@@ -1,0 +1,3 @@
+mode,seed,timeout,exit_code,wall_seconds,author_reported_length,author_seconds,node_count,note
+unchanged_direct,uncontrolled,True,1,45.020090699999855,145.94207763671875,0.9083538055419922,688,Produced path output; killed after 45 seconds; no strict verdict for this unseeded native run
+unchanged_seeded_render_trace,0,True,1,30.01246270000047,145.94207763671875,0.8055682182312012,603,Trace reached line 174 p.show after render returned; killed after 30 seconds; headless seed0 matches lengths and nodes
