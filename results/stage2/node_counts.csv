@@ -1,0 +1,126 @@
+run_id,scene_id,method,seed,stored_search_nodes,node_definition,sampled_nodes_value,sampled_nodes_unit,expanded_nodes,generated_candidates,valid_candidates,collision_filtered,capacity_evicted,no_candidate_expansions,paper_counter,pathset_size
+stage2_remaining_4maps,S0,astar,0,0,"discovered voxel-center states, excluding virtual endpoints",0,discovered voxel-center states,0,0,0,0,0,0,,
+stage2_remaining_4maps,S0,astar,1,0,"discovered voxel-center states, excluding virtual endpoints",0,discovered voxel-center states,0,0,0,0,0,0,,
+stage2_remaining_4maps,S0,astar,2,0,"discovered voxel-center states, excluding virtual endpoints",0,discovered voxel-center states,0,0,0,0,0,0,,
+stage2_remaining_4maps,S0,astar,3,0,"discovered voxel-center states, excluding virtual endpoints",0,discovered voxel-center states,0,0,0,0,0,0,,
+stage2_remaining_4maps,S0,astar,4,0,"discovered voxel-center states, excluding virtual endpoints",0,discovered voxel-center states,0,0,0,0,0,0,,
+stage2_remaining_4maps,S0,author_original,0,1,"author Allset rows, excluding special goal",1,author graph nodes,1,0,,,0,1,,
+stage2_remaining_4maps,S0,author_original,1,1,"author Allset rows, excluding special goal",1,author graph nodes,1,0,,,0,1,,
+stage2_remaining_4maps,S0,author_original,2,1,"author Allset rows, excluding special goal",1,author graph nodes,1,0,,,0,1,,
+stage2_remaining_4maps,S0,author_original,3,1,"author Allset rows, excluding special goal",1,author graph nodes,1,0,,,0,1,,
+stage2_remaining_4maps,S0,author_original,4,1,"author Allset rows, excluding special goal",1,author graph nodes,1,0,,,0,1,,
+stage2_remaining_4maps,S0,paper_reimplementation,0,2,permanent graph nodes including start and special goal,0,rays,1,0,0,0,0,0,0,1
+stage2_remaining_4maps,S0,paper_reimplementation,1,2,permanent graph nodes including start and special goal,0,rays,1,0,0,0,0,0,0,1
+stage2_remaining_4maps,S0,paper_reimplementation,2,2,permanent graph nodes including start and special goal,0,rays,1,0,0,0,0,0,0,1
+stage2_remaining_4maps,S0,paper_reimplementation,3,2,permanent graph nodes including start and special goal,0,rays,1,0,0,0,0,0,0,1
+stage2_remaining_4maps,S0,paper_reimplementation,4,2,permanent graph nodes including start and special goal,0,rays,1,0,0,0,0,0,0,1
+stage2_remaining_4maps,S0,rrt_connect,0,0,accepted tree nodes including roots,0,accepted tree nodes,0,0,0,0,0,0,,
+stage2_remaining_4maps,S0,rrt_connect,1,0,accepted tree nodes including roots,0,accepted tree nodes,0,0,0,0,0,0,,
+stage2_remaining_4maps,S0,rrt_connect,2,0,accepted tree nodes including roots,0,accepted tree nodes,0,0,0,0,0,0,,
+stage2_remaining_4maps,S0,rrt_connect,3,0,accepted tree nodes including roots,0,accepted tree nodes,0,0,0,0,0,0,,
+stage2_remaining_4maps,S0,rrt_connect,4,0,accepted tree nodes including roots,0,accepted tree nodes,0,0,0,0,0,0,,
+stage2_remaining_4maps,S0,safety_reference,0,2,permanent graph nodes including start and special goal,0,rays,1,0,0,0,0,0,0,1
+stage2_remaining_4maps,S0,safety_reference,1,2,permanent graph nodes including start and special goal,0,rays,1,0,0,0,0,0,0,1
+stage2_remaining_4maps,S0,safety_reference,2,2,permanent graph nodes including start and special goal,0,rays,1,0,0,0,0,0,0,1
+stage2_remaining_4maps,S0,safety_reference,3,2,permanent graph nodes including start and special goal,0,rays,1,0,0,0,0,0,0,1
+stage2_remaining_4maps,S0,safety_reference,4,2,permanent graph nodes including start and special goal,0,rays,1,0,0,0,0,0,0,1
+stage2_pilot_S1_5seeds,S1,astar,0,100000,"discovered voxel-center states, excluding virtual endpoints",100000,discovered voxel-center states,89423,1201266,1151330,49936,0,2,,
+stage2_pilot_S1_5seeds,S1,astar,1,100000,"discovered voxel-center states, excluding virtual endpoints",100000,discovered voxel-center states,89423,1201266,1151330,49936,0,2,,
+stage2_pilot_S1_5seeds,S1,astar,2,100000,"discovered voxel-center states, excluding virtual endpoints",100000,discovered voxel-center states,89423,1201266,1151330,49936,0,2,,
+stage2_pilot_S1_5seeds,S1,astar,3,100000,"discovered voxel-center states, excluding virtual endpoints",100000,discovered voxel-center states,89423,1201266,1151330,49936,0,2,,
+stage2_pilot_S1_5seeds,S1,astar,4,100000,"discovered voxel-center states, excluding virtual endpoints",100000,discovered voxel-center states,89423,1201266,1151330,49936,0,2,,
+stage2_pilot_S1_5seeds,S1,author_original,0,1,"author Allset rows, excluding special goal",1,author graph nodes,1,0,,,0,1,,
+stage2_pilot_S1_5seeds,S1,author_original,1,1,"author Allset rows, excluding special goal",1,author graph nodes,1,0,,,0,1,,
+stage2_pilot_S1_5seeds,S1,author_original,2,1,"author Allset rows, excluding special goal",1,author graph nodes,1,0,,,0,1,,
+stage2_pilot_S1_5seeds,S1,author_original,3,1,"author Allset rows, excluding special goal",1,author graph nodes,1,0,,,0,1,,
+stage2_pilot_S1_5seeds,S1,author_original,4,1,"author Allset rows, excluding special goal",1,author graph nodes,1,0,,,0,1,,
+stage2_pilot_S1_5seeds,S1,paper_reimplementation,0,341,permanent graph nodes including start and special goal,14868,rays,59,339,339,0,281,14,59,0
+stage2_pilot_S1_5seeds,S1,paper_reimplementation,1,348,permanent graph nodes including start and special goal,15120,rays,60,346,346,0,287,14,60,0
+stage2_pilot_S1_5seeds,S1,paper_reimplementation,2,342,permanent graph nodes including start and special goal,14616,rays,58,340,340,0,283,13,58,0
+stage2_pilot_S1_5seeds,S1,paper_reimplementation,3,343,permanent graph nodes including start and special goal,14868,rays,59,341,341,0,283,13,59,0
+stage2_pilot_S1_5seeds,S1,paper_reimplementation,4,349,permanent graph nodes including start and special goal,15372,rays,61,347,347,0,287,15,61,0
+stage2_pilot_S1_5seeds,S1,rrt_connect,0,135,accepted tree nodes including roots,135,accepted tree nodes,354,354,133,221,0,221,,
+stage2_pilot_S1_5seeds,S1,rrt_connect,1,104,accepted tree nodes including roots,104,accepted tree nodes,282,282,102,180,0,180,,
+stage2_pilot_S1_5seeds,S1,rrt_connect,2,88,accepted tree nodes including roots,88,accepted tree nodes,208,208,86,122,0,122,,
+stage2_pilot_S1_5seeds,S1,rrt_connect,3,112,accepted tree nodes including roots,112,accepted tree nodes,326,326,110,216,0,216,,
+stage2_pilot_S1_5seeds,S1,rrt_connect,4,129,accepted tree nodes including roots,129,accepted tree nodes,361,361,127,234,0,234,,
+stage2_pilot_S1_5seeds,S1,safety_reference,0,341,permanent graph nodes including start and special goal,14868,rays,59,339,339,0,281,14,59,0
+stage2_pilot_S1_5seeds,S1,safety_reference,1,348,permanent graph nodes including start and special goal,15120,rays,60,346,346,0,287,14,60,0
+stage2_pilot_S1_5seeds,S1,safety_reference,2,342,permanent graph nodes including start and special goal,14616,rays,58,340,340,0,283,13,58,0
+stage2_pilot_S1_5seeds,S1,safety_reference,3,343,permanent graph nodes including start and special goal,14868,rays,59,341,341,0,283,13,59,0
+stage2_pilot_S1_5seeds,S1,safety_reference,4,349,permanent graph nodes including start and special goal,15372,rays,61,347,347,0,287,15,61,0
+stage2_remaining_4maps,S2,astar,0,100000,"discovered voxel-center states, excluding virtual endpoints",100000,discovered voxel-center states,87585,1196426,1127367,69059,0,2,,
+stage2_remaining_4maps,S2,astar,1,100000,"discovered voxel-center states, excluding virtual endpoints",100000,discovered voxel-center states,87585,1196426,1127367,69059,0,2,,
+stage2_remaining_4maps,S2,astar,2,100000,"discovered voxel-center states, excluding virtual endpoints",100000,discovered voxel-center states,87585,1196426,1127367,69059,0,2,,
+stage2_remaining_4maps,S2,astar,3,100000,"discovered voxel-center states, excluding virtual endpoints",100000,discovered voxel-center states,87585,1196426,1127367,69059,0,2,,
+stage2_remaining_4maps,S2,astar,4,100000,"discovered voxel-center states, excluding virtual endpoints",100000,discovered voxel-center states,87585,1196426,1127367,69059,0,2,,
+stage2_remaining_4maps,S2,author_original,0,45,"author Allset rows, excluding special goal",45,author graph nodes,2,44,,,22,0,,
+stage2_remaining_4maps,S2,author_original,1,45,"author Allset rows, excluding special goal",45,author graph nodes,2,44,,,22,0,,
+stage2_remaining_4maps,S2,author_original,2,45,"author Allset rows, excluding special goal",45,author graph nodes,3,44,,,22,1,,
+stage2_remaining_4maps,S2,author_original,3,45,"author Allset rows, excluding special goal",45,author graph nodes,2,44,,,22,0,,
+stage2_remaining_4maps,S2,author_original,4,45,"author Allset rows, excluding special goal",45,author graph nodes,2,44,,,22,0,,
+stage2_remaining_4maps,S2,paper_reimplementation,0,150,permanent graph nodes including start and special goal,8568,rays,43,148,148,0,106,15,34,9
+stage2_remaining_4maps,S2,paper_reimplementation,1,150,permanent graph nodes including start and special goal,8568,rays,42,148,148,0,107,14,34,8
+stage2_remaining_4maps,S2,paper_reimplementation,2,157,permanent graph nodes including start and special goal,10332,rays,51,155,155,0,105,16,41,10
+stage2_remaining_4maps,S2,paper_reimplementation,3,182,permanent graph nodes including start and special goal,9324,rays,48,180,180,0,133,14,37,11
+stage2_remaining_4maps,S2,paper_reimplementation,4,154,permanent graph nodes including start and special goal,8316,rays,45,152,152,0,108,14,33,12
+stage2_remaining_4maps,S2,rrt_connect,0,1440,accepted tree nodes including roots,1440,accepted tree nodes,4767,4767,1438,3329,0,3329,,
+stage2_remaining_4maps,S2,rrt_connect,1,849,accepted tree nodes including roots,849,accepted tree nodes,2652,2652,847,1805,0,1805,,
+stage2_remaining_4maps,S2,rrt_connect,2,75,accepted tree nodes including roots,75,accepted tree nodes,163,163,73,90,0,90,,
+stage2_remaining_4maps,S2,rrt_connect,3,694,accepted tree nodes including roots,694,accepted tree nodes,2151,2151,692,1459,0,1459,,
+stage2_remaining_4maps,S2,rrt_connect,4,1078,accepted tree nodes including roots,1078,accepted tree nodes,3499,3499,1076,2423,0,2423,,
+stage2_remaining_4maps,S2,safety_reference,0,150,permanent graph nodes including start and special goal,8568,rays,43,148,148,0,106,15,34,9
+stage2_remaining_4maps,S2,safety_reference,1,150,permanent graph nodes including start and special goal,8568,rays,42,148,148,0,107,14,34,8
+stage2_remaining_4maps,S2,safety_reference,2,157,permanent graph nodes including start and special goal,10332,rays,51,155,155,0,105,16,41,10
+stage2_remaining_4maps,S2,safety_reference,3,182,permanent graph nodes including start and special goal,9324,rays,48,180,180,0,133,14,37,11
+stage2_remaining_4maps,S2,safety_reference,4,154,permanent graph nodes including start and special goal,8316,rays,45,152,152,0,108,14,33,12
+stage2_remaining_4maps,S3,astar,0,66831,"discovered voxel-center states, excluding virtual endpoints",66831,discovered voxel-center states,52493,729953,703991,25962,0,114,,
+stage2_remaining_4maps,S3,astar,1,66831,"discovered voxel-center states, excluding virtual endpoints",66831,discovered voxel-center states,52493,729953,703991,25962,0,114,,
+stage2_remaining_4maps,S3,astar,2,66831,"discovered voxel-center states, excluding virtual endpoints",66831,discovered voxel-center states,52493,729953,703991,25962,0,114,,
+stage2_remaining_4maps,S3,astar,3,66831,"discovered voxel-center states, excluding virtual endpoints",66831,discovered voxel-center states,52493,729953,703991,25962,0,114,,
+stage2_remaining_4maps,S3,astar,4,66831,"discovered voxel-center states, excluding virtual endpoints",66831,discovered voxel-center states,52493,729953,703991,25962,0,114,,
+stage2_remaining_4maps,S3,author_original,0,45,"author Allset rows, excluding special goal",45,author graph nodes,2,44,,,36,0,,
+stage2_remaining_4maps,S3,author_original,1,45,"author Allset rows, excluding special goal",45,author graph nodes,2,44,,,36,0,,
+stage2_remaining_4maps,S3,author_original,2,45,"author Allset rows, excluding special goal",45,author graph nodes,2,44,,,36,0,,
+stage2_remaining_4maps,S3,author_original,3,45,"author Allset rows, excluding special goal",45,author graph nodes,2,44,,,36,0,,
+stage2_remaining_4maps,S3,author_original,4,46,"author Allset rows, excluding special goal",46,author graph nodes,3,45,,,36,0,,
+stage2_remaining_4maps,S3,paper_reimplementation,0,2464,permanent graph nodes including start and special goal,23930,rays,122,2462,2462,0,2230,1,94,27
+stage2_remaining_4maps,S3,paper_reimplementation,1,2490,permanent graph nodes including start and special goal,23154,rays,119,2488,2488,0,2260,0,91,27
+stage2_remaining_4maps,S3,paper_reimplementation,2,2483,permanent graph nodes including start and special goal,23476,rays,124,2481,2481,0,2243,0,93,30
+stage2_remaining_4maps,S3,paper_reimplementation,3,2451,permanent graph nodes including start and special goal,23727,rays,120,2449,2449,0,2212,0,94,25
+stage2_remaining_4maps,S3,paper_reimplementation,4,2502,permanent graph nodes including start and special goal,23967,rays,125,2500,2500,0,2255,0,95,29
+stage2_remaining_4maps,S3,rrt_connect,0,43,accepted tree nodes including roots,43,accepted tree nodes,57,57,41,16,0,16,,
+stage2_remaining_4maps,S3,rrt_connect,1,49,accepted tree nodes including roots,49,accepted tree nodes,69,69,47,22,0,22,,
+stage2_remaining_4maps,S3,rrt_connect,2,38,accepted tree nodes including roots,38,accepted tree nodes,55,55,36,19,0,19,,
+stage2_remaining_4maps,S3,rrt_connect,3,40,accepted tree nodes including roots,40,accepted tree nodes,55,55,38,17,0,17,,
+stage2_remaining_4maps,S3,rrt_connect,4,44,accepted tree nodes including roots,44,accepted tree nodes,66,66,42,24,0,24,,
+stage2_remaining_4maps,S3,safety_reference,0,2358,permanent graph nodes including start and special goal,22633,rays,117,2356,2356,0,2127,1,89,27
+stage2_remaining_4maps,S3,safety_reference,1,2379,permanent graph nodes including start and special goal,22406,rays,113,2377,2377,0,2155,0,88,24
+stage2_remaining_4maps,S3,safety_reference,2,2381,permanent graph nodes including start and special goal,22766,rays,119,2379,2379,0,2146,0,90,28
+stage2_remaining_4maps,S3,safety_reference,3,2353,permanent graph nodes including start and special goal,22296,rays,112,2351,2351,0,2121,0,88,23
+stage2_remaining_4maps,S3,safety_reference,4,2398,permanent graph nodes including start and special goal,23259,rays,121,2396,2396,0,2157,0,92,28
+stage2_remaining_4maps,S4,astar,0,100000,"discovered voxel-center states, excluding virtual endpoints",100000,discovered voxel-center states,89739,1194633,1172250,22383,0,1,,
+stage2_remaining_4maps,S4,astar,1,100000,"discovered voxel-center states, excluding virtual endpoints",100000,discovered voxel-center states,89739,1194633,1172250,22383,0,1,,
+stage2_remaining_4maps,S4,astar,2,100000,"discovered voxel-center states, excluding virtual endpoints",100000,discovered voxel-center states,89739,1194633,1172250,22383,0,1,,
+stage2_remaining_4maps,S4,astar,3,100000,"discovered voxel-center states, excluding virtual endpoints",100000,discovered voxel-center states,89739,1194633,1172250,22383,0,1,,
+stage2_remaining_4maps,S4,astar,4,100000,"discovered voxel-center states, excluding virtual endpoints",100000,discovered voxel-center states,89739,1194633,1172250,22383,0,1,,
+stage2_remaining_4maps,S4,author_original,0,3,"author Allset rows, excluding special goal",3,author graph nodes,2,2,,,1,1,,
+stage2_remaining_4maps,S4,author_original,1,3,"author Allset rows, excluding special goal",3,author graph nodes,2,2,,,1,1,,
+stage2_remaining_4maps,S4,author_original,2,3,"author Allset rows, excluding special goal",3,author graph nodes,2,2,,,1,1,,
+stage2_remaining_4maps,S4,author_original,3,3,"author Allset rows, excluding special goal",3,author graph nodes,2,2,,,1,1,,
+stage2_remaining_4maps,S4,author_original,4,3,"author Allset rows, excluding special goal",3,author graph nodes,2,2,,,1,1,,
+stage2_remaining_4maps,S4,paper_reimplementation,0,2,permanent graph nodes including start and special goal,252,rays,1,0,0,0,0,1,1,0
+stage2_remaining_4maps,S4,paper_reimplementation,1,2,permanent graph nodes including start and special goal,252,rays,1,0,0,0,0,1,1,0
+stage2_remaining_4maps,S4,paper_reimplementation,2,2,permanent graph nodes including start and special goal,252,rays,1,0,0,0,0,1,1,0
+stage2_remaining_4maps,S4,paper_reimplementation,3,2,permanent graph nodes including start and special goal,252,rays,1,0,0,0,0,1,1,0
+stage2_remaining_4maps,S4,paper_reimplementation,4,2,permanent graph nodes including start and special goal,252,rays,1,0,0,0,0,1,1,0
+stage2_remaining_4maps,S4,rrt_connect,0,4712,accepted tree nodes including roots,4712,accepted tree nodes,14710,14710,4710,10000,0,10000,,
+stage2_remaining_4maps,S4,rrt_connect,1,4612,accepted tree nodes including roots,4612,accepted tree nodes,14610,14610,4610,10000,0,10000,,
+stage2_remaining_4maps,S4,rrt_connect,2,4651,accepted tree nodes including roots,4651,accepted tree nodes,14649,14649,4649,10000,0,10000,,
+stage2_remaining_4maps,S4,rrt_connect,3,4748,accepted tree nodes including roots,4748,accepted tree nodes,14746,14746,4746,10000,0,10000,,
+stage2_remaining_4maps,S4,rrt_connect,4,4697,accepted tree nodes including roots,4697,accepted tree nodes,14695,14695,4695,10000,0,10000,,
+stage2_remaining_4maps,S4,safety_reference,0,2,permanent graph nodes including start and special goal,252,rays,1,0,0,0,0,1,1,0
+stage2_remaining_4maps,S4,safety_reference,1,2,permanent graph nodes including start and special goal,252,rays,1,0,0,0,0,1,1,0
+stage2_remaining_4maps,S4,safety_reference,2,2,permanent graph nodes including start and special goal,252,rays,1,0,0,0,0,1,1,0
+stage2_remaining_4maps,S4,safety_reference,3,2,permanent graph nodes including start and special goal,252,rays,1,0,0,0,0,1,1,0
+stage2_remaining_4maps,S4,safety_reference,4,2,permanent graph nodes including start and special goal,252,rays,1,0,0,0,0,1,1,0

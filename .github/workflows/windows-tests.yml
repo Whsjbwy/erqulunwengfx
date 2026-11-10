@@ -1,0 +1,40 @@
+name: Windows Python tests
+
+on:
+  push:
+    branches: [repro/gsunlight-stage2]
+  pull_request:
+    branches: [repro/gsunlight-stage1]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-tests:
+    # GitHub-hosted Windows is a separate environment from the local Windows 11 PC.
+    runs-on: windows-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      # Official READMEs verified on 2026-11-10:
+      # https://github.com/actions/checkout
+      # https://github.com/actions/setup-python
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - name: Install independent tools and test dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Compile Python modules
+        run: python -m compileall -q src tests scripts
+      - name: Run synthetic tests without author materials
+        run: python -m pytest -v
+      - name: Check Python style
+        run: python -m ruff check .
+      - name: Check Python formatting
+        run: python -m ruff format --check .

@@ -6,6 +6,7 @@ import argparse
 import csv
 import json
 import logging
+import math
 import queue
 import subprocess
 import sys
@@ -51,9 +52,14 @@ FIELDS = (
 class WorkerClient:
     """Own one serial subprocess; replace it after timeout or unexpected exit."""
 
-    def __init__(self, command: list[str], startup_log: Path) -> None:
+    def __init__(
+        self, command: list[str], startup_log: Path, *, startup_timeout: float = 30.0
+    ) -> None:
+        if not math.isfinite(startup_timeout) or startup_timeout <= 0:
+            raise ValueError("Startup timeout must be finite and positive.")
         self.command = command
         self.startup_log = startup_log
+        self.startup_timeout = startup_timeout
         self.process: subprocess.Popen[str] | None = None
         self.messages: queue.Queue[dict[str, Any]] = queue.Queue()
         self.error_stream: Any = None
@@ -99,24 +105,36 @@ class WorkerClient:
 
     def run_seed(self, seed: int, timeout: float) -> dict[str, Any]:
         """Return an explicit seed outcome, including crash and timeout failures."""
-        started = time.perf_counter()
+        if not math.isfinite(timeout) or timeout <= 0:
+            raise ValueError("Planning timeout must be finite and positive.")
+        if not isinstance(seed, int) or not 0 <= seed < 2**32:
+            raise ValueError("Seed must be an integer in [0, 2**32).")
+        total_started = time.perf_counter()
+        request_started = None
+        startup_seconds = 0.0
         try:
             if self.process is None:
-                self.start(timeout)
+                self.start(self.startup_timeout)
+                startup_seconds = time.perf_counter() - total_started
             assert self.process is not None and self.process.stdin is not None
+            request_started = time.perf_counter()
             self.process.stdin.write(json.dumps({"seed": seed}) + "\n")
             self.process.stdin.flush()
-            remaining = max(0.001, timeout - (time.perf_counter() - started))
+            remaining = max(0.001, timeout - (time.perf_counter() - request_started))
             message = self.messages.get(timeout=remaining)
             if message.get("event") != "result" or message.get("seed") != seed:
                 raise RuntimeError(f"Worker protocol failed: {message}")
-            message["parent_seconds"] = time.perf_counter() - started
+            message["parent_seconds"] = time.perf_counter() - request_started
+            message["startup_seconds"] = startup_seconds
+            message["total_parent_seconds"] = time.perf_counter() - total_started
             message["worker_pid"] = self.process.pid
             message["map_load_count"] = self.map_load_count
             return message
         except (queue.Empty, TimeoutError):
             process = self.process
             self.close()
+            phase = "startup" if request_started is None else "planning"
+            elapsed = time.perf_counter() - (request_started or total_started)
             return {
                 "seed": seed,
                 "status": "timeout",
@@ -124,10 +142,12 @@ class WorkerClient:
                 "reported_success": False,
                 "parameters": None,
                 "parameters_state": "not_captured_before_timeout",
-                "wall_seconds": time.perf_counter() - started,
-                "failure_reason": (
-                    f"seed_timeout_after_{timeout:g}_seconds;parameters_not_captured"
-                ),
+                "wall_seconds": elapsed if request_started is not None else None,
+                "total_parent_seconds": time.perf_counter() - total_started,
+                "termination_reason": "startup_timeout"
+                if phase == "startup"
+                else "time_budget",
+                "failure_reason": (f"{phase}_timeout;parameters_not_captured"),
             }
         except (OSError, RuntimeError) as error:
             process = self.process
@@ -139,7 +159,13 @@ class WorkerClient:
                 "reported_success": False,
                 "parameters": None,
                 "parameters_state": "not_captured_before_worker_exit",
-                "wall_seconds": time.perf_counter() - started,
+                "wall_seconds": (
+                    time.perf_counter() - request_started
+                    if request_started is not None
+                    else None
+                ),
+                "total_parent_seconds": time.perf_counter() - total_started,
+                "termination_reason": "worker_error",
                 "failure_reason": f"{type(error).__name__}: {error}",
             }
 
@@ -244,13 +270,16 @@ def parse_arguments(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--map-path", type=Path, required=True)
     parser.add_argument("--seeds", type=int, nargs="+", default=list(range(5)))
     parser.add_argument("--timeout", type=float, default=120.0)
+    parser.add_argument("--startup-timeout", type=float, default=30.0)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--local-dir", type=Path, required=True)
     parser.add_argument("--mode", default="author_headless")
     parser.add_argument("--adapter-path", type=Path)
     args = parser.parse_args(argv)
-    if args.timeout <= 0:
-        parser.error("--timeout must be positive.")
+    if not math.isfinite(args.timeout) or args.timeout <= 0:
+        parser.error("--timeout must be finite and positive.")
+    if not math.isfinite(args.startup_timeout) or args.startup_timeout <= 0:
+        parser.error("--startup-timeout must be finite and positive.")
     if len(args.seeds) != len(set(args.seeds)):
         parser.error("--seeds must not contain duplicates.")
     if any(seed < 0 or seed >= 2**32 for seed in args.seeds):
@@ -262,6 +291,12 @@ def parse_arguments(argv: Sequence[str] | None = None) -> argparse.Namespace:
     repository = Path(__file__).resolve().parents[2]
     if args.local_dir.is_relative_to(repository):
         parser.error("--local-dir must be outside the public repository.")
+    if args.local_dir.exists() and (
+        not args.local_dir.is_dir() or any(args.local_dir.iterdir())
+    ):
+        parser.error(
+            "--local-dir must be new or empty; existing evidence cannot be mixed."
+        )
     for filename in ("main_sunlight_3Dgrid.py", "utils.py"):
         if not (args.source_dir / filename).is_file():
             parser.error(f"Missing local author file: {filename}")
@@ -271,7 +306,7 @@ def parse_arguments(argv: Sequence[str] | None = None) -> argparse.Namespace:
         args.adapter_path = args.adapter_path.resolve()
         if not args.adapter_path.is_file():
             parser.error("--adapter-path must be an existing local Python file.")
-        if args.mode == "author_headless":
+        if args.mode in ("author_headless", "author_original"):
             parser.error("An adapter requires a separate diagnostic --mode label.")
     return args
 
@@ -303,6 +338,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         },
         "seeds": args.seeds,
         "timeout_seconds": args.timeout,
+        "startup_timeout_seconds": args.startup_timeout,
         "command": [
             sys.executable,
             "-m",
@@ -332,7 +368,11 @@ def main(argv: Sequence[str] | None = None) -> int:
     ]
     if args.adapter_path is not None:
         command.extend(("--adapter-path", str(args.adapter_path)))
-    worker = WorkerClient(command, args.local_dir / "worker_stderr.log")
+    worker = WorkerClient(
+        command,
+        args.local_dir / "worker_stderr.log",
+        startup_timeout=args.startup_timeout,
+    )
     try:
         with (
             args.output.open("w", encoding="utf-8", newline="") as output,

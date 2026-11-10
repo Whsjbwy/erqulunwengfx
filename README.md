@@ -1,8 +1,8 @@
-# G-Sunlight 第一阶段科研复现
+# G-Sunlight 科研复现
 
-本仓库提供独立编写的运行包装、体素碰撞验证器、测试和实验记录，用于核查 G-Sunlight 作者提供的三维示例。第一阶段只复现和诊断，不加入洋流、MPC、Attention、训练或其他科研创新模块。
+本仓库提供独立编写的运行包装、体素碰撞验证器、测试和实验记录，用于核查 G-Sunlight 作者提供的三维示例。阶段一运行原版并做隔离诊断；阶段二独立重建论文结构、建立安全参考并开展固定多地图对比。不加入洋流、MPC、Attention、训练或其他科研创新模块。
 
-2026-11-10本机结果：作者计算流程20/20产生路径，原始及后处理严格有效率均0/20；VTK独立查询确认内部穿透。隔离安全诊断容量1/3/5分别为0/20、6/20、5/20。85项测试通过。详见[中文实验报告](docs/STAGE1_REPORT_CN.md)、[完整测试结果](docs/TEST_RESULTS_CN.md)及[实际命令](docs/RUN_COMMANDS_CN.md)。这些结果不等同于复现论文全部主图表。
+阶段一（2026-11-10）本机结果：作者计算流程20/20产生路径，原始及后处理严格有效率均0/20；VTK独立查询确认内部穿透。隔离安全诊断容量1/3/5分别为0/20、6/20、5/20。阶段一85项测试通过。详见[中文实验报告](docs/STAGE1_REPORT_CN.md)、[完整测试结果](docs/TEST_RESULTS_CN.md)及[实际命令](docs/RUN_COMMANDS_CN.md)。这些历史结果不并入阶段二性能排名，也不等同于复现论文全部主图表。
 
 论文、作者 ZIP、作者源码和 `map.vti` 均保存在仓库外，不随本项目发布。原仓库公开可见不等于获得再分发许可；所检查材料未附明确的 `LICENSE`。请从[作者原仓库](https://github.com/breaker123344/LIU3Dsunlight)自行取得材料，并遵守其适用授权。
 
@@ -69,6 +69,26 @@ $seeds = 0..19
 
 论文与源码核对见 [论文和源码审计](docs/PAPER_CODE_AUDIT_CN.md)。实际运行命令、退出码、环境、实验范围和未完成项以最终 `docs/STAGE1_REPORT_CN.md` 为准；任何未执行的实验都不能视为通过。
 
+## 阶段二：独立重建与多地图对比
+
+五个方法分别为 Author-Original、Paper-Reimplementation、Safety-Reference、A*和RRT-Connect。阶段二安全参考是独立自编实现，与上述阶段一作者代码hooks诊断身份分开。方法版本、参数和运行顺序见[版本与运行指南](docs/STAGE2_VERSION_GUIDE_CN.md)，论文对应关系见[三版本差异表](docs/STAGE2_PAPER_CODE_DIFF_CN.md)及[重建假设](docs/STAGE2_ASSUMPTIONS_CN.md)。
+
+在本仓库中先执行单场景、单seed预检；两处输出必须使用新名称，本地路径证据保存在仓库外：
+
+```powershell
+.\.venv\Scripts\python.exe -m gsunlight_repro.benchmark `
+  --source-dir ..\LIU3Dsunlight-main `
+  --map-config configs/stage2_maps.json `
+  --experiment-config configs/stage2_experiment.json `
+  --scenes S0 --seeds 0 --run-id stage2-s0-example `
+  --local-dir ..\local_only\stage2_s0_example `
+  --output results/stage2/s0_example.csv
+```
+
+S0—S4是五套提前冻结的确定性场景配方，`map_seed`只是配方标识，没有随机生成障碍；五个规划seed不代表五张随机地图。地图沿用作者坐标范围及原始端点，S3是自编合成海床，不是论文海床重建。先完成各场景单次预检，确认记录与资源控制可信后，再按指南扩展至0—4共五个规划seed，不能按成功率改地图或挑选结果。
+
+主要比较原始路径；共同严格shortcut作为次要结果，作者原生后处理单列。`reported_success`、`strict_valid`和预算内成功分别统计，未知用空值；各方法 `sampled_nodes`单位不同，不能直接排名。实际完成范围、命令、测试及结论见[阶段二报告](docs/STAGE2_REPORT_CN.md)、[阶段二完整测试结果](docs/STAGE2_TEST_RESULTS_CN.md)和[阶段二汇总](results/stage2/summary.csv)，不在此预填未完成实验数字。
+
 ## 代码检查
 
 ```powershell
@@ -78,7 +98,7 @@ $seeds = 0..19
 .\.venv\Scripts\python.exe -m ruff format --check .
 ```
 
-请勿提交虚拟环境、缓存、原始材料、逐点大日志或私密信息，也不生成额外文件哈希或校验清单。工作只推送独立分支并创建 Pull Request，第一阶段完成后等待研究者审核，不自行合并 `main`。
+请勿提交虚拟环境、缓存、原始材料、逐点大日志或私密信息，也不生成额外文件哈希或校验清单。工作只推送独立分支并创建 Pull Request，每一阶段完成后等待研究者审核，不自行合并 `main`。
 
 ## 研究引用
 
