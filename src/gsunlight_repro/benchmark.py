@@ -161,9 +161,13 @@ def make_row(
         if counters.get(counter):
             categories.append(label)
     reason = result.get("termination_reason", result.get("failure_reason", "unknown"))
-    if result["status"] in ("timeout", "budget_exhausted") or within is False:
+    if (
+        result["status"] in ("timeout", "budget_exhausted")
+        or within is False
+        or reason == "paper_iteration_limit"
+    ):
         categories.append("search_budget_exhausted")
-    if reason in ("open_exhausted", "nodes_exhausted"):
+    if reason in ("open_exhausted", "open_set_exhausted", "nodes_exhausted"):
         categories.append("search_nodes_exhausted")
     if raw["valid"] is False:
         categories.append("raw_path_invalid")

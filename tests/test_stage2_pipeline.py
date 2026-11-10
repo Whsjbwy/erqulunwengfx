@@ -368,3 +368,31 @@ def test_benchmark_startup_failure_records_actual_exit_code(
     assert row["exit_code"] == "1"
     assert row["reported_success"] == ""
     assert "original synthetic startup failure" in row["error"]
+
+
+@pytest.mark.parametrize(
+    ("reason", "expected"),
+    [
+        ("open_set_exhausted", "search_nodes_exhausted"),
+        ("paper_iteration_limit", "search_budget_exhausted"),
+    ],
+)
+def test_method_specific_termination_reasons_are_classified(
+    reason: str, expected: str
+) -> None:
+    """Keep A* exhaustion and the paper counter limit distinct in diagnostics."""
+    row, _ = make_row(
+        {
+            "method": "synthetic",
+            "seed": 0,
+            "status": "no_path",
+            "termination_reason": reason,
+            "reported_success": False,
+        },
+        empty_scenario(),
+        "classification",
+        PlanningLimits(),
+        32,
+        0,
+    )
+    assert expected in row["failure_categories"]

@@ -59,7 +59,7 @@ def plot_paths(
             axis = figure.add_subplot(2, 3, index + 1, projection="3d")
             record = selected.get((scenario.scene_id, method))
             if len(points):
-                axis.scatter(*points.T, s=1, alpha=0.12, c="gray", rasterized=True)
+                axis.scatter(*points.T, s=2, alpha=0.35, c="slategray", rasterized=True)
             axis.scatter(*scenario.start, color="blue", s=20)
             axis.scatter(*scenario.goal, color="black", s=25, marker="*")
             if record is None:

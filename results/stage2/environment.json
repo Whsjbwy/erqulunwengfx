@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-10",
+  "software": {
+    "python": "3.11.15",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "cpu": "AMD Ryzen 5 9600X 6-Core Processor",
+    "logical_cpu_count": 12,
+    "packages": {
+      "numpy": "2.4.6",
+      "pyvista": "0.49.2",
+      "vtk": "9.7.2",
+      "opencv-python": "5.0.0.93",
+      "pillow": "13.0.0",
+      "pytest": "9.2.0",
+      "ruff": "0.17.4",
+      "matplotlib": "3.11.2"
+    }
+  },
+  "map_config": "configs/stage2_maps.json",
+  "experiment_config": "configs/stage2_experiment.json",
+  "trial_parts": [
+    "pilot_S1.csv",
+    "remaining_4maps.csv"
+  ],
+  "unique_trials": 125,
+  "plot_seed": 0,
+  "timing_note": "scope differs for native author search timer; no speed ranking"
+}
