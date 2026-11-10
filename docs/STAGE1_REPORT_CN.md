@@ -96,7 +96,7 @@ seed0的原始路径按作者输出方向为目标到起点，首碰撞线段索
 
 目标：[Whsjbwy/erqulunwengfx](https://github.com/Whsjbwy/erqulunwengfx)，独立分支 `repro/gsunlight-stage1`。只发布自编验证器、包装、诊断hooks、副本生成脚本、测试、文档和精简CSV/环境信息。作者PDF、ZIP、原始/副本源码、map.vti、虚拟环境、缓存、原始路径日志均不发布；未擅自给作者代码附许可证。
 
-推送与PR状态将在实际远端确认后更新；未合并main。真实命令见 [RUN_COMMANDS_CN.md](RUN_COMMANDS_CN.md)。
+已成功推送独立分支，并创建 [Pull Request #1](https://github.com/Whsjbwy/erqulunwengfx/pull/1)。未合并main；等待研究者审核。远端已返回新分支创建及PR URL。公开交付共32个文件，包括src下8个自编模块、2个脚本、5个测试文件、README/规范/依赖、4份中文文档及精简结果；不含受限原件和本地日志。真实命令见 [RUN_COMMANDS_CN.md](RUN_COMMANDS_CN.md)，逐项测试见 [TEST_RESULTS_CN.md](TEST_RESULTS_CN.md)。
 
 ## H. 未知与研究者下一步审核
 
