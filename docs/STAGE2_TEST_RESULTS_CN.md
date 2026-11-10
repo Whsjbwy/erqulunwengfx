@@ -240,3 +240,5 @@ Windows首轮CI：216 passed in13.61s，[实际运行记录](https://github.com/
 | tests/test_stage2_pipeline.py::test_method_specific_termination_reasons_are_classified[open_set_exhausted-search_nodes_exhausted] | PASSED |
 | tests/test_stage2_pipeline.py::test_method_specific_termination_reasons_are_classified[paper_iteration_limit-search_budget_exhausted] | PASSED |
 | tests/test_stage2_summary.py::test_only_strict_valid_lengths_contribute_to_quality | PASSED |
+
+最终完整代码的Windows PR CI：[run42830966555](https://github.com/Whsjbwy/erqulunwengfx/actions/runs/42830966555)，Windows Server2025，232 passed in12.65s；编译、Ruff及格式检查全部成功。

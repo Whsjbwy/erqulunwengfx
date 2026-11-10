@@ -121,7 +121,7 @@ S0—S3见证均经严格检测，但从未传给规划器作参考路径。S4�
 
 ## H. 测试、Windows自动化与代码质量
 
-本地最终测试：**232 passed in 6.31s**；compileall、Ruff静态检查和格式检查通过。逐项测试及Windows记录见[完整测试结果](STAGE2_TEST_RESULTS_CN.md)。首轮真实远端WindowsCI已成功：[run42788759110](https://github.com/Whsjbwy/erqulunwengfx/actions/runs/42788759110)，Windows Server2025/Python3.11，216项通过13.61s；与本机Windows11区别明确，不以本地通过冒充CI通过。最终提交对应CI将按实际状态另行更新。
+本地最终测试：**232 passed in 6.31s**；compileall、Ruff静态检查和格式检查通过。逐项测试及Windows记录见[完整测试结果](STAGE2_TEST_RESULTS_CN.md)。首轮真实远端WindowsCI已成功：[run42788759110](https://github.com/Whsjbwy/erqulunwengfx/actions/runs/42788759110)，Windows Server2025/Python3.11，216项通过13.61s；与本机Windows11区别明确，不以本地通过冒充CI通过。完整代码提交14f9334的Windows PR测试亦已通过：[run42830966555](https://github.com/Whsjbwy/erqulunwengfx/actions/runs/42830966555)，232 passed in 12.65s，编译、Ruff与格式检查全部成功。
 
 测试包含阶段一85项，以及旋转/角边界/射线朴素oracle、论文计数/网格历史/插删/最短路径集、安全端点/父边/目标/完整路径/后处理回退、2264种26邻边占用组合和Dijkstra代价对照、RRT树交换/零进展/预算、场景证书、未知证据/异常/超时与合并数据不可覆盖。CI仅使用自编代码和合成数据，不下载作者材料，不运行科研批量。
 
@@ -129,7 +129,7 @@ S0—S3见证均经严格检测，但从未传给规划器作参考路径。S4�
 
 ## I. GitHub交付与停止
 
-远端为 [Whsjbwy/erqulunwengfx](https://github.com/Whsjbwy/erqulunwengfx)，head `repro/gsunlight-stage2`、base `repro/gsunlight-stage1`。阶段一与main保持原状。只发布自编代码、测试、配置、精简结果和图，不发布原件、作者源码副本、原地图、环境、日志或原始逐点路径。新PR与最终CI在真实确认后补入本节，不预填成功。
+远端为 [Whsjbwy/erqulunwengfx](https://github.com/Whsjbwy/erqulunwengfx)，head `repro/gsunlight-stage2`、base `repro/gsunlight-stage1`。阶段一与main保持原状。只发布自编代码、测试、配置、精简结果和图，不发布原件、作者源码副本、原地图、环境、日志或原始逐点路径。已创建 [堆叠PR #2](https://github.com/Whsjbwy/erqulunwengfx/pull/2)，状态开放、未合并。完整代码提交的Windows CI已实测通过，上述记录和最终文档提交的检查可从PR查看；未合并main或阶段一分支。
 
 ## J. 未完成范围与研究者审核问题
 
