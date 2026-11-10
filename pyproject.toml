@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "gsunlight-repro"
-version = "0.1.0"
-description = "Independent stage-one verification tools for the G-Sunlight author demo"
+version = "0.2.0"
+description = "Independent G-Sunlight reconstruction, strict safety and reproducible benchmarks"
 requires-python = ">=3.11,<3.12"
 dependencies = [
     "numpy==2.4.6",
@@ -13,6 +13,7 @@ dependencies = [
     "vtk==9.7.2",
     "opencv-python==5.0.0.93",
     "pillow==13.0.0",
+    "matplotlib==3.11.2",
 ]
 
 [project.optional-dependencies]
@@ -20,6 +21,8 @@ dev = ["pytest==9.2.0", "ruff==0.17.4"]
 
 [project.scripts]
 gsunlight-repro = "gsunlight_repro.experiment_runner:main"
+gsunlight-benchmark = "gsunlight_repro.benchmark:main"
+gsunlight-summary = "gsunlight_repro.summarize:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

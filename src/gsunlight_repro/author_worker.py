@@ -7,6 +7,7 @@ native-library output go to local log files, never to that protocol channel.
 from __future__ import annotations
 
 import argparse
+import ast
 import contextlib
 import importlib
 import importlib.util
@@ -106,6 +107,134 @@ def load_adapter(path: Path | None) -> ModuleType | None:
     return module
 
 
+def capacity_random_lines(source_path: Path) -> set[int]:
+    """Find the sole randint inside the known author's capacity-overflow block.
+
+    Unsupported source structures return an empty set; their eviction count is
+    unavailable rather than an invented zero. Reading the AST never edits code.
+    """
+    tree = ast.parse(source_path.read_bytes())
+    lines = set()
+    for node in ast.walk(tree):
+        if not isinstance(node, ast.If) or not isinstance(node.test, ast.Compare):
+            continue
+        test = node.test
+        if not (
+            len(test.ops) == len(test.comparators) == 1
+            and isinstance(test.ops[0], ast.Gt)
+            and isinstance(test.comparators[0], ast.Name)
+            and test.comparators[0].id == "max_num"
+            and isinstance(test.left, ast.Call)
+            and isinstance(test.left.func, ast.Name)
+            and test.left.func.id == "len"
+            and any(
+                isinstance(item, ast.Name) and item.id == "grids_ids"
+                for item in ast.walk(test.left)
+            )
+        ):
+            continue
+        for statement in node.body:
+            for call in ast.walk(statement):
+                if (
+                    isinstance(call, ast.Call)
+                    and isinstance(call.func, ast.Attribute)
+                    and isinstance(call.func.value, ast.Name)
+                    and call.func.value.id == "random"
+                    and call.func.attr == "randint"
+                ):
+                    lines.add(call.lineno)
+    return lines if len(lines) == 1 else set()
+
+
+@contextlib.contextmanager
+def observe_author_calls(
+    utils: ModuleType,
+    source_path: Path,
+    counters: dict[str, Any],
+    raw_candidates_observable: bool,
+) -> Iterator[None]:
+    """Count outputs and known capacity draws without additional RNG calls."""
+    original_tangent = getattr(utils, "findtangent", None)
+    original_randint = random.randint
+    eviction_lines = capacity_random_lines(source_path)
+    counters.update(
+        candidate_batches=None,
+        empty_candidate_batches=None,
+        emitted_candidates=None,
+        raw_candidates=None,
+        collision_filter_valid_candidates=None,
+        grid_evictions=0 if eviction_lines else None,
+    )
+    if callable(original_tangent):
+        counters.update(
+            candidate_batches=0, empty_candidate_batches=0, emitted_candidates=0
+        )
+        if raw_candidates_observable:
+            counters["raw_candidates"] = 0
+
+        def observed_tangent(*args: Any, **kwargs: Any) -> Any:
+            counters["candidate_batches"] += 1
+            candidates = original_tangent(*args, **kwargs)
+            count = len(candidates)
+            counters["emitted_candidates"] += count
+            counters["empty_candidate_batches"] += int(count == 0)
+            if raw_candidates_observable:
+                counters["raw_candidates"] += count
+            return candidates
+
+        utils.findtangent = observed_tangent
+
+    def observed_randint(first: int, last: int) -> int:
+        value = original_randint(first, last)
+        caller = sys._getframe(1)
+        if (
+            eviction_lines
+            and caller.f_code.co_filename == str(source_path)
+            and caller.f_lineno in eviction_lines
+        ):
+            counters["grid_evictions"] += 1
+        return value
+
+    if eviction_lines:
+        random.randint = observed_randint
+    try:
+        yield
+    finally:
+        if callable(original_tangent):
+            utils.findtangent = original_tangent
+        random.randint = original_randint
+
+
+def final_counters(
+    namespace: dict[str, Any] | None, observed: dict[str, Any]
+) -> dict[str, Any]:
+    """Add final frontier sizes; absent source state remains explicitly unknown."""
+    result = dict(observed)
+    state = namespace or {}
+    result["expanded_nodes"] = len(state["Closeset"]) if "Closeset" in state else None
+    result["open_nodes"] = len(state["Openset"]) if "Openset" in state else None
+    result["observation_note"] = (
+        "Emitted counts describe findtangent outputs. Raw and filter-valid counts "
+        "are null when not directly observed; evictions require a recognized AST block."
+    )
+    return result
+
+
+def author_termination(namespace: dict[str, Any], found: bool) -> str:
+    """Identify the author's first-batch success or actual no-path stop condition."""
+    if found:
+        return "found_first_batch"
+    if (
+        "iter" in namespace
+        and "max_iter" in namespace
+        and namespace["iter"] >= namespace["max_iter"]
+    ):
+        return "iteration_budget"
+    if "Openset" in namespace and len(namespace["Openset"]) == 0:
+        return "open_exhausted"
+    return "unknown_no_path_stop"
+
+
 def execute_author(
     source_dir: Path,
     map_path: Path,
@@ -118,6 +247,8 @@ def execute_author(
     import numpy as np
     import pyvista as pv
 
+    if adapter is not None and mode in ("author_headless", "author_original"):
+        raise ValueError("Author-original modes cannot enable a safety adapter.")
     previous_dir = Path.cwd()
     previous_argv = sys.argv[:]
     previous_path = sys.path[:]
@@ -127,6 +258,7 @@ def execute_author(
     python_random_state = random.getstate()
     numpy_random_state = np.random.get_state()
     parameter_context = {"seed": seed, "mode": mode}
+    counters: dict[str, Any] = {}
     context_started = time.perf_counter()
 
     def cached_read(filename: Any, *args: Any, **kwargs: Any) -> Any:
@@ -160,7 +292,15 @@ def execute_author(
             )
         )
         started = time.perf_counter()
-        with adapter_context:
+        with (
+            adapter_context,
+            observe_author_calls(
+                author_utils,
+                source_dir / "main_sunlight_3Dgrid.py",
+                counters,
+                raw_candidates_observable=adapter is None,
+            ),
+        ):
             namespace = runpy.run_path(
                 str(source_dir / "main_sunlight_3Dgrid.py"), run_name="__main__"
             )
@@ -180,10 +320,19 @@ def execute_author(
             "parameters": parameters,
             "node_count": len(namespace.get("Allset", [])),
             "counted_iterations": namespace.get("iter"),
+            "counters": final_counters(namespace, counters),
+            "termination_reason": author_termination(namespace, found),
             "author_raw_length": min(namespace["paths_lengths"]) if found else None,
             "author_postprocessed_length": namespace.get("L1") if found else None,
             "algorithm_seconds": namespace["time_end"] - namespace["time_start"],
             "worker_seconds": elapsed,
+            "timing_scopes": {
+                "algorithm_seconds": "author timer; excludes native postprocessing",
+                "worker_seconds": (
+                    "runpy execution including native postprocessing and observation; "
+                    "not a common search-only benchmark timer"
+                ),
+            },
             "adapter_metadata": parameter_context,
             "exit_code": 0,
             "failure_reason": "" if found else "author_returned_no_path",
@@ -195,6 +344,7 @@ def execute_author(
             source_dir / "main_sunlight_3Dgrid.py",
             time.perf_counter() - context_started,
             parameter_context,
+            counters,
         )
     finally:
         pv.read = previous_read
@@ -214,6 +364,7 @@ def recover_failed_execution(
     source_path: Path,
     elapsed: float,
     adapter_metadata: dict[str, Any],
+    observed_counters: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Recover completed search evidence from the author's exception traceback.
 
@@ -279,6 +430,8 @@ def recover_failed_execution(
         "partial": True,
         "node_count": node_count,
         "counted_iterations": counted_iterations,
+        "counters": final_counters(namespace, observed_counters or {}),
+        "termination_reason": "error",
         "author_raw_length": author_raw_length,
         "author_postprocessed_length": None,
         "algorithm_seconds": algorithm_seconds,

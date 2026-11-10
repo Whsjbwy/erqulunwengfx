@@ -1,0 +1,25 @@
+{
+  "schema_version": 2,
+  "limits": {"time_limit": 30.0, "max_nodes": 100000, "max_iterations": 10000},
+  "hard_timeout_seconds": 32.0,
+  "startup_timeout_seconds": 30.0,
+  "planning_seeds": [0, 1, 2, 3, 4],
+  "time_policy": "30s search budget; common 32s external process guard; author cannot cooperatively stop, so measured search over 30s is flagged and excluded from budget-valid success. Startup, validation and common shortcut are separate.",
+  "method_parameters": {
+    "author_original": {},
+    "paper_reimplementation": {
+      "grid_side_length": 5, "grid_capacity": 1, "n_max": 100,
+      "epsilon": 0.8, "alpha": 0.5,
+      "theta_step_degrees": 5, "phi_step_degrees": 10, "half_cone_degrees": 30,
+      "distance_step": 5, "length_threshold": 15, "forward_distance": 3
+    },
+    "safety_reference": {
+      "grid_side_length": 5, "grid_capacity": 1, "n_max": 100,
+      "epsilon": 0.8, "alpha": 0.5,
+      "theta_step_degrees": 5, "phi_step_degrees": 10, "half_cone_degrees": 30,
+      "distance_step": 5, "length_threshold": 15, "forward_distance": 3
+    },
+    "astar": {},
+    "rrt_connect": {"step_size": 5.0, "goal_bias": 0.05}
+  }
+}

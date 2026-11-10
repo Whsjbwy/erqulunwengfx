@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "profile": {
+    "shape": [100, 80, 80],
+    "origin": [0, 0, 0],
+    "spacing": [1, 1, 1],
+    "start": [2, 2, 2],
+    "goal": [95, 75, 75],
+    "geometry_note": "Deterministic synthetic recipes; map_seed identifies a frozen recipe, with no stochastic obstacle draws."
+  },
+  "scenarios": [
+    {
+      "scene_id": "S0",
+      "kind": "empty",
+      "map_seed": 2026111000,
+      "description": "三维空旷空间；起终点可严格直连。",
+      "reachability": "certified_reachable",
+      "witness_path": [[2, 2, 2], [95, 75, 75]]
+    },
+    {
+      "scene_id": "S1",
+      "kind": "static_obstacles",
+      "map_seed": 2026111001,
+      "description": "普通静态长方体与球形障碍；保存预先设计的绕行见证。",
+      "reachability": "certified_reachable",
+      "boxes": [
+        {"lower": [20, 0, 0], "upper": [32, 48, 50]},
+        {"lower": [43, 27, 24], "upper": [58, 80, 80]},
+        {"lower": [68, 0, 0], "upper": [80, 52, 58]}
+      ],
+      "spheres": [
+        {"center": [35, 35, 30], "radius": 8},
+        {"center": [75, 60, 30], "radius": 7}
+      ],
+      "witness_path": [[2, 2, 2], [10, 65, 10], [38, 65, 10], [38, 15, 65], [65, 15, 65], [85, 65, 65], [95, 75, 75]]
+    },
+    {
+      "scene_id": "S2",
+      "kind": "narrow_concave",
+      "map_seed": 2026111002,
+      "description": "两堵厚2体素墙，宽6体素的错位窗口，中间为向起点开口的U形障碍。",
+      "reachability": "certified_reachable",
+      "boxes": [
+        {"lower": [30, 0, 0], "upper": [32, 80, 80]},
+        {"lower": [60, 0, 0], "upper": [62, 80, 80]}
+      ],
+      "openings": [
+        {"lower": [30, 20, 20], "upper": [32, 26, 26]},
+        {"lower": [60, 54, 54], "upper": [62, 60, 60]}
+      ],
+      "additional_boxes": [
+        {"lower": [48, 30, 8], "upper": [50, 50, 60]},
+        {"lower": [40, 30, 8], "upper": [50, 32, 60]},
+        {"lower": [40, 48, 8], "upper": [50, 50, 60]}
+      ],
+      "witness_path": [[2, 2, 2], [28, 23, 23], [34, 23, 23], [36, 23, 70], [55, 23, 70], [58, 57, 57], [64, 57, 57], [95, 75, 75]]
+    },
+    {
+      "scene_id": "S3",
+      "kind": "gaussian_seabed",
+      "map_seed": 2026111003,
+      "description": "自编高斯起伏海床与静态球障碍，不是论文海床重建；世界显示z=z_map-80。",
+      "reachability": "certified_reachable",
+      "world_z_offset": -80,
+      "terrain": {
+        "base_height": 0.8,
+        "minimum_height": 0.8,
+        "peaks": [
+          {"center": [25, 20], "amplitude": 18, "sigma": 7},
+          {"center": [55, 42], "amplitude": 48, "sigma": 10},
+          {"center": [78, 24], "amplitude": 20, "sigma": 8},
+          {"center": [45, 65], "amplitude": -6, "sigma": 8}
+        ]
+      },
+      "spheres": [
+        {"center": [40, 25, 40], "radius": 6},
+        {"center": [65, 55, 55], "radius": 6},
+        {"center": [80, 35, 45], "radius": 6}
+      ],
+      "witness_path": [[2, 2, 2], [8, 8, 65], [90, 70, 65], [95, 75, 75]]
+    },
+    {
+      "scene_id": "S4",
+      "kind": "sealed_barrier",
+      "map_seed": 2026111004,
+      "description": "完整封闭障碍墙分隔起点与目标；不可达性由解析墙证书确定，不以超时判定。",
+      "reachability": "certified_unreachable",
+      "boxes": [{"lower": [48, 0, 0], "upper": [52, 80, 80]}],
+      "certificate": {"kind": "full_axis_barrier", "axis": 0, "lower": 48, "upper": 52},
+      "witness_path": null
+    }
+  ]
+}
