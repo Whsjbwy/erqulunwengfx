@@ -50,4 +50,15 @@
 
 首完整种子额外审计234任务/5178条路径条目/441截点通过；完整最终审计450任务/13185条路径条目/13633历史引用/1305截点通过，非法声明半径路径与迟到认证0。380条选中路径全部按原流程重放，执行结果及数值指标一致；包括几何拒绝短路，不夸大为380次完整跟踪。相关证据为certificate_audit.json和execution_replay.csv。
 
-后续分析提交0821203的[Windows运行43014995657](https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43014995657)已实际成功，job130503726258：413 passed in18.28s，编译、Ruff及121文件格式检查通过。最终416项代码提交CI将在下方单列，不将不同提交的数量混用。
+后续分析提交0821203的[Windows运行43014995657](https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43014995657)已实际成功，job130503726258：413 passed in18.28s，编译、Ruff及121文件格式检查通过。不将不同提交的数量混用。
+
+## 416项交付代码的Windows CI
+
+代码/结果提交361fcd9的两个实际Windows运行均成功，官方job日志均已读取：
+
+| 事件 | 运行/job | 实际结果 |
+| --- | --- | --- |
+| 分支push | [43038708010](https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43038708010) / 130584399610 | 416 passed in17.77s |
+| PR #5 | [43038823084](https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43038823084) / 130584808764 | 416 passed in18.60s |
+
+两次compileall、Ruff静态检查、123文件格式检查均成功，镜像windows-2025-vs2026。精简原始日志在[windows_ci.json](../results/stage5a/windows_ci.json)。之后仅补CI证据和审核链接，最后元数据提交的状态在[PR #5](https://github.com/Whsjbwy/erqulunwengfx/pull/5)中核实。

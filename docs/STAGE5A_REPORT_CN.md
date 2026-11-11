@@ -146,3 +146,5 @@ RRT-Connect的有解子集中位数较低，但不能据此声称所有时间截
 没有实体试验、实测车辆参数、连续真实海床、胶囊姿态空间、6DOF、水动力、洋流、MPC、强化学习或网络创新。每类仅两张固定生成图，五个规划seed不增加独立地图数量，统计以地图为单位，不能宣称总体显著性。跟踪失败仅证明固定模型/控制器未成功，不是不存在其他可执行轨迹的证明。
 
 作者PDF/ZIP/源码/原图、环境、完整路径和轨迹留在仓库外；公开自编代码、合成配置、精简CSV/图及报告。不额外文件hash，无校验清单，无GPU训练。最终PR以stage4a为base，不合并main或任何历史PR；完成5A后停止，不进入5B。
+
+GitHub分支：[pivot/auv-rrt-stage5a](https://github.com/Whsjbwy/erqulunwengfx/tree/pivot/auv-rrt-stage5a)；审核入口：[PR #5](https://github.com/Whsjbwy/erqulunwengfx/pull/5)，base为repro/gsunlight-stage4a。361fcd9交付代码的分支及PR Windows CI均已实际成功，分别416项/17.77秒、416项/18.60秒；官方日志与最后提交状态见测试记录和PR。等待研究者审核模型假设及下一阶段方向。
