@@ -1,0 +1,403 @@
+job_id,scene,split,method,seed,attempts,attempt_terminations,attempt_statuses,generated_candidates,valid_candidates,collision_filtered,capacity_evicted,no_candidate_expansions,expanded_nodes,seen_capacity_cells,spatial_coverage_bins20,post_interrupted,invalid_candidates,trial_classification
+D1_A1_seed0,D1,development,A1,0,13,"{""open_exhausted"": 12, ""time_budget"": 1}","{""ok"": 12, ""timeout"": 1}",2602,2602,0,2171,26,432,29,7,0,0,valid_incumbent_at_deadline
+D1_A1_seed1,D1,development,A1,1,13,"{""open_exhausted"": 12, ""time_budget"": 1}","{""ok"": 12, ""timeout"": 1}",2487,2487,0,2066,26,422,28,7,0,0,valid_incumbent_at_deadline
+D1_A1_seed2,D1,development,A1,2,13,"{""open_exhausted"": 12, ""time_budget"": 1}","{""ok"": 12, ""timeout"": 1}",2607,2607,0,2178,26,426,28,7,0,0,valid_incumbent_at_deadline
+D1_A1_seed3,D1,development,A1,3,13,"{""open_exhausted"": 12, ""time_budget"": 1}","{""ok"": 12, ""timeout"": 1}",2570,2570,0,2142,26,426,28,7,0,0,valid_incumbent_at_deadline
+D1_A1_seed4,D1,development,A1,4,13,"{""open_exhausted"": 12, ""time_budget"": 1}","{""ok"": 12, ""timeout"": 1}",2481,2481,0,2062,24,417,29,7,0,0,valid_incumbent_at_deadline
+D1_A2_seed0,D1,development,A2,0,3,"{""paper_iteration_limit"": 2, ""time_budget"": 1}","{""ok"": 2, ""timeout"": 1}",3847,3847,0,3357,0,432,102,11,0,0,valid_incumbent_at_deadline
+D1_A2_seed1,D1,development,A2,1,3,"{""paper_iteration_limit"": 2, ""time_budget"": 1}","{""ok"": 2, ""timeout"": 1}",3769,3769,0,3280,0,433,102,11,1,0,valid_incumbent_at_deadline
+D1_A2_seed2,D1,development,A2,2,3,"{""paper_iteration_limit"": 2, ""time_budget"": 1}","{""ok"": 2, ""timeout"": 1}",3834,3834,0,3340,0,412,102,11,0,0,valid_incumbent_at_deadline
+D1_A2_seed3,D1,development,A2,3,3,"{""paper_iteration_limit"": 2, ""time_budget"": 1}","{""ok"": 2, ""timeout"": 1}",3822,3822,0,3333,0,408,104,11,0,0,valid_incumbent_at_deadline
+D1_A2_seed4,D1,development,A2,4,3,"{""open_exhausted"": 1, ""paper_iteration_limit"": 1, ""time_budget"": 1}","{""ok"": 2, ""timeout"": 1}",3838,3838,0,3361,0,422,100,11,0,0,valid_incumbent_at_deadline
+D1_A3_seed0,D1,development,A3,0,7,"{""open_exhausted"": 6, ""time_budget"": 1}","{""ok"": 6, ""timeout"": 1}",2125,2125,0,1776,20,340,44,10,0,0,valid_incumbent_at_deadline
+D1_A3_seed1,D1,development,A3,1,6,"{""open_exhausted"": 5, ""time_budget"": 1}","{""ok"": 5, ""timeout"": 1}",1738,1738,0,1444,17,278,43,10,0,0,valid_incumbent_at_deadline
+D1_A3_seed2,D1,development,A3,2,7,"{""open_exhausted"": 6, ""time_budget"": 1}","{""ok"": 6, ""timeout"": 1}",2127,2127,0,1783,20,325,45,10,0,0,valid_incumbent_at_deadline
+D1_A3_seed3,D1,development,A3,3,7,"{""open_exhausted"": 6, ""time_budget"": 1}","{""ok"": 6, ""timeout"": 1}",2115,2115,0,1769,20,326,43,10,0,0,valid_incumbent_at_deadline
+D1_A3_seed4,D1,development,A3,4,7,"{""open_exhausted"": 6, ""time_budget"": 1}","{""ok"": 6, ""timeout"": 1}",2063,2063,0,1722,20,331,43,10,0,0,valid_incumbent_at_deadline
+D1_A4_seed0,D1,development,A4,0,2,"{""open_exhausted"": 1, ""time_budget"": 1}","{""ok"": 1, ""timeout"": 1}",2824,2824,0,2513,0,286,99,12,0,0,valid_incumbent_at_deadline
+D1_A4_seed1,D1,development,A4,1,2,"{""open_exhausted"": 1, ""time_budget"": 1}","{""ok"": 1, ""timeout"": 1}",2042,2042,0,1773,1,231,99,12,0,0,valid_incumbent_at_deadline
+D1_A4_seed2,D1,development,A4,2,2,"{""open_exhausted"": 1, ""time_budget"": 1}","{""ok"": 1, ""timeout"": 1}",2844,2844,0,2527,0,300,99,12,0,0,valid_incumbent_at_deadline
+D1_A4_seed3,D1,development,A4,3,2,"{""open_exhausted"": 1, ""time_budget"": 1}","{""ok"": 1, ""timeout"": 1}",2837,2837,0,2517,0,286,99,12,0,0,valid_incumbent_at_deadline
+D1_A4_seed4,D1,development,A4,4,2,"{""open_exhausted"": 1, ""time_budget"": 1}","{""ok"": 1, ""timeout"": 1}",2698,2698,0,2373,1,292,102,12,0,0,valid_incumbent_at_deadline
+D1_rrt_first_seed0,D1,development,rrt_first,0,1,"{""trees_connected"": 1}","{""ok"": 1}",90,40,50,0,50,90,0,0,0,0,first_attempt_valid
+D1_rrt_first_seed1,D1,development,rrt_first,1,1,"{""trees_connected"": 1}","{""ok"": 1}",112,52,60,0,60,112,0,0,0,0,first_attempt_valid
+D1_rrt_first_seed2,D1,development,rrt_first,2,1,"{""trees_connected"": 1}","{""ok"": 1}",86,42,44,0,44,86,0,0,0,0,first_attempt_valid
+D1_rrt_first_seed3,D1,development,rrt_first,3,1,"{""trees_connected"": 1}","{""ok"": 1}",40,26,14,0,14,40,0,0,0,0,first_attempt_valid
+D1_rrt_first_seed4,D1,development,rrt_first,4,1,"{""trees_connected"": 1}","{""ok"": 1}",84,41,43,0,43,84,0,0,0,0,first_attempt_valid
+D1_rrt_restart_seed0,D1,development,rrt_restart,0,1405,"{""time_budget"": 1, ""trees_connected"": 1404}","{""ok"": 1404, ""timeout"": 1}",82813,43420,39392,0,39392,82813,0,0,0,0,valid_incumbent_at_deadline
+D1_rrt_restart_seed1,D1,development,rrt_restart,1,1394,"{""time_budget"": 1, ""trees_connected"": 1393}","{""ok"": 1393, ""timeout"": 1}",82385,43102,39282,0,39282,82385,0,0,0,0,valid_incumbent_at_deadline
+D1_rrt_restart_seed2,D1,development,rrt_restart,2,1386,"{""trees_connected"": 1386}","{""ok"": 1386}",83404,43474,39930,0,39930,83404,0,0,1,0,valid_incumbent_at_deadline
+D1_rrt_restart_seed3,D1,development,rrt_restart,3,1397,"{""time_budget"": 1, ""trees_connected"": 1396}","{""ok"": 1396, ""timeout"": 1}",81031,42686,38345,0,38345,81031,0,0,0,0,valid_incumbent_at_deadline
+D1_rrt_restart_seed4,D1,development,rrt_restart,4,1347,"{""time_budget"": 1, ""trees_connected"": 1346}","{""ok"": 1346, ""timeout"": 1}",79856,41860,37995,0,37995,79856,0,0,0,0,valid_incumbent_at_deadline
+D2_A1_seed0,D2,development,A1,0,82,"{""open_exhausted"": 81, ""time_budget"": 1}","{""no_path"": 81, ""timeout"": 1}",164,164,0,0,163,246,3,3,0,0,budget_or_first_attempt_without_valid_solution
+D2_A1_seed1,D2,development,A1,1,64,"{""open_exhausted"": 63, ""time_budget"": 1}","{""no_path"": 63, ""timeout"": 1}",126,126,0,0,126,190,3,3,0,0,budget_or_first_attempt_without_valid_solution
+D2_A1_seed2,D2,development,A1,2,81,"{""open_exhausted"": 80, ""time_budget"": 1}","{""no_path"": 80, ""timeout"": 1}",162,162,0,0,160,242,3,3,0,0,budget_or_first_attempt_without_valid_solution
+D2_A1_seed3,D2,development,A1,3,82,"{""open_exhausted"": 81, ""time_budget"": 1}","{""no_path"": 81, ""timeout"": 1}",163,163,0,0,162,244,3,3,0,0,budget_or_first_attempt_without_valid_solution
+D2_A1_seed4,D2,development,A1,4,80,"{""open_exhausted"": 79, ""time_budget"": 1}","{""no_path"": 79, ""timeout"": 1}",159,159,0,0,158,238,3,3,0,0,budget_or_first_attempt_without_valid_solution
+D2_A2_seed0,D2,development,A2,0,16,"{""open_exhausted"": 15, ""time_budget"": 1}","{""no_path"": 15, ""timeout"": 1}",512,512,0,352,78,174,10,3,0,0,budget_or_first_attempt_without_valid_solution
+D2_A2_seed1,D2,development,A2,1,13,"{""open_exhausted"": 12, ""time_budget"": 1}","{""no_path"": 12, ""timeout"": 1}",384,384,0,264,60,133,10,3,0,0,budget_or_first_attempt_without_valid_solution
+D2_A2_seed2,D2,development,A2,2,16,"{""open_exhausted"": 15, ""time_budget"": 1}","{""no_path"": 15, ""timeout"": 1}",512,512,0,352,76,173,10,3,0,0,budget_or_first_attempt_without_valid_solution
+D2_A2_seed3,D2,development,A2,3,16,"{""open_exhausted"": 15, ""time_budget"": 1}","{""no_path"": 15, ""timeout"": 1}",512,512,0,352,77,174,10,3,0,0,budget_or_first_attempt_without_valid_solution
+D2_A2_seed4,D2,development,A2,4,16,"{""open_exhausted"": 15, ""time_budget"": 1}","{""no_path"": 15, ""timeout"": 1}",512,512,0,352,76,173,10,3,0,0,budget_or_first_attempt_without_valid_solution
+D2_A3_seed0,D2,development,A3,0,59,"{""open_exhausted"": 58, ""time_budget"": 1}","{""no_path"": 58, ""timeout"": 1}",116,116,0,0,116,175,3,3,0,0,budget_or_first_attempt_without_valid_solution
+D2_A3_seed1,D2,development,A3,1,45,"{""open_exhausted"": 44, ""time_budget"": 1}","{""no_path"": 44, ""timeout"": 1}",88,88,0,0,88,133,3,3,0,0,budget_or_first_attempt_without_valid_solution
+D2_A3_seed2,D2,development,A3,2,58,"{""open_exhausted"": 57, ""time_budget"": 1}","{""no_path"": 57, ""timeout"": 1}",116,116,0,0,114,173,3,3,0,0,budget_or_first_attempt_without_valid_solution
+D2_A3_seed3,D2,development,A3,3,58,"{""open_exhausted"": 57, ""time_budget"": 1}","{""no_path"": 57, ""timeout"": 1}",114,114,0,0,114,172,3,3,0,0,budget_or_first_attempt_without_valid_solution
+D2_A3_seed4,D2,development,A3,4,57,"{""open_exhausted"": 56, ""time_budget"": 1}","{""no_path"": 56, ""timeout"": 1}",112,112,0,0,112,169,3,3,0,0,budget_or_first_attempt_without_valid_solution
+D2_A4_seed0,D2,development,A4,0,15,"{""open_exhausted"": 14, ""time_budget"": 1}","{""no_path"": 14, ""timeout"": 1}",220,220,0,99,44,132,9,3,0,0,budget_or_first_attempt_without_valid_solution
+D2_A4_seed1,D2,development,A4,1,15,"{""open_exhausted"": 14, ""time_budget"": 1}","{""no_path"": 14, ""timeout"": 1}",228,228,0,105,45,136,9,3,0,0,budget_or_first_attempt_without_valid_solution
+D2_A4_seed2,D2,development,A4,2,15,"{""open_exhausted"": 14, ""time_budget"": 1}","{""no_path"": 14, ""timeout"": 1}",230,230,0,105,46,138,9,3,0,0,budget_or_first_attempt_without_valid_solution
+D2_A4_seed3,D2,development,A4,3,15,"{""open_exhausted"": 14, ""time_budget"": 1}","{""no_path"": 14, ""timeout"": 1}",228,228,0,105,44,136,9,3,0,0,budget_or_first_attempt_without_valid_solution
+D2_A4_seed4,D2,development,A4,4,15,"{""open_exhausted"": 14, ""time_budget"": 1}","{""no_path"": 14, ""timeout"": 1}",227,227,0,105,45,137,9,3,0,0,budget_or_first_attempt_without_valid_solution
+D2_rrt_first_seed0,D2,development,rrt_first,0,1,"{""trees_connected"": 1}","{""ok"": 1}",608,203,405,0,405,608,0,0,0,0,first_attempt_valid
+D2_rrt_first_seed1,D2,development,rrt_first,1,1,"{""trees_connected"": 1}","{""ok"": 1}",454,144,310,0,310,454,0,0,0,0,first_attempt_valid
+D2_rrt_first_seed2,D2,development,rrt_first,2,1,"{""trees_connected"": 1}","{""ok"": 1}",548,164,384,0,384,548,0,0,0,0,first_attempt_valid
+D2_rrt_first_seed3,D2,development,rrt_first,3,1,"{""trees_connected"": 1}","{""ok"": 1}",519,161,358,0,358,519,0,0,0,0,first_attempt_valid
+D2_rrt_first_seed4,D2,development,rrt_first,4,1,"{""trees_connected"": 1}","{""ok"": 1}",475,153,322,0,322,475,0,0,0,0,first_attempt_valid
+D2_rrt_restart_seed0,D2,development,rrt_restart,0,416,"{""trees_connected"": 416}","{""ok"": 416}",187132,59724,127408,0,127408,187132,0,0,0,0,valid_incumbent_at_deadline
+D2_rrt_restart_seed1,D2,development,rrt_restart,1,414,"{""time_budget"": 1, ""trees_connected"": 413}","{""ok"": 413, ""timeout"": 1}",186986,59438,127547,0,127547,186986,0,0,0,0,valid_incumbent_at_deadline
+D2_rrt_restart_seed2,D2,development,rrt_restart,2,412,"{""time_budget"": 1, ""trees_connected"": 411}","{""ok"": 411, ""timeout"": 1}",183965,58964,125000,0,125000,183965,0,0,0,0,valid_incumbent_at_deadline
+D2_rrt_restart_seed3,D2,development,rrt_restart,3,410,"{""trees_connected"": 410}","{""ok"": 410}",185086,58554,126532,0,126532,185086,0,0,1,0,valid_incumbent_at_deadline
+D2_rrt_restart_seed4,D2,development,rrt_restart,4,398,"{""time_budget"": 1, ""trees_connected"": 397}","{""ok"": 397, ""timeout"": 1}",180343,57501,122841,0,122841,180343,0,0,0,0,valid_incumbent_at_deadline
+D3_A1_seed0,D3,development,A1,0,7,"{""open_exhausted"": 6, ""time_budget"": 1}","{""ok"": 6, ""timeout"": 1}",1856,1856,0,1710,0,144,19,4,0,0,valid_incumbent_at_deadline
+D3_A1_seed1,D3,development,A1,1,7,"{""open_exhausted"": 6, ""time_budget"": 1}","{""ok"": 6, ""timeout"": 1}",1813,1813,0,1676,0,140,19,4,0,0,valid_incumbent_at_deadline
+D3_A1_seed2,D3,development,A1,2,7,"{""open_exhausted"": 6, ""time_budget"": 1}","{""ok"": 6, ""timeout"": 1}",1772,1772,0,1631,0,141,19,4,0,0,valid_incumbent_at_deadline
+D3_A1_seed3,D3,development,A1,3,7,"{""open_exhausted"": 6, ""time_budget"": 1}","{""ok"": 6, ""timeout"": 1}",1814,1814,0,1670,0,142,19,4,0,0,valid_incumbent_at_deadline
+D3_A1_seed4,D3,development,A1,4,7,"{""open_exhausted"": 6, ""time_budget"": 1}","{""ok"": 6, ""timeout"": 1}",1714,1714,0,1575,0,141,19,4,0,0,valid_incumbent_at_deadline
+D3_A2_seed0,D3,development,A2,0,6,"{""open_exhausted"": 5, ""time_budget"": 1}","{""ok"": 5, ""timeout"": 1}",1602,1602,0,1391,16,206,32,8,0,0,valid_incumbent_at_deadline
+D3_A2_seed1,D3,development,A2,1,6,"{""open_exhausted"": 5, ""time_budget"": 1}","{""ok"": 5, ""timeout"": 1}",1557,1557,0,1347,14,201,31,8,0,0,valid_incumbent_at_deadline
+D3_A2_seed2,D3,development,A2,2,6,"{""open_exhausted"": 5, ""time_budget"": 1}","{""ok"": 5, ""timeout"": 1}",1626,1626,0,1417,16,204,31,8,0,0,valid_incumbent_at_deadline
+D3_A2_seed3,D3,development,A2,3,6,"{""open_exhausted"": 5, ""time_budget"": 1}","{""ok"": 5, ""timeout"": 1}",1638,1638,0,1422,20,215,31,8,0,0,valid_incumbent_at_deadline
+D3_A2_seed4,D3,development,A2,4,6,"{""open_exhausted"": 5, ""time_budget"": 1}","{""ok"": 5, ""timeout"": 1}",1610,1610,0,1397,16,203,31,8,0,0,valid_incumbent_at_deadline
+D3_A3_seed0,D3,development,A3,0,7,"{""open_exhausted"": 6, ""time_budget"": 1}","{""ok"": 6, ""timeout"": 1}",1004,1004,0,905,0,99,14,4,0,0,valid_incumbent_at_deadline
+D3_A3_seed1,D3,development,A3,1,7,"{""open_exhausted"": 6, ""time_budget"": 1}","{""ok"": 6, ""timeout"": 1}",979,979,0,886,0,96,14,4,0,0,valid_incumbent_at_deadline
+D3_A3_seed2,D3,development,A3,2,7,"{""open_exhausted"": 6, ""time_budget"": 1}","{""ok"": 6, ""timeout"": 1}",997,997,0,903,0,96,15,4,0,0,valid_incumbent_at_deadline
+D3_A3_seed3,D3,development,A3,3,7,"{""open_exhausted"": 6, ""time_budget"": 1}","{""ok"": 6, ""timeout"": 1}",1004,1004,0,909,0,99,15,4,0,0,valid_incumbent_at_deadline
+D3_A3_seed4,D3,development,A3,4,6,"{""open_exhausted"": 5, ""time_budget"": 1}","{""ok"": 5, ""timeout"": 1}",963,963,0,873,0,89,15,4,0,0,valid_incumbent_at_deadline
+D3_A4_seed0,D3,development,A4,0,4,"{""open_exhausted"": 3, ""time_budget"": 1}","{""ok"": 3, ""timeout"": 1}",1573,1573,0,1428,16,133,31,7,0,0,valid_incumbent_at_deadline
+D3_A4_seed1,D3,development,A4,1,4,"{""open_exhausted"": 3, ""time_budget"": 1}","{""ok"": 3, ""timeout"": 1}",1504,1504,0,1375,15,130,31,7,0,0,valid_incumbent_at_deadline
+D3_A4_seed2,D3,development,A4,2,4,"{""open_exhausted"": 3, ""time_budget"": 1}","{""ok"": 3, ""timeout"": 1}",1526,1526,0,1391,16,134,32,7,0,0,valid_incumbent_at_deadline
+D3_A4_seed3,D3,development,A4,3,4,"{""open_exhausted"": 3, ""time_budget"": 1}","{""ok"": 3, ""timeout"": 1}",1582,1582,0,1439,15,128,30,7,0,0,valid_incumbent_at_deadline
+D3_A4_seed4,D3,development,A4,4,3,"{""open_exhausted"": 2, ""time_budget"": 1}","{""ok"": 2, ""timeout"": 1}",1397,1397,0,1272,14,115,31,7,0,0,valid_incumbent_at_deadline
+D3_rrt_first_seed0,D3,development,rrt_first,0,1,"{""trees_connected"": 1}","{""ok"": 1}",21,17,4,0,4,21,0,0,0,0,first_attempt_valid
+D3_rrt_first_seed1,D3,development,rrt_first,1,1,"{""trees_connected"": 1}","{""ok"": 1}",28,22,6,0,6,28,0,0,0,0,first_attempt_valid
+D3_rrt_first_seed2,D3,development,rrt_first,2,1,"{""trees_connected"": 1}","{""ok"": 1}",108,47,61,0,61,108,0,0,0,0,first_attempt_valid
+D3_rrt_first_seed3,D3,development,rrt_first,3,1,"{""trees_connected"": 1}","{""ok"": 1}",5914,1824,4090,0,4090,5914,0,0,0,0,first_attempt_valid
+D3_rrt_first_seed4,D3,development,rrt_first,4,1,"{""trees_connected"": 1}","{""ok"": 1}",666,220,446,0,446,666,0,0,0,0,first_attempt_valid
+D3_rrt_restart_seed0,D3,development,rrt_restart,0,617,"{""time_budget"": 1, ""trees_connected"": 616}","{""ok"": 616, ""timeout"": 1}",191037,67635,123401,0,123401,191037,0,0,0,0,valid_incumbent_at_deadline
+D3_rrt_restart_seed1,D3,development,rrt_restart,1,559,"{""time_budget"": 1, ""trees_connected"": 558}","{""ok"": 558, ""timeout"": 1}",199091,69211,129879,0,129879,199091,0,0,0,0,valid_incumbent_at_deadline
+D3_rrt_restart_seed2,D3,development,rrt_restart,2,617,"{""time_budget"": 1, ""trees_connected"": 616}","{""ok"": 616, ""timeout"": 1}",189701,67099,122601,0,122601,189701,0,0,0,0,valid_incumbent_at_deadline
+D3_rrt_restart_seed3,D3,development,rrt_restart,3,572,"{""time_budget"": 1, ""trees_connected"": 571}","{""ok"": 571, ""timeout"": 1}",196099,68501,127597,0,127597,196099,0,0,0,0,valid_incumbent_at_deadline
+D3_rrt_restart_seed4,D3,development,rrt_restart,4,548,"{""time_budget"": 1, ""trees_connected"": 547}","{""ok"": 547, ""timeout"": 1}",178422,62623,115798,0,115798,178422,0,0,0,0,valid_incumbent_at_deadline
+D4_A1_seed0,D4,development,A1,0,13,"{""open_exhausted"": 12, ""time_budget"": 1}","{""ok"": 12, ""timeout"": 1}",2969,2969,0,2570,12,412,28,8,0,0,valid_incumbent_at_deadline
+D4_A1_seed1,D4,development,A1,1,13,"{""open_exhausted"": 12, ""time_budget"": 1}","{""ok"": 12, ""timeout"": 1}",2952,2952,0,2554,12,405,27,8,0,0,valid_incumbent_at_deadline
+D4_A1_seed2,D4,development,A1,2,12,"{""open_exhausted"": 11, ""time_budget"": 1}","{""ok"": 11, ""timeout"": 1}",2957,2957,0,2567,11,398,27,8,0,0,valid_incumbent_at_deadline
+D4_A1_seed3,D4,development,A1,3,13,"{""open_exhausted"": 12, ""time_budget"": 1}","{""ok"": 12, ""timeout"": 1}",2965,2965,0,2561,12,403,27,8,0,0,valid_incumbent_at_deadline
+D4_A1_seed4,D4,development,A1,4,12,"{""open_exhausted"": 11, ""time_budget"": 1}","{""ok"": 11, ""timeout"": 1}",2900,2900,0,2509,11,389,27,8,0,0,valid_incumbent_at_deadline
+D4_A2_seed0,D4,development,A2,0,5,"{""open_exhausted"": 4, ""time_budget"": 1}","{""ok"": 4, ""timeout"": 1}",4054,4054,0,3601,0,432,63,9,0,0,valid_incumbent_at_deadline
+D4_A2_seed1,D4,development,A2,1,5,"{""open_exhausted"": 4, ""time_budget"": 1}","{""ok"": 4, ""timeout"": 1}",4087,4087,0,3643,0,421,62,9,0,0,valid_incumbent_at_deadline
+D4_A2_seed2,D4,development,A2,2,5,"{""open_exhausted"": 4, ""time_budget"": 1}","{""ok"": 4, ""timeout"": 1}",3875,3875,0,3431,0,411,62,9,0,0,valid_incumbent_at_deadline
+D4_A2_seed3,D4,development,A2,3,5,"{""open_exhausted"": 4, ""time_budget"": 1}","{""ok"": 4, ""timeout"": 1}",4087,4087,0,3637,0,417,62,9,0,0,valid_incumbent_at_deadline
+D4_A2_seed4,D4,development,A2,4,5,"{""open_exhausted"": 4, ""time_budget"": 1}","{""ok"": 4, ""timeout"": 1}",3966,3966,0,3525,0,416,62,9,0,0,valid_incumbent_at_deadline
+D4_A3_seed0,D4,development,A3,0,10,"{""open_exhausted"": 9, ""time_budget"": 1}","{""ok"": 9, ""timeout"": 1}",2261,2261,0,1946,9,312,26,8,0,0,valid_incumbent_at_deadline
+D4_A3_seed1,D4,development,A3,1,10,"{""open_exhausted"": 9, ""time_budget"": 1}","{""ok"": 9, ""timeout"": 1}",2245,2245,0,1933,10,313,25,8,0,0,valid_incumbent_at_deadline
+D4_A3_seed2,D4,development,A3,2,10,"{""open_exhausted"": 9, ""time_budget"": 1}","{""ok"": 9, ""timeout"": 1}",2254,2254,0,1939,9,313,25,8,0,0,valid_incumbent_at_deadline
+D4_A3_seed3,D4,development,A3,3,10,"{""open_exhausted"": 9, ""time_budget"": 1}","{""ok"": 9, ""timeout"": 1}",2271,2271,0,1959,10,312,25,8,0,0,valid_incumbent_at_deadline
+D4_A3_seed4,D4,development,A3,4,10,"{""open_exhausted"": 9, ""time_budget"": 1}","{""ok"": 9, ""timeout"": 1}",2144,2144,0,1837,10,301,25,8,0,0,valid_incumbent_at_deadline
+D4_A4_seed0,D4,development,A4,0,3,"{""open_exhausted"": 2, ""time_budget"": 1}","{""ok"": 2, ""timeout"": 1}",2920,2920,0,2572,3,343,70,9,1,0,valid_incumbent_at_deadline
+D4_A4_seed1,D4,development,A4,1,4,"{""open_exhausted"": 3, ""time_budget"": 1}","{""ok"": 3, ""timeout"": 1}",2907,2907,0,2539,3,350,70,9,0,0,valid_incumbent_at_deadline
+D4_A4_seed2,D4,development,A4,2,3,"{""open_exhausted"": 2, ""time_budget"": 1}","{""ok"": 2, ""timeout"": 1}",2905,2905,0,2573,3,327,69,9,0,0,valid_incumbent_at_deadline
+D4_A4_seed3,D4,development,A4,3,4,"{""open_exhausted"": 3, ""time_budget"": 1}","{""ok"": 3, ""timeout"": 1}",2918,2918,0,2567,3,341,70,9,0,0,valid_incumbent_at_deadline
+D4_A4_seed4,D4,development,A4,4,3,"{""open_exhausted"": 2, ""time_budget"": 1}","{""ok"": 2, ""timeout"": 1}",2832,2832,0,2507,3,315,73,10,0,0,valid_incumbent_at_deadline
+D4_rrt_first_seed0,D4,development,rrt_first,0,1,"{""trees_connected"": 1}","{""ok"": 1}",30,20,10,0,10,30,0,0,0,0,first_attempt_valid
+D4_rrt_first_seed1,D4,development,rrt_first,1,1,"{""trees_connected"": 1}","{""ok"": 1}",41,27,14,0,14,41,0,0,0,0,first_attempt_valid
+D4_rrt_first_seed2,D4,development,rrt_first,2,1,"{""trees_connected"": 1}","{""ok"": 1}",62,30,32,0,32,62,0,0,0,0,first_attempt_valid
+D4_rrt_first_seed3,D4,development,rrt_first,3,1,"{""trees_connected"": 1}","{""ok"": 1}",22,19,3,0,3,22,0,0,0,0,first_attempt_valid
+D4_rrt_first_seed4,D4,development,rrt_first,4,1,"{""trees_connected"": 1}","{""ok"": 1}",32,21,11,0,11,32,0,0,0,0,first_attempt_valid
+D4_rrt_restart_seed0,D4,development,rrt_restart,0,1731,"{""trees_connected"": 1731}","{""ok"": 1731}",58290,38668,19622,0,19622,58290,0,0,1,0,valid_incumbent_at_deadline
+D4_rrt_restart_seed1,D4,development,rrt_restart,1,1739,"{""trees_connected"": 1739}","{""ok"": 1739}",57161,38429,18732,0,18732,57161,0,0,1,0,valid_incumbent_at_deadline
+D4_rrt_restart_seed2,D4,development,rrt_restart,2,1745,"{""time_budget"": 1, ""trees_connected"": 1744}","{""ok"": 1744, ""timeout"": 1}",58028,38644,19383,0,19383,58028,0,0,0,0,valid_incumbent_at_deadline
+D4_rrt_restart_seed3,D4,development,rrt_restart,3,1728,"{""trees_connected"": 1728}","{""ok"": 1728}",57175,38260,18915,0,18915,57175,0,0,1,0,valid_incumbent_at_deadline
+D4_rrt_restart_seed4,D4,development,rrt_restart,4,1649,"{""trees_connected"": 1649}","{""ok"": 1649}",54287,36351,17936,0,17936,54287,0,0,1,0,valid_incumbent_at_deadline
+S1_A1_seed0,S1,legacy,A1,0,2,"{""open_exhausted"": 1, ""time_budget"": 1}","{""no_path"": 1, ""timeout"": 1}",615,615,0,508,17,93,38,8,0,0,budget_or_first_attempt_without_valid_solution
+S1_A1_seed1,S1,legacy,A1,1,2,"{""open_exhausted"": 1, ""time_budget"": 1}","{""no_path"": 1, ""timeout"": 1}",619,619,0,512,15,92,38,8,0,0,budget_or_first_attempt_without_valid_solution
+S1_A1_seed2,S1,legacy,A1,2,2,"{""open_exhausted"": 1, ""time_budget"": 1}","{""no_path"": 1, ""timeout"": 1}",602,602,0,496,16,92,38,8,0,0,budget_or_first_attempt_without_valid_solution
+S1_A2_seed0,S1,legacy,A2,0,2,"{""paper_iteration_limit"": 1, ""time_budget"": 1}","{""ok"": 1, ""timeout"": 1}",1633,1633,0,1258,5,123,253,31,0,0,valid_incumbent_at_deadline
+S1_A2_seed1,S1,legacy,A2,1,2,"{""paper_iteration_limit"": 1, ""time_budget"": 1}","{""no_path"": 1, ""timeout"": 1}",1622,1622,0,1231,5,115,266,34,0,0,budget_or_first_attempt_without_valid_solution
+S1_A2_seed2,S1,legacy,A2,2,2,"{""paper_iteration_limit"": 1, ""time_budget"": 1}","{""ok"": 1, ""timeout"": 1}",1554,1554,0,1210,2,115,235,31,0,0,valid_incumbent_at_deadline
+S1_A3_seed0,S1,legacy,A3,0,3,"{""open_exhausted"": 2, ""time_budget"": 1}","{""no_path"": 2, ""timeout"": 1}",281,281,0,190,35,85,26,8,0,0,budget_or_first_attempt_without_valid_solution
+S1_A3_seed1,S1,legacy,A3,1,3,"{""open_exhausted"": 2, ""time_budget"": 1}","{""no_path"": 2, ""timeout"": 1}",278,278,0,191,34,82,26,8,0,0,budget_or_first_attempt_without_valid_solution
+S1_A3_seed2,S1,legacy,A3,2,3,"{""open_exhausted"": 2, ""time_budget"": 1}","{""no_path"": 2, ""timeout"": 1}",290,290,0,201,33,83,26,8,0,0,budget_or_first_attempt_without_valid_solution
+S1_A4_seed0,S1,legacy,A4,0,1,"{""time_budget"": 1}","{""timeout"": 1}",1145,1145,0,938,0,73,174,27,0,0,valid_incumbent_at_deadline
+S1_A4_seed1,S1,legacy,A4,1,1,"{""time_budget"": 1}","{""timeout"": 1}",1098,1098,0,890,0,67,173,27,0,0,valid_incumbent_at_deadline
+S1_A4_seed2,S1,legacy,A4,2,1,"{""time_budget"": 1}","{""timeout"": 1}",1058,1058,0,858,2,70,169,26,0,0,valid_incumbent_at_deadline
+T1_A1_seed0,T1,holdout,A1,0,11,"{""open_exhausted"": 10, ""time_budget"": 1}","{""ok"": 10, ""timeout"": 1}",2592,2592,0,2091,11,490,38,7,0,0,valid_incumbent_at_deadline
+T1_A1_seed1,T1,holdout,A1,1,12,"{""open_exhausted"": 11, ""time_budget"": 1}","{""ok"": 11, ""timeout"": 1}",2819,2819,0,2260,12,549,38,7,0,0,valid_incumbent_at_deadline
+T1_A1_seed2,T1,holdout,A1,2,12,"{""open_exhausted"": 11, ""time_budget"": 1}","{""ok"": 11, ""timeout"": 1}",2814,2814,0,2266,12,537,38,7,0,0,valid_incumbent_at_deadline
+T1_A1_seed3,T1,holdout,A1,3,12,"{""open_exhausted"": 11, ""time_budget"": 1}","{""ok"": 11, ""timeout"": 1}",2827,2827,0,2281,12,534,38,7,0,0,valid_incumbent_at_deadline
+T1_A1_seed4,T1,holdout,A1,4,11,"{""open_exhausted"": 10, ""time_budget"": 1}","{""ok"": 10, ""timeout"": 1}",2746,2746,0,2225,11,511,38,7,0,0,valid_incumbent_at_deadline
+T1_A2_seed0,T1,holdout,A2,0,5,"{""open_exhausted"": 4, ""time_budget"": 1}","{""ok"": 4, ""timeout"": 1}",3400,3400,0,2856,4,494,80,9,0,0,valid_incumbent_at_deadline
+T1_A2_seed1,T1,holdout,A2,1,5,"{""open_exhausted"": 4, ""time_budget"": 1}","{""ok"": 4, ""timeout"": 1}",3481,3481,0,2927,3,507,80,9,0,0,valid_incumbent_at_deadline
+T1_A2_seed2,T1,holdout,A2,2,5,"{""open_exhausted"": 4, ""time_budget"": 1}","{""ok"": 4, ""timeout"": 1}",3463,3463,0,2913,4,500,78,7,0,0,valid_incumbent_at_deadline
+T1_A2_seed3,T1,holdout,A2,3,5,"{""open_exhausted"": 4, ""time_budget"": 1}","{""ok"": 4, ""timeout"": 1}",3504,3504,0,2958,3,492,77,7,0,0,valid_incumbent_at_deadline
+T1_A2_seed4,T1,holdout,A2,4,5,"{""open_exhausted"": 4, ""time_budget"": 1}","{""ok"": 4, ""timeout"": 1}",3352,3352,0,2826,3,483,78,8,0,0,valid_incumbent_at_deadline
+T1_A3_seed0,T1,holdout,A3,0,13,"{""open_exhausted"": 12, ""time_budget"": 1}","{""ok"": 12, ""timeout"": 1}",1707,1707,0,1313,39,399,26,6,0,0,valid_incumbent_at_deadline
+T1_A3_seed1,T1,holdout,A3,1,14,"{""open_exhausted"": 13, ""time_budget"": 1}","{""ok"": 13, ""timeout"": 1}",1762,1762,0,1355,39,403,26,6,0,0,valid_incumbent_at_deadline
+T1_A3_seed2,T1,holdout,A3,2,14,"{""open_exhausted"": 13, ""time_budget"": 1}","{""ok"": 13, ""timeout"": 1}",1758,1758,0,1359,39,396,26,6,0,0,valid_incumbent_at_deadline
+T1_A3_seed3,T1,holdout,A3,3,14,"{""open_exhausted"": 13, ""time_budget"": 1}","{""ok"": 13, ""timeout"": 1}",1762,1762,0,1354,39,404,26,6,0,0,valid_incumbent_at_deadline
+T1_A3_seed4,T1,holdout,A3,4,13,"{""open_exhausted"": 12, ""time_budget"": 1}","{""ok"": 12, ""timeout"": 1}",1635,1635,0,1250,39,384,26,6,0,0,valid_incumbent_at_deadline
+T1_A4_seed0,T1,holdout,A4,0,4,"{""open_exhausted"": 3, ""time_budget"": 1}","{""ok"": 3, ""timeout"": 1}",2448,2448,0,2066,0,342,68,9,0,0,valid_incumbent_at_deadline
+T1_A4_seed1,T1,holdout,A4,1,4,"{""open_exhausted"": 3, ""time_budget"": 1}","{""ok"": 3, ""timeout"": 1}",2449,2449,0,2048,3,357,68,9,0,0,valid_incumbent_at_deadline
+T1_A4_seed2,T1,holdout,A4,2,4,"{""open_exhausted"": 3, ""time_budget"": 1}","{""ok"": 3, ""timeout"": 1}",2534,2534,0,2136,0,352,68,9,0,0,valid_incumbent_at_deadline
+T1_A4_seed3,T1,holdout,A4,3,4,"{""open_exhausted"": 3, ""time_budget"": 1}","{""ok"": 3, ""timeout"": 1}",2534,2534,0,2141,4,350,68,9,0,0,valid_incumbent_at_deadline
+T1_A4_seed4,T1,holdout,A4,4,4,"{""open_exhausted"": 3, ""time_budget"": 1}","{""ok"": 3, ""timeout"": 1}",2427,2427,0,2038,0,345,68,9,0,0,valid_incumbent_at_deadline
+T1_rrt_first_seed0,T1,holdout,rrt_first,0,1,"{""trees_connected"": 1}","{""ok"": 1}",63,29,34,0,34,63,0,0,0,0,first_attempt_valid
+T1_rrt_first_seed1,T1,holdout,rrt_first,1,1,"{""trees_connected"": 1}","{""ok"": 1}",38,24,14,0,14,38,0,0,0,0,first_attempt_valid
+T1_rrt_first_seed2,T1,holdout,rrt_first,2,1,"{""trees_connected"": 1}","{""ok"": 1}",105,50,55,0,55,105,0,0,0,0,first_attempt_valid
+T1_rrt_first_seed3,T1,holdout,rrt_first,3,1,"{""trees_connected"": 1}","{""ok"": 1}",41,27,14,0,14,41,0,0,0,0,first_attempt_valid
+T1_rrt_first_seed4,T1,holdout,rrt_first,4,1,"{""trees_connected"": 1}","{""ok"": 1}",33,21,12,0,12,33,0,0,0,0,first_attempt_valid
+T1_rrt_restart_seed0,T1,holdout,rrt_restart,0,1437,"{""trees_connected"": 1437}","{""ok"": 1437}",78665,42486,36179,0,36179,78665,0,0,0,0,valid_incumbent_at_deadline
+T1_rrt_restart_seed1,T1,holdout,rrt_restart,1,1506,"{""trees_connected"": 1506}","{""ok"": 1506}",81527,44141,37386,0,37386,81527,0,0,0,0,valid_incumbent_at_deadline
+T1_rrt_restart_seed2,T1,holdout,rrt_restart,2,1488,"{""time_budget"": 1, ""trees_connected"": 1487}","{""ok"": 1487, ""timeout"": 1}",81961,44297,37664,0,37664,81961,0,0,0,0,valid_incumbent_at_deadline
+T1_rrt_restart_seed3,T1,holdout,rrt_restart,3,1484,"{""trees_connected"": 1484}","{""ok"": 1484}",83505,44603,38902,0,38902,83505,0,0,1,0,valid_incumbent_at_deadline
+T1_rrt_restart_seed4,T1,holdout,rrt_restart,4,1416,"{""trees_connected"": 1416}","{""ok"": 1416}",78613,42312,36301,0,36301,78613,0,0,0,0,valid_incumbent_at_deadline
+T2_A1_seed0,T2,holdout,A1,0,1,"{""time_budget"": 1}","{""timeout"": 1}",2097,2097,0,1893,0,83,179,23,0,0,valid_incumbent_at_deadline
+T2_A1_seed1,T2,holdout,A1,1,1,"{""time_budget"": 1}","{""timeout"": 1}",2124,2124,0,1934,0,78,163,23,0,0,valid_incumbent_at_deadline
+T2_A1_seed2,T2,holdout,A1,2,1,"{""time_budget"": 1}","{""timeout"": 1}",2167,2167,0,1972,1,81,166,23,0,0,valid_incumbent_at_deadline
+T2_A1_seed3,T2,holdout,A1,3,1,"{""time_budget"": 1}","{""timeout"": 1}",2144,2144,0,1936,1,83,176,23,0,0,valid_incumbent_at_deadline
+T2_A1_seed4,T2,holdout,A1,4,1,"{""time_budget"": 1}","{""timeout"": 1}",2113,2113,0,1913,0,84,167,23,0,0,valid_incumbent_at_deadline
+T2_A2_seed0,T2,holdout,A2,0,1,"{""time_budget"": 1}","{""timeout"": 1}",2928,2928,0,2528,0,87,369,35,0,0,valid_incumbent_at_deadline
+T2_A2_seed1,T2,holdout,A2,1,1,"{""time_budget"": 1}","{""timeout"": 1}",2933,2933,0,2530,0,81,375,36,0,0,valid_incumbent_at_deadline
+T2_A2_seed2,T2,holdout,A2,2,1,"{""time_budget"": 1}","{""timeout"": 1}",2995,2995,0,2587,0,88,378,38,0,0,valid_incumbent_at_deadline
+T2_A2_seed3,T2,holdout,A2,3,1,"{""time_budget"": 1}","{""timeout"": 1}",2970,2970,0,2535,0,83,407,37,0,0,valid_incumbent_at_deadline
+T2_A2_seed4,T2,holdout,A2,4,1,"{""time_budget"": 1}","{""timeout"": 1}",2795,2795,0,2393,0,84,371,36,0,0,valid_incumbent_at_deadline
+T2_A3_seed0,T2,holdout,A3,0,1,"{""time_budget"": 1}","{""timeout"": 1}",1485,1485,0,1311,2,48,157,21,0,0,valid_incumbent_at_deadline
+T2_A3_seed1,T2,holdout,A3,1,1,"{""time_budget"": 1}","{""timeout"": 1}",1512,1512,0,1337,0,51,157,21,0,0,valid_incumbent_at_deadline
+T2_A3_seed2,T2,holdout,A3,2,1,"{""time_budget"": 1}","{""timeout"": 1}",1578,1578,0,1409,0,51,149,21,0,0,valid_incumbent_at_deadline
+T2_A3_seed3,T2,holdout,A3,3,1,"{""time_budget"": 1}","{""timeout"": 1}",1429,1429,0,1273,0,45,140,21,0,0,valid_incumbent_at_deadline
+T2_A3_seed4,T2,holdout,A3,4,1,"{""time_budget"": 1}","{""timeout"": 1}",1500,1500,0,1327,0,57,150,21,0,0,valid_incumbent_at_deadline
+T2_A4_seed0,T2,holdout,A4,0,1,"{""time_budget"": 1}","{""timeout"": 1}",2094,2094,0,1769,0,55,312,36,0,0,valid_incumbent_at_deadline
+T2_A4_seed1,T2,holdout,A4,1,1,"{""time_budget"": 1}","{""timeout"": 1}",2106,2106,0,1782,0,52,310,36,0,0,valid_incumbent_at_deadline
+T2_A4_seed2,T2,holdout,A4,2,1,"{""time_budget"": 1}","{""timeout"": 1}",2129,2129,0,1791,0,53,321,36,0,0,valid_incumbent_at_deadline
+T2_A4_seed3,T2,holdout,A4,3,1,"{""time_budget"": 1}","{""timeout"": 1}",2138,2138,0,1810,0,56,312,36,0,0,valid_incumbent_at_deadline
+T2_A4_seed4,T2,holdout,A4,4,1,"{""time_budget"": 1}","{""timeout"": 1}",1907,1907,0,1587,0,52,306,36,0,0,valid_incumbent_at_deadline
+T2_rrt_first_seed0,T2,holdout,rrt_first,0,1,"{""trees_connected"": 1}","{""ok"": 1}",68,38,30,0,30,68,0,0,0,0,first_attempt_valid
+T2_rrt_first_seed1,T2,holdout,rrt_first,1,1,"{""trees_connected"": 1}","{""ok"": 1}",39,32,7,0,7,39,0,0,0,0,first_attempt_valid
+T2_rrt_first_seed2,T2,holdout,rrt_first,2,1,"{""trees_connected"": 1}","{""ok"": 1}",120,65,55,0,55,120,0,0,0,0,first_attempt_valid
+T2_rrt_first_seed3,T2,holdout,rrt_first,3,1,"{""trees_connected"": 1}","{""ok"": 1}",62,42,20,0,20,62,0,0,0,0,first_attempt_valid
+T2_rrt_first_seed4,T2,holdout,rrt_first,4,1,"{""trees_connected"": 1}","{""ok"": 1}",51,37,14,0,14,51,0,0,0,0,first_attempt_valid
+T2_rrt_restart_seed0,T2,holdout,rrt_restart,0,722,"{""trees_connected"": 722}","{""ok"": 722}",51908,30727,21181,0,21181,51908,0,0,1,0,valid_incumbent_at_deadline
+T2_rrt_restart_seed1,T2,holdout,rrt_restart,1,736,"{""trees_connected"": 736}","{""ok"": 736}",52354,31187,21167,0,21167,52354,0,0,1,0,valid_incumbent_at_deadline
+T2_rrt_restart_seed2,T2,holdout,rrt_restart,2,752,"{""trees_connected"": 752}","{""ok"": 752}",53650,31935,21715,0,21715,53650,0,0,1,0,valid_incumbent_at_deadline
+T2_rrt_restart_seed3,T2,holdout,rrt_restart,3,752,"{""time_budget"": 1, ""trees_connected"": 751}","{""ok"": 751, ""timeout"": 1}",53389,31825,21563,0,21563,53389,0,0,0,0,valid_incumbent_at_deadline
+T2_rrt_restart_seed4,T2,holdout,rrt_restart,4,748,"{""trees_connected"": 748}","{""ok"": 748}",53669,31835,21834,0,21834,53669,0,0,1,0,valid_incumbent_at_deadline
+T3_A1_seed0,T3,holdout,A1,0,22,"{""open_exhausted"": 21, ""time_budget"": 1}","{""no_path"": 21, ""timeout"": 1}",766,766,0,590,105,198,7,3,0,0,budget_or_first_attempt_without_valid_solution
+T3_A1_seed1,T3,holdout,A1,1,22,"{""open_exhausted"": 21, ""time_budget"": 1}","{""no_path"": 21, ""timeout"": 1}",749,749,0,573,104,195,7,3,0,0,budget_or_first_attempt_without_valid_solution
+T3_A1_seed2,T3,holdout,A1,2,23,"{""open_exhausted"": 22, ""time_budget"": 1}","{""no_path"": 22, ""timeout"": 1}",741,741,0,562,108,198,7,3,0,0,budget_or_first_attempt_without_valid_solution
+T3_A1_seed3,T3,holdout,A1,3,23,"{""open_exhausted"": 22, ""time_budget"": 1}","{""no_path"": 22, ""timeout"": 1}",746,746,0,570,108,199,7,3,0,0,budget_or_first_attempt_without_valid_solution
+T3_A1_seed4,T3,holdout,A1,4,23,"{""open_exhausted"": 22, ""time_budget"": 1}","{""no_path"": 22, ""timeout"": 1}",752,752,0,574,107,199,7,3,0,0,budget_or_first_attempt_without_valid_solution
+T3_A2_seed0,T3,holdout,A2,0,15,"{""open_exhausted"": 14, ""time_budget"": 1}","{""no_path"": 14, ""timeout"": 1}",858,858,0,680,48,191,11,3,0,0,budget_or_first_attempt_without_valid_solution
+T3_A2_seed1,T3,holdout,A2,1,15,"{""open_exhausted"": 14, ""time_budget"": 1}","{""no_path"": 14, ""timeout"": 1}",860,860,0,685,48,189,11,3,0,0,budget_or_first_attempt_without_valid_solution
+T3_A2_seed2,T3,holdout,A2,2,16,"{""open_exhausted"": 15, ""time_budget"": 1}","{""no_path"": 15, ""timeout"": 1}",859,859,0,682,48,189,11,3,0,0,budget_or_first_attempt_without_valid_solution
+T3_A2_seed3,T3,holdout,A2,3,16,"{""open_exhausted"": 15, ""time_budget"": 1}","{""no_path"": 15, ""timeout"": 1}",852,852,0,674,51,190,11,3,0,0,budget_or_first_attempt_without_valid_solution
+T3_A2_seed4,T3,holdout,A2,4,15,"{""open_exhausted"": 14, ""time_budget"": 1}","{""no_path"": 14, ""timeout"": 1}",836,836,0,665,48,185,11,3,0,0,budget_or_first_attempt_without_valid_solution
+T3_A3_seed0,T3,holdout,A3,0,16,"{""open_exhausted"": 15, ""time_budget"": 1}","{""no_path"": 15, ""timeout"": 1}",288,288,0,208,63,96,6,3,0,0,budget_or_first_attempt_without_valid_solution
+T3_A3_seed1,T3,holdout,A3,1,16,"{""open_exhausted"": 15, ""time_budget"": 1}","{""no_path"": 15, ""timeout"": 1}",288,288,0,208,62,95,6,3,0,0,budget_or_first_attempt_without_valid_solution
+T3_A3_seed2,T3,holdout,A3,2,17,"{""open_exhausted"": 16, ""time_budget"": 1}","{""no_path"": 16, ""timeout"": 1}",306,306,0,221,64,99,6,3,0,0,budget_or_first_attempt_without_valid_solution
+T3_A3_seed3,T3,holdout,A3,3,17,"{""open_exhausted"": 16, ""time_budget"": 1}","{""no_path"": 16, ""timeout"": 1}",306,306,0,221,64,99,6,3,0,0,budget_or_first_attempt_without_valid_solution
+T3_A3_seed4,T3,holdout,A3,4,17,"{""open_exhausted"": 16, ""time_budget"": 1}","{""no_path"": 16, ""timeout"": 1}",288,288,0,208,64,97,6,3,0,0,budget_or_first_attempt_without_valid_solution
+T3_A4_seed0,T3,holdout,A4,0,11,"{""open_exhausted"": 10, ""time_budget"": 1}","{""no_path"": 10, ""timeout"": 1}",656,656,0,535,34,130,10,3,0,0,budget_or_first_attempt_without_valid_solution
+T3_A4_seed1,T3,holdout,A4,1,10,"{""open_exhausted"": 9, ""time_budget"": 1}","{""no_path"": 9, ""timeout"": 1}",655,655,0,534,32,130,10,3,0,0,budget_or_first_attempt_without_valid_solution
+T3_A4_seed2,T3,holdout,A4,2,11,"{""open_exhausted"": 10, ""time_budget"": 1}","{""no_path"": 10, ""timeout"": 1}",701,701,0,577,31,131,10,3,0,0,budget_or_first_attempt_without_valid_solution
+T3_A4_seed3,T3,holdout,A4,3,11,"{""open_exhausted"": 10, ""time_budget"": 1}","{""no_path"": 10, ""timeout"": 1}",715,715,0,590,31,134,10,3,0,0,budget_or_first_attempt_without_valid_solution
+T3_A4_seed4,T3,holdout,A4,4,11,"{""open_exhausted"": 10, ""time_budget"": 1}","{""no_path"": 10, ""timeout"": 1}",684,684,0,559,33,131,10,3,0,0,budget_or_first_attempt_without_valid_solution
+T3_rrt_first_seed0,T3,holdout,rrt_first,0,1,"{""trees_connected"": 1}","{""ok"": 1}",364,130,234,0,234,364,0,0,0,0,first_attempt_valid
+T3_rrt_first_seed1,T3,holdout,rrt_first,1,1,"{""trees_connected"": 1}","{""ok"": 1}",880,263,617,0,617,880,0,0,0,0,first_attempt_valid
+T3_rrt_first_seed2,T3,holdout,rrt_first,2,1,"{""trees_connected"": 1}","{""ok"": 1}",628,199,429,0,429,628,0,0,0,0,first_attempt_valid
+T3_rrt_first_seed3,T3,holdout,rrt_first,3,1,"{""trees_connected"": 1}","{""ok"": 1}",368,108,260,0,260,368,0,0,0,0,first_attempt_valid
+T3_rrt_first_seed4,T3,holdout,rrt_first,4,1,"{""trees_connected"": 1}","{""ok"": 1}",169,64,105,0,105,169,0,0,0,0,first_attempt_valid
+T3_rrt_restart_seed0,T3,holdout,rrt_restart,0,363,"{""trees_connected"": 363}","{""ok"": 363}",196328,62311,134017,0,134017,196328,0,0,0,0,valid_incumbent_at_deadline
+T3_rrt_restart_seed1,T3,holdout,rrt_restart,1,354,"{""time_budget"": 1, ""trees_connected"": 353}","{""ok"": 353, ""timeout"": 1}",189688,60129,129558,0,129558,189688,0,0,0,0,valid_incumbent_at_deadline
+T3_rrt_restart_seed2,T3,holdout,rrt_restart,2,363,"{""time_budget"": 1, ""trees_connected"": 362}","{""ok"": 362, ""timeout"": 1}",193189,61357,131831,0,131831,193189,0,0,0,0,valid_incumbent_at_deadline
+T3_rrt_restart_seed3,T3,holdout,rrt_restart,3,369,"{""time_budget"": 1, ""trees_connected"": 368}","{""ok"": 368, ""timeout"": 1}",194799,61677,133121,0,133121,194799,0,0,0,0,valid_incumbent_at_deadline
+T3_rrt_restart_seed4,T3,holdout,rrt_restart,4,352,"{""time_budget"": 1, ""trees_connected"": 351}","{""ok"": 351, ""timeout"": 1}",193043,61343,131699,0,131699,193043,0,0,0,0,valid_incumbent_at_deadline
+T4_A1_seed0,T4,holdout,A1,0,10,"{""open_exhausted"": 9, ""time_budget"": 1}","{""no_path"": 9, ""timeout"": 1}",510,510,0,413,55,106,10,6,0,0,budget_or_first_attempt_without_valid_solution
+T4_A1_seed1,T4,holdout,A1,1,10,"{""open_exhausted"": 9, ""time_budget"": 1}","{""no_path"": 9, ""timeout"": 1}",500,500,0,405,55,104,10,6,0,0,budget_or_first_attempt_without_valid_solution
+T4_A1_seed2,T4,holdout,A1,2,10,"{""open_exhausted"": 9, ""time_budget"": 1}","{""no_path"": 9, ""timeout"": 1}",502,502,0,404,57,107,10,6,0,0,budget_or_first_attempt_without_valid_solution
+T4_A1_seed3,T4,holdout,A1,3,10,"{""open_exhausted"": 9, ""time_budget"": 1}","{""no_path"": 9, ""timeout"": 1}",510,510,0,412,56,107,10,6,0,0,budget_or_first_attempt_without_valid_solution
+T4_A1_seed4,T4,holdout,A1,4,10,"{""open_exhausted"": 9, ""time_budget"": 1}","{""no_path"": 9, ""timeout"": 1}",502,502,0,408,53,103,10,6,0,0,budget_or_first_attempt_without_valid_solution
+T4_A2_seed0,T4,holdout,A2,0,2,"{""paper_iteration_limit"": 1, ""time_budget"": 1}","{""no_path"": 1, ""timeout"": 1}",836,836,0,693,37,115,66,17,0,0,budget_or_first_attempt_without_valid_solution
+T4_A2_seed1,T4,holdout,A2,1,2,"{""open_exhausted"": 1, ""time_budget"": 1}","{""no_path"": 1, ""timeout"": 1}",878,878,0,737,37,116,66,17,0,0,budget_or_first_attempt_without_valid_solution
+T4_A2_seed2,T4,holdout,A2,2,2,"{""open_exhausted"": 1, ""time_budget"": 1}","{""no_path"": 1, ""timeout"": 1}",880,880,0,738,37,116,66,17,0,0,budget_or_first_attempt_without_valid_solution
+T4_A2_seed3,T4,holdout,A2,3,2,"{""open_exhausted"": 1, ""time_budget"": 1}","{""no_path"": 1, ""timeout"": 1}",918,918,0,775,39,121,66,17,0,0,budget_or_first_attempt_without_valid_solution
+T4_A2_seed4,T4,holdout,A2,4,2,"{""open_exhausted"": 1, ""time_budget"": 1}","{""no_path"": 1, ""timeout"": 1}",859,859,0,725,38,115,65,17,0,0,budget_or_first_attempt_without_valid_solution
+T4_A3_seed0,T4,holdout,A3,0,4,"{""open_exhausted"": 3, ""time_budget"": 1}","{""no_path"": 3, ""timeout"": 1}",272,272,0,207,32,65,14,4,0,0,budget_or_first_attempt_without_valid_solution
+T4_A3_seed1,T4,holdout,A3,1,4,"{""open_exhausted"": 3, ""time_budget"": 1}","{""no_path"": 3, ""timeout"": 1}",263,263,0,201,33,65,14,4,0,0,budget_or_first_attempt_without_valid_solution
+T4_A3_seed2,T4,holdout,A3,2,4,"{""open_exhausted"": 3, ""time_budget"": 1}","{""no_path"": 3, ""timeout"": 1}",263,263,0,201,32,64,14,4,0,0,budget_or_first_attempt_without_valid_solution
+T4_A3_seed3,T4,holdout,A3,3,4,"{""open_exhausted"": 3, ""time_budget"": 1}","{""no_path"": 3, ""timeout"": 1}",272,272,0,208,34,67,14,4,0,0,budget_or_first_attempt_without_valid_solution
+T4_A3_seed4,T4,holdout,A3,4,4,"{""open_exhausted"": 3, ""time_budget"": 1}","{""no_path"": 3, ""timeout"": 1}",263,263,0,200,32,64,14,4,0,0,budget_or_first_attempt_without_valid_solution
+T4_A4_seed0,T4,holdout,A4,0,2,"{""open_exhausted"": 1, ""time_budget"": 1}","{""no_path"": 1, ""timeout"": 1}",466,466,0,390,23,65,35,9,0,0,budget_or_first_attempt_without_valid_solution
+T4_A4_seed1,T4,holdout,A4,1,2,"{""open_exhausted"": 1, ""time_budget"": 1}","{""no_path"": 1, ""timeout"": 1}",391,391,0,314,27,65,34,9,0,0,budget_or_first_attempt_without_valid_solution
+T4_A4_seed2,T4,holdout,A4,2,2,"{""open_exhausted"": 1, ""time_budget"": 1}","{""no_path"": 1, ""timeout"": 1}",475,475,0,395,26,68,35,9,0,0,budget_or_first_attempt_without_valid_solution
+T4_A4_seed3,T4,holdout,A4,3,2,"{""open_exhausted"": 1, ""time_budget"": 1}","{""no_path"": 1, ""timeout"": 1}",483,483,0,406,25,67,35,9,0,0,budget_or_first_attempt_without_valid_solution
+T4_A4_seed4,T4,holdout,A4,4,2,"{""open_exhausted"": 1, ""time_budget"": 1}","{""no_path"": 1, ""timeout"": 1}",430,430,0,352,26,66,34,9,0,0,budget_or_first_attempt_without_valid_solution
+T4_rrt_first_seed0,T4,holdout,rrt_first,0,1,"{""trees_connected"": 1}","{""ok"": 1}",795,285,510,0,510,795,0,0,0,0,first_attempt_valid
+T4_rrt_first_seed1,T4,holdout,rrt_first,1,1,"{""trees_connected"": 1}","{""ok"": 1}",1512,498,1014,0,1014,1512,0,0,0,0,first_attempt_valid
+T4_rrt_first_seed2,T4,holdout,rrt_first,2,1,"{""trees_connected"": 1}","{""ok"": 1}",736,262,474,0,474,736,0,0,0,0,first_attempt_valid
+T4_rrt_first_seed3,T4,holdout,rrt_first,3,1,"{""trees_connected"": 1}","{""ok"": 1}",878,292,586,0,586,878,0,0,0,0,first_attempt_valid
+T4_rrt_first_seed4,T4,holdout,rrt_first,4,1,"{""trees_connected"": 1}","{""ok"": 1}",1224,399,825,0,825,1224,0,0,0,0,first_attempt_valid
+T4_rrt_restart_seed0,T4,holdout,rrt_restart,0,165,"{""trees_connected"": 165}","{""ok"": 165}",173556,56655,116901,0,116901,173556,0,0,1,0,valid_incumbent_at_deadline
+T4_rrt_restart_seed1,T4,holdout,rrt_restart,1,167,"{""time_budget"": 1, ""trees_connected"": 166}","{""ok"": 166, ""timeout"": 1}",172395,56828,115566,0,115566,172395,0,0,0,0,valid_incumbent_at_deadline
+T4_rrt_restart_seed2,T4,holdout,rrt_restart,2,165,"{""time_budget"": 1, ""trees_connected"": 164}","{""ok"": 164, ""timeout"": 1}",175635,57278,118356,0,118356,175635,0,0,0,0,valid_incumbent_at_deadline
+T4_rrt_restart_seed3,T4,holdout,rrt_restart,3,168,"{""time_budget"": 1, ""trees_connected"": 167}","{""ok"": 167, ""timeout"": 1}",175813,57165,118648,0,118648,175813,0,0,0,0,valid_incumbent_at_deadline
+T4_rrt_restart_seed4,T4,holdout,rrt_restart,4,157,"{""trees_connected"": 157}","{""ok"": 157}",166824,54636,112188,0,112188,166824,0,0,1,0,valid_incumbent_at_deadline
+T5_A1_seed0,T5,holdout,A1,0,10,"{""open_exhausted"": 9, ""time_budget"": 1}","{""ok"": 9, ""timeout"": 1}",2088,2088,0,1916,0,172,16,4,0,0,valid_incumbent_at_deadline
+T5_A1_seed1,T5,holdout,A1,1,10,"{""open_exhausted"": 9, ""time_budget"": 1}","{""ok"": 9, ""timeout"": 1}",2117,2117,0,1949,0,167,16,4,0,0,valid_incumbent_at_deadline
+T5_A1_seed2,T5,holdout,A1,2,10,"{""open_exhausted"": 9, ""time_budget"": 1}","{""ok"": 9, ""timeout"": 1}",2080,2080,0,1919,0,165,16,4,0,0,valid_incumbent_at_deadline
+T5_A1_seed3,T5,holdout,A1,3,10,"{""open_exhausted"": 9, ""time_budget"": 1}","{""ok"": 9, ""timeout"": 1}",2085,2085,0,1918,0,166,16,4,0,0,valid_incumbent_at_deadline
+T5_A1_seed4,T5,holdout,A1,4,10,"{""open_exhausted"": 9, ""time_budget"": 1}","{""ok"": 9, ""timeout"": 1}",2050,2050,0,1886,0,164,16,4,0,0,valid_incumbent_at_deadline
+T5_A2_seed0,T5,holdout,A2,0,7,"{""open_exhausted"": 6, ""time_budget"": 1}","{""ok"": 6, ""timeout"": 1}",1388,1388,0,1175,29,210,31,9,0,0,valid_incumbent_at_deadline
+T5_A2_seed1,T5,holdout,A2,1,6,"{""open_exhausted"": 5, ""time_budget"": 1}","{""ok"": 5, ""timeout"": 1}",1309,1309,0,1104,28,199,35,9,0,0,valid_incumbent_at_deadline
+T5_A2_seed2,T5,holdout,A2,2,6,"{""open_exhausted"": 5, ""time_budget"": 1}","{""ok"": 5, ""timeout"": 1}",1364,1364,0,1158,27,199,34,9,0,0,valid_incumbent_at_deadline
+T5_A2_seed3,T5,holdout,A2,3,7,"{""open_exhausted"": 6, ""time_budget"": 1}","{""ok"": 6, ""timeout"": 1}",1403,1403,0,1197,28,203,31,9,0,0,valid_incumbent_at_deadline
+T5_A2_seed4,T5,holdout,A2,4,6,"{""open_exhausted"": 5, ""time_budget"": 1}","{""ok"": 5, ""timeout"": 1}",1292,1292,0,1096,32,193,30,9,0,0,valid_incumbent_at_deadline
+T5_A3_seed0,T5,holdout,A3,0,7,"{""open_exhausted"": 6, ""time_budget"": 1}","{""ok"": 6, ""timeout"": 1}",1578,1578,0,1470,0,109,16,4,0,0,valid_incumbent_at_deadline
+T5_A3_seed1,T5,holdout,A3,1,6,"{""open_exhausted"": 5, ""time_budget"": 1}","{""ok"": 5, ""timeout"": 1}",1540,1540,0,1438,0,99,16,4,0,0,valid_incumbent_at_deadline
+T5_A3_seed2,T5,holdout,A3,2,6,"{""open_exhausted"": 5, ""time_budget"": 1}","{""ok"": 5, ""timeout"": 1}",1543,1543,0,1440,0,102,16,4,0,0,valid_incumbent_at_deadline
+T5_A3_seed3,T5,holdout,A3,3,7,"{""open_exhausted"": 6, ""time_budget"": 1}","{""ok"": 6, ""timeout"": 1}",1575,1575,0,1471,0,105,16,4,0,0,valid_incumbent_at_deadline
+T5_A3_seed4,T5,holdout,A3,4,6,"{""open_exhausted"": 5, ""time_budget"": 1}","{""ok"": 5, ""timeout"": 1}",1479,1479,0,1378,0,97,16,4,0,0,valid_incumbent_at_deadline
+T5_A4_seed0,T5,holdout,A4,0,3,"{""open_exhausted"": 2, ""time_budget"": 1}","{""ok"": 2, ""timeout"": 1}",1619,1619,0,1479,21,118,42,8,0,0,valid_incumbent_at_deadline
+T5_A4_seed1,T5,holdout,A4,1,3,"{""open_exhausted"": 2, ""time_budget"": 1}","{""ok"": 2, ""timeout"": 1}",1630,1630,0,1494,21,116,42,8,0,0,valid_incumbent_at_deadline
+T5_A4_seed2,T5,holdout,A4,2,3,"{""open_exhausted"": 2, ""time_budget"": 1}","{""ok"": 2, ""timeout"": 1}",1603,1603,0,1467,23,118,42,8,0,0,valid_incumbent_at_deadline
+T5_A4_seed3,T5,holdout,A4,3,3,"{""open_exhausted"": 2, ""time_budget"": 1}","{""ok"": 2, ""timeout"": 1}",1628,1628,0,1491,20,113,42,8,0,0,valid_incumbent_at_deadline
+T5_A4_seed4,T5,holdout,A4,4,3,"{""open_exhausted"": 2, ""time_budget"": 1}","{""ok"": 2, ""timeout"": 1}",1653,1653,0,1512,20,119,42,8,0,0,valid_incumbent_at_deadline
+T5_rrt_first_seed0,T5,holdout,rrt_first,0,1,"{""trees_connected"": 1}","{""ok"": 1}",27,23,4,0,4,27,0,0,0,0,first_attempt_valid
+T5_rrt_first_seed1,T5,holdout,rrt_first,1,1,"{""trees_connected"": 1}","{""ok"": 1}",23,19,4,0,4,23,0,0,0,0,first_attempt_valid
+T5_rrt_first_seed2,T5,holdout,rrt_first,2,1,"{""trees_connected"": 1}","{""ok"": 1}",108,47,61,0,61,108,0,0,0,0,first_attempt_valid
+T5_rrt_first_seed3,T5,holdout,rrt_first,3,1,"{""trees_connected"": 1}","{""ok"": 1}",167,64,103,0,103,167,0,0,0,0,first_attempt_valid
+T5_rrt_first_seed4,T5,holdout,rrt_first,4,1,"{""trees_connected"": 1}","{""ok"": 1}",666,220,446,0,446,666,0,0,0,0,first_attempt_valid
+T5_rrt_restart_seed0,T5,holdout,rrt_restart,0,811,"{""time_budget"": 1, ""trees_connected"": 810}","{""ok"": 810, ""timeout"": 1}",163292,61300,101991,0,101991,163292,0,0,0,0,valid_incumbent_at_deadline
+T5_rrt_restart_seed1,T5,holdout,rrt_restart,1,801,"{""trees_connected"": 801}","{""ok"": 801}",166996,62189,104807,0,104807,166996,0,0,1,0,valid_incumbent_at_deadline
+T5_rrt_restart_seed2,T5,holdout,rrt_restart,2,812,"{""trees_connected"": 812}","{""ok"": 812}",156994,59061,97933,0,97933,156994,0,0,1,0,valid_incumbent_at_deadline
+T5_rrt_restart_seed3,T5,holdout,rrt_restart,3,727,"{""time_budget"": 1, ""trees_connected"": 726}","{""ok"": 726, ""timeout"": 1}",172148,62518,109629,0,109629,172148,0,0,0,0,valid_incumbent_at_deadline
+T5_rrt_restart_seed4,T5,holdout,rrt_restart,4,808,"{""time_budget"": 1, ""trees_connected"": 807}","{""ok"": 807, ""timeout"": 1}",167331,62333,104998,0,104998,167331,0,0,0,0,valid_incumbent_at_deadline
+T6_A1_seed0,T6,holdout,A1,0,5,"{""open_exhausted"": 4, ""time_budget"": 1}","{""ok"": 4, ""timeout"": 1}",1012,1012,0,891,13,115,26,9,0,0,valid_incumbent_at_deadline
+T6_A1_seed1,T6,holdout,A1,1,4,"{""open_exhausted"": 3, ""time_budget"": 1}","{""ok"": 3, ""timeout"": 1}",991,991,0,889,9,97,26,9,0,0,valid_incumbent_at_deadline
+T6_A1_seed2,T6,holdout,A1,2,4,"{""open_exhausted"": 3, ""time_budget"": 1}","{""ok"": 3, ""timeout"": 1}",952,952,0,856,9,92,25,9,0,0,valid_incumbent_at_deadline
+T6_A1_seed3,T6,holdout,A1,3,5,"{""open_exhausted"": 4, ""time_budget"": 1}","{""ok"": 4, ""timeout"": 1}",1008,1008,0,893,12,109,25,9,0,0,valid_incumbent_at_deadline
+T6_A1_seed4,T6,holdout,A1,4,5,"{""open_exhausted"": 4, ""time_budget"": 1}","{""ok"": 4, ""timeout"": 1}",997,997,0,890,13,112,25,9,0,0,valid_incumbent_at_deadline
+T6_A2_seed0,T6,holdout,A2,0,2,"{""paper_iteration_limit"": 1, ""time_budget"": 1}","{""ok"": 1, ""timeout"": 1}",917,917,0,670,41,120,157,22,0,0,valid_incumbent_at_deadline
+T6_A2_seed1,T6,holdout,A2,1,2,"{""paper_iteration_limit"": 1, ""time_budget"": 1}","{""ok"": 1, ""timeout"": 1}",852,852,0,623,39,114,159,22,0,0,valid_incumbent_at_deadline
+T6_A2_seed2,T6,holdout,A2,2,2,"{""paper_iteration_limit"": 1, ""time_budget"": 1}","{""ok"": 1, ""timeout"": 1}",898,898,0,645,39,116,164,22,0,0,valid_incumbent_at_deadline
+T6_A2_seed3,T6,holdout,A2,3,2,"{""paper_iteration_limit"": 1, ""time_budget"": 1}","{""ok"": 1, ""timeout"": 1}",898,898,0,660,40,114,157,22,0,0,valid_incumbent_at_deadline
+T6_A2_seed4,T6,holdout,A2,4,2,"{""paper_iteration_limit"": 1, ""time_budget"": 1}","{""ok"": 1, ""timeout"": 1}",883,883,0,644,41,116,158,22,0,0,valid_incumbent_at_deadline
+T6_A3_seed0,T6,holdout,A3,0,3,"{""open_exhausted"": 2, ""time_budget"": 1}","{""ok"": 2, ""timeout"": 1}",707,707,0,630,2,66,23,9,0,0,valid_incumbent_at_deadline
+T6_A3_seed1,T6,holdout,A3,1,3,"{""open_exhausted"": 2, ""time_budget"": 1}","{""ok"": 2, ""timeout"": 1}",622,622,0,548,2,62,23,9,0,0,valid_incumbent_at_deadline
+T6_A3_seed2,T6,holdout,A3,2,3,"{""open_exhausted"": 2, ""time_budget"": 1}","{""ok"": 2, ""timeout"": 1}",634,634,0,559,2,62,23,9,0,0,valid_incumbent_at_deadline
+T6_A3_seed3,T6,holdout,A3,3,3,"{""open_exhausted"": 2, ""time_budget"": 1}","{""ok"": 2, ""timeout"": 1}",670,670,0,597,2,61,23,9,0,0,valid_incumbent_at_deadline
+T6_A3_seed4,T6,holdout,A3,4,3,"{""open_exhausted"": 2, ""time_budget"": 1}","{""ok"": 2, ""timeout"": 1}",681,681,0,602,2,68,23,9,0,0,valid_incumbent_at_deadline
+T6_A4_seed0,T6,holdout,A4,0,1,"{""time_budget"": 1}","{""timeout"": 1}",740,740,0,603,5,61,120,20,0,0,valid_incumbent_at_deadline
+T6_A4_seed1,T6,holdout,A4,1,1,"{""time_budget"": 1}","{""timeout"": 1}",701,701,0,565,8,66,121,20,0,0,valid_incumbent_at_deadline
+T6_A4_seed2,T6,holdout,A4,2,1,"{""time_budget"": 1}","{""timeout"": 1}",713,713,0,576,5,63,119,20,0,0,valid_incumbent_at_deadline
+T6_A4_seed3,T6,holdout,A4,3,1,"{""time_budget"": 1}","{""timeout"": 1}",678,678,0,552,5,54,115,20,0,0,budget_or_first_attempt_without_valid_solution
+T6_A4_seed4,T6,holdout,A4,4,1,"{""time_budget"": 1}","{""timeout"": 1}",695,695,0,562,7,63,117,20,0,0,valid_incumbent_at_deadline
+T6_rrt_first_seed0,T6,holdout,rrt_first,0,1,"{""trees_connected"": 1}","{""ok"": 1}",92,48,44,0,44,92,0,0,0,0,first_attempt_valid
+T6_rrt_first_seed1,T6,holdout,rrt_first,1,1,"{""trees_connected"": 1}","{""ok"": 1}",8277,2579,5698,0,5698,8277,0,0,0,0,first_attempt_valid
+T6_rrt_first_seed2,T6,holdout,rrt_first,2,1,"{""trees_connected"": 1}","{""ok"": 1}",3448,1085,2363,0,2363,3448,0,0,0,0,first_attempt_valid
+T6_rrt_first_seed3,T6,holdout,rrt_first,3,1,"{""trees_connected"": 1}","{""ok"": 1}",193,75,118,0,118,193,0,0,0,0,first_attempt_valid
+T6_rrt_first_seed4,T6,holdout,rrt_first,4,1,"{""trees_connected"": 1}","{""ok"": 1}",286,126,160,0,160,286,0,0,0,0,first_attempt_valid
+T6_rrt_restart_seed0,T6,holdout,rrt_restart,0,197,"{""time_budget"": 1, ""trees_connected"": 196}","{""ok"": 196, ""timeout"": 1}",179310,61674,117635,0,117635,179310,0,0,0,0,valid_incumbent_at_deadline
+T6_rrt_restart_seed1,T6,holdout,rrt_restart,1,157,"{""time_budget"": 1, ""trees_connected"": 156}","{""ok"": 156, ""timeout"": 1}",179149,60549,118599,0,118599,179149,0,0,0,0,valid_incumbent_at_deadline
+T6_rrt_restart_seed2,T6,holdout,rrt_restart,2,156,"{""time_budget"": 1, ""trees_connected"": 155}","{""ok"": 155, ""timeout"": 1}",171030,57762,113267,0,113267,171030,0,0,0,0,valid_incumbent_at_deadline
+T6_rrt_restart_seed3,T6,holdout,rrt_restart,3,129,"{""iteration_budget"": 2, ""time_budget"": 1, ""trees_connected"": 126}","{""budget_exhausted"": 2, ""ok"": 126, ""timeout"": 1}",164431,54830,109600,0,109600,164431,0,0,0,0,valid_incumbent_at_deadline
+T6_rrt_restart_seed4,T6,holdout,rrt_restart,4,155,"{""time_budget"": 1, ""trees_connected"": 154}","{""ok"": 154, ""timeout"": 1}",170455,57283,113171,0,113171,170455,0,0,0,0,valid_incumbent_at_deadline
+T7_A1_seed0,T7,holdout,A1,0,6,"{""open_exhausted"": 5, ""time_budget"": 1}","{""ok"": 5, ""timeout"": 1}",3435,3435,0,3112,0,312,42,9,0,0,valid_incumbent_at_deadline
+T7_A1_seed1,T7,holdout,A1,1,6,"{""open_exhausted"": 5, ""time_budget"": 1}","{""ok"": 5, ""timeout"": 1}",3325,3325,0,3013,0,300,42,9,0,0,valid_incumbent_at_deadline
+T7_A1_seed2,T7,holdout,A1,2,6,"{""open_exhausted"": 5, ""time_budget"": 1}","{""ok"": 5, ""timeout"": 1}",3367,3367,0,3053,0,301,43,9,0,0,valid_incumbent_at_deadline
+T7_A1_seed3,T7,holdout,A1,3,6,"{""open_exhausted"": 5, ""time_budget"": 1}","{""ok"": 5, ""timeout"": 1}",3203,3203,0,2908,0,289,42,9,0,0,valid_incumbent_at_deadline
+T7_A1_seed4,T7,holdout,A1,4,6,"{""open_exhausted"": 5, ""time_budget"": 1}","{""ok"": 5, ""timeout"": 1}",3402,3402,0,3081,0,311,44,9,0,0,valid_incumbent_at_deadline
+T7_A2_seed0,T7,holdout,A2,0,6,"{""open_exhausted"": 5, ""time_budget"": 1}","{""ok"": 5, ""timeout"": 1}",3989,3989,0,3571,0,408,51,9,0,0,valid_incumbent_at_deadline
+T7_A2_seed1,T7,holdout,A2,1,6,"{""open_exhausted"": 5, ""time_budget"": 1}","{""ok"": 5, ""timeout"": 1}",3851,3851,0,3450,0,391,53,9,0,0,valid_incumbent_at_deadline
+T7_A2_seed2,T7,holdout,A2,2,6,"{""open_exhausted"": 5, ""time_budget"": 1}","{""ok"": 5, ""timeout"": 1}",3829,3829,0,3427,0,397,50,9,0,0,valid_incumbent_at_deadline
+T7_A2_seed3,T7,holdout,A2,3,6,"{""open_exhausted"": 5, ""time_budget"": 1}","{""ok"": 5, ""timeout"": 1}",3798,3798,0,3420,0,380,53,9,0,0,valid_incumbent_at_deadline
+T7_A2_seed4,T7,holdout,A2,4,6,"{""open_exhausted"": 5, ""time_budget"": 1}","{""ok"": 5, ""timeout"": 1}",3966,3966,0,3561,0,398,52,9,0,0,valid_incumbent_at_deadline
+T7_A3_seed0,T7,holdout,A3,0,4,"{""open_exhausted"": 3, ""time_budget"": 1}","{""ok"": 3, ""timeout"": 1}",2628,2628,0,2393,0,225,47,10,0,0,valid_incumbent_at_deadline
+T7_A3_seed1,T7,holdout,A3,1,4,"{""open_exhausted"": 3, ""time_budget"": 1}","{""ok"": 3, ""timeout"": 1}",2593,2593,0,2353,0,231,48,10,0,0,valid_incumbent_at_deadline
+T7_A3_seed2,T7,holdout,A3,2,4,"{""open_exhausted"": 3, ""time_budget"": 1}","{""ok"": 3, ""timeout"": 1}",2598,2598,0,2362,1,229,47,10,0,0,valid_incumbent_at_deadline
+T7_A3_seed3,T7,holdout,A3,3,4,"{""open_exhausted"": 3, ""time_budget"": 1}","{""ok"": 3, ""timeout"": 1}",2485,2485,0,2259,0,215,47,10,0,0,valid_incumbent_at_deadline
+T7_A3_seed4,T7,holdout,A3,4,4,"{""open_exhausted"": 3, ""time_budget"": 1}","{""ok"": 3, ""timeout"": 1}",2566,2566,0,2327,0,232,47,10,0,0,valid_incumbent_at_deadline
+T7_A4_seed0,T7,holdout,A4,0,3,"{""open_exhausted"": 2, ""time_budget"": 1}","{""ok"": 2, ""timeout"": 1}",2974,2974,0,2708,0,241,63,10,0,0,valid_incumbent_at_deadline
+T7_A4_seed1,T7,holdout,A4,1,3,"{""open_exhausted"": 2, ""time_budget"": 1}","{""ok"": 2, ""timeout"": 1}",2909,2909,0,2645,0,239,64,10,0,0,valid_incumbent_at_deadline
+T7_A4_seed2,T7,holdout,A4,2,3,"{""open_exhausted"": 2, ""time_budget"": 1}","{""ok"": 2, ""timeout"": 1}",2957,2957,0,2692,0,243,61,10,0,0,valid_incumbent_at_deadline
+T7_A4_seed3,T7,holdout,A4,3,3,"{""open_exhausted"": 2, ""time_budget"": 1}","{""ok"": 2, ""timeout"": 1}",2750,2750,0,2512,0,229,63,10,0,0,valid_incumbent_at_deadline
+T7_A4_seed4,T7,holdout,A4,4,3,"{""open_exhausted"": 2, ""time_budget"": 1}","{""ok"": 2, ""timeout"": 1}",2960,2960,0,2688,0,247,63,10,0,0,valid_incumbent_at_deadline
+T7_rrt_first_seed0,T7,holdout,rrt_first,0,1,"{""trees_connected"": 1}","{""ok"": 1}",30,20,10,0,10,30,0,0,0,0,first_attempt_valid
+T7_rrt_first_seed1,T7,holdout,rrt_first,1,1,"{""trees_connected"": 1}","{""ok"": 1}",41,27,14,0,14,41,0,0,0,0,first_attempt_valid
+T7_rrt_first_seed2,T7,holdout,rrt_first,2,1,"{""trees_connected"": 1}","{""ok"": 1}",62,30,32,0,32,62,0,0,0,0,first_attempt_valid
+T7_rrt_first_seed3,T7,holdout,rrt_first,3,1,"{""trees_connected"": 1}","{""ok"": 1}",22,19,3,0,3,22,0,0,0,0,first_attempt_valid
+T7_rrt_first_seed4,T7,holdout,rrt_first,4,1,"{""trees_connected"": 1}","{""ok"": 1}",58,30,28,0,28,58,0,0,0,0,first_attempt_valid
+T7_rrt_restart_seed0,T7,holdout,rrt_restart,0,1722,"{""time_budget"": 1, ""trees_connected"": 1721}","{""ok"": 1721, ""timeout"": 1}",61717,39329,22387,0,22387,61717,0,0,0,0,valid_incumbent_at_deadline
+T7_rrt_restart_seed1,T7,holdout,rrt_restart,1,1674,"{""trees_connected"": 1674}","{""ok"": 1674}",58149,37483,20666,0,20666,58149,0,0,0,0,valid_incumbent_at_deadline
+T7_rrt_restart_seed2,T7,holdout,rrt_restart,2,1743,"{""trees_connected"": 1743}","{""ok"": 1743}",61771,39537,22234,0,22234,61771,0,0,0,0,valid_incumbent_at_deadline
+T7_rrt_restart_seed3,T7,holdout,rrt_restart,3,1701,"{""time_budget"": 1, ""trees_connected"": 1700}","{""ok"": 1700, ""timeout"": 1}",59896,38414,21482,0,21482,59896,0,0,0,0,valid_incumbent_at_deadline
+T7_rrt_restart_seed4,T7,holdout,rrt_restart,4,1725,"{""trees_connected"": 1725}","{""ok"": 1725}",60915,39022,21893,0,21893,60915,0,0,0,0,valid_incumbent_at_deadline
+T8_A1_seed0,T8,holdout,A1,0,2,"{""open_exhausted"": 1, ""time_budget"": 1}","{""ok"": 1, ""timeout"": 1}",2100,2100,0,1840,0,210,117,17,0,0,valid_incumbent_at_deadline
+T8_A1_seed1,T8,holdout,A1,1,2,"{""open_exhausted"": 1, ""time_budget"": 1}","{""ok"": 1, ""timeout"": 1}",2037,2037,0,1778,0,205,116,17,0,0,valid_incumbent_at_deadline
+T8_A1_seed2,T8,holdout,A1,2,2,"{""open_exhausted"": 1, ""time_budget"": 1}","{""ok"": 1, ""timeout"": 1}",2077,2077,0,1821,0,206,113,16,0,0,valid_incumbent_at_deadline
+T8_A1_seed3,T8,holdout,A1,3,2,"{""open_exhausted"": 1, ""time_budget"": 1}","{""ok"": 1, ""timeout"": 1}",2076,2076,0,1814,0,210,116,17,0,0,valid_incumbent_at_deadline
+T8_A1_seed4,T8,holdout,A1,4,2,"{""open_exhausted"": 1, ""time_budget"": 1}","{""ok"": 1, ""timeout"": 1}",2081,2081,0,1821,0,206,113,16,0,0,valid_incumbent_at_deadline
+T8_A2_seed0,T8,holdout,A2,0,2,"{""paper_iteration_limit"": 1, ""time_budget"": 1}","{""ok"": 1, ""timeout"": 1}",2354,2354,0,2005,0,150,263,29,0,0,valid_incumbent_at_deadline
+T8_A2_seed1,T8,holdout,A2,1,2,"{""paper_iteration_limit"": 1, ""time_budget"": 1}","{""ok"": 1, ""timeout"": 1}",2382,2382,0,2031,0,144,262,30,0,0,valid_incumbent_at_deadline
+T8_A2_seed2,T8,holdout,A2,2,2,"{""paper_iteration_limit"": 1, ""time_budget"": 1}","{""ok"": 1, ""timeout"": 1}",2330,2330,0,1970,0,149,259,29,0,0,valid_incumbent_at_deadline
+T8_A2_seed3,T8,holdout,A2,3,1,"{""time_budget"": 1}","{""timeout"": 1}",2291,2291,0,1971,0,140,263,30,0,0,valid_incumbent_at_deadline
+T8_A2_seed4,T8,holdout,A2,4,2,"{""paper_iteration_limit"": 1, ""time_budget"": 1}","{""ok"": 1, ""timeout"": 1}",2331,2331,0,1971,0,154,258,28,0,0,valid_incumbent_at_deadline
+T8_A3_seed0,T8,holdout,A3,0,2,"{""open_exhausted"": 1, ""time_budget"": 1}","{""ok"": 1, ""timeout"": 1}",1701,1701,0,1500,0,163,110,17,0,0,valid_incumbent_at_deadline
+T8_A3_seed1,T8,holdout,A3,1,2,"{""open_exhausted"": 1, ""time_budget"": 1}","{""ok"": 1, ""timeout"": 1}",1715,1715,0,1521,1,155,107,16,0,0,valid_incumbent_at_deadline
+T8_A3_seed2,T8,holdout,A3,2,2,"{""open_exhausted"": 1, ""time_budget"": 1}","{""ok"": 1, ""timeout"": 1}",1723,1723,0,1528,1,156,108,16,0,0,valid_incumbent_at_deadline
+T8_A3_seed3,T8,holdout,A3,3,2,"{""open_exhausted"": 1, ""time_budget"": 1}","{""ok"": 1, ""timeout"": 1}",1684,1684,0,1492,1,158,111,17,0,0,valid_incumbent_at_deadline
+T8_A3_seed4,T8,holdout,A3,4,2,"{""open_exhausted"": 1, ""time_budget"": 1}","{""ok"": 1, ""timeout"": 1}",1737,1737,0,1535,2,165,112,17,0,0,valid_incumbent_at_deadline
+T8_A4_seed0,T8,holdout,A4,0,1,"{""time_budget"": 1}","{""timeout"": 1}",1648,1648,0,1417,0,110,194,26,0,0,valid_incumbent_at_deadline
+T8_A4_seed1,T8,holdout,A4,1,1,"{""time_budget"": 1}","{""timeout"": 1}",1617,1617,0,1391,0,98,195,26,0,0,valid_incumbent_at_deadline
+T8_A4_seed2,T8,holdout,A4,2,1,"{""time_budget"": 1}","{""timeout"": 1}",1651,1651,0,1428,0,97,191,26,0,0,valid_incumbent_at_deadline
+T8_A4_seed3,T8,holdout,A4,3,1,"{""time_budget"": 1}","{""timeout"": 1}",1515,1515,0,1297,0,96,189,26,0,0,valid_incumbent_at_deadline
+T8_A4_seed4,T8,holdout,A4,4,1,"{""time_budget"": 1}","{""timeout"": 1}",1608,1608,0,1380,0,104,194,26,0,0,valid_incumbent_at_deadline
+T8_rrt_first_seed0,T8,holdout,rrt_first,0,1,"{""trees_connected"": 1}","{""ok"": 1}",90,49,41,0,41,90,0,0,0,0,first_attempt_valid
+T8_rrt_first_seed1,T8,holdout,rrt_first,1,1,"{""trees_connected"": 1}","{""ok"": 1}",71,46,25,0,25,71,0,0,0,0,first_attempt_valid
+T8_rrt_first_seed2,T8,holdout,rrt_first,2,1,"{""trees_connected"": 1}","{""ok"": 1}",167,79,88,0,88,167,0,0,0,0,first_attempt_valid
+T8_rrt_first_seed3,T8,holdout,rrt_first,3,1,"{""trees_connected"": 1}","{""ok"": 1}",52,36,16,0,16,52,0,0,0,0,first_attempt_valid
+T8_rrt_first_seed4,T8,holdout,rrt_first,4,1,"{""trees_connected"": 1}","{""ok"": 1}",58,39,19,0,19,58,0,0,0,0,first_attempt_valid
+T8_rrt_restart_seed0,T8,holdout,rrt_restart,0,747,"{""time_budget"": 1, ""trees_connected"": 746}","{""ok"": 746, ""timeout"": 1}",55189,33333,21855,0,21855,55189,0,0,0,0,valid_incumbent_at_deadline
+T8_rrt_restart_seed1,T8,holdout,rrt_restart,1,748,"{""trees_connected"": 748}","{""ok"": 748}",54112,32967,21145,0,21145,54112,0,0,1,0,valid_incumbent_at_deadline
+T8_rrt_restart_seed2,T8,holdout,rrt_restart,2,755,"{""time_budget"": 1, ""trees_connected"": 754}","{""ok"": 754, ""timeout"": 1}",55182,33463,21719,0,21719,55182,0,0,0,0,valid_incumbent_at_deadline
+T8_rrt_restart_seed3,T8,holdout,rrt_restart,3,727,"{""trees_connected"": 727}","{""ok"": 727}",53233,32375,20858,0,20858,53233,0,0,1,0,valid_incumbent_at_deadline
+T8_rrt_restart_seed4,T8,holdout,rrt_restart,4,753,"{""time_budget"": 1, ""trees_connected"": 752}","{""ok"": 752, ""timeout"": 1}",54624,33148,21476,0,21476,54624,0,0,0,0,valid_incumbent_at_deadline
+U1_A1_seed0,U1,negative,A1,0,60,"{""open_exhausted"": 59, ""time_budget"": 1}","{""no_path"": 59, ""timeout"": 1}",0,0,0,0,59,60,1,1,0,0,certified_negative_no_false_positive
+U1_A1_seed1,U1,negative,A1,1,55,"{""open_exhausted"": 54, ""time_budget"": 1}","{""no_path"": 54, ""timeout"": 1}",0,0,0,0,54,55,1,1,0,0,certified_negative_no_false_positive
+U1_A1_seed2,U1,negative,A1,2,58,"{""open_exhausted"": 57, ""time_budget"": 1}","{""no_path"": 57, ""timeout"": 1}",0,0,0,0,57,58,1,1,0,0,certified_negative_no_false_positive
+U1_A1_seed3,U1,negative,A1,3,58,"{""open_exhausted"": 57, ""time_budget"": 1}","{""no_path"": 57, ""timeout"": 1}",0,0,0,0,57,58,1,1,0,0,certified_negative_no_false_positive
+U1_A1_seed4,U1,negative,A1,4,60,"{""open_exhausted"": 59, ""time_budget"": 1}","{""no_path"": 59, ""timeout"": 1}",0,0,0,0,59,60,1,1,0,0,certified_negative_no_false_positive
+U1_A2_seed0,U1,negative,A2,0,40,"{""open_exhausted"": 39, ""time_budget"": 1}","{""no_path"": 39, ""timeout"": 1}",40,40,0,0,39,80,2,2,0,0,certified_negative_no_false_positive
+U1_A2_seed1,U1,negative,A2,1,39,"{""open_exhausted"": 38, ""time_budget"": 1}","{""no_path"": 38, ""timeout"": 1}",38,38,0,0,38,77,2,2,0,0,certified_negative_no_false_positive
+U1_A2_seed2,U1,negative,A2,2,38,"{""open_exhausted"": 37, ""time_budget"": 1}","{""no_path"": 37, ""timeout"": 1}",37,37,0,0,37,75,2,2,0,0,certified_negative_no_false_positive
+U1_A2_seed3,U1,negative,A2,3,39,"{""open_exhausted"": 38, ""time_budget"": 1}","{""no_path"": 38, ""timeout"": 1}",39,39,0,0,38,78,2,2,0,0,certified_negative_no_false_positive
+U1_A2_seed4,U1,negative,A2,4,41,"{""open_exhausted"": 40, ""time_budget"": 1}","{""no_path"": 40, ""timeout"": 1}",40,40,0,0,40,81,2,2,0,0,certified_negative_no_false_positive
+U1_A3_seed0,U1,negative,A3,0,41,"{""open_exhausted"": 40, ""time_budget"": 1}","{""no_path"": 40, ""timeout"": 1}",0,0,0,0,40,41,1,1,0,0,certified_negative_no_false_positive
+U1_A3_seed1,U1,negative,A3,1,41,"{""open_exhausted"": 40, ""time_budget"": 1}","{""no_path"": 40, ""timeout"": 1}",0,0,0,0,40,41,1,1,0,0,certified_negative_no_false_positive
+U1_A3_seed2,U1,negative,A3,2,41,"{""open_exhausted"": 40, ""time_budget"": 1}","{""no_path"": 40, ""timeout"": 1}",0,0,0,0,40,41,1,1,0,0,certified_negative_no_false_positive
+U1_A3_seed3,U1,negative,A3,3,41,"{""open_exhausted"": 40, ""time_budget"": 1}","{""no_path"": 40, ""timeout"": 1}",0,0,0,0,40,41,1,1,0,0,certified_negative_no_false_positive
+U1_A3_seed4,U1,negative,A3,4,39,"{""open_exhausted"": 38, ""time_budget"": 1}","{""no_path"": 38, ""timeout"": 1}",0,0,0,0,38,39,1,1,0,0,certified_negative_no_false_positive
+U1_A4_seed0,U1,negative,A4,0,28,"{""open_exhausted"": 27, ""time_budget"": 1}","{""no_path"": 27, ""timeout"": 1}",28,28,0,0,27,55,2,2,0,0,certified_negative_no_false_positive
+U1_A4_seed1,U1,negative,A4,1,29,"{""open_exhausted"": 28, ""time_budget"": 1}","{""no_path"": 28, ""timeout"": 1}",28,28,0,0,28,57,2,2,0,0,certified_negative_no_false_positive
+U1_A4_seed2,U1,negative,A4,2,29,"{""open_exhausted"": 28, ""time_budget"": 1}","{""no_path"": 28, ""timeout"": 1}",28,28,0,0,28,57,2,2,0,0,certified_negative_no_false_positive
+U1_A4_seed3,U1,negative,A4,3,28,"{""open_exhausted"": 27, ""time_budget"": 1}","{""no_path"": 27, ""timeout"": 1}",28,28,0,0,27,55,2,2,0,0,certified_negative_no_false_positive
+U1_A4_seed4,U1,negative,A4,4,27,"{""open_exhausted"": 26, ""time_budget"": 1}","{""no_path"": 26, ""timeout"": 1}",27,27,0,0,26,54,2,2,0,0,certified_negative_no_false_positive
+U1_rrt_first_seed0,U1,negative,rrt_first,0,1,"{""iteration_budget"": 1}","{""budget_exhausted"": 1}",14563,4563,10000,0,10000,14563,0,0,0,0,certified_negative_no_false_positive
+U1_rrt_first_seed1,U1,negative,rrt_first,1,1,"{""iteration_budget"": 1}","{""budget_exhausted"": 1}",14485,4485,10000,0,10000,14485,0,0,0,0,certified_negative_no_false_positive
+U1_rrt_first_seed2,U1,negative,rrt_first,2,1,"{""iteration_budget"": 1}","{""budget_exhausted"": 1}",14502,4502,10000,0,10000,14502,0,0,0,0,certified_negative_no_false_positive
+U1_rrt_first_seed3,U1,negative,rrt_first,3,1,"{""iteration_budget"": 1}","{""budget_exhausted"": 1}",14609,4609,10000,0,10000,14609,0,0,0,0,certified_negative_no_false_positive
+U1_rrt_first_seed4,U1,negative,rrt_first,4,1,"{""iteration_budget"": 1}","{""budget_exhausted"": 1}",14575,4575,10000,0,10000,14575,0,0,0,0,certified_negative_no_false_positive
+U1_rrt_restart_seed0,U1,negative,rrt_restart,0,10,"{""iteration_budget"": 9, ""time_budget"": 1}","{""budget_exhausted"": 9, ""timeout"": 1}",140609,43744,96864,0,96864,140609,0,0,0,0,certified_negative_no_false_positive
+U1_rrt_restart_seed1,U1,negative,rrt_restart,1,11,"{""iteration_budget"": 10, ""time_budget"": 1}","{""budget_exhausted"": 10, ""timeout"": 1}",150314,47020,103293,0,103293,150314,0,0,0,0,certified_negative_no_false_positive
+U1_rrt_restart_seed2,U1,negative,rrt_restart,2,10,"{""iteration_budget"": 9, ""time_budget"": 1}","{""budget_exhausted"": 9, ""timeout"": 1}",141305,44236,97068,0,97068,141305,0,0,0,0,certified_negative_no_false_positive
+U1_rrt_restart_seed3,U1,negative,rrt_restart,3,10,"{""iteration_budget"": 9, ""time_budget"": 1}","{""budget_exhausted"": 9, ""timeout"": 1}",145218,45583,99634,0,99634,145218,0,0,0,0,certified_negative_no_false_positive
+U1_rrt_restart_seed4,U1,negative,rrt_restart,4,10,"{""iteration_budget"": 9, ""time_budget"": 1}","{""budget_exhausted"": 9, ""timeout"": 1}",139645,43745,95899,0,95899,139645,0,0,0,0,certified_negative_no_false_positive

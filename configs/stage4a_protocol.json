@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "base_branch": "repro/gsunlight-stage3",
+  "base_commit": "d3a8e96",
+  "total_budget_s": 30,
+  "checkpoints_s": [0.1, 1, 5, 10, 30],
+  "planning_seeds": [0, 1, 2, 3, 4],
+  "pilot_seeds": [0, 1, 2],
+  "pilot_maps": ["S1", "D1", "D2"],
+  "max_nodes_per_attempt": 100000,
+  "max_iterations_per_attempt": 10000,
+  "bootstrap_seed": 4901,
+  "bootstrap_repetitions": 2000,
+  "timing_repetitions": 5,
+  "fixed_work_n_max": 3,
+  "cache_max_entries": 8192,
+  "angles": {
+    "A1": {"half_cone_degrees": 30, "theta_step_degrees": 5, "theory_rays": 252},
+    "A2": {"half_cone_degrees": 45, "theta_step_degrees": 7.5, "theory_rays": 252},
+    "A3": {"half_cone_degrees": 30, "theta_step_degrees": 3.3333333333333335, "theory_rays": 360},
+    "A4": {"half_cone_degrees": 45, "theta_step_degrees": 5, "theory_rays": 360}
+  },
+  "methods": ["A1", "A2", "A3", "A4", "rrt_first", "rrt_restart"],
+  "primary_gsunlight": "A4",
+  "primary_comparator": "rrt_restart",
+  "shared_parameters": {
+    "grid_capacity": 1, "grid_side_length": 5,
+    "phi_step_degrees": 10, "distance_step": 5,
+    "length_threshold": 15, "forward_distance": 3,
+    "n_max": 100, "alpha": 0.5, "epsilon": 0.8
+  },
+  "go_gate": {
+    "minimum_joint_coverage": 0.9,
+    "minimum_length_reduction": 0.05,
+    "minimum_families_with_reduction": 2,
+    "coverage_rule": "A4 held-out map-mean success must be no lower than RRT restart",
+    "quality_rule": "paired map-mean relative reduction >=5%, hierarchical 95% CI lower >0",
+    "safety_rule": "zero accepted invalid paths; any safety error blocks decision until reviewed",
+    "insufficient_evidence": "Pivot recommendation with explicit uncertainty, not proof of universal inferiority"
+  },
+  "fixed_work_maps": ["S1", "D1"],
+  "figure_tasks": ["D1", "T4", "T5", "T7"],
+  "clearance_sample_step": 0.5,
+  "turn_threshold_degrees": 1,
+  "restart_rule": "first attempt uses root planning seed; later seeds use SeedSequence([root_seed, attempt_index]); no result-based selection",
+  "postprocessing_policy": "identical interruptible greedy shortcut for every candidate; validation and shortcut consume the same global 30s budget, no free extra postprocessing allowance",
+  "measurement_policy": "fresh serial single-core workers, thread limits1; no per-ray or per-node event files in formal timing",
+  "resource_guard": "30s planning plus45s startup/output allowance; stop on worker errors or invalid accepted paths; record workload, memory, elapsed overshoot; never exclude a seed due to poor performance"
+}
