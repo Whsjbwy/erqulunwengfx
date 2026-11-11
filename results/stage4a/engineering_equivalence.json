@@ -1,0 +1,20 @@
+[
+  {
+    "scene": "S1",
+    "raw_path_equal": true,
+    "status_equal": true,
+    "termination_reason_equal": true,
+    "parameters_equal": true,
+    "expanded_sequence_equal": true,
+    "logical_counters_equal": true
+  },
+  {
+    "scene": "D1",
+    "raw_path_equal": true,
+    "status_equal": true,
+    "termination_reason_equal": true,
+    "parameters_equal": true,
+    "expanded_sequence_equal": true,
+    "logical_counters_equal": true
+  }
+]

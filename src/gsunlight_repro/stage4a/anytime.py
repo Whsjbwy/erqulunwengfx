@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import math
+import time
 from collections import Counter
 from contextlib import ExitStack
 from dataclasses import asdict
@@ -139,11 +140,13 @@ def plan(
     first = incumbent.raw_history[0] if incumbent.raw_history else None
     best = incumbent.history[-1] if incumbent.history else None
     # This final audit is outside planning and cannot introduce a new solution.
+    audit_started = time.perf_counter()
     if (
         incumbent.best_path is not None
         and not validate_path(incumbent.best_path, scenario.grid).valid
     ):
         raise RuntimeError("Final audit rejected an accepted incumbent")
+    audit_seconds = time.perf_counter() - audit_started
     result = {
         "method": method,
         "version": "stage4a-budgeted-static-v1",
@@ -151,6 +154,7 @@ def plan(
         "parameters": parameters,
         "total_budget_s": budget.seconds,
         "actual_total_s": total_s,
+        "post_run_audit_s": audit_seconds,
         "deadline_overshoot_s": max(0.0, total_s - budget.seconds),
         "termination_reason": stop_reason,
         "policy_completed_without_error": True,
