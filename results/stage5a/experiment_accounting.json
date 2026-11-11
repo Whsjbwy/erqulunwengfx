@@ -1,0 +1,19 @@
+{
+  "actual_independent_trials": 450,
+  "phase_counts": {
+    "development": 45,
+    "holdout": 270,
+    "pilot": 135
+  },
+  "expected_phase_counts": {
+    "pilot": 135,
+    "development": 45,
+    "holdout": 270
+  },
+  "complete": true,
+  "technical_errors": 0,
+  "known_negative_trials": 60,
+  "known_negative_false_positives": 0,
+  "accepted_geometry_trials": 380,
+  "note": "Mixed phases/radii/negative cases; do not interpret this total as one success rate"
+}

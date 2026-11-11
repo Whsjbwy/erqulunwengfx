@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "generator": "stage5a-seeded-geometry-v1-distinct-map-amendment1",
+  "units": "metres for new5A maps only; historical map units are not relabelled",
+  "spacing": [0.5, 0.5, 0.5],
+  "small_extent_m": [24, 18, 12],
+  "main_extent_m": [50, 36, 24],
+  "maps": [
+    {"id": "F5_EMPTY", "split": "pilot", "family": "empty", "scale": "small", "seed": 5000},
+    {"id": "F5_BOX", "split": "pilot", "family": "ordinary", "scale": "small", "seed": 5001},
+    {"id": "F5_BED", "split": "pilot", "family": "near_seabed", "scale": "small", "seed": 5002},
+    {"id": "F5_GAP", "split": "pilot", "family": "narrow", "scale": "small", "opening_m": 1.5, "seed": 5003},
+    {"id": "F5_SEALED", "split": "pilot", "family": "sealed", "scale": "small", "seed": 5004},
+    {"id": "D5_O", "split": "development", "family": "ordinary", "scale": "main", "seed": 5101},
+    {"id": "D5_B", "split": "development", "family": "near_seabed", "scale": "main", "seed": 5102},
+    {"id": "D5_N", "split": "development", "family": "narrow", "scale": "main", "opening_m": 3.5, "seed": 5103},
+    {"id": "H5_O1", "split": "holdout", "family": "ordinary", "scale": "main", "seed": 5201},
+    {"id": "H5_O2", "split": "holdout", "family": "ordinary", "scale": "main", "seed": 5202, "ordinary_variant": "offset_blocks"},
+    {"id": "H5_B1", "split": "holdout", "family": "near_seabed", "scale": "main", "seed": 5203},
+    {"id": "H5_B2", "split": "holdout", "family": "near_seabed", "scale": "main", "seed": 5204},
+    {"id": "H5_N1", "split": "holdout", "family": "narrow", "scale": "main", "opening_m": 3.5, "seed": 5205},
+    {"id": "H5_N2", "split": "holdout", "family": "narrow", "scale": "main", "opening_m": 2.5, "seed": 5206}
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "reason": "Correct identical O1/O2 before any O2 planning; never select on performance",
+  "unchanged_map_recipes_verified_against_frozen_code": 13,
+  "changed_scene_only": "H5_O2",
+  "reused_complete_trials": 185,
+  "reused_phase_counts": {
+    "development": 45,
+    "holdout": 5,
+    "pilot": 135
+  },
+  "interrupted_original_trials": [
+    "holdout_H5_O1_rrt_star_margin_seed0_step5"
+  ],
+  "storage": "Junctions reference original single-copy immutable results",
+  "protocol_equal": true
+}

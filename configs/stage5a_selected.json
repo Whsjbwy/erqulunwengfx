@@ -1,0 +1,35 @@
+{
+  "selection_scope": "Complete pilot/development only; no held-out outcomes",
+  "resource_gate_passed": true,
+  "steps_m": {
+    "rrt_connect": 5,
+    "rrt_star": 5,
+    "informed_rrt_star": 5
+  },
+  "development_comparisons": {
+    "rrt_star": {
+      "step3_valid": 9,
+      "step5_valid": 9,
+      "paired_map_mean_length3_minus5_m": 0.2465734662880629,
+      "joint_tasks": 9
+    },
+    "informed_rrt_star": {
+      "step3_valid": 9,
+      "step5_valid": 9,
+      "paired_map_mean_length3_minus5_m": 0.5135913428437224,
+      "joint_tasks": 9
+    }
+  },
+  "pilot_trials": 135,
+  "development_trials": 45,
+  "known_negative_false_positives": 0,
+  "maximum_planning_peak_rss_bytes": 85409792,
+  "maximum_tracking_wall_s_per_trial": 3.349394499997288,
+  "maximum_planning_overshoot_s": 0.03726189999724738,
+  "formal_maps": 6,
+  "formal_seeds_per_map": 5,
+  "formal_trials": 270,
+  "formal_budget_s": 30,
+  "planning_budget_upper_total_s": 8100,
+  "core_commit": "2096266"
+}

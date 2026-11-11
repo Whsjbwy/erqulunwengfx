@@ -1,0 +1,64 @@
+# 第五阶段5A测试与Windows证据
+
+状态：450个任务已完成，完整几何/时间审计及选中路径重放通过。测试、实际科研结果和模型假设分别报告，不以测试通过替代科研成功。
+
+## 基线与新增检查
+
+开始前在Windows11重新运行阶段4A基线：327 passed in7.24s，编译、Ruff静态检查和92文件格式检查通过。原有测试、源码、配置与实验结果不改。
+
+2096266核心实现为397 passed in8.57s；新增分析/审计后的4ac3ef9为407 passed in8.44s。地图独立性修正后全量410 passed in8.32s，compileall、Ruff及116文件格式检查通过。后来新增的路径需求描述测试另有7项相关检查通过，最终全量数量以实际交付检查为准。
+
+新增覆盖包括：
+
+- 闭体素的面/棱/角精确切触、圆角Minkowski几何、工作空间闭边界、零长度、非法数据、非单位spacing和随机小图穷举独立参考；90组每组三盒的分段二次距离与独立凸区间参考比对，80组零半径与历史oracle比对。
+- 14张新地图逐尺度见证与孔径/封闭证书、只读占用数组、相同seed重建、近底顶界及三类留出图各两张不重复。
+- RRT-Connect首轮三个seed与冻结代码的路径及节点/展开回归；RRT*重连后全部后代成本、循环拒绝、四组固定迭代重复、历史长度非增和完整端点/路径检查。
+- Informed三维球体积均匀性、椭球焦点距离、SO(3)旋转、反向/竖直/同点和最短长度退化；节点/时间预算不伪报无解。
+- 三维常值角速精确积分与数值积分比对，五种角速组合中间曲线弦偏差界；几何路径有效但转向/俯仰受限跟踪失败的反例，点路径不能当实体执行成功。
+- 原始记录不可覆盖、部分目录拒绝复用、开发前置条件、开发选参禁止查看留出、缺长度不填0、地图级配对保留失败、最终审计拒绝迟到/错误端点/截点倒填。
+
+## 实际Windows GitHub Actions
+
+只运行自编代码和合成测试，不下载作者材料，不声称CI执行了全部科研矩阵。官方job日志已逐一读取：
+
+| 提交 | 实际运行 | job | 测试结果 |
+| --- | --- | --- | --- |
+| 2096266 | [43008739841](https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43008739841) | 130482687525 | 397 passed in15.04s |
+| 4ac3ef9 | [43010937515](https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43010937515) | 130490082866 | 407 passed in18.57s |
+| b1c61ee | [43012387134](https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43012387134) | 130494984700 | 410 passed in18.64s |
+
+三次编译、Ruff及格式检查均成功，镜像windows-2025-vs2026。精简官方证据在results/stage5a/windows_ci.json；GitHub-hosted Windows与本机Windows11分列。
+
+## 发现的错误及修正
+
+地图生成器不同seed发生同几何，是有科研影响的审查遗漏。H5_O2尚未搜索即停止首批，保留5次已完成和1次未完成尝试；地图修正、全量复用和前置回归见STAGE5A_MAP_AMENDMENT_CN.md。没有删除失败seed，也未调整控制器提高成功率。
+
+其余开发错误是Ruff行长/变量命名、补丁与格式化后位置不匹配、PowerShell错误输出GBK解码及沙箱拒绝CIM/目录链接。分别经明确修正和正常授权环境完成；不静默忽略，不修改settings，不读取或提交凭据。
+
+## 最终本机交付检查
+
+实际执行并保留UTF-8完整日志，检查日期2026-11-11：
+
+| 命令 | 实际结果 |
+| --- | --- |
+| `python -m compileall -q src tests scripts` | 退出0 |
+| `python -m pytest -v` | 416 passed in8.62s，退出0 |
+| `python -m ruff check .` | All checks passed，退出0 |
+| `python -m ruff format --check .` | 123 files already formatted，退出0 |
+
+均使用仓库.venv/Scripts/python.exe。每项实际进程耗时和末尾输出在[local_checks.json](../results/stage5a/local_checks.json)，416个逐项结果在[pytest_results.csv](../results/stage5a/pytest_results.csv)。新增结果测试验证450组合完整、1305截点、缺失长度、机体/执行成功约束及实际重放证据，不要求某方法达到预设成功率。
+
+首完整种子额外审计234任务/5178条路径条目/441截点通过；完整最终审计450任务/13185条路径条目/13633历史引用/1305截点通过，非法声明半径路径与迟到认证0。380条选中路径全部按原流程重放，执行结果及数值指标一致；包括几何拒绝短路，不夸大为380次完整跟踪。相关证据为certificate_audit.json和execution_replay.csv。
+
+后续分析提交0821203的[Windows运行43014995657](https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43014995657)已实际成功，job130503726258：413 passed in18.28s，编译、Ruff及121文件格式检查通过。不将不同提交的数量混用。
+
+## 416项交付代码的Windows CI
+
+代码/结果提交361fcd9的两个实际Windows运行均成功，官方job日志均已读取：
+
+| 事件 | 运行/job | 实际结果 |
+| --- | --- | --- |
+| 分支push | [43038708010](https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43038708010) / 130584399610 | 416 passed in17.77s |
+| PR #5 | [43038823084](https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43038823084) / 130584808764 | 416 passed in18.60s |
+
+两次compileall、Ruff静态检查、123文件格式检查均成功，镜像windows-2025-vs2026。精简原始日志在[windows_ci.json](../results/stage5a/windows_ci.json)。之后仅补CI证据和审核链接，最后元数据提交的状态在[PR #5](https://github.com/Whsjbwy/erqulunwengfx/pull/5)中核实。

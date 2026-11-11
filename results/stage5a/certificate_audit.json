@@ -1,0 +1,13 @@
+{
+  "trials": 450,
+  "path_entries": 13185,
+  "history_events": 13633,
+  "checkpoints": 1305,
+  "executions": 732,
+  "accepted_executions": 116,
+  "replayed_selected_paths": 380,
+  "invalid_paths": 0,
+  "late_certificates": 0,
+  "execution_flag_inconsistencies": 0,
+  "status": "passed"
+}

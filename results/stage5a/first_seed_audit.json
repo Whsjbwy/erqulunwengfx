@@ -1,0 +1,12 @@
+{
+  "trials": 234,
+  "path_entries": 5178,
+  "history_events": 5426,
+  "checkpoints": 441,
+  "executions": 340,
+  "accepted_executions": 74,
+  "status": "partial_passed",
+  "scope": "135 pilot +45 development +54 heldout seed0 only",
+  "not_final_matrix_audit": true,
+  "own_helper_affinity_mask": 256
+}

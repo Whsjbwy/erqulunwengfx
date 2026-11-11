@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-11T22:25:59.149391",
+  "checks": [
+    {
+      "command": "python -m compileall -q src tests scripts",
+      "exit_code": 0,
+      "elapsed_s": 0.12671799999952782,
+      "last_lines": []
+    },
+    {
+      "command": "python -m pytest -v",
+      "exit_code": 0,
+      "elapsed_s": 9.21060249999573,
+      "last_lines": [
+        "tests/test_stage5a_tracking.py::test_valid_steep_path_can_fail_while_rates_stay_limited PASSED [ 99%]",
+        "tests/test_stage5a_tracking.py::test_rate_limited_controller_can_cut_into_obstacle_on_valid_polyline PASSED [100%]",
+        "",
+        "============================= 416 passed in 8.62s ============================="
+      ]
+    },
+    {
+      "command": "python -m ruff check .",
+      "exit_code": 0,
+      "elapsed_s": 0.10235670000110986,
+      "last_lines": [
+        "All checks passed!"
+      ]
+    },
+    {
+      "command": "python -m ruff format --check .",
+      "exit_code": 0,
+      "elapsed_s": 0.10866659999737749,
+      "last_lines": [
+        "123 files already formatted"
+      ]
+    }
+  ]
+}
