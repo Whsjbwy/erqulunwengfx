@@ -1,0 +1,14 @@
+{
+  "unique_trials": 112,
+  "phase_view_rows": 130,
+  "summary_groups": 45,
+  "strict_valid_returned_paths": 81,
+  "invalid_returned_paths": 0,
+  "status_counts": {
+    "ok": 53,
+    "budget_exhausted": 3,
+    "no_path": 19,
+    "timeout": 37
+  },
+  "errors": 0
+}

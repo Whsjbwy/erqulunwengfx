@@ -1,0 +1,13 @@
+{
+  "raw_path_equal": true,
+  "status_equal": true,
+  "termination_reason_equal": true,
+  "counters_equal": true,
+  "parameters_equal": true,
+  "call_seconds": {
+    "observed": 8.657867899999928,
+    "profile": 19.233879400000205,
+    "unobserved": 8.42565330000025
+  },
+  "note": "Fixed-work profiling controls only; timing is not a baseline ranking."
+}

@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-11T11:28:13.789246",
+  "checks": [
+    {
+      "command": "python -m compileall -q src tests scripts",
+      "exit_code": 0,
+      "elapsed_s": 0.11021959999925457,
+      "last_lines": []
+    },
+    {
+      "command": "python -m pytest -v",
+      "exit_code": 0,
+      "elapsed_s": 7.099213699999382,
+      "last_lines": [
+        "tests/test_stage3_results.py::test_observed_histories_and_safety_metrics_are_consistent PASSED [ 99%]",
+        "tests/test_stage3_results.py::test_sweeps_include_every_predeclared_seed_and_factor PASSED [100%]",
+        "",
+        "============================= 265 passed in 6.56s ============================="
+      ]
+    },
+    {
+      "command": "python -m ruff check .",
+      "exit_code": 0,
+      "elapsed_s": 0.10148389999994833,
+      "last_lines": [
+        "All checks passed!"
+      ]
+    },
+    {
+      "command": "python -m ruff format --check .",
+      "exit_code": 0,
+      "elapsed_s": 0.10284090000004653,
+      "last_lines": [
+        "66 files already formatted"
+      ]
+    }
+  ]
+}
