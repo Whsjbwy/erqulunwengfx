@@ -1,0 +1,25 @@
+name: Stage 5A Windows geometry and kinematics tests
+on:
+  push:
+    branches: [pivot/auv-rrt-stage5a]
+  pull_request:
+    branches: [repro/gsunlight-stage4a]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -e '.[dev]'
+      - run: python -m compileall -q src tests scripts
+      - run: python -m pytest -v
+      - run: python -m ruff check .
+      - run: python -m ruff format --check .
