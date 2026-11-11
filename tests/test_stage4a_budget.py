@@ -183,6 +183,45 @@ def test_cache_size_is_bounded_and_patches_restore_on_exception(empty_scene) -> 
     assert sampling.ray_free_length is original
 
 
+@pytest.mark.parametrize(
+    "point,direction,expected",
+    [
+        ((0.5, 2.5, 2.0), (1, 0, 0), 1.0),
+        ((0.5, 2.0, 2.0), (1, 0, 0), 1.0),
+        ((0.5, 0.5, 0.5), (1, 1, 1), 2.5),
+    ],
+)
+def test_cached_face_edge_and_corner_contacts_match_closed_geometry(
+    point, direction, expected
+) -> None:
+    cells = np.zeros((6, 6, 6), dtype=bool)
+    cells[2, 2, 2] = True
+    grid = OccupancyMap(cells)
+    grid.occupancy.setflags(write=False)
+    measurement = Measurement(grid, 2)
+    with measurement.installed():
+        for _ in range(2):
+            actual = sampling.ray_free_length(
+                point, direction, grid, 0.5, Deadline(10), SearchCounters()
+            )
+            assert actual == expected
+    assert measurement.cache_hits == 1
+
+
+def test_invalid_ray_origin_is_never_cached_as_a_success() -> None:
+    cells = np.zeros((5, 5, 5), dtype=bool)
+    cells[2, 2, 2] = True
+    grid = OccupancyMap(cells)
+    grid.occupancy.setflags(write=False)
+    measurement = Measurement(grid, 2)
+    with measurement.installed():
+        with pytest.raises(ValueError, match="origin"):
+            sampling.ray_free_length(
+                (2.5, 2.5, 3.0), (0, 0, 1), grid, 0.5, Deadline(10), SearchCounters()
+            )
+    assert not measurement.cache
+
+
 @pytest.mark.parametrize("method", ["A1", "A2", "A3", "A4", "rrt_first", "rrt_restart"])
 def test_anytime_accepts_only_valid_paths_and_restores_backends(
     empty_scene, method
