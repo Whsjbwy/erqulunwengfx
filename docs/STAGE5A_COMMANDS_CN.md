@@ -47,9 +47,9 @@ git switch -c pivot/auv-rrt-stage5a repro/gsunlight-stage4a
   --local-dir ../local_only/stage5a_amend1 --output results/stage5a --figures
 ```
 
-b1c61ee在H5_O2首次搜索前推送，地图独立性修正有明确Git记录。恢复命令正在执行，完成状态应以experiment_accounting.json和完整性审计为准，不能以命令已启动代替实验完成。
+b1c61ee在H5_O2首次搜索前推送，地图独立性修正有明确Git记录。恢复命令已实际正常退出0，完整270次留出完成；功能/开发连同复用共450个完成任务，另1次未完成尝试单列。experiment_accounting.json的complete=true已核实。
 
-## 全部完成后执行的审计（当前尚未执行）
+## 已实际完成的最终审计与检查
 
 ```powershell
 .venv/Scripts/python.exe -m gsunlight_repro.stage5a.audit `
@@ -63,6 +63,8 @@ git status --short
 ```
 
 审计只读取原始坐标、历史和截点，额外重放选中路径，不能改变原记录或反过来选更好的输出。
+
+审计实际退出0：450任务、13185条归档路径条目、13633条历史引用、1305个截点通过；380条选中路径按原执行流程重放，结果/指标一致。随后实际重新派生最终CSV/图。修正显示留白后最终本地416 passed in8.62s，编译、Ruff与123文件格式检查成功；完整日志保留仓库外，逐项表在results/stage5a/pytest_results.csv。
 
 ## 研究者从头独立重复的方法
 

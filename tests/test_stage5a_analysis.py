@@ -5,6 +5,7 @@ import pytest
 from gsunlight_repro.stage5a.analysis import (
     analyze,
     choose_steps,
+    comparison_summary,
     paired_map_summary,
     paired_rows,
     summaries,
@@ -169,3 +170,11 @@ def test_summary_exposes_geometric_and_execution_denominators_separately() -> No
     assert result["trials"] == 2 and result["geometric_solutions"] == 1
     assert result["execution_eligible"] == 1 and result["execution_successes"] == 0
     assert result["best_length_mean_solved_only"] == 90
+    aggregate = comparison_summary([row, failed])[0]
+    assert aggregate["known_feasible_tasks"] == 2
+    assert aggregate["execution_eligible"] == 1
+    assert aggregate["geometry_rate_map_mean_feasible"] == 0.5
+    assert aggregate["execution_rate_of_eligible"] == 0
+    unknown = comparison_summary([failed | {"reachability": "unknown"}])[0]
+    assert unknown["known_infeasible_tasks"] == 0
+    assert unknown["unknown_feasibility_tasks"] == 1

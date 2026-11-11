@@ -12,6 +12,26 @@ from statistics import mean, median, stdev
 from .maps import body_radius, load_scene, read_config
 from .path_features import describe_path
 
+COUNTERS = (
+    "inserted_nodes",
+    "expanded_nodes",
+    "generated_candidates",
+    "outer_iterations",
+    "goal_biased_samples",
+    "uniform_samples",
+    "informed_samples",
+    "sample_rejections",
+    "duplicate_samples",
+    "tree_swaps",
+    "parent_checks",
+    "rewire_checks",
+    "rewires",
+    "descendant_cost_updates",
+    "rejected_physical_obstacle",
+    "rejected_mission_ceiling",
+    "rejected_workspace_boundary",
+)
+
 
 def write_csv(path: Path, rows: list[dict]) -> None:
     """Serialize compact tables, preserving absent lengths as empty fields."""
@@ -236,6 +256,79 @@ def paired_rows(rows: list[dict]) -> list[dict]:
     return output
 
 
+def comparison_summary(rows: list[dict]) -> list[dict]:
+    """Give map-weighted coverage with solved/eligible denominators explicit."""
+    groups: dict[tuple, list[dict]] = defaultdict(list)
+    for row in rows:
+        if row["phase"] == "holdout":
+            groups[(row["geometry_mode"], row["method"])].append(row)
+    output = []
+    for (mode, method), group in sorted(groups.items()):
+        feasible = [
+            row
+            for row in group
+            if row["reachability"].startswith("certified_reachable")
+        ]
+        solved = [row for row in feasible if row["strict_geometry_valid"]]
+        eligible = [row for row in feasible if row["execution_eligible"]]
+
+        def map_rate(current: list[dict], key: str) -> float | None:
+            per_map: dict[str, list[bool]] = defaultdict(list)
+            for row in current:
+                per_map[row["scene"]].append(row[key] is True)
+            return (
+                mean(mean(values) for values in per_map.values()) if per_map else None
+            )
+
+        output.append(
+            {
+                "geometry_mode": mode,
+                "method": method,
+                "all_tasks": len(group),
+                "known_feasible_tasks": len(feasible),
+                "known_infeasible_tasks": sum(
+                    row["reachability"].startswith("certified_unreachable")
+                    for row in group
+                ),
+                "unknown_feasibility_tasks": sum(
+                    row["reachability"] == "unknown" for row in group
+                ),
+                "known_feasible_maps": len({row["scene"] for row in feasible}),
+                "geometric_solutions": len(solved),
+                "geometry_rate_map_mean_feasible": map_rate(
+                    feasible, "strict_geometry_valid"
+                ),
+                "nominal_body_valid": sum(
+                    row["nominal_body_valid"] is True for row in feasible
+                ),
+                "execution_eligible": len(eligible),
+                "execution_successes": sum(
+                    row["execution_success"] is True for row in feasible
+                ),
+                "execution_rate_map_mean_all_feasible": map_rate(
+                    feasible, "execution_success"
+                ),
+                "execution_rate_of_eligible": mean(
+                    row["execution_success"] for row in eligible
+                )
+                if eligible
+                else None,
+                "physical_execution_successes": sum(
+                    row["physical_execution_success"] is True for row in feasible
+                ),
+                "raw_execution_successes": sum(
+                    row.get("raw_execution_success") is True for row in feasible
+                ),
+                "first_valid_task_median_s_solved_only": median(
+                    row["first_valid_time_s"] for row in solved
+                )
+                if solved
+                else None,
+            }
+        )
+    return output
+
+
 def paired_map_summary(pairs: list[dict]) -> list[dict]:
     """Average paired gains within maps before comparing maps of each family."""
     grouped: dict[tuple, list[dict]] = defaultdict(list)
@@ -294,7 +387,7 @@ def analyze(local: Path, output: Path) -> dict:
     histories, curves, executions, features = [], [], [], []
     for item in evidence:
         row = {**item["row"], "dataset_revision": revision}
-        row = {**row, **{"c_" + key: value for key, value in row["counters"].items()}}
+        row = {**row, **{"c_" + key: row["counters"].get(key, 0) for key in COUNTERS}}
         rows.append(row)
         identity = {
             key: row[key]
@@ -344,6 +437,7 @@ def analyze(local: Path, output: Path) -> dict:
     write_csv(output / "executions.csv", executions)
     write_csv(output / "path_features.csv", features)
     write_csv(output / "map_summary.csv", summaries(rows))
+    write_csv(output / "comparison_summary.csv", comparison_summary(rows))
     pairs = paired_rows(rows)
     write_csv(output / "paired_comparisons.csv", pairs)
     write_csv(output / "paired_map_summary.csv", paired_map_summary(pairs))

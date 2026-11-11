@@ -1,0 +1,10 @@
+geometry_mode,method,all_tasks,known_feasible_tasks,known_infeasible_tasks,unknown_feasibility_tasks,known_feasible_maps,geometric_solutions,geometry_rate_map_mean_feasible,nominal_body_valid,execution_eligible,execution_successes,execution_rate_map_mean_all_feasible,execution_rate_of_eligible,physical_execution_successes,raw_execution_successes,first_valid_task_median_s_solved_only
+body,informed_rrt_star,30,30,0,0,6,28,0.9333333333333333,28,28,1,0.03333333333333333,0.03571428571428571,1,3,0.13122809999913443
+body,rrt_connect,30,30,0,0,6,28,0.9333333333333333,28,28,11,0.3666666666666667,0.39285714285714285,11,1,0.08914965000076336
+body,rrt_star,30,30,0,0,6,28,0.9333333333333333,28,28,7,0.23333333333333334,0.25,7,6,0.12139939999906346
+margin,informed_rrt_star,30,25,5,0,5,24,0.96,24,24,0,0,0,14,1,0.1701136999981827
+margin,rrt_connect,30,25,5,0,5,25,1,25,25,7,0.28,0.28,13,0,0.08029520000127377
+margin,rrt_star,30,25,5,0,5,24,0.96,24,24,5,0.2,0.20833333333333334,14,4,0.1833149499980209
+point,informed_rrt_star,30,30,0,0,6,30,1,0,0,0,0,,0,0,0.03522200000224984
+point,rrt_connect,30,30,0,0,6,30,1,0,0,0,0,,0,0,0.020990400000300724
+point,rrt_star,30,30,0,0,6,30,1,0,0,0,0,,0,0,0.03327490000083344

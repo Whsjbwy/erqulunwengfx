@@ -1,6 +1,6 @@
 # 第五阶段5A测试与Windows证据
 
-状态：科研留出矩阵仍在运行，以下仅报告已完成的实际检查。最终交付检查另补，不能用测试通过代替科研实验完成。
+状态：450个任务已完成，完整几何/时间审计及选中路径重放通过。测试、实际科研结果和模型假设分别报告，不以测试通过替代科研成功。
 
 ## 基线与新增检查
 
@@ -34,3 +34,20 @@
 地图生成器不同seed发生同几何，是有科研影响的审查遗漏。H5_O2尚未搜索即停止首批，保留5次已完成和1次未完成尝试；地图修正、全量复用和前置回归见STAGE5A_MAP_AMENDMENT_CN.md。没有删除失败seed，也未调整控制器提高成功率。
 
 其余开发错误是Ruff行长/变量命名、补丁与格式化后位置不匹配、PowerShell错误输出GBK解码及沙箱拒绝CIM/目录链接。分别经明确修正和正常授权环境完成；不静默忽略，不修改settings，不读取或提交凭据。
+
+## 最终本机交付检查
+
+实际执行并保留UTF-8完整日志，检查日期2026-11-11：
+
+| 命令 | 实际结果 |
+| --- | --- |
+| `python -m compileall -q src tests scripts` | 退出0 |
+| `python -m pytest -v` | 416 passed in8.62s，退出0 |
+| `python -m ruff check .` | All checks passed，退出0 |
+| `python -m ruff format --check .` | 123 files already formatted，退出0 |
+
+均使用仓库.venv/Scripts/python.exe。每项实际进程耗时和末尾输出在[local_checks.json](../results/stage5a/local_checks.json)，416个逐项结果在[pytest_results.csv](../results/stage5a/pytest_results.csv)。新增结果测试验证450组合完整、1305截点、缺失长度、机体/执行成功约束及实际重放证据，不要求某方法达到预设成功率。
+
+首完整种子额外审计234任务/5178条路径条目/441截点通过；完整最终审计450任务/13185条路径条目/13633历史引用/1305截点通过，非法声明半径路径与迟到认证0。380条选中路径全部按原流程重放，执行结果及数值指标一致；包括几何拒绝短路，不夸大为380次完整跟踪。相关证据为certificate_audit.json和execution_replay.csv。
+
+后续分析提交0821203的[Windows运行43014995657](https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43014995657)已实际成功，job130503726258：413 passed in18.28s，编译、Ruff及121文件格式检查通过。最终416项代码提交CI将在下方单列，不将不同提交的数量混用。

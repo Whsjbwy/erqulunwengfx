@@ -137,7 +137,7 @@ def plot_fixed_paths(
         for index, method in enumerate(protocol["methods"]):
             axis = fig.add_subplot(1, 3, index + 1, projection="3d")
             if len(shown):
-                axis.scatter(*shown.T, color="gray", alpha=0.12, s=1)
+                axis.scatter(*shown.T, color="gray", alpha=0.3, s=3)
             if scene.heights is not None:
                 xx, yy = np.meshgrid(
                     (np.arange(scene.grid.shape[0]) + 0.5) * scene.grid.spacing[0],
@@ -221,7 +221,12 @@ def plot_fixed_paths(
         fig.suptitle(
             scene_id + " / seed0 / body planning / display voxels and tracks decimated"
         )
-        fig.savefig(output / (scene_id + "_body_seed0.png"), dpi=150)
+        fig.savefig(
+            output / (scene_id + "_body_seed0.png"),
+            dpi=150,
+            bbox_inches="tight",
+            pad_inches=0.2,
+        )
         plt.close(fig)
 
 
