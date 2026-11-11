@@ -226,7 +226,9 @@ def test_invalid_ray_origin_is_never_cached_as_a_success() -> None:
 def test_anytime_accepts_only_valid_paths_and_restores_backends(
     empty_scene, method
 ) -> None:
-    protocol = json.loads(Path("configs/stage4a_protocol.json").read_text())
+    protocol = json.loads(
+        Path("configs/stage4a_protocol.json").read_text(encoding="utf-8")
+    )
     original = paper_planner._reconstruct
     result = plan(empty_scene, method, 0, protocol, seconds=0.05)
     assert result["strict_valid"]
@@ -249,7 +251,9 @@ def test_restart_streams_are_deterministic_and_not_selected_by_results() -> None
 
 
 def test_angle_controls_have_expected_theoretical_work() -> None:
-    protocol = json.loads(Path("configs/stage4a_protocol.json").read_text())
+    protocol = json.loads(
+        Path("configs/stage4a_protocol.json").read_text(encoding="utf-8")
+    )
     for angle in protocol["angles"].values():
         theta = list(
             sampling.angle_values(

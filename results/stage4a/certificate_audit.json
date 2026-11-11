@@ -1,0 +1,12 @@
+{
+  "independent_trials": 402,
+  "archived_path_entries": 1886,
+  "distinct_map_polylines_checked": 1307,
+  "history_events_checked": 2442,
+  "checkpoints_checked": 2010,
+  "invalid_paths": 0,
+  "endpoint_mismatches": 0,
+  "late_certificates": 0,
+  "checkpoint_inconsistencies": 0,
+  "status": "passed"
+}

@@ -54,7 +54,9 @@ def test_successful_survivors_cannot_override_low_coverage() -> None:
     rows = fixture_pairs()
     rows[0].update(left_valid=False, relative_length_gain=None)
     estimate = paired_estimate(rows, repetitions=100)
-    gate = json.loads(Path("configs/stage4a_protocol.json").read_text())["go_gate"]
+    gate = json.loads(
+        Path("configs/stage4a_protocol.json").read_text(encoding="utf-8")
+    )["go_gate"]
     assert (
         decide(estimate, gate, complete=True, invalid_paths=0)["recommendation"]
         == "Pivot"
@@ -71,7 +73,9 @@ def test_successful_survivors_cannot_override_low_coverage() -> None:
 
 def test_go_requires_all_preregistered_conditions() -> None:
     estimate = paired_estimate(fixture_pairs(), repetitions=100)
-    gate = json.loads(Path("configs/stage4a_protocol.json").read_text())["go_gate"]
+    gate = json.loads(
+        Path("configs/stage4a_protocol.json").read_text(encoding="utf-8")
+    )["go_gate"]
     assert (
         decide(estimate, gate, complete=True, invalid_paths=0)["recommendation"] == "Go"
     )

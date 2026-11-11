@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-11T16:04:49.532122",
+  "checks": [
+    {
+      "command": "python -m compileall -q src tests scripts",
+      "exit_code": 0,
+      "elapsed_s": 0.13126489999922342,
+      "last_lines": []
+    },
+    {
+      "command": "python -m pytest -v",
+      "exit_code": 0,
+      "elapsed_s": 7.372730099999899,
+      "last_lines": [
+        "tests/test_stage4a_statistics.py::test_empty_analysis_is_incomplete_and_preserves_configuration PASSED [ 99%]",
+        "tests/test_stage4a_statistics.py::test_map_summary_keeps_coverage_and_conditional_quality_together PASSED [100%]",
+        "",
+        "============================= 327 passed in 6.90s ============================="
+      ]
+    },
+    {
+      "command": "python -m ruff check .",
+      "exit_code": 0,
+      "elapsed_s": 0.09837659999902826,
+      "last_lines": [
+        "All checks passed!"
+      ]
+    },
+    {
+      "command": "python -m ruff format --check .",
+      "exit_code": 0,
+      "elapsed_s": 0.09754800000155228,
+      "last_lines": [
+        "92 files already formatted"
+      ]
+    }
+  ]
+}

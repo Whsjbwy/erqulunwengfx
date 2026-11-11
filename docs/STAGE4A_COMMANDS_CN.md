@@ -57,6 +57,10 @@ foreach ($phase in @('development','holdout','negative')) {
 
 .venv\Scripts\python.exe -m gsunlight_repro.stage4a.analysis `
   --local-dir ..\local_only\stage4a --output results\stage4a
+
+.venv\Scripts\python.exe -m gsunlight_repro.stage4a.audit `
+  --local-dir ..\local_only\stage4a `
+  --output results\stage4a\certificate_audit.json --expected-trials 402
 ```
 
 每阶段先所有方法seed0，再按1—4执行；pilot只到2。相同预检任务自动复用，不重算、不增加独立样本。每个新trial启动全新子进程，固定单个可用逻辑CPU、普通优先级，线程环境1。无有效路径也保留完整失败记录，不会改种子。使用`--no-figures`可以仅重新派生表格，不影响原始证据。
@@ -75,3 +79,5 @@ git status --short
 ```
 
 公开提交只含自编代码、合成配置、测试、精简表格、图及报告。原始每次试验只保存一份本地证据，改善路径按path_id引用，不重复保存逐射线轨迹；无额外文件hash/校验清单。Git push只针对stage4a，PR目标stage3，不合并。实际试验是否已完成须看experiment_accounting.json，不能以命令列表代替完成证据。
+
+402次完成后实际执行audit，再执行analysis重新派生全部最终表格和图；审计1307条不同图/折线组合，检查2010个时间截点，全部通过。没有重跑不利种子或改写任何原始result.json。

@@ -64,7 +64,7 @@ def test_incomplete_trial_and_changed_configuration_are_explicit(tmp_path) -> No
     with pytest.raises(FileExistsError, match="Incomplete"):
         runner.run("D1", "A1", 0)
     config = runner.local / "configuration.json"
-    document = json.loads(config.read_text())
+    document = json.loads(config.read_text(encoding="utf-8"))
     document["protocol"]["total_budget_s"] = 31
     config.write_text(json.dumps(document))
     with pytest.raises(ValueError, match="configuration"):
@@ -80,7 +80,9 @@ def test_fixed_work_observer_and_cache_preserve_backend_state(monkeypatch) -> No
         "unit", grid, (0.5, 0.5, 0.5), (4.5, 4.5, 4.5), 0, "unit", None, "test"
     )
     monkeypatch.setattr(engineering, "load_map", lambda _: scene)
-    protocol = json.loads(Path("configs/stage4a_protocol.json").read_text())
+    protocol = json.loads(
+        Path("configs/stage4a_protocol.json").read_text(encoding="utf-8")
+    )
     cases = [
         fixed_work("unit", mode, protocol, trace=True)
         for mode in ("bare", "light", "cache")
@@ -108,7 +110,9 @@ def test_no_attempt_budget_has_no_fabricated_solution() -> None:
     scene = Scenario(
         "unit", grid, (0.5, 0.5, 0.5), (1.5, 1.5, 1.5), 0, "unit", None, "test"
     )
-    protocol = json.loads(Path("configs/stage4a_protocol.json").read_text())
+    protocol = json.loads(
+        Path("configs/stage4a_protocol.json").read_text(encoding="utf-8")
+    )
     result = plan(scene, "A1", 0, protocol, seconds=1e-12)
     assert result["attempts"] == 0
     assert result["best_length"] is result["first_valid_time_s"] is None

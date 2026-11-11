@@ -14,6 +14,8 @@
 - `map_features.csv`：新地图的种子、尺寸、端点、占用率、见证长度和设计开口宽度。普通障碍/地形不伪称已求出全空间最窄通道。
 - `engineering_equivalence.json`、`fixed_work_timing.csv`：非约束固定工作量等价性及各模式五次完整计时，缓存模式不替换主矩阵。
 - `experiment_accounting.json`、`decision.json`：完整性及预注册Go/Pivot门槛。未完成必须保持Incomplete；不是把当前部分结果伪报成最终结论。
+- `certificate_audit.json`：402次运行的额外几何及时间溯源审计，完整坐标仅保存在本地。
+- `local_checks.json`、`pytest_results.csv`：本机实际检查及327项逐项测试记录；Windows CI的实际日志与链接见[测试报告](../../docs/STAGE4A_TEST_RESULTS_CN.md)。
 
 G-Sunlight四组使用冻结安全参考，外层允许预定随机流重启；RRT首解只运行一次，RRT重启用完同一30秒总预算。所有候选采用相同完整校验和可中断shortcut，不另给免费后处理时间。其结果身份是stage4a-budgeted-static-v1，不冒充原论文单次控制器。后处理未完成时可保留此前已确认的有效原始路径，best_kind明确区分。
 

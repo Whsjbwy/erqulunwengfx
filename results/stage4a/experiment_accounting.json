@@ -1,0 +1,15 @@
+{
+  "expected_unique_trials": 402,
+  "actual_unique_trials": 402,
+  "complete": true,
+  "accepted_solution_trials": 304,
+  "invalid_candidates": 0,
+  "technical_error_records": 0,
+  "split_trial_counts": {
+    "development": 120,
+    "legacy": 12,
+    "holdout": 240,
+    "negative": 30
+  },
+  "recommendation": "Pivot"
+}
