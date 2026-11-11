@@ -283,10 +283,16 @@ def analyze(local: Path, output: Path) -> dict:
     """Derive small public tables; never write to any original result.json."""
     evidence = read_evidence(local)
     output.mkdir(parents=True, exist_ok=True)
+    configuration = local / "configuration.json"
+    revision = (
+        json.loads(configuration.read_text(encoding="utf-8"))["maps"]["generator"]
+        if configuration.exists()
+        else "unconfigured_empty_analysis"
+    )
     rows = []
     histories, curves, executions = [], [], []
     for item in evidence:
-        row = item["row"]
+        row = {**item["row"], "dataset_revision": revision}
         row = {**row, **{"c_" + key: value for key, value in row["counters"].items()}}
         rows.append(row)
         identity = {

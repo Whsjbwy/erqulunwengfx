@@ -34,3 +34,9 @@ def test_seeded_maps_repeat_and_near_bed_has_no_free_top_escape() -> None:
         == "mission_ceiling"
     )
     assert first.specification["seed"] == 5204
+
+
+@pytest.mark.parametrize("family", ["O", "B", "N"])
+def test_two_heldout_maps_have_distinct_voxel_geometry(family: str) -> None:
+    first, second = load_scene(f"H5_{family}1"), load_scene(f"H5_{family}2")
+    assert not np.array_equal(first.grid.occupancy, second.grid.occupancy)

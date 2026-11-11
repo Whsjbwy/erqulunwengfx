@@ -97,13 +97,24 @@ def load_scene(scene_id: str, document: dict | None = None) -> Scene:
         witness = [start, goal]
     elif family == "ordinary":
         middle = extent[0] / 2 + float(rng.integers(-1, 2)) * 0.5
-        box(
-            [middle - 2, 2 if spec["scale"] == "small" else 10, 0],
-            [middle + 2, float(extent[1] - 5), 7 if spec["scale"] == "small" else 14],
-        )
-        if spec["scale"] == "main":
-            box([10, 2, 0], [15, 10, 8])
-            box([35, 25, 0], [40, 34, 10])
+        if spec.get("ordinary_variant") == "offset_blocks":
+            # Prospective O2 correction; all other map recipes stay unchanged.
+            middle = 0.55 * extent[0]
+            box([middle - 2, 8, 0], [middle + 2, float(extent[1] - 7), 16])
+            box([11, 3, 0], [16, 12, 9])
+            box([35, 23, 0], [41, 34, 11])
+        else:
+            box(
+                [middle - 2, 2 if spec["scale"] == "small" else 10, 0],
+                [
+                    middle + 2,
+                    float(extent[1] - 5),
+                    7 if spec["scale"] == "small" else 14,
+                ],
+            )
+            if spec["scale"] == "main":
+                box([10, 2, 0], [15, 10, 8])
+                box([35, 25, 0], [40, 34, 10])
         top = float(extent[2] - 1.5)
         witness = [start, (start[0], start[1], top), (goal[0], goal[1], top), goal]
     elif family in ("narrow", "sealed"):
