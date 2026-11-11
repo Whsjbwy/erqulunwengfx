@@ -16,7 +16,7 @@ import time
 import traceback
 from dataclasses import asdict
 from pathlib import Path
-from typing import Any
+from typing import Any, TextIO
 
 from .. import astar, paper_planner, rrt_connect, safety_planner
 from ..benchmark import assess_path
@@ -27,6 +27,25 @@ from ..scenarios import load_scenario
 from .observation import FirstValidFound, Observation
 
 LOGGER = logging.getLogger(__name__)
+
+
+def terminate_worker(process: subprocess.Popen, log: TextIO) -> int:
+    """Stop only this worker tree, including the Windows venv interpreter child."""
+    finished = process.poll()
+    if finished is not None:
+        return finished
+    if os.name == "nt":
+        outcome = subprocess.run(
+            ["taskkill", "/PID", str(process.pid), "/T", "/F"],
+            stdout=log,
+            stderr=log,
+            check=False,
+        )
+        if outcome.returncode and process.poll() is None:
+            raise RuntimeError("Windows could not stop the timed-out worker tree")
+    else:
+        process.kill()
+    return process.wait(timeout=5)
 
 
 def memory_usage() -> dict[str, int | None]:
@@ -245,6 +264,9 @@ class Experiment:
     def __init__(self, root: Path, output: Path) -> None:
         self.root, self.output = root.resolve(), output.resolve()
         repository = Path(__file__).resolve().parents[3]
+        self.protocol = json.loads(
+            (repository / "configs/stage3_protocol.json").read_text(encoding="utf-8")
+        )
         if self.root.is_relative_to(repository):
             raise ValueError("Full experiment evidence must be outside the repository")
         self.root.mkdir(parents=True, exist_ok=True)
@@ -321,8 +343,7 @@ class Experiment:
             try:
                 code = process.wait(timeout=seconds + 15)
             except subprocess.TimeoutExpired:
-                process.kill()
-                code = process.wait()
+                code = terminate_worker(process, log)
                 row = {
                     "job_id": identity,
                     "phase": phase,
@@ -375,10 +396,13 @@ class Experiment:
     def phase(self, phase: str) -> None:
         """Execute only the predeclared settings for the requested phase."""
         rows = []
-        base = {"grid_capacity": 1, "grid_side_length": 5}
+        base = {
+            "grid_capacity": self.protocol["reference_capacity"],
+            "grid_side_length": self.protocol["reference_side_length"],
+        }
         if phase == "s3":
             for method in ("paper_reimplementation", "safety_reference"):
-                for seed in range(5):
+                for seed in self.protocol["s3_seeds"]:
                     rows.append(self.run(phase, "S3", method, seed, base))
         elif phase in ("capacity", "size", "sampling"):
             if phase == "sampling":
@@ -394,28 +418,32 @@ class Experiment:
                     )
                     return
                 settings = [
-                    {**base, "distance_step": v} if v != 5 else base for v in (1, 3, 5)
+                    {**base, "distance_step": v} if v != 5 else base
+                    for v in self.protocol["distance_step_diagnostic"]
                 ] + [
                     {**base, "half_cone_degrees": v} if v != 30 else base
-                    for v in (15, 30, 45)
+                    for v in self.protocol["half_cone_diagnostic"]
                 ]
                 scenes = ("S1",)
             else:
                 settings = (
-                    [{**base, "grid_capacity": v} for v in (1, 3, 5, 10)]
+                    [{**base, "grid_capacity": v} for v in self.protocol["capacity"]]
                     if phase == "capacity"
-                    else [{**base, "grid_side_length": v} for v in (3, 5, 8)]
+                    else [
+                        {**base, "grid_side_length": v}
+                        for v in self.protocol["side_length"]
+                    ]
                 )
-                scenes = ("S1", "S2", "S3")
+                scenes = self.protocol["scenes"]
             for options in settings:
                 for scene in scenes:
-                    for seed in range(3):
+                    for seed in self.protocol["seeds"]:
                         rows.append(
                             self.run(phase, scene, seed=seed, parameters=options)
                         )
         elif phase == "astar":
-            for scene in ("S1", "S2"):
-                for nodes in (100000, 200000, 400000, 640000):
+            for scene in self.protocol["astar_scenes"]:
+                for nodes in self.protocol["astar_nodes"]:
                     row = self.run(phase, scene, "astar", nodes=nodes)
                     rows.append(row)
                     if row.get("strict_valid"):
@@ -439,17 +467,18 @@ class Experiment:
             prior = list(csv.DictReader((self.output / "s3.csv").open()))
             if not any(
                 r.get("time_to_first_valid_path_s")
-                and float(r["time_to_first_valid_path_s"]) < 5
+                and float(r["time_to_first_valid_path_s"])
+                < self.protocol["early_solution_seconds"]
                 for r in prior
             ):
                 LOGGER.info("Early-solution trigger not met")
                 return
             for method in ("paper_reimplementation", "safety_reference"):
-                for seed in range(5):
+                for seed in self.protocol["s3_seeds"]:
                     rows.append(self.run(phase, "S3", method, seed, base, stop=True))
         elif phase == "baselines":
-            for scene in ("S1", "S2", "S3"):
-                for seed in range(3):
+            for scene in self.protocol["scenes"]:
+                for seed in self.protocol["seeds"]:
                     rows.append(self.run(phase, scene, "rrt_connect", seed))
         elif phase == "holdout":
             candidates: dict[str, dict] = {}
@@ -494,7 +523,7 @@ class Experiment:
             options_list = [base] + ([selected] if selected != base else [])
             for scene in ("H1", "H2"):
                 for options in options_list:
-                    for seed in range(3):
+                    for seed in self.protocol["holdout_seeds"]:
                         rows.append(
                             self.run(
                                 phase,
@@ -504,7 +533,7 @@ class Experiment:
                                 map_config="configs/stage3_holdout_maps.json",
                             )
                         )
-                for seed in range(3):
+                for seed in self.protocol["holdout_seeds"]:
                     rows.append(
                         self.run(
                             phase,

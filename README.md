@@ -1,5 +1,7 @@
 # G-Sunlight 科研复现
 
+阶段三诊断入口：[中文报告](docs/STAGE3_REPORT_CN.md)、[预注册协议](docs/STAGE3_EXPERIMENT_PROTOCOL_CN.md)、[运行命令](docs/STAGE3_COMMANDS_CN.md)、[独立新结果](results/stage3/README.md)。重点区分首次有效路径、正常完成和预算不足；阶段一/二代码与结果冻结。
+
 本仓库提供独立编写的运行包装、体素碰撞验证器、测试和实验记录，用于核查 G-Sunlight 作者提供的三维示例。阶段一运行原版并做隔离诊断；阶段二独立重建论文结构、建立安全参考并开展固定多地图对比。不加入洋流、MPC、Attention、训练或其他科研创新模块。
 
 阶段一（2026-11-10）本机结果：作者计算流程20/20产生路径，原始及后处理严格有效率均0/20；VTK独立查询确认内部穿透。隔离安全诊断容量1/3/5分别为0/20、6/20、5/20。阶段一85项测试通过。详见[中文实验报告](docs/STAGE1_REPORT_CN.md)、[完整测试结果](docs/TEST_RESULTS_CN.md)及[实际命令](docs/RUN_COMMANDS_CN.md)。这些历史结果不并入阶段二性能排名，也不等同于复现论文全部主图表。

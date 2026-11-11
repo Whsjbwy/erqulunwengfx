@@ -171,3 +171,94 @@ def test_existing_incomplete_trial_is_not_silently_overwritten(tmp_path: Path) -
         seconds=5,
     )
     assert repeated == first["row"]
+
+
+def test_generation_filter_and_queue_events_are_separately_observed(
+    tmp_path, monkeypatch
+) -> None:
+    cells = np.zeros((4, 4, 4), dtype=bool)
+    cells[1, 0, 0] = True
+    monkeypatch.setattr(
+        paper_planner,
+        "tangent_candidates",
+        lambda *args: iter([(1.5, 0.5, 0.5), (0.5, 2.5, 0.5)]),
+    )
+    obs = Observation(
+        OccupancyMap(cells),
+        (0.5, 0.5, 0.5),
+        (3.5, 0.5, 0.5),
+        {},
+        tmp_path / "events.jsonl",
+    )
+    with obs.installed():
+        result = safety_planner.plan(
+            obs.grid,
+            obs.start,
+            obs.goal,
+            0,
+            PlanningLimits(10),
+            {"n_max": 0, "grid_capacity": 10},
+        )
+    events = [json.loads(line) for line in obs.event_path.read_text().splitlines()]
+    assert sum(e["event"] == "generated" for e in events) == 2
+    assert [e["passed"] for e in events if e["event"] == "parent_check"] == [
+        False,
+        True,
+    ]
+    assert result.counters.collision_filtered == 1
+    assert result.counters.valid_candidates == 1
+
+
+def test_summary_counts_only_actual_completed_trials_and_preserves_inputs(
+    tmp_path,
+) -> None:
+    from gsunlight_repro.stage3.analysis import analyze
+
+    folder = tmp_path / "private" / "case"
+    folder.mkdir(parents=True)
+    data = {
+        "job": {
+            "job_id": "case",
+            "phase": "test",
+            "scene": "S0",
+            "parameters": {},
+            "seed": 0,
+            "stop_first": False,
+            "measurement": "observed",
+            "map_config": "configs/stage2_maps.json",
+        },
+        "row": {
+            "job_id": "case",
+            "phase": "test",
+            "scene": "S0",
+            "method": "safety_reference",
+            "seed": 0,
+            "measurement": "observed",
+            "status": "no_path",
+            "termination_reason": "open_exhausted",
+            "incumbent_history": [],
+        },
+        "result": {"version": "frozen"},
+    }
+    source = folder / "result.json"
+    source.write_text(json.dumps(data), encoding="utf-8")
+    (folder / "events.jsonl").write_text(
+        json.dumps(
+            {
+                "event": "expanded",
+                "time_s": 0.1,
+                "point": [1, 2, 3],
+                "grid": [0, 0, 0],
+                "spatial_bin": [0, 0, 0],
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    before = source.read_bytes()
+    output = tmp_path / "tables"
+    totals = analyze(folder.parent, output)
+    assert totals["unique_trials"] == 1
+    assert source.read_bytes() == before
+    assert "frozen" in (output / "unique_runs.csv").read_text()
+    assert "expanded" in (output / "candidate_event_summary.csv").read_text()

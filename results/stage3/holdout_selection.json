@@ -1,0 +1,13 @@
+{
+  "baseline": {
+    "grid_capacity": 1,
+    "grid_side_length": 5
+  },
+  "selected": {
+    "grid_capacity": 1,
+    "grid_side_length": 5
+  },
+  "reference_success": 6,
+  "selected_success": 6,
+  "rule": "dev only; strict improvement required"
+}

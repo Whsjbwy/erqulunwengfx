@@ -1,0 +1,16 @@
+{
+  "baseline_commit": "40008f8",
+  "rows": 125,
+  "unique_trial_keys": 125,
+  "expected_trials": 125,
+  "missing_trials": 0,
+  "extra_trials": 0,
+  "strict_valid": 65,
+  "status_counts": {
+    "ok": 60,
+    "no_path": 35,
+    "budget_exhausted": 20,
+    "timeout": 10
+  },
+  "scope": "read-only stage2 audit; no old data rewritten"
+}

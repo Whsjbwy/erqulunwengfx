@@ -1,0 +1,4 @@
+job_id,seed,edge_departure_angles_degrees,max_angle_degrees,edges_above_reference_30_degrees,note
+S1_safety_reference_0_30_100000_observed_0_grid_capacity-1_grid_side_length-5_half_cone_degrees-45,0,"[40.0, 39.99999999999999, 40.00000000000001, 20.0, 0.0]",40.00000000000001,3,Post-run geometry only; not a reachability proof
+S1_safety_reference_1_30_100000_observed_0_grid_capacity-1_grid_side_length-5_half_cone_degrees-45,1,"[34.999999999999986, 25.00000000000004, 29.999999999999996, 0.0]",34.999999999999986,1,Post-run geometry only; not a reachability proof
+S1_safety_reference_2_30_100000_observed_0_grid_capacity-1_grid_side_length-5_half_cone_degrees-45,2,"[29.999999999999996, 45.00000000000002, 40.00000000000002, 34.99999999999999, 0.0]",45.00000000000002,3,Post-run geometry only; not a reachability proof

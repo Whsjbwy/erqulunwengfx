@@ -4,17 +4,23 @@ from __future__ import annotations
 
 import json
 import math
+import random
 import time
+from collections.abc import Iterator
 from contextlib import ExitStack, contextmanager
 from dataclasses import asdict
 from pathlib import Path
 from typing import Any
 from unittest.mock import patch
 
+import numpy as np
+
 from .. import paper_planner as paper
 from ..collision_checker import validate_path
+from ..grid_candidates import CandidateNode, GridCandidates
+from ..map_reader import OccupancyMap, Point
 from ..metrics import endpoints_match, path_length
-from ..planning import PlanResult, SearchCounters
+from ..planning import Deadline, PlanningLimits, PlanResult, SearchCounters
 
 
 class FirstValidFound(Exception):
@@ -31,9 +37,9 @@ class Observation:
 
     def __init__(
         self,
-        grid: Any,
-        start: Any,
-        goal: Any,
+        grid: OccupancyMap,
+        start: Point,
+        goal: Point,
         parameters: dict[str, Any],
         event_path: Path | None = None,
         stop_first: bool = False,
@@ -45,17 +51,18 @@ class Observation:
         self.event_limit = event_limit
         self.started = 0.0
         self.history: list[dict[str, Any]] = []
-        self.first_path: list | None = None
+        self.first_path: list[Point] | None = None
         self.first_nodes: int | None = None
         self.best_length = math.inf
         self.counters = SearchCounters()
         self.opened: Any = None
         self.sun: Any = None
-        self.nodes: list = []
         self.stream: Any = None
         self.event_count = 0
         self.dropped_events = 0
         self.validation_seconds = 0.0
+        self.pending_candidate: tuple | None = None
+        self.generation_id = 0
 
     def event(self, kind: str, node: Any = None, **extra: Any) -> None:
         """Write only candidate-level events; explicitly count any truncated rows."""
@@ -81,33 +88,64 @@ class Observation:
         self.event_count += 1
 
     @contextmanager
-    def installed(self):
+    def installed(self) -> Iterator[Observation]:
         """Install local observers, restoring all baseline globals even on errors."""
         original_deadline = paper.Deadline
         original_choose = paper._choose_sun
         original_free = paper._free
         original_reconstruct = paper._reconstruct
         original_grid = paper.GridCandidates
+        original_sampling = paper.tangent_candidates
         observer = self
 
-        def deadline(seconds):
+        def deadline(seconds: float) -> Deadline:
             value = original_deadline(seconds)
             observer.started = value.started
             return value
 
-        def free(first, second, grid, counters):
+        def free(
+            first: Point, second: Point, grid: OccupancyMap, counters: SearchCounters
+        ) -> bool:
             observer.counters = counters
-            return original_free(first, second, grid, counters)
+            answer = original_free(first, second, grid, counters)
+            if observer.pending_candidate == tuple(second):
+                observer.event(
+                    "parent_check",
+                    generation_id=observer.generation_id,
+                    point=second,
+                    passed=answer,
+                )
+            return answer
 
-        def choose(*args):
-            value = original_choose(*args)
+        def sampling(*args: Any, **kwargs: Any) -> Iterator[Point]:
+            for candidate in original_sampling(*args, **kwargs):
+                observer.generation_id += 1
+                observer.pending_candidate = tuple(candidate)
+                observer.event(
+                    "generated",
+                    generation_id=observer.generation_id,
+                    point=candidate,
+                    parent_id=observer.sun.node_id if observer.sun else None,
+                )
+                yield candidate
+                observer.pending_candidate = None
+
+        def choose(
+            opened: GridCandidates,
+            goal: Point,
+            parameters: paper.PaperParameters,
+            python_rng: random.Random,
+            numpy_rng: np.random.Generator,
+        ) -> CandidateNode:
+            value = original_choose(opened, goal, parameters, python_rng, numpy_rng)
             observer.sun = value
             observer.event("selected", value)
             return value
 
-        def reconstruct(nodes, node, goal):
+        def reconstruct(
+            nodes: list[CandidateNode], node: CandidateNode, goal: Point
+        ) -> list[Point]:
             path = original_reconstruct(nodes, node, goal)
-            observer.nodes = nodes
             before = time.perf_counter()
             valid = validate_path(path, observer.grid).valid and endpoints_match(
                 path, observer.start, observer.goal
@@ -133,11 +171,11 @@ class Observation:
             return path
 
         class ObservedGrid(original_grid):
-            def __init__(self, *args):
+            def __init__(self, *args: Any) -> None:
                 super().__init__(*args)
                 observer.opened = self
 
-            def insert(self, node):
+            def insert(self, node: CandidateNode) -> int | None:
                 previous = (
                     {i: self._open[i] for i in self.members(node.point)}
                     if observer.stream
@@ -153,7 +191,7 @@ class Observation:
                     )
                 return removed
 
-            def remove(self, node_id):
+            def remove(self, node_id: int) -> CandidateNode:
                 node = super().remove(node_id)
                 observer.event("expanded", node)
                 return node
@@ -172,6 +210,8 @@ class Observation:
                 "GridCandidates": ObservedGrid,
             }.items():
                 stack.enter_context(patch.object(paper, name, value))
+            if self.event_path:
+                stack.enter_context(patch.object(paper, "tangent_candidates", sampling))
             try:
                 yield self
             finally:
@@ -180,7 +220,7 @@ class Observation:
                         self.event("open_at_stop", node)
                 self.stream = None
 
-    def first_result(self, method: str, limits: Any) -> PlanResult:
+    def first_result(self, method: str, limits: PlanningLimits) -> PlanResult:
         """Return the explicitly changed stopping-policy result, never paper-v1."""
         self.counters.final_open_nodes = len(self.opened)
         return PlanResult(

@@ -1,0 +1,4 @@
+job_id,measurement,search_seconds,expanded_nodes,ray_sampling_self_seconds,collision_self_seconds,grid_self_seconds,choose_sun_self_seconds,path_validation_self_seconds,other_self_seconds,ray_sampling_fraction,collision_fraction,grid_fraction,choose_sun_fraction,path_validation_fraction,other_fraction
+S3_safety_reference_0_30_100000_observed_0_grid_capacity-1_grid_side_length-5_n_max-10,observed,8.657737600000019,12,,,,,,,,,,,,
+S3_safety_reference_0_30_100000_profile_0_grid_capacity-1_grid_side_length-5_n_max-10,profile,19.23360879999973,12,0.2710562,13.4145968,0.0050274000000000004,6.76e-05,0.0006736000000000001,5.325113600000002,0.014253711159749018,0.7054175042359977,0.0002643699258106703,3.5548010870034835e-06,3.5421804914283234e-05,0.2800254380724414
+S3_safety_reference_0_30_100000_unobserved_0_grid_capacity-1_grid_side_length-5_n_max-10,unobserved,8.425562400000217,12,,,,,,,,,,,,
