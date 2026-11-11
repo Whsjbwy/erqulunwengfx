@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "generator": "stage4a-seeded-geometry-v1",
+  "small_shape": [60, 50, 40],
+  "large_shape": [100, 80, 80],
+  "maps": [
+    {"id": "D1", "split": "development", "family": "ordinary", "scale": "small", "seed": 4101},
+    {"id": "D2", "split": "development", "family": "staggered", "scale": "small", "seed": 4102},
+    {"id": "D3", "split": "development", "family": "narrow", "scale": "small", "seed": 4103},
+    {"id": "D4", "split": "development", "family": "terrain", "scale": "small", "seed": 4104},
+    {"id": "T1", "split": "holdout", "family": "ordinary", "scale": "small", "seed": 4201},
+    {"id": "T2", "split": "holdout", "family": "ordinary", "scale": "large", "seed": 4202},
+    {"id": "T3", "split": "holdout", "family": "staggered", "scale": "small", "seed": 4203},
+    {"id": "T4", "split": "holdout", "family": "staggered", "scale": "large", "seed": 4204},
+    {"id": "T5", "split": "holdout", "family": "narrow", "scale": "small", "seed": 4205},
+    {"id": "T6", "split": "holdout", "family": "narrow", "scale": "large", "seed": 4206},
+    {"id": "T7", "split": "holdout", "family": "terrain", "scale": "small", "seed": 4207},
+    {"id": "T8", "split": "holdout", "family": "terrain", "scale": "large", "seed": 4208},
+    {"id": "U1", "split": "negative", "family": "sealed", "scale": "small", "seed": 4301}
+  ]
+}
