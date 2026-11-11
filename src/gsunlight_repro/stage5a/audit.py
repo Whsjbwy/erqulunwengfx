@@ -12,13 +12,17 @@ from pathlib import Path
 from ..metrics import endpoints_match, path_length
 from ..stage4a.runtime import configure_worker
 from .analysis import read_evidence, write_csv
-from .maps import Scene, body_radius, load_scene, read_config
+from .maps import Scene, body_radius, load_scene, mode_radius, read_config
 from .tracking import track
 
 
 def check_record(item: dict, scene: Scene, protocol: dict) -> Counter:
     """Fail closed on any unsafe path, inconsistent history or success flag."""
     row, paths = item["row"], item["paths"]
+    if not math.isclose(
+        row["radius_m"], mode_radius(row["geometry_mode"], protocol), abs_tol=1e-12
+    ):
+        raise ValueError("Recorded radius does not match the declared body mode")
     counters = Counter(trials=1)
     geometry = scene.geometry(row["radius_m"])
     for path in paths:
@@ -123,6 +127,12 @@ def check_record(item: dict, scene: Scene, protocol: dict) -> Counter:
         selected["execution_success"] if selected else None
     ):
         raise ValueError("Summary changed the selected path's execution outcome")
+    if selected is not None:
+        eligible = scene.geometry(body).path(paths[row["selected_path_id"]]).valid
+        if selected["eligible"] != eligible:
+            raise ValueError(
+                "Execution eligibility disagrees with nominal-body geometry"
+            )
     return counters
 
 
@@ -172,6 +182,13 @@ def audit(local: Path, output: Path, *, replay_selected: bool = False) -> dict:
     replay_rows = []
     for item in evidence:
         row = item["row"]
+        if any(row[key] != value for key, value in item["job"].items()):
+            raise ValueError("Recorded job inputs were changed in the result row")
+        if (
+            row["time_budget_s"] != item["job"]["seconds"]
+            or row["options"]["step"] != row["step_m"]
+        ):
+            raise ValueError("Effective planning budget/step differs from the job")
         scene_id = row["scene"]
         if scene_id not in scenes:
             scenes[scene_id] = load_scene(scene_id, config["maps"])

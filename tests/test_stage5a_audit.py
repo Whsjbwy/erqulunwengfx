@@ -49,7 +49,7 @@ def test_real_small_record_passes_additional_safety_audit() -> None:
     assert result["path_entries"] == result["accepted_executions"] == 1
 
 
-@pytest.mark.parametrize("corruption", ["path", "late", "checkpoint"])
+@pytest.mark.parametrize("corruption", ["path", "late", "checkpoint", "radius"])
 def test_inconsistent_evidence_is_rejected(corruption: str) -> None:
     original, scene, protocol = example()
     item = copy.deepcopy(original)
@@ -57,6 +57,8 @@ def test_inconsistent_evidence_is_rejected(corruption: str) -> None:
         item["paths"][0][-1] = (1000, 1000, 1000)
     elif corruption == "late":
         item["history"][0]["time_s"] = 4
+    elif corruption == "radius":
+        item["row"]["radius_m"] = 0
     else:
         item["checkpoints"][0]["valid"] = False
     with pytest.raises(ValueError):

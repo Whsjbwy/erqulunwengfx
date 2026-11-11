@@ -10,6 +10,7 @@ from pathlib import Path
 from statistics import mean, median, stdev
 
 from .maps import body_radius, load_scene, read_config
+from .path_features import describe_path
 
 
 def write_csv(path: Path, rows: list[dict]) -> None:
@@ -290,7 +291,7 @@ def analyze(local: Path, output: Path) -> dict:
         else "unconfigured_empty_analysis"
     )
     rows = []
-    histories, curves, executions = [], [], []
+    histories, curves, executions, features = [], [], [], []
     for item in evidence:
         row = {**item["row"], "dataset_revision": revision}
         row = {**row, **{"c_" + key: value for key, value in row["counters"].items()}}
@@ -313,6 +314,16 @@ def analyze(local: Path, output: Path) -> dict:
                 for event in item[history_name]
             )
         curves.extend({**identity, **point} for point in item["checkpoints"])
+        for path_id in sorted({row["raw_path_id"], row["selected_path_id"]} - {None}):
+            features.append(
+                {
+                    **identity,
+                    "path_id": path_id,
+                    "is_selected": path_id == row["selected_path_id"],
+                    "is_raw_best": path_id == row["raw_path_id"],
+                    **describe_path(item["paths"][path_id], row["start"], row["goal"]),
+                }
+            )
         for path_id, execution in item["executions"].items():
             executions.append(
                 {
@@ -331,6 +342,7 @@ def analyze(local: Path, output: Path) -> dict:
     write_csv(output / "incumbent_history.csv", histories)
     write_csv(output / "anytime_curves.csv", curves)
     write_csv(output / "executions.csv", executions)
+    write_csv(output / "path_features.csv", features)
     write_csv(output / "map_summary.csv", summaries(rows))
     pairs = paired_rows(rows)
     write_csv(output / "paired_comparisons.csv", pairs)

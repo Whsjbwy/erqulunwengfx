@@ -1,0 +1,41 @@
+{
+  "scope": "Actual Windows-hosted synthetic tests, not scientific matrix reruns",
+  "runs": [
+    {
+      "run_id": 43008739841,
+      "job_id": 130482687525,
+      "conclusion": "success",
+      "url": "https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43008739841",
+      "lines": [
+        "2026-11-11T11:03:25.7816308Z Image: windows-2025-vs2026",
+        "2026-11-11T11:04:32.3074117Z ============================ 397 passed in 15.04s =============================",
+        "2026-11-11T11:04:33.0201648Z All checks passed!",
+        "2026-11-11T11:04:33.4568151Z 108 files already formatted"
+      ]
+    },
+    {
+      "run_id": 43010937515,
+      "job_id": 130490082866,
+      "conclusion": "success",
+      "url": "https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43010937515",
+      "lines": [
+        "2026-11-11T11:19:09.0892701Z Image: windows-2025-vs2026",
+        "2026-11-11T11:20:18.1665131Z ============================ 407 passed in 18.57s =============================",
+        "2026-11-11T11:20:18.8903571Z All checks passed!",
+        "2026-11-11T11:20:19.4440839Z 114 files already formatted"
+      ]
+    },
+    {
+      "run_id": 43012387134,
+      "job_id": 130494984700,
+      "conclusion": "success",
+      "url": "https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43012387134",
+      "lines": [
+        "2026-11-11T11:29:46.0200032Z Image: windows-2025-vs2026",
+        "2026-11-11T11:31:02.7581166Z ============================ 410 passed in 18.64s =============================",
+        "2026-11-11T11:31:03.4723427Z All checks passed!",
+        "2026-11-11T11:31:03.9884313Z 116 files already formatted"
+      ]
+    }
+  ]
+}
