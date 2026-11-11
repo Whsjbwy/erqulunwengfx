@@ -43,4 +43,17 @@ Ruff发现了文档字符串、图标题行长和命令文档代码围栏中的�
 
 命令使用仓库`.venv/Scripts/python.exe`。逐项327条记录见[pytest_results.csv](../results/stage4a/pytest_results.csv)，检查时刻、命令及实际进程耗时见[local_checks.json](../results/stage4a/local_checks.json)。pytest自身耗时6.90秒与整个子进程7.37秒口径不同。
 
-正式搜索核心相对3fea66f无改动，前三阶段已有源码、配置和CSV无改动。交付分支的最后Windows CI另在下方记录，不用早期320项CI替代最终检查。
+正式搜索核心相对3fea66f无改动，前三阶段已有源码、配置和CSV无改动。
+
+## 交付代码的实际Windows CI
+
+代码与结果交付提交300eba4，两个实际Windows检查均已完成，官方job日志均已读取：
+
+| 事件 | 运行/job | 实际结果 |
+| --- | --- | --- |
+| 分支push | [42985355697](https://github.com/Whsjbwy/erqulunwengfx/actions/runs/42985355697) / 130405119895 | 327 passed in 12.84s |
+| PR #4 | [42985433804](https://github.com/Whsjbwy/erqulunwengfx/actions/runs/42985433804) / 130405365371 | 327 passed in 14.23s |
+
+两次compileall、Ruff静态检查及92文件格式检查均成功；分支job镜像为windows-2025-vs2026。精简官方日志见[windows_ci.json](../results/stage4a/windows_ci.json)。这些是GitHub-hosted Windows合成测试，不冒充本机实验重跑。
+
+随后仅补报告链接和本次CI证据。独立审核入口为[PR #4](https://github.com/Whsjbwy/erqulunwengfx/pull/4)，目标repro/gsunlight-stage3；最后元数据提交的检查状态在PR中核实，不把早期320项结果当327项证据。

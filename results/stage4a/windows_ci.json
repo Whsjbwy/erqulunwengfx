@@ -1,0 +1,53 @@
+{
+  "scope": "Actual GitHub-hosted Windows checks; no scientific matrix rerun in CI",
+  "code_delivery_commit": "300eba4748540f4ab7d7eb220ebcb1b657f17b24",
+  "runs": [
+    {
+      "run_id": 42964895115,
+      "job_id": 130339704570,
+      "head": "1a1d145dd0da1c70ab236be5d4b278de8b888039",
+      "url": "https://github.com/Whsjbwy/erqulunwengfx/actions/runs/42964895115",
+      "conclusion": "success",
+      "lines": [
+        "2026-11-11T05:19:44.9522944Z ============================ 320 passed in 13.84s =============================",
+        "2026-11-11T05:19:45.6843735Z All checks passed!",
+        "2026-11-11T05:19:46.2032812Z 87 files already formatted"
+      ],
+      "scope": "development",
+      "tests_passed": 320
+    },
+    {
+      "run_id": 42985355697,
+      "job_id": 130405119895,
+      "head": "300eba4748540f4ab7d7eb220ebcb1b657f17b24",
+      "event": "push",
+      "url": "https://github.com/Whsjbwy/erqulunwengfx/actions/runs/42985355697",
+      "conclusion": "success",
+      "runner_image": "windows-2025-vs2026",
+      "tests_passed": 327,
+      "pytest_duration_s": 12.84,
+      "lines": [
+        "2026-11-11T08:15:09.3520691Z ============================ 327 passed in 12.84s =============================",
+        "2026-11-11T08:15:10.0238913Z All checks passed!",
+        "2026-11-11T08:15:10.4606014Z 92 files already formatted"
+      ]
+    },
+    {
+      "run_id": 42985433804,
+      "job_id": 130405365371,
+      "head": "300eba4748540f4ab7d7eb220ebcb1b657f17b24",
+      "event": "pull_request",
+      "url": "https://github.com/Whsjbwy/erqulunwengfx/actions/runs/42985433804",
+      "conclusion": "success",
+      "tests_passed": 327,
+      "pytest_duration_s": 14.23,
+      "lines": [
+        "2026-11-11T08:15:28.0051838Z ============================ 327 passed in 14.23s =============================",
+        "2026-11-11T08:15:28.6876290Z All checks passed!",
+        "2026-11-11T08:15:29.2153719Z 92 files already formatted"
+      ]
+    }
+  ],
+  "final_metadata_commit": "Report links and this CI evidence are recorded after the checked code commit; final branch checks are linked in PR #4.",
+  "pull_request": "https://github.com/Whsjbwy/erqulunwengfx/pull/4"
+}

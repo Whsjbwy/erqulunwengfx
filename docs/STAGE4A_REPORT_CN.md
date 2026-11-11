@@ -135,3 +135,5 @@ U1为全截面封闭障碍的解析负例，六方法各5次，共30次均无误
 本轮未做优化版全矩阵、更多独立地图、RRT*、不同后处理分配制度、实体半径、动力学、控制跟踪、洋流或4B创新。原论文未定义的ChooseSun等重建假设仍沿用阶段二披露；4A外层重启不代表作者原版。安全余量只是已声明的保守下界，数值0不等于碰撞，正值不构成真实AUV认证。
 
 已完成402正式任务、30次工程重复、完整配对统计、原始路径审计、预选图表和失败分析。最终本地327项测试全部通过（6.90秒），compileall、Ruff静态检查及92文件格式检查通过；逐项结果公开为pytest_results.csv。实际命令、逐项检查及Windows CI见[命令](STAGE4A_COMMANDS_CN.md)和[测试记录](STAGE4A_TEST_RESULTS_CN.md)；CSV与图表字段见[结果说明](../results/stage4a/README.md)。所有原作者资料和完整单份轨迹留在本地，GitHub只发布自编及合成内容。4A完成后停止，不合并main或历史PR，不进入4B。
+
+GitHub交付分支为[repro/gsunlight-stage4a](https://github.com/Whsjbwy/erqulunwengfx/tree/repro/gsunlight-stage4a)，[PR #4](https://github.com/Whsjbwy/erqulunwengfx/pull/4)以repro/gsunlight-stage3为目标。代码提交300eba4的分支及PR Windows CI均实际成功，分别327项/12.84秒与327项/14.23秒；官方日志见测试记录。后续只补链接和CI证据，等待研究者审核路线建议。

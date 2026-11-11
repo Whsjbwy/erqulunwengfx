@@ -16,6 +16,7 @@
 - `experiment_accounting.json`、`decision.json`：完整性及预注册Go/Pivot门槛。未完成必须保持Incomplete；不是把当前部分结果伪报成最终结论。
 - `certificate_audit.json`：402次运行的额外几何及时间溯源审计，完整坐标仅保存在本地。
 - `local_checks.json`、`pytest_results.csv`：本机实际检查及327项逐项测试记录；Windows CI的实际日志与链接见[测试报告](../../docs/STAGE4A_TEST_RESULTS_CN.md)。
+- `windows_ci.json`：已完成的GitHub Windows CI运行、job和精简官方日志；不把CI合成测试称为科研矩阵重跑。
 
 G-Sunlight四组使用冻结安全参考，外层允许预定随机流重启；RRT首解只运行一次，RRT重启用完同一30秒总预算。所有候选采用相同完整校验和可中断shortcut，不另给免费后处理时间。其结果身份是stage4a-budgeted-static-v1，不冒充原论文单次控制器。后处理未完成时可保留此前已确认的有效原始路径，best_kind明确区分。
 

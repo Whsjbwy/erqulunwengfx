@@ -2,6 +2,8 @@
 
 阶段4A：[中文决策报告](docs/STAGE4A_REPORT_CN.md)、[预注册协议](docs/STAGE4A_PROTOCOL_CN.md)、[实际命令](docs/STAGE4A_COMMANDS_CN.md)、[测试记录](docs/STAGE4A_TEST_RESULTS_CN.md)、[CSV与图表](results/stage4a/README.md)。402次预注册独立运行完成，建议Pivot：新留出集A4有效29/40，RRT重启40/40，共同有效任务上A4长度平均更长约1.12%。新地图和总预算Anytime实验在独立stage4a模块运行，前三阶段保持冻结；结论限于已测试静态零半径折线，不进入4B。
 
+阶段4A审核：[PR #4](https://github.com/Whsjbwy/erqulunwengfx/pull/4)，目标为阶段三分支，暂不合并。
+
 阶段三诊断入口：[中文报告](docs/STAGE3_REPORT_CN.md)、[预注册协议](docs/STAGE3_EXPERIMENT_PROTOCOL_CN.md)、[运行命令](docs/STAGE3_COMMANDS_CN.md)、[独立新结果](results/stage3/README.md)。重点区分首次有效路径、正常完成和预算不足；阶段一/二代码与结果冻结。
 
 阶段三审核：[PR #3](https://github.com/Whsjbwy/erqulunwengfx/pull/3)，目标为阶段二分支，暂不合并。
