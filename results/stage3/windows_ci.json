@@ -1,0 +1,29 @@
+{
+  "preregistration": {
+    "run_id": 42948039665,
+    "job_id": 130285474929,
+    "url": "https://github.com/Whsjbwy/erqulunwengfx/actions/runs/42948039665",
+    "head": "6a461ade263573ca142f49cbebad2f37857ea1d3",
+    "conclusion": "success",
+    "evidence": [
+      "2026-11-11T02:45:23.0836832Z collecting ... collected 246 items",
+      "2026-11-11T02:45:29.3913993Z ============================ 246 passed in 11.27s =============================",
+      "2026-11-11T02:45:30.1646750Z All checks passed!",
+      "2026-11-11T02:45:30.6682767Z 59 files already formatted"
+    ]
+  },
+  "code_delivery": {
+    "run_id": 42953199180,
+    "job_id": 130302111719,
+    "url": "https://github.com/Whsjbwy/erqulunwengfx/actions/runs/42953199180",
+    "head": "371412d43dc6381d67ca5e2d8647a240c7621e53",
+    "conclusion": "success",
+    "evidence": [
+      "2026-11-11T03:31:30.2202036Z platform win32 -- Python 3.11.9, pytest-9.2.0, pluggy-1.7.0 -- C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\python.exe",
+      "2026-11-11T03:31:35.9958350Z collecting ... collected 265 items",
+      "2026-11-11T03:31:41.3271673Z ============================ 265 passed in 11.04s =============================",
+      "2026-11-11T03:31:41.9187810Z All checks passed!",
+      "2026-11-11T03:31:42.3078805Z 67 files already formatted"
+    ]
+  }
+}

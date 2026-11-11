@@ -51,4 +51,6 @@
 
 独立workflow为 `.github/workflows/stage3-windows.yml`，使用 `windows-latest`、Python3.11，仅自编代码及合成数据，不读取作者目录。
 
-首版提交 `6a461ad` 的[实际运行42948039665](https://github.com/Whsjbwy/erqulunwengfx/actions/runs/42948039665)成功：246 passed in 11.27s，编译、Ruff及59文件格式检查全部通过。该记录对应首版测试数，不能冒充交付版265项。交付版记录在完成后另列。
+首版提交 `6a461ad` 的[实际运行42948039665](https://github.com/Whsjbwy/erqulunwengfx/actions/runs/42948039665)成功：246 passed in 11.27s，编译、Ruff及59文件格式检查全部通过。该记录对应首版测试数，不能冒充交付版265项。
+
+交付代码提交 `371412d` 的[实际运行42953199180](https://github.com/Whsjbwy/erqulunwengfx/actions/runs/42953199180)成功：**265 passed in 11.04s**，compileall、Ruff及67文件格式检查全部通过；远端Python3.11.9，与本地3.11.15分别记录。步骤摘要及官方日志中的实测行保存在[windows_ci.json](../results/stage3/windows_ci.json)。后续只补文档和CI记录，不改变已经验证的算法/实验代码；最终分支检查可在[PR #3](https://github.com/Whsjbwy/erqulunwengfx/pull/3)查看。

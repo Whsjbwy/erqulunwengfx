@@ -50,3 +50,16 @@ git status --short
 ```
 
 公开提交仅包含自编模块、测试、合成配置、精简表格、图和报告。完整日志、路径、作者资料和虚拟环境不提交。未进行额外文件哈希校验；Git 自身的提交标识仅用于版本追溯。
+
+## 已执行的GitHub交付
+
+```powershell
+git add AGENTS.md README.md docs/STAGE3_COMMANDS_CN.md docs/STAGE3_REPORT_CN.md `
+  docs/STAGE3_TEST_RESULTS_CN.md src/gsunlight_repro/stage3 `
+  tests/test_stage3_observation.py tests/test_stage3_protocol.py `
+  tests/test_stage3_results.py results/stage3
+git commit -m "feat: complete stage-three failure diagnostics with 112 reproducible trials"
+git push -u origin repro/gsunlight-stage3
+```
+
+交付代码为 `371412d`。已通过已连接GitHub工具创建[PR #3](https://github.com/Whsjbwy/erqulunwengfx/pull/3)，head=`repro/gsunlight-stage3`、base=`repro/gsunlight-stage2`。后续只补交付链接和已验证的CI记录。没有合并、强制推送或重写历史。
