@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import argparse
-import gzip
 import json
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -12,7 +11,8 @@ from statistics import mean
 import numpy as np
 
 from ..stage5a.analysis import write_csv
-from .evidence import read_manifest
+from .evidence import protect_output, read_manifest
+from .storage import read_record
 
 
 def read_replays(local: Path) -> list[dict]:
@@ -20,8 +20,7 @@ def read_replays(local: Path) -> list[dict]:
     records = []
     keys = set()
     for path in sorted((local / "replays").glob("*.json.gz")):
-        with gzip.open(path, "rt", encoding="utf-8") as stream:
-            item = json.load(stream)
+        item = read_record(path)
         row = item["summary"]
         key = (row["job_id"], row["variant"], row["path_id"], row["condition_id"])
         if key in keys:
@@ -163,7 +162,8 @@ def geometry_associations(rows: list[dict]) -> list[dict]:
             valid = [row for row in group if row.get(feature) is not None]
             x = [row[feature] for row in valid]
             y = [float(row["execution_success"]) for row in valid]
-            map_means.append((mean(x), mean(y)))
+            if valid:
+                map_means.append((mean(x), mean(y)))
             output.append(
                 {
                     "level": "within_map_paths",
@@ -171,8 +171,8 @@ def geometry_associations(rows: list[dict]) -> list[dict]:
                     "feature": feature,
                     "n": len(valid),
                     "missing": len(group) - len(valid),
-                    "feature_mean": mean(x),
-                    "success_rate": mean(y),
+                    "feature_mean": mean(x) if valid else None,
+                    "success_rate": mean(y) if valid else None,
                     "spearman_with_success": spearman(x, y),
                     "spearman_with_max_error": spearman(
                         x, [row["max_tracking_error_m"] for row in valid]
@@ -186,7 +186,7 @@ def geometry_associations(rows: list[dict]) -> list[dict]:
                 "scene": "ALL",
                 "feature": feature,
                 "n": len(map_means),
-                "missing": 0,
+                "missing": len({row["scene"] for row in rows}) - len(map_means),
                 "spearman_with_success": spearman(
                     [a for a, _ in map_means], [b for _, b in map_means]
                 ),
@@ -223,12 +223,18 @@ def shortcut_rows(pairs: list[dict]) -> list[dict]:
             }
         )
         for label, summary in (("raw", raw), ("shortcut", shortened)):
+            row[label + "_registry_path_id"] = summary["path_id"]
             row.update(
                 {
                     label + "_" + key: value
                     for key, value in summary.items()
                     if key
-                    not in ("raw_path_id", "shortcut_source_id", "shortcut_path_id")
+                    not in (
+                        "path_id",
+                        "raw_path_id",
+                        "shortcut_source_id",
+                        "shortcut_path_id",
+                    )
                 }
             )
         for key in (
@@ -295,6 +301,7 @@ def waterfall(items: list[dict]) -> list[dict]:
 
 def analyze(local: Path, output: Path) -> dict:
     """Rebuild tables with mandatory complete P0-P3 gates and paired counts."""
+    output = protect_output(output)
     for phase in ("p0", "manifest", "pilot", "p1", "p2", "p3"):
         if not json.loads(
             (local / f"{phase}_completed.json").read_text(encoding="utf-8")
@@ -305,7 +312,37 @@ def analyze(local: Path, output: Path) -> dict:
     )
     protocol = configuration["diagnostic"]
     records = read_replays(local)
-    rows = [item["summary"] for item in records]
+    rows = []
+    for item in records:
+        row = dict(item["summary"])
+        # The frozen mission oracle includes physical checks. Record a pure
+        # task-band event separately, rather than relabelling obstacle refusals.
+        band = next(
+            (
+                step
+                for step in item["trace"]
+                if step["mission_reason"] == "mission_ceiling"
+            ),
+            None,
+        )
+        row.update(
+            first_task_band_time_start_s=band["time_start_s"] if band else None,
+            first_task_band_time_s=band["time_s"] if band else None,
+            first_task_band_position=band["position"] if band else None,
+        )
+        steps = row["steps"]
+        for axis in ("yaw", "pitch"):
+            row[axis + "_saturation_fraction"] = (
+                row[axis + "_saturation_steps"] / steps if steps else None
+            )
+        row["either_axis_saturation_s"] = (
+            sum(
+                step["yaw_saturated"] or step["pitch_saturated"]
+                for step in item["trace"]
+            )
+            * configuration["historical"]["protocol"]["kinematics"]["step_s"]
+        )
+        rows.append(row)
     paired = paired_sensitivity(rows, protocol["conditions"])
     manifest = read_manifest(output / "sampling_manifest.csv")
     expanded = {row["job_id"] for row in manifest if row["in_expansion"]}
@@ -350,7 +387,12 @@ def analyze(local: Path, output: Path) -> dict:
         "same_source_shortcut_pairs": len(pairs),
         "shortcut_replays": 2 * len(pairs),
         "unique_saved_replays": len(records),
-        "actual_integrated_replays": sum(row["eligible"] for row in rows),
+        "unique_saved_traces": sum("trace_reference" not in item for item in records),
+        "trace_reference_records": sum("trace_reference" in item for item in records),
+        "actual_integrated_replays": sum(
+            item["summary"]["eligible"] and "trace_reference" not in item
+            for item in records
+        ),
         "resource_timeouts": sum(
             row["primary_class"] == "resource_timeout" for row in rows
         ),

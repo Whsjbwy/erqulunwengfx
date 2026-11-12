@@ -1,0 +1,101 @@
+condition_id,scene,mode,independent_maps,frozen_planning_outputs,strict_successes,nominal_successes,recovered,lost,success_rate_map_mean,failure_counts,all_path_mean_max_error_m
+C1_first_heading,ALL,ALL,6,157,33,70,2,0,0.2650793650793651,"{""swept_safety_reject"": 73, ""margin_only_failure"": 37, ""success"": 33, ""mission_band_reject"": 2, ""tracking_error_limit"": 12}",0.9897220542142191
+C1_first_heading,ALL,body,6,84,20,20,1,0,0.26666666666666666,"{""swept_safety_reject"": 56, ""success"": 20, ""mission_band_reject"": 2, ""tracking_error_limit"": 6}",0.8957297101915479
+C1_first_heading,ALL,margin,5,73,13,50,1,0,0.18564102564102564,"{""margin_only_failure"": 37, ""success"": 13, ""swept_safety_reject"": 17, ""tracking_error_limit"": 6}",1.0978776281581148
+C1_first_heading,H5_B1,ALL,1,30,5,18,0,0,0.16666666666666666,"{""swept_safety_reject"": 11, ""margin_only_failure"": 13, ""success"": 5, ""mission_band_reject"": 1}",0.367506183512867
+C1_first_heading,H5_B1,body,1,15,3,3,0,0,0.2,"{""swept_safety_reject"": 11, ""success"": 3, ""mission_band_reject"": 1}",0.33346075314786117
+C1_first_heading,H5_B1,margin,1,15,2,15,0,0,0.13333333333333333,"{""margin_only_failure"": 13, ""success"": 2}",0.4015516138778729
+C1_first_heading,H5_B2,ALL,1,30,10,19,0,0,0.3333333333333333,"{""swept_safety_reject"": 10, ""margin_only_failure"": 9, ""mission_band_reject"": 1, ""success"": 10}",0.43021012290532595
+C1_first_heading,H5_B2,body,1,15,6,6,0,0,0.4,"{""swept_safety_reject"": 8, ""mission_band_reject"": 1, ""success"": 6}",0.44618050902798156
+C1_first_heading,H5_B2,margin,1,15,4,13,0,0,0.26666666666666666,"{""margin_only_failure"": 9, ""swept_safety_reject"": 2, ""success"": 4}",0.41423973678267034
+C1_first_heading,H5_N1,ALL,1,28,10,17,0,0,0.35714285714285715,"{""swept_safety_reject"": 11, ""margin_only_failure"": 7, ""success"": 10}",0.33119071773628805
+C1_first_heading,H5_N1,body,1,15,4,4,0,0,0.26666666666666666,"{""swept_safety_reject"": 11, ""success"": 4}",0.2753513176214077
+C1_first_heading,H5_N1,margin,1,13,6,13,0,0,0.46153846153846156,"{""margin_only_failure"": 7, ""success"": 6}",0.3956207947919192
+C1_first_heading,H5_N2,ALL,1,9,6,6,0,0,0.6666666666666666,"{""swept_safety_reject"": 3, ""success"": 6}",0.43009700887844304
+C1_first_heading,H5_N2,body,1,9,6,6,0,0,0.6666666666666666,"{""swept_safety_reject"": 3, ""success"": 6}",0.43009700887844304
+C1_first_heading,H5_O1,ALL,1,30,0,0,0,0,0,"{""swept_safety_reject"": 24, ""tracking_error_limit"": 6}",2.7890698820745277
+C1_first_heading,H5_O1,body,1,15,0,0,0,0,0,"{""swept_safety_reject"": 12, ""tracking_error_limit"": 3}",2.7359115275122967
+C1_first_heading,H5_O1,margin,1,15,0,0,0,0,0,"{""swept_safety_reject"": 12, ""tracking_error_limit"": 3}",2.8422282366367586
+C1_first_heading,H5_O2,ALL,1,30,2,10,2,0,0.06666666666666667,"{""swept_safety_reject"": 14, ""margin_only_failure"": 8, ""tracking_error_limit"": 6, ""success"": 2}",1.154618789344291
+C1_first_heading,H5_O2,body,1,15,1,1,1,0,0.06666666666666667,"{""swept_safety_reject"": 11, ""tracking_error_limit"": 3, ""success"": 1}",0.9671240644360553
+C1_first_heading,H5_O2,margin,1,15,1,9,1,0,0.06666666666666667,"{""margin_only_failure"": 8, ""tracking_error_limit"": 3, ""swept_safety_reject"": 3, ""success"": 1}",1.342113514252527
+C2_speed_0p5,ALL,ALL,6,157,20,55,4,15,0.11547619047619048,"{""swept_safety_reject"": 96, ""margin_only_failure"": 35, ""success"": 20, ""tracking_error_limit"": 6}",1.024431719039463
+C2_speed_0p5,ALL,body,6,84,11,11,4,12,0.12222222222222222,"{""swept_safety_reject"": 69, ""success"": 11, ""tracking_error_limit"": 4}",0.9265056383297715
+C2_speed_0p5,ALL,margin,5,73,9,44,0,3,0.13230769230769232,"{""margin_only_failure"": 35, ""success"": 9, ""swept_safety_reject"": 27, ""tracking_error_limit"": 2}",1.1371137845136285
+C2_speed_0p5,H5_B1,ALL,1,30,2,16,1,4,0.06666666666666667,"{""swept_safety_reject"": 14, ""margin_only_failure"": 14, ""success"": 2}",0.3224270574970137
+C2_speed_0p5,H5_B1,body,1,15,1,1,1,3,0.06666666666666667,"{""swept_safety_reject"": 14, ""success"": 1}",0.21721441212572337
+C2_speed_0p5,H5_B1,margin,1,15,1,15,0,1,0.06666666666666667,"{""margin_only_failure"": 14, ""success"": 1}",0.42763970286830405
+C2_speed_0p5,H5_B2,ALL,1,30,6,18,1,5,0.2,"{""swept_safety_reject"": 12, ""margin_only_failure"": 12, ""success"": 6}",0.4085785757660185
+C2_speed_0p5,H5_B2,body,1,15,4,4,1,3,0.26666666666666666,"{""swept_safety_reject"": 11, ""success"": 4}",0.3626083900737595
+C2_speed_0p5,H5_B2,margin,1,15,2,14,0,2,0.13333333333333333,"{""margin_only_failure"": 12, ""success"": 2, ""swept_safety_reject"": 1}",0.45454876145827755
+C2_speed_0p5,H5_N1,ALL,1,28,11,15,1,0,0.39285714285714285,"{""swept_safety_reject"": 13, ""margin_only_failure"": 4, ""success"": 11}",0.42459344062006243
+C2_speed_0p5,H5_N1,body,1,15,5,5,1,0,0.3333333333333333,"{""swept_safety_reject"": 10, ""success"": 5}",0.3499521706724172
+C2_speed_0p5,H5_N1,margin,1,13,6,10,0,0,0.46153846153846156,"{""swept_safety_reject"": 3, ""margin_only_failure"": 4, ""success"": 6}",0.5107179828673454
+C2_speed_0p5,H5_N2,ALL,1,9,0,0,0,6,0,"{""swept_safety_reject"": 9}",0.5664337228502138
+C2_speed_0p5,H5_N2,body,1,9,0,0,0,6,0,"{""swept_safety_reject"": 9}",0.5664337228502138
+C2_speed_0p5,H5_O1,ALL,1,30,0,0,0,0,0,"{""swept_safety_reject"": 27, ""tracking_error_limit"": 3}",2.535292690366483
+C2_speed_0p5,H5_O1,body,1,15,0,0,0,0,0,"{""swept_safety_reject"": 13, ""tracking_error_limit"": 2}",2.4835470474232744
+C2_speed_0p5,H5_O1,margin,1,15,0,0,0,0,0,"{""swept_safety_reject"": 14, ""tracking_error_limit"": 1}",2.587038333309692
+C2_speed_0p5,H5_O2,ALL,1,30,1,6,1,0,0.03333333333333333,"{""swept_safety_reject"": 21, ""margin_only_failure"": 5, ""success"": 1, ""tracking_error_limit"": 3}",1.5286770112432186
+C2_speed_0p5,H5_O2,body,1,15,1,1,1,0,0.06666666666666667,"{""swept_safety_reject"": 12, ""success"": 1, ""tracking_error_limit"": 2}",1.435249320641418
+C2_speed_0p5,H5_O2,margin,1,15,0,5,0,0,0,"{""margin_only_failure"": 5, ""swept_safety_reject"": 9, ""tracking_error_limit"": 1}",1.622104701845019
+C3_lookahead_1p5,ALL,ALL,6,157,50,65,40,21,0.28293650793650793,"{""success"": 50, ""margin_only_failure"": 15, ""mission_band_reject"": 6, ""swept_safety_reject"": 74, ""tracking_error_limit"": 12}",1.1978583866182344
+C3_lookahead_1p5,ALL,body,6,84,32,32,23,10,0.35555555555555557,"{""success"": 32, ""mission_band_reject"": 4, ""swept_safety_reject"": 42, ""tracking_error_limit"": 6}",1.0948543471784136
+C3_lookahead_1p5,ALL,margin,5,73,18,33,17,11,0.24820512820512822,"{""margin_only_failure"": 15, ""success"": 18, ""swept_safety_reject"": 32, ""mission_band_reject"": 2, ""tracking_error_limit"": 6}",1.3163835826859736
+C3_lookahead_1p5,H5_B1,ALL,1,30,20,26,17,2,0.6666666666666666,"{""success"": 20, ""margin_only_failure"": 6, ""mission_band_reject"": 2, ""swept_safety_reject"": 2}",0.4117313300963999
+C3_lookahead_1p5,H5_B1,body,1,15,14,14,11,0,0.9333333333333333,"{""success"": 14, ""mission_band_reject"": 1}",0.3641209710251288
+C3_lookahead_1p5,H5_B1,margin,1,15,6,12,6,2,0.4,"{""margin_only_failure"": 6, ""success"": 6, ""swept_safety_reject"": 2, ""mission_band_reject"": 1}",0.459341689167671
+C3_lookahead_1p5,H5_B2,ALL,1,30,17,21,12,5,0.5666666666666667,"{""swept_safety_reject"": 5, ""success"": 17, ""mission_band_reject"": 4, ""margin_only_failure"": 4}",0.5569575630615577
+C3_lookahead_1p5,H5_B2,body,1,15,9,9,5,2,0.6,"{""swept_safety_reject"": 3, ""success"": 9, ""mission_band_reject"": 3}",0.5905033790088601
+C3_lookahead_1p5,H5_B2,margin,1,15,8,12,7,3,0.5333333333333333,"{""success"": 8, ""swept_safety_reject"": 2, ""margin_only_failure"": 4, ""mission_band_reject"": 1}",0.5234117471142555
+C3_lookahead_1p5,H5_N1,ALL,1,28,13,18,11,8,0.4642857142857143,"{""success"": 13, ""swept_safety_reject"": 10, ""margin_only_failure"": 5}",0.22805332429149197
+C3_lookahead_1p5,H5_N1,body,1,15,9,9,7,2,0.6,"{""success"": 9, ""swept_safety_reject"": 6}",0.13367421186194858
+C3_lookahead_1p5,H5_N1,margin,1,13,4,9,4,6,0.3076923076923077,"{""success"": 4, ""margin_only_failure"": 5, ""swept_safety_reject"": 4}",0.3369523001717344
+C3_lookahead_1p5,H5_N2,ALL,1,9,0,0,0,6,0,"{""swept_safety_reject"": 9}",0.32731297473248544
+C3_lookahead_1p5,H5_N2,body,1,9,0,0,0,6,0,"{""swept_safety_reject"": 9}",0.32731297473248544
+C3_lookahead_1p5,H5_O1,ALL,1,30,0,0,0,0,0,"{""swept_safety_reject"": 24, ""tracking_error_limit"": 6}",2.7550049056021084
+C3_lookahead_1p5,H5_O1,body,1,15,0,0,0,0,0,"{""swept_safety_reject"": 12, ""tracking_error_limit"": 3}",2.6996925705321493
+C3_lookahead_1p5,H5_O1,margin,1,15,0,0,0,0,0,"{""swept_safety_reject"": 12, ""tracking_error_limit"": 3}",2.8103172406720676
+C3_lookahead_1p5,H5_O2,ALL,1,30,0,0,0,0,0,"{""swept_safety_reject"": 24, ""tracking_error_limit"": 6}",2.234054762783556
+C3_lookahead_1p5,H5_O2,body,1,15,0,0,0,0,0,"{""swept_safety_reject"": 12, ""tracking_error_limit"": 3}",2.146805426931538
+C3_lookahead_1p5,H5_O2,margin,1,15,0,0,0,0,0,"{""swept_safety_reject"": 12, ""tracking_error_limit"": 3}",2.321304098635574
+C3_lookahead_5,ALL,ALL,6,157,8,19,1,24,0.04603174603174603,"{""swept_safety_reject"": 126, ""margin_only_failure"": 11, ""success"": 8, ""tracking_error_limit"": 12}",1.3148041916377398
+C3_lookahead_5,ALL,body,6,84,7,7,1,13,0.07777777777777778,"{""swept_safety_reject"": 71, ""success"": 7, ""tracking_error_limit"": 6}",1.215051411557558
+C3_lookahead_5,ALL,margin,5,73,1,12,0,11,0.015384615384615385,"{""swept_safety_reject"": 55, ""margin_only_failure"": 11, ""success"": 1, ""tracking_error_limit"": 6}",1.4295882125519217
+C3_lookahead_5,H5_B1,ALL,1,30,0,4,0,5,0,"{""swept_safety_reject"": 26, ""margin_only_failure"": 4}",0.4456008133547615
+C3_lookahead_5,H5_B1,body,1,15,0,0,0,3,0,"{""swept_safety_reject"": 15}",0.3496064265197532
+C3_lookahead_5,H5_B1,margin,1,15,0,4,0,2,0,"{""swept_safety_reject"": 11, ""margin_only_failure"": 4}",0.5415952001897697
+C3_lookahead_5,H5_B2,ALL,1,30,4,9,1,7,0.13333333333333333,"{""swept_safety_reject"": 21, ""success"": 4, ""margin_only_failure"": 5}",0.5671894630344292
+C3_lookahead_5,H5_B2,body,1,15,4,4,1,3,0.26666666666666666,"{""swept_safety_reject"": 11, ""success"": 4}",0.5143224078164808
+C3_lookahead_5,H5_B2,margin,1,15,0,5,0,4,0,"{""swept_safety_reject"": 10, ""margin_only_failure"": 5}",0.6200565182523776
+C3_lookahead_5,H5_N1,ALL,1,28,4,6,0,6,0.14285714285714285,"{""swept_safety_reject"": 22, ""success"": 4, ""margin_only_failure"": 2}",0.6362077556226624
+C3_lookahead_5,H5_N1,body,1,15,3,3,0,1,0.2,"{""swept_safety_reject"": 12, ""success"": 3}",0.543872143938742
+C3_lookahead_5,H5_N1,margin,1,13,1,3,0,5,0.07692307692307693,"{""swept_safety_reject"": 10, ""success"": 1, ""margin_only_failure"": 2}",0.742748846027186
+C3_lookahead_5,H5_N2,ALL,1,9,0,0,0,6,0,"{""swept_safety_reject"": 9}",0.8680925512769392
+C3_lookahead_5,H5_N2,body,1,9,0,0,0,6,0,"{""swept_safety_reject"": 9}",0.8680925512769392
+C3_lookahead_5,H5_O1,ALL,1,30,0,0,0,0,0,"{""swept_safety_reject"": 24, ""tracking_error_limit"": 6}",2.779502211663526
+C3_lookahead_5,H5_O1,body,1,15,0,0,0,0,0,"{""swept_safety_reject"": 12, ""tracking_error_limit"": 3}",2.730197155079183
+C3_lookahead_5,H5_O1,margin,1,15,0,0,0,0,0,"{""swept_safety_reject"": 12, ""tracking_error_limit"": 3}",2.82880726824787
+C3_lookahead_5,H5_O2,ALL,1,30,0,0,0,0,0,"{""swept_safety_reject"": 24, ""tracking_error_limit"": 6}",2.234294444220555
+C3_lookahead_5,H5_O2,body,1,15,0,0,0,0,0,"{""swept_safety_reject"": 12, ""tracking_error_limit"": 3}",2.145434240602002
+C3_lookahead_5,H5_O2,margin,1,15,0,0,0,0,0,"{""swept_safety_reject"": 12, ""tracking_error_limit"": 3}",2.323154647839107
+baseline,ALL,ALL,6,157,31,60,0,0,0.25396825396825395,"{""swept_safety_reject"": 83, ""margin_only_failure"": 29, ""success"": 31, ""mission_band_reject"": 2, ""tracking_error_limit"": 12}",1.1921845616995024
+baseline,ALL,body,6,84,19,19,0,0,0.25555555555555554,"{""swept_safety_reject"": 57, ""success"": 19, ""mission_band_reject"": 2, ""tracking_error_limit"": 6}",1.1031934928851046
+baseline,ALL,margin,5,73,12,41,0,0,0.1723076923076923,"{""margin_only_failure"": 29, ""success"": 12, ""swept_safety_reject"": 26, ""tracking_error_limit"": 6}",1.294585243622919
+baseline,H5_B1,ALL,1,30,5,18,0,0,0.16666666666666666,"{""swept_safety_reject"": 11, ""margin_only_failure"": 13, ""success"": 5, ""mission_band_reject"": 1}",0.36865586644948506
+baseline,H5_B1,body,1,15,3,3,0,0,0.2,"{""swept_safety_reject"": 11, ""success"": 3, ""mission_band_reject"": 1}",0.3354473152747712
+baseline,H5_B1,margin,1,15,2,15,0,0,0.13333333333333333,"{""margin_only_failure"": 13, ""success"": 2}",0.4018644176241989
+baseline,H5_B2,ALL,1,30,10,19,0,0,0.3333333333333333,"{""swept_safety_reject"": 10, ""margin_only_failure"": 9, ""mission_band_reject"": 1, ""success"": 10}",0.43075140236880655
+baseline,H5_B2,body,1,15,6,6,0,0,0.4,"{""swept_safety_reject"": 8, ""mission_band_reject"": 1, ""success"": 6}",0.4471423615343946
+baseline,H5_B2,margin,1,15,4,13,0,0,0.26666666666666666,"{""margin_only_failure"": 9, ""swept_safety_reject"": 2, ""success"": 4}",0.4143604432032185
+baseline,H5_N1,ALL,1,28,10,17,0,0,0.35714285714285715,"{""swept_safety_reject"": 11, ""margin_only_failure"": 7, ""success"": 10}",0.33285090411071677
+baseline,H5_N1,body,1,15,4,4,0,0,0.26666666666666666,"{""swept_safety_reject"": 11, ""success"": 4}",0.277893830118889
+baseline,H5_N1,margin,1,13,6,13,0,0,0.46153846153846156,"{""margin_only_failure"": 7, ""success"": 6}",0.39626291256282575
+baseline,H5_N2,ALL,1,9,6,6,0,0,0.6666666666666666,"{""swept_safety_reject"": 3, ""success"": 6}",0.43628732243362944
+baseline,H5_N2,body,1,9,6,6,0,0,0.6666666666666666,"{""swept_safety_reject"": 3, ""success"": 6}",0.43628732243362944
+baseline,H5_O1,ALL,1,30,0,0,0,0,0,"{""swept_safety_reject"": 24, ""tracking_error_limit"": 6}",2.763450551037253
+baseline,H5_O1,body,1,15,0,0,0,0,0,"{""swept_safety_reject"": 12, ""tracking_error_limit"": 3}",2.708621922655013
+baseline,H5_O1,margin,1,15,0,0,0,0,0,"{""swept_safety_reject"": 12, ""tracking_error_limit"": 3}",2.8182791794194926
+baseline,H5_O2,ALL,1,30,0,0,0,0,0,"{""swept_safety_reject"": 24, ""tracking_error_limit"": 6}",2.2346943458050936
+baseline,H5_O2,body,1,15,0,0,0,0,0,"{""swept_safety_reject"": 12, ""tracking_error_limit"": 3}",2.14700573711334
+baseline,H5_O2,margin,1,15,0,0,0,0,0,"{""swept_safety_reject"": 12, ""tracking_error_limit"": 3}",2.322382954496847

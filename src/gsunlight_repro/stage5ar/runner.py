@@ -18,12 +18,14 @@ from .evidence import (
     inventory,
     load_history,
     path_features,
+    protect_output,
     read_manifest,
     select_pilot,
 )
 from .p0 import run_all
 from .reference import sampled_curve_evidence
 from .replay import Replay, compare_frozen, replay
+from .storage import read_record
 
 LOGGER = logging.getLogger(__name__)
 
@@ -61,7 +63,7 @@ class Runner:
         self.history, self.local, self.output = (
             history.resolve(),
             local.resolve(),
-            output.resolve(),
+            protect_output(output),
         )
         if (
             self.local.is_relative_to(ROOT)
@@ -72,10 +74,6 @@ class Runner:
             raise ValueError(
                 "New full evidence must be separate from repository/history"
             )
-        if self.output.is_relative_to(ROOT) and not self.output.is_relative_to(
-            ROOT / "results/stage5ar"
-        ):
-            raise ValueError("Public output must stay in results/stage5ar")
         self.local.mkdir(parents=True, exist_ok=True)
         self.output.mkdir(parents=True, exist_ok=True)
         self.protocol = read_config("stage5ar_protocol.json")
@@ -171,17 +169,44 @@ class Runner:
             protocol_id=self.protocol["protocol_id"],
         )
         identity.update(extra or {})
+        if variant == "shortcut":
+            identity["path_uid"] = identity["shortcut_path_id"]
         directory = self.local / "replays"
         directory.mkdir(exist_ok=True)
         name = f"{row['job_id']}--{variant}-p{path_id}--{condition['id']}.json.gz"
         target = directory / name
         specification = {"identity": identity, "condition": condition}
         if target.exists():
-            with gzip.open(target, "rt", encoding="utf-8") as stream:
-                previous = json.load(stream)
+            previous = read_record(target)
             if previous["specification"] != specification:
                 raise ValueError("Existing replay differs from requested condition")
             return Replay(previous["summary"], previous["trace"])
+        # The same task may publish the same coordinates as selected/raw/shortcut.
+        # Reuse the verified baseline trace instead of simulating/storing it again.
+        if condition["id"] == "baseline" and variant != "selected":
+            item = self.items[row["job_id"]]
+            selected_id = item["row"]["selected_path_id"]
+            selected_path = item["paths"][selected_id]
+            source_variant = "selected" if path == selected_path else "raw"
+            source_id = selected_id if source_variant == "selected" else path_id
+            same_raw = path == item["paths"][item["row"]["raw_path_id"]]
+            if path == selected_path or (variant == "shortcut" and same_raw):
+                reference = (
+                    f"{row['job_id']}--{source_variant}-p{source_id}--baseline.json.gz"
+                )
+                previous = read_record(directory / reference)
+                result = Replay({**previous["summary"], **identity}, previous["trace"])
+                with gzip.open(target, "xt", encoding="utf-8") as stream:
+                    json.dump(
+                        {
+                            "specification": specification,
+                            "summary": result.summary,
+                            "trace_reference": reference,
+                        },
+                        stream,
+                        allow_nan=False,
+                    )
+                return result
         scene = self.scene(row["scene"])
         protocol = self.config["protocol"]
         margin = (

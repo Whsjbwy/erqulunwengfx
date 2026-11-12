@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "replay_records_checked": 1099,
+  "trace_reference_records": 85,
+  "recorded_steps_checked_including_references": 361456,
+  "independent_rk4_steps": 3297,
+  "maximum_rk4_error_m": 9.972942541209448e-14,
+  "tolerance_m": 1e-10
+}

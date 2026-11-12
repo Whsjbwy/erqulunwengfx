@@ -11,9 +11,21 @@ from pathlib import Path
 from ..metrics import path_length
 from ..stage5a.analysis import read_evidence, write_csv
 from ..stage5a.audit import expected_identities
-from ..stage5a.maps import Scene, body_radius, load_scene, read_config
+from ..stage5a.maps import ROOT, Scene, body_radius, load_scene, read_config
 from ..stage5a.path_features import describe_path
 from .replay import classify
+
+
+def protect_output(path: Path) -> Path:
+    """Reject new diagnostic output targeting frozen repository files."""
+    resolved = path.resolve()
+    if resolved.is_relative_to(ROOT) and not resolved.is_relative_to(
+        ROOT / "results/stage5ar"
+    ):
+        raise ValueError(
+            "Diagnostic output cannot overwrite historical repository paths"
+        )
+    return resolved
 
 
 def load_history(local: Path) -> tuple[dict, list[dict]]:

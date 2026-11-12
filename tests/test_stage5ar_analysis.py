@@ -3,6 +3,8 @@
 import pytest
 
 from gsunlight_repro.stage5ar.analysis import (
+    condition_summary,
+    geometry_associations,
     paired_sensitivity,
     rankdata,
     shortcut_rows,
@@ -68,3 +70,30 @@ def test_waterfall_does_not_turn_geometry_rejection_into_tracking() -> None:
     result = waterfall([{"row": row}])[0]
     assert result["registered_tasks"] == result["geometric_path"] == 1
     assert result["nominal_precheck"] == result["actually_tracked"] == 0
+
+
+def test_unequal_map_counts_still_use_map_mean() -> None:
+    base = {
+        "condition_id": "baseline",
+        "mode": "body",
+        "physical_execution_success": False,
+        "delta_execution_success": 0,
+        "primary_class": "tracking_error_limit",
+        "max_tracking_error_m": 3.1,
+    }
+    rows = [base | {"scene": "A", "execution_success": True}]
+    rows += [base | {"scene": "B", "execution_success": False} for _ in range(3)]
+    result = next(
+        row for row in condition_summary(rows) if row["scene"] == row["mode"] == "ALL"
+    )
+    assert result["frozen_planning_outputs"] == 4
+    assert result["strict_successes"] == 1
+    assert result["success_rate_map_mean"] == 0.5
+
+
+def test_missing_geometry_stays_undefined_instead_of_zero() -> None:
+    rows = geometry_associations(
+        [{"scene": "A", "execution_success": False, "max_tracking_error_m": 3.1}]
+    )
+    assert all(row["spearman_with_success"] is None for row in rows)
+    assert all(row["n"] == 0 and row["missing"] == 1 for row in rows)

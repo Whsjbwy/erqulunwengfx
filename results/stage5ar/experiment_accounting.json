@@ -1,0 +1,18 @@
+{
+  "complete": true,
+  "original_planning_trials": 450,
+  "holdout_planning_trials": 270,
+  "independent_maps": 6,
+  "pilot_selected_paths": 18,
+  "expanded_selected_paths": 157,
+  "sensitivity_replays": 785,
+  "same_source_shortcut_pairs": 157,
+  "shortcut_replays": 314,
+  "unique_saved_replays": 1099,
+  "unique_saved_traces": 1014,
+  "trace_reference_records": 85,
+  "actual_integrated_replays": 1014,
+  "resource_timeouts": 0,
+  "new_searches": 0,
+  "baseline_frozen_and_history_equivalent": 157
+}

@@ -6,6 +6,7 @@ import pytest
 
 from gsunlight_repro.stage5ar.evidence import (
     freeze_manifest,
+    protect_output,
     read_manifest,
     select_pilot,
 )
@@ -103,3 +104,11 @@ def test_unknown_classification_and_changed_baseline_raise() -> None:
         classify("unknown")
     with pytest.raises(ValueError, match="mismatch"):
         compare_frozen({"eligible": False}, {"eligible": True})
+
+
+def test_historical_repository_output_is_protected() -> None:
+    from pathlib import Path
+
+    with pytest.raises(ValueError, match="historical"):
+        protect_output(Path("results/stage5a"))
+    assert protect_output(Path("results/stage5ar")).name == "stage5ar"

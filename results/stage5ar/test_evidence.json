@@ -1,0 +1,14 @@
+{
+  "analytic_extra": {
+    "S_curve_min_yaw_rate_rad_s": -0.17453292519943295,
+    "S_curve_max_yaw_rate_rad_s": 0.17453292519943295,
+    "status": "passed"
+  },
+  "baseline": "416 passed in 11.17s",
+  "pre_export_fix_full_suite": "1 failed, 448 passed in 9.43s",
+  "pre_export_fix_minimal_test": "1 failed in 0.24s",
+  "regression_commit": "b563a8c",
+  "post_export_fix_minimal_test": "1 passed in 0.13s",
+  "post_export_fix_public_results": "3 passed in 0.13s",
+  "final_suite": "450 passed in 9.07s"
+}

@@ -1,0 +1,40 @@
+{
+  "figures": [
+    {
+      "figure": "failure_locations.png",
+      "width_px": 2565,
+      "height_px": 1783,
+      "opened_for_visual_review": true
+    },
+    {
+      "figure": "failure_waterfall.png",
+      "width_px": 2250,
+      "height_px": 750,
+      "opened_for_visual_review": true
+    },
+    {
+      "figure": "narrow_failure_detail.png",
+      "width_px": 1800,
+      "height_px": 1200,
+      "opened_for_visual_review": true
+    },
+    {
+      "figure": "sensitivity_by_map.png",
+      "width_px": 1350,
+      "height_px": 750,
+      "opened_for_visual_review": true
+    },
+    {
+      "figure": "shortcut_paired.png",
+      "width_px": 2250,
+      "height_px": 675,
+      "opened_for_visual_review": true
+    }
+  ],
+  "display_only_changes": [
+    "darkened complete-map obstacle display samples",
+    "expanded right export margin",
+    "zoomed narrow opening clearance panel"
+  ],
+  "scientific_data_changed": false
+}
