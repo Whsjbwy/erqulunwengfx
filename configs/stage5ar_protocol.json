@@ -1,0 +1,27 @@
+{
+  "protocol_id": "stage5ar-v1",
+  "historical_commit": "8c69bb505f8b0602d61559080f385627e2678b1f",
+  "base_branch": "pivot/auv-rrt-stage5a",
+  "branch": "audit/auv-stage5ar-execution",
+  "manifest": "results/stage5ar/sampling_manifest.csv",
+  "families": ["ordinary", "near_seabed", "narrow"],
+  "pilot_per_family": 6,
+  "selection": "Eligible selected holdout paths only. First earliest historical termination in each primary outcome class; then earliest failure in any uncovered scene; fill remaining slots alternating earliest/latest failures, ties by job_id. Maximum six per family. Inventory also retains all raw-best paths and missing paths.",
+  "expansion": "After the fixed 18-or-fewer pilot paths pass replay equivalence without errors, expand P1 and P2 to ALL nominal-body-eligible selected holdout paths. Never replace a pilot case. P3 uses the raw-best path of every same expanded task, including geometry rejects.",
+  "conditions": [
+    {"id": "baseline", "initial_yaw": "goal", "speed_m_s": 1.0, "lookahead_m": 3.0},
+    {"id": "C1_first_heading", "initial_yaw": "first_segment", "speed_m_s": 1.0, "lookahead_m": 3.0},
+    {"id": "C2_speed_0p5", "initial_yaw": "goal", "speed_m_s": 0.5, "lookahead_m": 3.0},
+    {"id": "C3_lookahead_1p5", "initial_yaw": "goal", "speed_m_s": 1.0, "lookahead_m": 1.5},
+    {"id": "C3_lookahead_5", "initial_yaw": "goal", "speed_m_s": 1.0, "lookahead_m": 5.0}
+  ],
+  "initial_pitch_rad": 0.0,
+  "C4": "Not preregistered; pitch-demand associations reported descriptively, no post-hoc additional tuning.",
+  "frozen": "5A kinematics, integration, Route, Geometry, map, body sphere, angle gain, limits, dt, goal tolerance and tracking-error threshold unchanged. Diagnostic loop is checked against the original track function and original records.",
+  "time_limit": "Exactly 5A min(600,max(60,3*length/speed+30)); speed-dependent budget reported per replay. Wall guard remains 20 seconds per replay.",
+  "shortcut": "One deterministic farthest-visible-vertex greedy pass using the original planning radius, no randomness or search. Derive from raw_best, never compare unrelated incumbents as a shortcut pair.",
+  "P0": "T01-T08 mathematical expectations in tests and p0.py; no real-scene scan before all pass.",
+  "statistics": "Per-scene counts first; paired changes include every replay, no success-only error means, no p-values or unseen-map generalization. Spearman associations are descriptive and omit undefined features explicitly.",
+  "storage": "Historical full coordinates read in place. New per-step replay trace saved once outside repository. Public CSV has summaries and IDs only. No extra file hashes.",
+  "stop": "Stop after P0-P3, report Go/Refine Evaluation/Pivot and open unmerged stacked PR. P4 development requires later researcher review."
+}
