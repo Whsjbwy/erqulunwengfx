@@ -40,4 +40,8 @@ Python3.11.15；依赖实际为NumPy2.4.6、Matplotlib3.11.2、pytest9.2.0、Ruf
 
 ## GitHub Windows CI
 
-新增stage5ar-windows.yml在本分支push及以pivot/auv-rrt-stage5a为目标的PR上运行Windows测试、Ruff、格式和编译。只用自编代码/合成数据，不下载作者材料，也不宣称CI重跑了全部科研矩阵。实际提交、run/job及日志证据在代码推送后核验补充。
+新增stage5ar-windows.yml在本分支push及以pivot/auv-rrt-stage5a为目标的PR上运行Windows测试、Ruff、格式和编译。只用自编代码/合成数据，不下载作者材料，也不宣称CI重跑了全部科研矩阵。
+
+代码/结果提交87a87c6的[PR Windows运行43151114687](https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43151114687)已实际成功，job130960212608。已读取完整官方日志：450 passed in16.15s，compileall与Ruff成功，145 files already formatted。镜像windows-2025-vs2026，Python3.11.9；与本机Windows11/Python3.11.15分别记录，不混记补丁版本、耗时或收集文件数。
+
+精简官方证据在[windows_ci.json](../results/stage5ar/windows_ci.json)，完整日志留本地。审核入口为[PR #6](https://github.com/Whsjbwy/erqulunwengfx/pull/6)，base为pivot/auv-rrt-stage5a，保持开放、未合并。其后仅补文档和CI证据的最终提交状态在PR实时检查中另核验。

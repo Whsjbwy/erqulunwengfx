@@ -85,3 +85,9 @@ git diff --name-status pivot/auv-rrt-stage5a
 7. 证据整理脚本最初假定静默compileall也有日志文件，实际Tee-Object在无输出时未创建文件；改为依据真实退出0及无输出记录，未补造编译输出。
 
 最终本机和Windows CI的实际结果另见STAGE5AR_TEST_RESULTS_CN.md，不以预期代替执行证据。
+
+## 实际GitHub交付
+
+30d39d5推送预注册与清单；b563a8c保留最小失败回归；87a87c6提交完整代码/结果及导出修复。推送87a87c6曾在普通环境报getaddrinfo线程启动失败，属于DNS/网络环境错误；已在授权联网环境用同一git push命令成功推送，未修改远端分支策略或settings。
+
+已通过GitHub连接器创建[PR #6](https://github.com/Whsjbwy/erqulunwengfx/pull/6)，明确base pivot/auv-rrt-stage5a、head audit/auv-stage5ar-execution、open/unmerged。随后实际读取PR的Windows run43151114687/job130960212608及完整官方日志：450 passed in16.15s，编译/Ruff/145文件格式通过。测试证据补充另作纯文档/元数据提交；不合并、不进入P4或5B。
