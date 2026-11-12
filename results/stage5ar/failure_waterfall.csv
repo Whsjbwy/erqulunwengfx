@@ -1,0 +1,10 @@
+mode,method,registered_tasks,certified_reachable,certified_unreachable,geometric_path,nominal_precheck,actually_tracked,nominal_arrival,strict_completion
+body,informed_rrt_star,30,30,0,28,28,28,1,1
+body,rrt_connect,30,30,0,28,28,28,11,11
+body,rrt_star,30,30,0,28,28,28,7,7
+margin,informed_rrt_star,30,25,5,24,24,24,14,0
+margin,rrt_connect,30,25,5,25,25,25,13,7
+margin,rrt_star,30,25,5,24,24,24,14,5
+point,informed_rrt_star,30,30,0,30,0,0,0,0
+point,rrt_connect,30,30,0,30,0,0,0,0
+point,rrt_star,30,30,0,30,0,0,0,0

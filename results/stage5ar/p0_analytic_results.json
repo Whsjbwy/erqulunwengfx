@@ -1,0 +1,57 @@
+[
+  {
+    "case": "T01",
+    "status": "passed",
+    "steps": 293,
+    "expected_steps": 293,
+    "final_error_m": 0.6999999999997257
+  },
+  {
+    "case": "T02",
+    "status": "passed",
+    "initial_yaw_rad": 0.0,
+    "primary_class": "tracking_error_limit",
+    "max_error_m": 3.0362137323240557
+  },
+  {
+    "case": "T03",
+    "status": "passed",
+    "maximum_reference_error_m": 8.832014452883827e-13,
+    "tolerance_m": 1e-10
+  },
+  {
+    "case": "T04",
+    "status": "passed",
+    "primary_class": "tracking_error_limit",
+    "max_error_m": 3.017385325277906
+  },
+  {
+    "case": "T05",
+    "status": "passed",
+    "z_convention": "up",
+    "maximum_pitch_deg": 20
+  },
+  {
+    "case": "T06",
+    "status": "passed",
+    "reference_samples": 1001,
+    "reference_lipschitz_gap_m": 0.0025,
+    "reference_physical_sample_min_m": 0.009999999999999787,
+    "reference_physical_curve_lower_bound_m": 0.007499999999999786,
+    "reference_physical_classification": "curve_certified_clear",
+    "reference_mission_sample_min_m": 0.009999999999999787,
+    "reference_mission_curve_lower_bound_m": 0.007499999999999786,
+    "reference_mission_classification": "curve_certified_clear"
+  },
+  {
+    "case": "T07",
+    "status": "passed",
+    "primary_class": "margin_only_failure"
+  },
+  {
+    "case": "T08",
+    "status": "passed",
+    "primary_class": "tracking_error_limit",
+    "max_error_m": 3.0362137323240566
+  }
+]

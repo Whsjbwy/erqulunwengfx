@@ -1,0 +1,18 @@
+{
+  "bug": "CSV flattened path_id overwrote global raw/shortcut IDs",
+  "pre_fix_test_commit": "b563a8c",
+  "affected_pairs": 157,
+  "pre_fix_unique_shortcut_ids": 74,
+  "post_fix_unique_shortcut_ids": 157,
+  "all_shared_non_identity_fields_unchanged": true,
+  "raw_successes_before_after": [
+    15,
+    15
+  ],
+  "shortcut_successes_before_after": [
+    32,
+    32
+  ],
+  "trajectory_recomputation": false,
+  "historical_stage5a_changed": false
+}

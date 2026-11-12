@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "source": "GitHub Actions official job logs",
+  "commit": "87a87c64ef02df9d64014e1ffced11d36d6364de",
+  "event": "pull_request",
+  "pull_request": 6,
+  "run_id": 43151114687,
+  "job_id": 130960212608,
+  "url": "https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43151114687",
+  "conclusion": "success",
+  "runner_image": "windows-2025-vs2026",
+  "python": "3.11.9",
+  "pytest": {
+    "passed": 450,
+    "duration_s": 16.15
+  },
+  "compileall": "success",
+  "ruff_check": "success",
+  "ruff_format": {
+    "status": "success",
+    "files_already_formatted": 145
+  },
+  "official_log_excerpt": [
+    "2026-11-12T03:53:00.6401531Z Image: windows-2025-vs2026",
+    "2026-11-12T03:53:10.5951731Z Successfully set up CPython (3.11.9)",
+    "2026-11-12T03:53:48.6074739Z ##[group]Run python -m compileall -q src tests scripts",
+    "2026-11-12T03:53:49.1508217Z ##[group]Run python -m pytest -v",
+    "2026-11-12T03:54:06.1529727Z ============================ 450 passed in 16.15s =============================",
+    "2026-11-12T03:54:06.6057551Z ##[group]Run python -m ruff check .",
+    "2026-11-12T03:54:06.9214577Z All checks passed!",
+    "2026-11-12T03:54:07.0390592Z ##[group]Run python -m ruff format --check .",
+    "2026-11-12T03:54:07.3229185Z 145 files already formatted"
+  ],
+  "scope": "Synthetic software tests only; the full research replay matrix was run locally, not in CI"
+}

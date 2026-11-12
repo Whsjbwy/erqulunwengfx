@@ -1,0 +1,73 @@
+{
+  "date": "2026-11-12",
+  "python": "3.11.15",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "processor": "",
+  "libraries": {
+    "numpy": "2.4.6",
+    "matplotlib": "3.11.2",
+    "pytest": "9.2.0",
+    "ruff": "0.17.4"
+  },
+  "checks": [
+    {
+      "arguments": [
+        "-m",
+        "pytest",
+        "-v",
+        "--junitxml=../local_only/stage5ar_audit/final_pytest.xml"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 9.818371,
+      "completed_at": "2026-11-12T11:46:05.9231908+08:00",
+      "check": "pytest",
+      "last_output_line": "============================= 450 passed in 9.07s ============================="
+    },
+    {
+      "elapsed_s": 0.3224802,
+      "check": "ruff",
+      "exit_code": 0,
+      "completed_at": "2026-11-12T11:45:56.4341779+08:00",
+      "arguments": [
+        "-m",
+        "ruff",
+        "check",
+        "."
+      ],
+      "last_output_line": "All checks passed!"
+    },
+    {
+      "arguments": [
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "."
+      ],
+      "exit_code": 0,
+      "check": "ruff_format",
+      "completed_at": "2026-11-12T11:45:56.4460552+08:00",
+      "elapsed_s": 0.3340543,
+      "last_output_line": "143 files already formatted"
+    },
+    {
+      "exit_code": 0,
+      "arguments": [
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "tests",
+        "scripts"
+      ],
+      "completed_at": "2026-11-12T11:45:56.4848076+08:00",
+      "elapsed_s": 0.3737312,
+      "check": "compileall",
+      "last_output_line": ""
+    }
+  ],
+  "pytest_passed": 450,
+  "pytest_summary": "450 passed in 9.07s",
+  "pre_export_repair_summary": "1 failed, 448 passed in 9.43s",
+  "logs": "Full original command output retained outside repository in local_only/stage5ar_audit"
+}
