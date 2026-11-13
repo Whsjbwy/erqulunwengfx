@@ -1,0 +1,30 @@
+{
+  "chosen": {
+    "id": "los_d2",
+    "kind": "los3d",
+    "lookahead_m": 2.0
+  },
+  "all_candidates": [
+    {
+      "controller": {
+        "id": "los_d2",
+        "kind": "los3d",
+        "lookahead_m": 2.0
+      },
+      "strict_map_mean": 0.22976190476190475,
+      "nominal_map_mean": 0.25833333333333336,
+      "rms_map_mean_m": 0.6850233417069311
+    },
+    {
+      "controller": {
+        "id": "los_d4",
+        "kind": "los3d",
+        "lookahead_m": 4.0
+      },
+      "strict_map_mean": 0.1623015873015873,
+      "nominal_map_mean": 0.2234126984126984,
+      "rms_map_mean_m": 0.6983075589113278
+    }
+  ],
+  "selection_scope": "old_six_maps_only_once"
+}

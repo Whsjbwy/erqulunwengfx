@@ -1,0 +1,30 @@
+{
+  "type": "accidental_duplicate_worker_after_interruption",
+  "date_local": "2026-11-13",
+  "reason": "Agent incorrectly inferred termination from an unavailable process listing instead of polling the original exec session.",
+  "original_session": 86933,
+  "duplicate_session": 60293,
+  "duplicate_exit_code": 1,
+  "duplicate_job_id": "independent_E_B2_rrt_star_body_seed0",
+  "duplicate_search_attempts": 1,
+  "duplicate_execution_conditions_logged": 0,
+  "duplicate_numeric_result_available": false,
+  "duplicate_result_status": "Not archived: exclusive creation raised FileExistsError; original record retained.",
+  "known_planning_overlap_jobs": [
+    "independent_E_B2_rrt_star_body_seed0"
+  ],
+  "conservatively_marked_execution_jobs": [
+    "independent_E_B2_rrt_connect_margin_seed0",
+    "independent_E_B2_rrt_star_body_seed0"
+  ],
+  "duplicate_log_started_local": "2026-11-13 12:40:19.488",
+  "duplicate_log_last_write_local": "2026-11-13 12:40:36",
+  "configuration_unchanged": true,
+  "record_overwrites": 0,
+  "matrix_policy": "Keep every original task and result; separately disclose this unarchived duplicate search and resource overlap. Do not substitute or rerun the affected original result.",
+  "logs": [
+    "e3_formal.log",
+    "e3_formal_resume1.log",
+    "interruption_scan.json"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "figures": [
+    {
+      "figure": "development_controls.png",
+      "width_px": 2400,
+      "height_px": 750,
+      "bytes": 123833,
+      "visually_opened": true
+    },
+    {
+      "figure": "horizontal_reference.png",
+      "width_px": 2279,
+      "height_px": 800,
+      "bytes": 126253,
+      "visually_opened": true
+    },
+    {
+      "figure": "independent_rates.png",
+      "width_px": 2400,
+      "height_px": 1350,
+      "bytes": 187385,
+      "visually_opened": true
+    },
+    {
+      "figure": "narrow_tracks.png",
+      "width_px": 2240,
+      "height_px": 1960,
+      "bytes": 1029647,
+      "visually_opened": true
+    },
+    {
+      "figure": "nearbed_tracks.png",
+      "width_px": 2240,
+      "height_px": 1960,
+      "bytes": 1331293,
+      "visually_opened": true
+    },
+    {
+      "figure": "ordinary_tracks.png",
+      "width_px": 2240,
+      "height_px": 1960,
+      "bytes": 609370,
+      "visually_opened": true
+    }
+  ],
+  "count": 6,
+  "horizontal_xlabel_crop_repaired_with_tight_bbox": true,
+  "all_trajectory_cases_fixed_before_plotting": true,
+  "no_data_or_map_changed_for_display": true
+}

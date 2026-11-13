@@ -1,0 +1,15 @@
+{
+  "historical_records": 450,
+  "public_fields_compared": 33670,
+  "status": "passed",
+  "replayed_legacy_paths": 12,
+  "historical_failures_augmented": 910,
+  "projection_jump_markers": 177,
+  "synthetic_fold": {
+    "position_step_m": 0.002,
+    "projection_step_m": 16.2,
+    "segment_before": 0,
+    "segment_after": 2,
+    "interpretation": "expected_global_nearest_mapping_discontinuity"
+  }
+}

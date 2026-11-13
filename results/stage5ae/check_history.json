@@ -1,0 +1,21 @@
+{
+  "baseline_pytest_passed": 450,
+  "final_attempt1": {
+    "passed": 468,
+    "failed": 1,
+    "duration_s": 10.99,
+    "cause": "UTF-8 child stderr was decoded as Windows GBK in worker-lock test",
+    "full_log": "local_only/stage5ae_audit/final_pytest_attempt1.log",
+    "junit": "local_only/stage5ae_audit/final_pytest_attempt1.xml"
+  },
+  "minimal_utf8_fix_test": {
+    "passed": 1,
+    "duration_s": 0.18
+  },
+  "final_attempt2": {
+    "passed": 469,
+    "failed": 0,
+    "duration_s": 10.24
+  },
+  "scientific_results_changed_by_test_fix": false
+}

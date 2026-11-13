@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "planning_tasks_checked": 360,
+  "geometry_paths_checked": 306,
+  "first_certificates_checked": 306,
+  "maximum_planning_process_peak_rss_bytes": 212332544,
+  "records_checked": 2323,
+  "trace_steps_checked": 929875,
+  "independent_rk4_steps": 6969,
+  "maximum_rk4_error_m": 2.1316282072803006e-13,
+  "unique_independent_safety_traces": 1224,
+  "continuous_intervals_recertified": 627750,
+  "failure_curve_reference_conditions": 338,
+  "unique_failure_curve_references": 338
+}

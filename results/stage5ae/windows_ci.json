@@ -1,0 +1,27 @@
+{
+  "repository": "Whsjbwy/erqulunwengfx",
+  "pr": 7,
+  "base": "audit/auv-stage5ar-execution",
+  "head": "audit/auv-stage5ae-evaluation",
+  "code_commit": "b55c618f9563012b25908d2cfeec3af5e3947282",
+  "run_id": 43370148148,
+  "run_url": "https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43370148148",
+  "job_id": 131703760406,
+  "job_url": "https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43370148148/job/131703760406",
+  "job_conclusion": "success",
+  "official_full_log_read": true,
+  "runner_image": "windows-2025-vs2026",
+  "operating_system": "Microsoft Windows Server 2025",
+  "python": "3.11.9",
+  "pytest": {
+    "passed": 469,
+    "failed": 0,
+    "elapsed_s": 19.94
+  },
+  "compileall": "success",
+  "ruff": "All checks passed!",
+  "format": "169 files already formatted",
+  "full_log_local": "local_only/stage5ae_audit/windows_code_job_131703760406.log",
+  "scope": "Software, public results, resource lock and terminal-boundary regressions; not a rerun of360 scientific planning tasks.",
+  "metadata_followup": "A later documentation/evidence-only commit will be verified separately without a self-referential evidence-commit loop."
+}

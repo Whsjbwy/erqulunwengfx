@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "planning_trials": 36,
+  "geometry_successes": 36,
+  "planning_actual_total_s": 240.0811408999989,
+  "maximum_deadline_overshoot_s": 0.0036200999998072803,
+  "maximum_process_peak_rss_bytes": 180486144,
+  "errors": 0,
+  "criterion": "All 36 planned tasks complete with no technical error; geometric or execution failures remain valid negative results. Full matrix reuses these tasks."
+}

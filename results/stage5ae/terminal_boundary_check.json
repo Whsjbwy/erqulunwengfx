@@ -1,0 +1,23 @@
+{
+  "type": "analytic_posthoc_boundary_diagnosis_not_new_planning_sample",
+  "start_position": [
+    11.0,
+    0.0,
+    0.0
+  ],
+  "goal_position": [
+    10.0,
+    0.0,
+    0.0
+  ],
+  "progress_before_m": 10.0,
+  "progress_after_m": 10.0,
+  "command_target": [
+    12.0,
+    0.0,
+    0.0
+  ],
+  "command_dot_goal_direction": -1.0,
+  "interpretation": "Frozen finite-path LOS continues along terminal tangent after overshoot; no terminal point attractor is implemented. Do not attribute all endpoint error failures to path geometry.",
+  "guidance_changed": false
+}

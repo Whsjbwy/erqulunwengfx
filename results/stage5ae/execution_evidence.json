@@ -1,0 +1,14 @@
+{
+  "formal_process_exit_code": 0,
+  "formal_completed_marker": {
+    "phase": "formal",
+    "passed": true,
+    "planning_trials": 360
+  },
+  "original_session": 86933,
+  "duplicate_process_exit_code": 1,
+  "duplicate_session": 60293,
+  "formal_log": "local_only/stage5ae_audit/e3_formal.log",
+  "duplicate_log": "local_only/stage5ae_audit/e3_formal_resume1.log",
+  "failed_duplicate_did_not_replace_primary": true
+}
