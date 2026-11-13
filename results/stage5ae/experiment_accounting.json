@@ -1,0 +1,14 @@
+{
+  "complete": false,
+  "old_diagnostic_paths": 157,
+  "development_condition_records": 1099,
+  "independent_planning_trials": 0,
+  "independent_maps": 0,
+  "independent_execution_conditions": 0,
+  "independent_condition_rows": 0,
+  "not_run_no_path_conditions": 0,
+  "geometry_successes": 0,
+  "new_saved_traces": 543,
+  "historical_trace_references": 471,
+  "same_trace_references": 85
+}
