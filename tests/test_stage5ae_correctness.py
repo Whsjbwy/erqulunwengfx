@@ -6,10 +6,23 @@ import numpy as np
 import pytest
 
 from gsunlight_repro.stage5a.maps import read_config
+from gsunlight_repro.stage5a.tracking import Route, State
 from gsunlight_repro.stage5ae.curves import fillet
 from gsunlight_repro.stage5ae.guidance import LOS, frame
 from gsunlight_repro.stage5ae.verification import analytic_cases, folded_projection_case
 from gsunlight_repro.stage5ar.p0 import empty_scene
+
+
+def test_finite_path_los_does_not_claim_a_terminal_attractor() -> None:
+    """Expose the frozen guidance limitation without silently repairing it."""
+    route = Route([(0.0, 0.0, 0.0), (10.0, 0.0, 0.0)])
+    guidance = LOS(route, 2.0)
+    guidance.progress = 10.0
+    state = State((11.0, 0.0, 0.0), 0.0, 0.0, 1.0)
+    target, _ = guidance.command(state, 0.1)
+    desired = target - state.position
+    assert guidance.progress == 10.0
+    assert desired @ (route.points[-1] - state.position) < 0
 
 
 def test_analytic_positive_and_negative_tracking_cases() -> None:

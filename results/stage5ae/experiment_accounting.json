@@ -1,14 +1,15 @@
 {
-  "complete": false,
+  "complete": true,
   "old_diagnostic_paths": 157,
   "development_condition_records": 1099,
-  "independent_planning_trials": 0,
-  "independent_maps": 0,
-  "independent_execution_conditions": 0,
-  "independent_condition_rows": 0,
-  "not_run_no_path_conditions": 0,
-  "geometry_successes": 0,
-  "new_saved_traces": 543,
+  "independent_planning_trials": 360,
+  "independent_maps": 12,
+  "independent_execution_conditions": 1224,
+  "independent_condition_rows": 1440,
+  "not_run_no_path_conditions": 216,
+  "geometry_successes": 306,
+  "new_saved_traces": 1767,
   "historical_trace_references": 471,
-  "same_trace_references": 85
+  "same_trace_references": 85,
+  "additional_unarchived_search_attempts": 1
 }

@@ -1,0 +1,38 @@
+{
+  "python": "Python 3.11.15",
+  "platform": "Windows 11 local",
+  "checks": [
+    {
+      "name": "pytest",
+      "command": ".venv/Scripts/python.exe -m pytest -v --junitxml=../local_only/stage5ae_audit/final_pytest.xml",
+      "started_local": "2026-11-13T13:03:34.0990323+08:00",
+      "elapsed_s": 10.770456,
+      "exit_code": 0,
+      "log_present": true
+    },
+    {
+      "name": "ruff",
+      "command": ".venv/Scripts/python.exe -m ruff check .",
+      "started_local": "2026-11-13T13:03:44.8764199+08:00",
+      "elapsed_s": 0.1049026,
+      "exit_code": 0,
+      "log_present": true
+    },
+    {
+      "name": "format",
+      "command": ".venv/Scripts/python.exe -m ruff format --check .",
+      "started_local": "2026-11-13T13:03:44.9822701+08:00",
+      "elapsed_s": 0.1006995,
+      "exit_code": 0,
+      "log_present": true
+    },
+    {
+      "name": "compile",
+      "command": ".venv/Scripts/python.exe -m compileall -q src tests scripts",
+      "started_local": "2026-11-13T13:03:45.0835529+08:00",
+      "elapsed_s": 0.142868,
+      "exit_code": 0,
+      "log_present": false
+    }
+  ]
+}
