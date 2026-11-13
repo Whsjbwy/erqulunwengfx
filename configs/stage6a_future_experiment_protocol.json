@@ -70,19 +70,25 @@
     "total_planning_jobs": 324,
     "maximum_core_tracking_conditions_if_all_solved": 324,
     "maximum_ablation_tracking_conditions_if_all_solved": 108,
-    "pure_planning_budget_minutes": 54
+    "pure_planning_budget_minutes": 54,
+    "maximum_tracking_conditions_if_all_solved": 432,
+    "worst_case_serial_budget_minutes_with_shared_planning": 198
   },
   "fairness": {
     "wall_budget_s": 10,
+    "wall_budget_semantics": "Planning cap within the same30s total planning-plus-execution budget for every registered pipeline",
+    "common_total_pipeline_wall_budget_s": 30,
+    "common_execution_wall_cap_s": 20,
     "charged_inside_budget": ["search", "ODE integration", "local steering", "collision and boundary certification", "path processing", "final independent trajectory certification", "serialization needed to return a valid incumbent"],
     "return_policy": "last fully certified incumbent ready within deadline only; record overshoot, never accept a newly validated late incumbent",
     "shared_preprocessing": "map load/index build and their measured times reported separately, cached identically; method-specific preprocessing charged",
     "parameter_effort": "same development wall-time allowance and documented candidate configurations for all state planners; no holdout tuning",
-    "execution": "Every returned reference evaluated through the same frozen los_terminal_v1 and common validated reference adapter; controller cost reported separately for every method",
+    "execution": "Every returned reference evaluated through the same frozen los_terminal_v1 and common validated reference adapter; all controller integration/certification/bridge cost charged within the common20s execution cap and30s total cap; cap violation is a retained resource failure, never extra free compute",
     "native_vs_tracking": "Native control integration success is a separate metric and cannot replace uniform-controller success",
     "processing": "Within-method raw and shortcut references paired from same solve; shortcut inside the shared 10s budget. If no certified shortcut exists, use registered raw fallback and record it",
     "validity": "same outer sphere plus0.25m, continuous interval enclosure, rate/angle limits, goal and initial pose for all methods; no point-only checker",
-    "language_cost": "Report native bridge, integration/certification and Python/C++ overhead; include same-kernel SST vs H1 to isolate mechanism"
+    "language_cost": "Report native bridge, integration/certification and Python/C++ overhead; include same-kernel SST vs H1 to isolate mechanism",
+    "length_metric_policy": "Separate geometric reference polyline length from model-native arc length v*T; primary comparable executed travel is frozen v times accepted execution time. Report length only with its object and success population; no zero imputation for failed/no-path tasks"
   },
   "outcomes": {
     "geometric": "G/K for each fixed pipeline",

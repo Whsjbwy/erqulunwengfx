@@ -32,10 +32,12 @@
 
 新增测试覆盖解析左右圆弧、标量曲率/独立率反例、拒绝候选不能计入接受轨迹、历史路径输出保护、缺失布尔值必须显式报错、历史不同分母、文献证据深度和未来协议未授权状态。没有为纯报告文字编写镜像测试。
 
-官方Windows证据见[CI记录](../results/stage6a/windows_ci.json)，对应`.github/workflows/stage6a-windows.yml`，在`windows-latest`上实际检查Python编译、完整pytest、Ruff与格式；只使用自编代码/合成数据，不依赖私有作者资料或完整轨迹。CI成功不表示OMPL安装成功，工作流没有安装或测试OMPL。
+代码交付`9331144`的[官方Windows CI](https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43414449322)已成功，作业`131848684408`实际489项测试通过（19.31秒），编译、Ruff及205文件格式检查全部成功；官方完整日志已读取，精简证据见[CI记录](../results/stage6a/windows_ci.json)。对应`.github/workflows/stage6a-windows.yml`只使用自编代码/合成数据，不依赖私有作者资料或完整轨迹。CI成功不表示OMPL安装成功，工作流没有安装或测试OMPL。
+
+交付核查补充了两篇经典作者PDF的本地视觉方法阅读；未公开作者PDF或页面图。未来协议进一步明确所有方法相同的30秒总预算（规划10秒、执行20秒），324规划与最多432跟踪条件共享规划后的串行最坏预算198分钟。均为未来草案澄清，没有产生新规划任务或覆盖12例数值记录。
 
 ## 科研与文件范围验收
 
 公开结果不包括完整轨迹、作者论文/源码/地图、环境、完整日志或额外文件hash清单。新增源码只读复用既有ODE/几何/RK4，不改冻结LOS、速度、率限制、球形认证和目标阈值。相对5A-F基点的范围核对见[交付审查](../results/stage6a/delivery_review.json)。
 
-文献元数据22个DOI已核验，但部分全文/官方代码仍未核验，不能把文献数量或CI通过当作创新证明。结论保持`Need-Baseline-Evidence`。新分支`research/auv-executable-planning-stage6a`的PR目标为`audit/auv-stage5af-terminal`，不合并main；阶段结束后等待审核。
+文献元数据22个DOI已核验，但部分全文/官方代码仍未核验，不能把文献数量或CI通过当作创新证明。结论保持`Need-Baseline-Evidence`。[PR #9](https://github.com/Whsjbwy/erqulunwengfx/pull/9)来自`research/auv-executable-planning-stage6a`，目标为`audit/auv-stage5af-terminal`，不合并main；阶段结束后等待审核。
