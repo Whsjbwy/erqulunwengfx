@@ -1,0 +1,119 @@
+{
+  "version": "stage6a-future-design-v1",
+  "status": "draft_for_researcher_review_not_a_run_manifest",
+  "execution_authorized": false,
+  "independent_maps_generated": false,
+  "decision": "Need-Baseline-Evidence",
+  "model": {
+    "inherit_vehicle": "stage5a_protocol.json",
+    "state": ["x", "y", "z", "yaw", "pitch"],
+    "control": ["yaw_rate", "pitch_rate"],
+    "speed_m_s": 1.0,
+    "max_yaw_rate_deg_s": 10.0,
+    "max_pitch_rate_deg_s": 5.0,
+    "max_pitch_deg": 20.0,
+    "step_s": 0.1,
+    "goal_tolerance_m": 0.75,
+    "max_tracking_error_m": 3.0,
+    "body_radius_m": 1.019803902718557,
+    "extra_margin_m_all_methods": 0.25,
+    "goal_semantics": "position ball entry, free terminal orientation, no stop or hover",
+    "initial_state": "same fixed yaw toward goal and zero pitch for all methods; generated witness must start at exactly this state"
+  },
+  "gates_before_any_original_implementation": [
+    "Researcher and ChatGPT review of Stage6A",
+    "Obtain nearest abstract-only method details and resolve novelty overlap",
+    "Verify modern DIRT/RDG author implementation and licensing or document unavailability without claiming SOTA",
+    "Build mature native SST and control RRT on Windows in an isolated environment",
+    "Validate identical ODE, forward-only propagation and continuous swept-body certification; reject approximate solutions as strict successes",
+    "Record same-language same-kernel comparison path or cross-language overhead controls",
+    "Freeze controller reference adapter and test on supplied-control witnesses",
+    "Separate approval for any prototype or expanded experiment"
+  ],
+  "development": {
+    "maps": "All historical H5, E and F maps and results, plus analytic supplied-control cases",
+    "allowed_use": "engineering, difficulty calibration, baseline parameters and prototype tuning only after new approval",
+    "prohibited_claim": "independent validation",
+    "parameters_not_yet_chosen": ["SST radii", "state metric weights", "propagation duration range", "mixture weight", "joint feature law"],
+    "freeze_before_new_maps": ["all methods and parameters", "source revision", "map recipe", "all seeds", "difficulty thresholds", "time policy", "controller adapter", "analysis and exclusion rules"]
+  },
+  "independent_design": {
+    "recipe": "New control-integrated feasible tube maps with independent distractor obstacles, alternating banked-free S-turn/depth transitions and off-tube decoys; not re-seeded historical templates",
+    "tiers": [
+      {"name": "easy", "maps": 4, "witness": "straight, gentle yaw, gentle rise/dive; wide body-plus-margin tube"},
+      {"name": "medium", "maps": 4, "witness": "combined heading and depth transitions; positive certified gap and separated alternatives"},
+      {"name": "hard", "maps": 4, "witness": "alternating bounded-rate turns near pitch limit, small positive certified gap, finite-height passages"}
+    ],
+    "difficulty_thresholds": "Pending development-only calibration and approval; lock before any independent map is generated",
+    "witness": "Continuous supplied control schedule independently designed from the candidate sampler or primitive palette, integrated from common initial state, full swept-body and angle limits certified; hidden from planners",
+    "construction_rule": "Place obstacles outside the certified witness tube without repairing maps after observing any planner result; keep explicit floor and ceiling",
+    "seeds": "All map, control-generation and planner seeds registered in a committed manifest after approval and before generation; no seed screening",
+    "planner_seeds_per_map": 3,
+    "map_count": 12,
+    "statistical_unit": "map; planner seeds nested within map; no treating processing/controller conditions as independent maps",
+    "invalid_input_policy": "Stop on generator/certificate inconsistency; preserve all records, explain and revise protocol prospectively; never delete a map because planners fail",
+    "negative_controls": "Separate analytic/proven infeasible cases only; search timeout is not an infeasibility proof"
+  },
+  "methods": [
+    {"id": "geometric_rrt_connect", "role": "frozen geometric diagnostic", "processing_conditions": ["raw", "common_shortcut"]},
+    {"id": "geometric_rrt_star", "role": "frozen geometric optimization", "processing_conditions": ["raw", "common_shortcut"]},
+    {"id": "geometric_informed_rrt_star", "role": "frozen informed geometric optimization", "processing_conditions": ["raw", "common_shortcut"]},
+    {"id": "mature_control_rrt", "role": "matched-model feasible control baseline", "processing_conditions": ["native_reference"]},
+    {"id": "mature_control_sst", "role": "primary mature matched-model strong baseline; fixed radii not SST*", "processing_conditions": ["native_reference"]},
+    {"id": "hypothesis_joint_duration", "role": "unimplemented H1; same kernel as SST, duration sampling only", "processing_conditions": ["native_reference"]}
+  ],
+  "ablations": ["clearance_only_duration", "attitude_only_duration", "shuffled_joint_features"],
+  "modern_challenger": "DIRT or RDG to be added through a reviewed protocol amendment after author code/license/model audit; current six-method matrix is not a SOTA-completeness claim",
+  "planned_counts_not_executed": {
+    "core_planning_jobs": 216,
+    "ablation_planning_jobs": 108,
+    "total_planning_jobs": 324,
+    "maximum_core_tracking_conditions_if_all_solved": 324,
+    "maximum_ablation_tracking_conditions_if_all_solved": 108,
+    "pure_planning_budget_minutes": 54,
+    "maximum_tracking_conditions_if_all_solved": 432,
+    "worst_case_serial_budget_minutes_with_shared_planning": 198
+  },
+  "fairness": {
+    "wall_budget_s": 10,
+    "wall_budget_semantics": "Planning cap within the same30s total planning-plus-execution budget for every registered pipeline",
+    "common_total_pipeline_wall_budget_s": 30,
+    "common_execution_wall_cap_s": 20,
+    "charged_inside_budget": ["search", "ODE integration", "local steering", "collision and boundary certification", "path processing", "final independent trajectory certification", "serialization needed to return a valid incumbent"],
+    "return_policy": "last fully certified incumbent ready within deadline only; record overshoot, never accept a newly validated late incumbent",
+    "shared_preprocessing": "map load/index build and their measured times reported separately, cached identically; method-specific preprocessing charged",
+    "parameter_effort": "same development wall-time allowance and documented candidate configurations for all state planners; no holdout tuning",
+    "execution": "Every returned reference evaluated through the same frozen los_terminal_v1 and common validated reference adapter; all controller integration/certification/bridge cost charged within the common20s execution cap and30s total cap; cap violation is a retained resource failure, never extra free compute",
+    "native_vs_tracking": "Native control integration success is a separate metric and cannot replace uniform-controller success",
+    "processing": "Within-method raw and shortcut references paired from same solve; shortcut inside the shared 10s budget. If no certified shortcut exists, use registered raw fallback and record it",
+    "validity": "same outer sphere plus0.25m, continuous interval enclosure, rate/angle limits, goal and initial pose for all methods; no point-only checker",
+    "language_cost": "Report native bridge, integration/certification and Python/C++ overhead; include same-kernel SST vs H1 to isolate mechanism",
+    "length_metric_policy": "Separate geometric reference polyline length from model-native arc length v*T; primary comparable executed travel is frozen v times accepted execution time. Report length only with its object and success population; no zero imputation for failed/no-path tasks"
+  },
+  "outcomes": {
+    "geometric": "G/K for each fixed pipeline",
+    "conditional_execution": "S/E with E=actually executed eligible references, not all registered conditions",
+    "complete_task": "S/K for each fixed pipeline, no_path and certification rejections retained",
+    "planned_model_feasible": "M/K for trajectories reconstructed from returned controls satisfying ODE, all bounds, swept safety and goal; report separately from tracking",
+    "diagnostics": ["time to first strictly certified solution", "best certified cost by deadline", "no_path", "approximate_only", "safety rejection location", "error and saturation", "minimum certified gap", "propagation count", "collision calls", "peak RSS", "deadline overshoot", "processing recovery and degradation"]
+  },
+  "statistics": {
+    "primary": "map-mean paired difference of complete-task success under uniform frozen tracking, H1 minus same-kernel SST",
+    "secondary": "planned-model-feasible success, conditional tracking, first-valid time with timeouts retained as censored/not-found, and certified length only on common successes",
+    "uncertainty": "paired map-cluster bootstrap95% interval, seeds resampled only inside sampled map; three seeds are not three maps",
+    "multiplicity": "one primary contrast; others exploratory, all reported; no best-seed or best-map subset",
+    "power_limit": "12 maps is a feasibility screen, not a definitive paper-scale power claim; no expansion without separate review"
+  },
+  "prospective_decision": {
+    "proceed": "Only after all correctness/native/novelty gates and new approval: paired primary improvement>=0.10 with map-cluster95% lower bound>0, no strict-safety false positives, predicted medium/hard-tier and ablation evidence, no development-only effect",
+    "need_evidence": "interval overlaps0 or sample size insufficient, modern challenger unverified, native bridge or model mapping not validated; retain all failures and request scientific review",
+    "pivot": "equivalent prior mechanism found, same-kernel mature baseline eliminates gap, or model/geometry assumptions dominate the observed benefit",
+    "threshold_status": "prospective research-screen criterion, not a measured Stage6A result"
+  },
+  "resource_and_storage": {
+    "execution": "serial CPU only; no GPU/large experiments in Stage6A",
+    "trace_policy": "one local numeric trace per actual run, public compact per-job CSV and selected necessary plots; reference shared prefixes instead of duplicate traces",
+    "hash_manifests": false,
+    "historical_results_mutable": false
+  }
+}

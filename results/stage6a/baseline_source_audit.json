@@ -1,0 +1,38 @@
+{
+  "checked_date": "2026-11-13",
+  "method": "Read-only primary paper, official GitHub source, license and platform documentation review; no native planner executed",
+  "ompl_source_tag": "2.0.2",
+  "ompl_license": "BSD-3-Clause",
+  "ompl_license_url": "https://github.com/ompl/ompl/blob/2.0.2/LICENSE",
+  "source_reads": [
+    {"path": "src/ompl/control/planners/sst/src/SST.cpp", "lines": [180, 335], "finding": "BestNear, sampled controls and durations, propagateWhileValid, witness representative and sparse pruning; fixed radii not SST*"},
+    {"path": "src/ompl/control/planners/rrt/src/RRT.cpp", "lines": [110, 240], "finding": "directed control sampling and optional intermediate states; approximate solution must not be counted as strict success"},
+    {"path": "src/ompl/control/src/SpaceInformation.cpp", "lines": [130, 230], "finding": "validity at propagated endpoints; not the frozen curved swept-body interval certificate"},
+    {"path": "src/ompl/base/spaces/VanaOwenStateSpace.h", "lines": [70, 142], "finding": "asymmetric R4xSO2 curve distance and scalar curvature/pitch limits; not automatically identical to separate Euler rate bounds"}
+  ],
+  "other_author_code": [
+    {"url": "https://github.com/DeepakPrakashKumar/3D-Motion-Planning-for-Generalized-Dubins-with-Pitch-Yaw-constraints", "read": ["README", "LICENSE"], "license": "Apache-2.0", "model_mapping_validated": false},
+    {"url": "https://github.com/ZJU-FAST-Lab/GCOPTER", "read": ["README", "LICENSE", "gcopter/include/gcopter/firi.hpp first42lines"], "license": "MIT", "note": "firi.hpp explicitly old version; not verified as the complete2025 FIRI publication implementation"}
+  ],
+  "platform_observations": {
+    "official_download_version": "2.0.2",
+    "official_download_url": "https://ompl.kavrakilab.org/download.html",
+    "pypi_2_0_2_url": "https://pypi.org/pypi/ompl/2.0.2/json",
+    "pypi_2_0_2_http_status": 404,
+    "pypi_package_url": "https://pypi.org/pypi/ompl/json",
+    "pypi_package_request_succeeded": true,
+    "pypi_latest": "2.0.1",
+    "pypi_releases_seen": ["1.7.0", "2.0.0", "2.0.1"],
+    "windows_wheels_found_in_listed_releases": 0,
+    "wheel_platform_suffixes_checked": ["win_amd64.whl", "win32.whl", "win_arm64.whl"],
+    "local_importlib_find_spec_ompl": false,
+    "local_cmake_command_found": false,
+    "local_cl_command_found": false,
+    "official_windows_route": "vcpkg; official documentation states no Python bindings in this route",
+    "official_install_url": "https://ompl.kavrakilab.org/core/installation.html",
+    "native_build_or_install_attempted": false
+  },
+  "interpretation": "Method and source/license feasibility reviewed; Windows native build, shared continuous-certification adapter and strong-baseline search evidence remain unverified. No claim that OMPL cannot run on Windows.",
+  "original_algorithm_implemented": false,
+  "external_source_copied_into_repository": false
+}

@@ -1,0 +1,174 @@
+{
+  "papers": 22,
+  "recent_2023_2026": 15,
+  "registered_dois_verified": 22,
+  "abstract_only": [
+    "L06",
+    "L08",
+    "L09"
+  ],
+  "registry_attempts": [
+    {
+      "doi": "10.3390/electronics15153435",
+      "status": "verified",
+      "api_url": "https://api.crossref.org/works/10.3390%2Felectronics15153435",
+      "checked_utc": "2026-11-13T10:37:31.402513+00:00",
+      "error": null
+    },
+    {
+      "doi": "10.3390/jmse14100919",
+      "status": "verified",
+      "api_url": "https://api.crossref.org/works/10.3390%2Fjmse14100919",
+      "checked_utc": "2026-11-13T10:37:31.402513+00:00",
+      "error": null
+    },
+    {
+      "doi": "10.3390/jmse14100917",
+      "status": "verified",
+      "api_url": "https://api.crossref.org/works/10.3390%2Fjmse14100917",
+      "checked_utc": "2026-11-13T10:37:31.402513+00:00",
+      "error": null
+    },
+    {
+      "doi": "10.3390/jmse13071354",
+      "status": "verified",
+      "api_url": "https://api.crossref.org/works/10.3390%2Fjmse13071354",
+      "checked_utc": "2026-11-13T10:37:31.402513+00:00",
+      "error": null
+    },
+    {
+      "doi": "10.1038/s41598-025-11500-1",
+      "status": "verified",
+      "api_url": "https://api.crossref.org/works/10.1038%2Fs41598-025-11500-1",
+      "checked_utc": "2026-11-13T10:37:31.402513+00:00",
+      "error": null
+    },
+    {
+      "doi": "10.1016/j.engappai.2024.108583",
+      "status": "not_verified",
+      "api_url": "https://api.crossref.org/works/10.1016%2Fj.engappai.2024.108583",
+      "checked_utc": "2026-11-13T10:37:31.402513+00:00",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "doi": "10.1109/OCEANS55160.2024.10754581",
+      "status": "verified",
+      "api_url": "https://api.crossref.org/works/10.1109%2FOCEANS55160.2024.10754581",
+      "checked_utc": "2026-11-13T10:37:31.402513+00:00",
+      "error": null
+    },
+    {
+      "doi": "10.1007/s10514-023-10083-y",
+      "status": "verified",
+      "api_url": "https://api.crossref.org/works/10.1007%2Fs10514-023-10083-y",
+      "checked_utc": "2026-11-13T10:37:31.402513+00:00",
+      "error": null
+    },
+    {
+      "doi": "10.1007/s10846-025-02320-6",
+      "status": "verified",
+      "api_url": "https://api.crossref.org/works/10.1007%2Fs10846-025-02320-6",
+      "checked_utc": "2026-11-13T10:37:31.402513+00:00",
+      "error": null
+    },
+    {
+      "doi": "10.3390/app13063435",
+      "status": "verified",
+      "api_url": "https://api.crossref.org/works/10.3390%2Fapp13063435",
+      "checked_utc": "2026-11-13T10:37:31.402513+00:00",
+      "error": null
+    },
+    {
+      "doi": "10.1109/TRO.2025.3562482",
+      "status": "verified",
+      "api_url": "https://api.crossref.org/works/10.1109%2FTRO.2025.3562482",
+      "checked_utc": "2026-11-13T10:37:31.402513+00:00",
+      "error": null
+    },
+    {
+      "doi": "10.1109/TRO.2022.3160022",
+      "status": "verified",
+      "api_url": "https://api.crossref.org/works/10.1109%2FTRO.2022.3160022",
+      "checked_utc": "2026-11-13T10:37:31.402513+00:00",
+      "error": null
+    },
+    {
+      "doi": "10.1109/ICRA40945.2020.9197084",
+      "status": "verified",
+      "api_url": "https://api.crossref.org/works/10.1109%2FICRA40945.2020.9197084",
+      "checked_utc": "2026-11-13T10:37:31.402513+00:00",
+      "error": null
+    },
+    {
+      "doi": "10.1109/ROBOT.2000.844730",
+      "status": "verified",
+      "api_url": "https://api.crossref.org/works/10.1109%2FROBOT.2000.844730",
+      "checked_utc": "2026-11-13T10:37:31.402513+00:00",
+      "error": null
+    },
+    {
+      "doi": "10.1177/0278364911406761",
+      "status": "verified",
+      "api_url": "https://api.crossref.org/works/10.1177%2F0278364911406761",
+      "checked_utc": "2026-11-13T10:37:31.402513+00:00",
+      "error": null
+    },
+    {
+      "doi": "10.1109/IROS.2014.6942976",
+      "status": "verified",
+      "api_url": "https://api.crossref.org/works/10.1109%2FIROS.2014.6942976",
+      "checked_utc": "2026-11-13T10:37:31.402513+00:00",
+      "error": null
+    },
+    {
+      "doi": "10.1177/02783640122067453",
+      "status": "verified",
+      "api_url": "https://api.crossref.org/works/10.1177%2F02783640122067453",
+      "checked_utc": "2026-11-13T10:37:31.402513+00:00",
+      "error": null
+    },
+    {
+      "doi": "10.1177/0278364915614386",
+      "status": "verified",
+      "api_url": "https://api.crossref.org/works/10.1177%2F0278364915614386",
+      "checked_utc": "2026-11-13T10:37:31.402513+00:00",
+      "error": null
+    },
+    {
+      "doi": "10.1016/j.engappai.2024.108583",
+      "status": "verified",
+      "api_url": "https://api.crossref.org/works/10.1016%2Fj.engappai.2024.108583",
+      "checked_utc": "2026-11-13T10:44:59.786857+00:00",
+      "error": null
+    },
+    {
+      "doi": "10.48550/arXiv.2509.24143",
+      "status": "verified",
+      "api_url": "https://api.datacite.org/dois/10.48550%2FarXiv.2509.24143",
+      "checked_utc": "2026-11-13T10:44:59.786857+00:00",
+      "error": null
+    },
+    {
+      "doi": "10.48550/arXiv.2409.11522",
+      "status": "verified",
+      "api_url": "https://api.datacite.org/dois/10.48550%2FarXiv.2409.11522",
+      "checked_utc": "2026-11-13T10:44:59.786857+00:00",
+      "error": null
+    },
+    {
+      "doi": "10.48550/arXiv.2311.02957",
+      "status": "verified",
+      "api_url": "https://api.datacite.org/dois/10.48550%2FarXiv.2311.02957",
+      "checked_utc": "2026-11-13T10:44:59.786857+00:00",
+      "error": null
+    },
+    {
+      "doi": "10.48550/arXiv.2609.22733",
+      "status": "verified",
+      "api_url": "https://api.datacite.org/dois/10.48550%2FarXiv.2609.22733",
+      "checked_utc": "2026-11-13T10:44:59.786857+00:00",
+      "error": null
+    }
+  ],
+  "scope": "Targeted primary-source review, not an exhaustive systematic review. Code availability and text access are separate from DOI verification."
+}

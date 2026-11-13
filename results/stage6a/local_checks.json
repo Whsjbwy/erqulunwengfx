@@ -1,0 +1,87 @@
+{
+  "checked_utc": "2026-11-13T11:02:46.204410+00:00",
+  "platform": "win32",
+  "python": "3.11.15",
+  "complete": true,
+  "test_count": 489,
+  "test_status_counts": {
+    "passed": 489
+  },
+  "earlier_implementation_checks": [
+    {
+      "check": "core_pytest",
+      "result": "3 passed in0.15s",
+      "exit_code": 0
+    },
+    {
+      "check": "initial_core_ruff",
+      "exit_code": 1,
+      "reason": "E50194-column explanatory string; wrapped and subsequent core_ruff.log passed"
+    },
+    {
+      "check": "first_full_static",
+      "exit_code": 1,
+      "reason": "E50189-column figure line; two new files need Ruff formatting; fixed before full checks",
+      "evidence": "actual tool output; no full log file captured for this initial static command"
+    }
+  ],
+  "checks": [
+    {
+      "check": "compile",
+      "command": [
+        "python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "tests",
+        "scripts"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 0.18605880000177422,
+      "output_tail": ""
+    },
+    {
+      "check": "pytest",
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "--junitxml=D:\\2区论文复现\\local_only\\stage6a_audit\\pytest.xml"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 12.232677299998613,
+      "output_tail": "........................................................................ [ 14%]\n........................................................................ [ 29%]\n........................................................................ [ 44%]\n........................................................................ [ 58%]\n........................................................................ [ 73%]\n........................................................................ [ 88%]\n.........................................................                [100%]\n489 passed in 11.74s\n"
+    },
+    {
+      "check": "ruff",
+      "command": [
+        "python",
+        "-m",
+        "ruff",
+        "check",
+        "."
+      ],
+      "exit_code": 0,
+      "elapsed_s": 0.10320000000137952,
+      "output_tail": "All checks passed!\n"
+    },
+    {
+      "check": "format",
+      "command": [
+        "python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "."
+      ],
+      "exit_code": 0,
+      "elapsed_s": 0.10179020000214223,
+      "output_tail": "205 files already formatted\n"
+    }
+  ],
+  "raw_evidence_directory": "workspace/local_only/stage6a_audit (not committed)",
+  "ompl_native_test_performed": false
+}

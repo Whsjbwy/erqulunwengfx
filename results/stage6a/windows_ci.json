@@ -1,0 +1,21 @@
+{
+  "commit": "9331144e7d0cf6516c6f45ed17bbd17568d25690",
+  "run_id": 43414449322,
+  "job_id": 131848684408,
+  "url": "https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43414449322",
+  "conclusion": "success",
+  "runner": "windows-latest",
+  "pytest_count": 489,
+  "pytest_seconds": 19.31,
+  "compileall": "success",
+  "ruff": "success",
+  "format": "success",
+  "official_job_log_read": true,
+  "log_excerpts": [
+    "2026-11-13T11:08:57.3028392Z ============================ 489 passed in 19.31s =============================",
+    "2026-11-13T11:08:57.9417501Z All checks passed!",
+    "2026-11-13T11:08:58.3847868Z 205 files already formatted"
+  ],
+  "full_log_retained_locally": "workspace/local_only/stage6a_audit/windows_code_job.log",
+  "ompl_native_test_performed": false
+}

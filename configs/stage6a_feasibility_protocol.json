@@ -1,0 +1,27 @@
+{
+  "version": "stage6a-analytic-feasibility-v1",
+  "scope": "12 deterministic supplied-control acceptance cases, not a planner benchmark or original algorithm",
+  "inherit_vehicle": "stage5a_protocol.json",
+  "step_s": 0.1,
+  "effective_radius": "body plus frozen0.25m margin for every case",
+  "start_position_m": [20, 20, 15],
+  "extent_m": [80, 80, 40],
+  "spacing_m": [0.5, 0.5, 0.5],
+  "cases": [
+    {"id":"straight","controls_deg_s_duration_s":[[0,0,20]],"expected":"ok"},
+    {"id":"left_arc","controls_deg_s_duration_s":[[10,0,9]],"expected":"ok"},
+    {"id":"right_arc","controls_deg_s_duration_s":[[-10,0,9]],"expected":"ok"},
+    {"id":"climb","controls_deg_s_duration_s":[[0,2.5,4],[0,0,8],[0,-2.5,4]],"expected":"ok"},
+    {"id":"dive","controls_deg_s_duration_s":[[0,-2.5,4],[0,0,8],[0,2.5,4]],"expected":"ok"},
+    {"id":"combined","controls_deg_s_duration_s":[[5,2,4],[-5,-2,4]],"expected":"ok"},
+    {"id":"yaw_rate_reject","controls_deg_s_duration_s":[[11,0,1]],"expected":"yaw_rate"},
+    {"id":"pitch_rate_reject","controls_deg_s_duration_s":[[0,6,1]],"expected":"pitch_rate"},
+    {"id":"pitch_angle_reject","initial_pitch_deg":19,"controls_deg_s_duration_s":[[0,5,0.4]],"expected":"pitch_bound"},
+    {"id":"obstacle_reject","obstacle":true,"controls_deg_s_duration_s":[[0,0,20]],"expected":"physical_obstacle"},
+    {"id":"mission_band_reject","ceiling_z_m":17,"controls_deg_s_duration_s":[[0,2.5,4],[0,0,8]],"expected":"mission_ceiling"},
+    {"id":"hover_not_in_model","initial_speed_m_s":0,"controls_deg_s_duration_s":[[0,0,1]],"expected":"frozen_speed"}
+  ],
+  "independent_reference": "First, middle and last integrated intervals against50-substep independent RK4; atol1e-10m. Every accepted interval keeps frozen curved swept-sphere enclosure.",
+  "storage": "One compressed numeric record outside repository; compact CSV and JSON publicly. Never overwrite an existing run directory.",
+  "stop": "Unexpected case outcome or independent integration/certificate mismatch stops acceptance; no random-seed or parameter search. No original planner or mass planning run."
+}

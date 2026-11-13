@@ -1,0 +1,8 @@
+{
+  "file": "results/stage6a/feasibility_witnesses.png",
+  "source": "single local acceptance.json.gz plus analytic constant-speed curvature formula",
+  "witness_count": 6,
+  "planner_performance_figure": false,
+  "review": "Visual inspection found overlap in the first rate annotation; arrows and margins were adjusted. Final check confirms separate XY/XZ projections, all six legend entries, readable rate bounds and two distinct counterexample points. Projection axes have their own labeled scales, not an equal-scale 3D rendering.",
+  "numeric_acceptance_rerun_for_plot": false
+}

@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "cases": 12,
+  "positive_witnesses": 6,
+  "negative_inputs_or_references": 6,
+  "accepted_intervals": 930,
+  "independent_rk4_intervals": 27,
+  "maximum_rk4_error_m": 1.2079226507921703e-13,
+  "planner_searches": 0,
+  "ompl_native_baseline_executed": false
+}
