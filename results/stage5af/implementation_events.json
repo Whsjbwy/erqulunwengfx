@@ -1,0 +1,16 @@
+{
+  "gate1_fixture_insertion_error": {
+    "failed_tests": 2,
+    "passed_tests": 1,
+    "resolved_before_development": true
+  },
+  "pilot_serialization_failure": {
+    "partial_record": "independent_E_B1_informed_rrt_star_body_seed0--raw--los_terminal_v1.json.gz",
+    "extra_unarchived_execution_attempts": 1,
+    "original_partial_preserved": true,
+    "record_overwritten": false,
+    "resolution": "Explicit Python bool; full-trace JSON serialization regression added."
+  },
+  "scientific_parameter_changes_after_outcomes": false,
+  "outcome_based_map_resampling": false
+}

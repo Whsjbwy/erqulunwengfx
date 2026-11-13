@@ -265,7 +265,7 @@ def analyze(local: Path, old: Path, output: Path, complete: bool = False) -> dic
     if not (local / "development_completed.json").exists():
         raise ValueError("Finish development before reporting")
     rows = []
-    saved = []
+    saved_count = prefix_records = prefix_steps = 0
     for path in sorted((local / "replays").glob("*.json.gz")):
         with gzip.open(path, "rt", encoding="utf-8") as stream:
             record = json.load(stream)
@@ -276,7 +276,9 @@ def analyze(local: Path, old: Path, output: Path, complete: bool = False) -> dic
             reused_prefix_steps=record.get("prefix_steps", 0), source_evidence=path.name
         )
         rows.append(row)
-        saved.append(record)
+        saved_count += 1
+        prefix_records += int("prefix_source" in record)
+        prefix_steps += record.get("prefix_steps", 0)
     development = [r for r in rows if r["phase"] == "development"]
     independent = [r for r in rows if r["phase"] == "independent"]
     old_plans = planning_rows(old / "planning", "development")
@@ -381,9 +383,9 @@ def analyze(local: Path, old: Path, output: Path, complete: bool = False) -> dic
         "independent_geometry_successes": sum(r["geometry_success"] for r in plans),
         "independent_actual_execution_conditions": independent_actual,
         "independent_registered_conditions": len(independent),
-        "saved_condition_records": len(saved),
-        "prefix_reference_records": sum("prefix_source" in r for r in saved),
-        "reused_prefix_steps": sum(r.get("prefix_steps", 0) for r in saved),
+        "saved_condition_records": saved_count,
+        "prefix_reference_records": prefix_records,
+        "reused_prefix_steps": prefix_steps,
         "terminal54_recovered": sum(r["recovered"] for r in terminal),
         "additional_unarchived_serialization_attempts": len(
             list((local / "serialization_failure").glob("*.partial"))

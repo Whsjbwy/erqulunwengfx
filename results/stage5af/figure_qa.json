@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "figures": [
+    {
+      "figure": "development_controls.png",
+      "width_px": 2432,
+      "height_px": 932,
+      "visually_reviewed": true,
+      "labels_legible": true,
+      "result_selection": "fixed_ids_not_outcome_selected"
+    },
+    {
+      "figure": "development_terminal.png",
+      "width_px": 2240,
+      "height_px": 1680,
+      "visually_reviewed": true,
+      "labels_legible": true,
+      "result_selection": "fixed_ids_not_outcome_selected"
+    },
+    {
+      "figure": "independent_rates.png",
+      "width_px": 2582,
+      "height_px": 1532,
+      "visually_reviewed": true,
+      "labels_legible": true,
+      "result_selection": "fixed_ids_not_outcome_selected"
+    },
+    {
+      "figure": "ordinary_tracks.png",
+      "width_px": 2240,
+      "height_px": 1960,
+      "visually_reviewed": true,
+      "labels_legible": true,
+      "result_selection": "fixed_ids_not_outcome_selected"
+    },
+    {
+      "figure": "narrow_tracks.png",
+      "width_px": 2240,
+      "height_px": 1960,
+      "visually_reviewed": true,
+      "labels_legible": true,
+      "result_selection": "fixed_ids_not_outcome_selected"
+    },
+    {
+      "figure": "nearbed_tracks.png",
+      "width_px": 2240,
+      "height_px": 1960,
+      "visually_reviewed": true,
+      "labels_legible": true,
+      "result_selection": "fixed_ids_not_outcome_selected"
+    }
+  ],
+  "correction": "Explicit unrun labels added to development no-path cells; source data unchanged."
+}

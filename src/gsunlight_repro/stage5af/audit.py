@@ -41,7 +41,20 @@ def audit(local: Path, old: Path, ar: Path, output: Path, phase: str) -> dict:
             continue
         value = json.loads(file.read_text(encoding="utf-8"))
         plans.append(value)
+        search = value["search"]
+        if search["time_budget_s"] != 10 or not math.isclose(
+            search["radius_m"],
+            mode_radius(value["mode"], cfg["vehicle"]),
+            rel_tol=0,
+            abs_tol=1e-12,
+        ):
+            raise ValueError("Planning budget or effective radius changed")
         if value["raw"] is None:
+            if (
+                value["first_certificate"] is not None
+                or search["first_valid_time_s"] is not None
+            ):
+                raise ValueError("Missing path has a false first-certificate claim")
             continue
         post = json.loads(
             (directory / (value["job_id"] + ".processing.json")).read_text(
@@ -158,13 +171,17 @@ def audit(local: Path, old: Path, ar: Path, output: Path, phase: str) -> dict:
             ):
                 raise ValueError("Path geometry/endpoints failed")
         event = value["first_certificate"]
+        if event["time_s"] != value["search"]["first_valid_time_s"]:
+            raise ValueError("First-certificate time differs from actual search")
         if event["time_s"] > 10 or not math.isclose(
             event["length"], path_length(value["first_path"]), abs_tol=1e-9
         ):
             raise ValueError("First certificate late/changed")
-        if not geometry.path(value["first_path"]).valid or value[
-            "reachability"
-        ].startswith("certified_unreachable"):
+        if (
+            not geometry.path(value["first_path"]).valid
+            or not endpoints_match(value["first_path"], scene.start, scene.goal)
+            or value["reachability"].startswith("certified_unreachable")
+        ):
             raise ValueError("Invalid geometric claim")
         geometries += 1
     result = {

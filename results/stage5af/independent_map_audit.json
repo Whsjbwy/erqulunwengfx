@@ -1,0 +1,338 @@
+{
+  "passed": true,
+  "maps": [
+    {
+      "id": "F_O1",
+      "family": "ordinary",
+      "seed": 71101,
+      "extent_m": [
+        70,
+        48,
+        28
+      ],
+      "variant": 0,
+      "start": [
+        5.0,
+        6.0,
+        6.5
+      ],
+      "goal": [
+        65.0,
+        42.0,
+        8.0
+      ],
+      "reachability": {
+        "body": "certified_reachable_geometry_only",
+        "margin": "certified_reachable_geometry_only"
+      },
+      "nominal_direct_valid": false,
+      "occupied_fraction": 0.03979591836734694
+    },
+    {
+      "id": "F_O2",
+      "family": "ordinary",
+      "seed": 71102,
+      "extent_m": [
+        74,
+        50,
+        30
+      ],
+      "variant": 1,
+      "start": [
+        5.0,
+        6.0,
+        7.0
+      ],
+      "goal": [
+        69.0,
+        44.0,
+        8.5
+      ],
+      "reachability": {
+        "body": "certified_reachable_geometry_only",
+        "margin": "certified_reachable_geometry_only"
+      },
+      "nominal_direct_valid": false,
+      "occupied_fraction": 0.03841441441441441
+    },
+    {
+      "id": "F_O3",
+      "family": "ordinary",
+      "seed": 71103,
+      "extent_m": [
+        68,
+        52,
+        26
+      ],
+      "variant": 2,
+      "start": [
+        5.0,
+        6.0,
+        7.5
+      ],
+      "goal": [
+        63.0,
+        46.0,
+        9.0
+      ],
+      "reachability": {
+        "body": "certified_reachable_geometry_only",
+        "margin": "certified_reachable_geometry_only"
+      },
+      "nominal_direct_valid": false,
+      "occupied_fraction": 0.041159067177166726
+    },
+    {
+      "id": "F_O4",
+      "family": "ordinary",
+      "seed": 71104,
+      "extent_m": [
+        76,
+        46,
+        32
+      ],
+      "variant": 3,
+      "start": [
+        5.0,
+        6.0,
+        8.0
+      ],
+      "goal": [
+        71.0,
+        40.0,
+        9.5
+      ],
+      "reachability": {
+        "body": "certified_reachable_geometry_only",
+        "margin": "certified_reachable_geometry_only"
+      },
+      "nominal_direct_valid": false,
+      "occupied_fraction": 0.03704233409610984
+    },
+    {
+      "id": "F_N1",
+      "family": "narrow",
+      "seed": 71201,
+      "extent_m": [
+        64,
+        48,
+        26
+      ],
+      "variant": 0,
+      "opening_m": 6.0,
+      "start": [
+        5.0,
+        6.0,
+        8.0
+      ],
+      "goal": [
+        59.0,
+        42.0,
+        9.0
+      ],
+      "reachability": {
+        "body": "certified_reachable_geometry_only",
+        "margin": "certified_reachable_geometry_only"
+      },
+      "nominal_direct_valid": false,
+      "occupied_fraction": 0.9516225961538461
+    },
+    {
+      "id": "F_N2",
+      "family": "narrow",
+      "seed": 71202,
+      "extent_m": [
+        72,
+        52,
+        28
+      ],
+      "variant": 1,
+      "opening_m": 5.0,
+      "start": [
+        5.0,
+        6.0,
+        8.0
+      ],
+      "goal": [
+        67.0,
+        46.0,
+        9.0
+      ],
+      "reachability": {
+        "body": "certified_reachable_geometry_only",
+        "margin": "certified_reachable_geometry_only"
+      },
+      "nominal_direct_valid": false,
+      "occupied_fraction": 0.9645814255189256
+    },
+    {
+      "id": "F_N3",
+      "family": "narrow",
+      "seed": 71203,
+      "extent_m": [
+        68,
+        50,
+        24
+      ],
+      "variant": 2,
+      "opening_m": 4.0,
+      "start": [
+        5.0,
+        6.0,
+        8.0
+      ],
+      "goal": [
+        63.0,
+        44.0,
+        9.0
+      ],
+      "reachability": {
+        "body": "certified_reachable_geometry_only",
+        "margin": "certified_reachable_geometry_only"
+      },
+      "nominal_direct_valid": false,
+      "occupied_fraction": 0.9635784313725491
+    },
+    {
+      "id": "F_N4",
+      "family": "narrow",
+      "seed": 71204,
+      "extent_m": [
+        76,
+        54,
+        30
+      ],
+      "variant": 3,
+      "opening_m": 2.5,
+      "start": [
+        5.25,
+        6.25,
+        8.0
+      ],
+      "goal": [
+        70.75,
+        47.75,
+        9.0
+      ],
+      "reachability": {
+        "body": "certified_reachable_geometry_only",
+        "margin": "certified_unreachable_aperture"
+      },
+      "nominal_direct_valid": false,
+      "occupied_fraction": 0.981228679337232
+    },
+    {
+      "id": "F_B1",
+      "family": "near_seabed",
+      "seed": 71301,
+      "extent_m": [
+        72,
+        46,
+        26
+      ],
+      "variant": 0,
+      "ridge_height_m": 6.0,
+      "start": [
+        5.0,
+        6.0,
+        5.5
+      ],
+      "goal": [
+        66.0,
+        39.0,
+        7.0
+      ],
+      "reachability": {
+        "body": "certified_reachable_geometry_only",
+        "margin": "certified_reachable_geometry_only"
+      },
+      "nominal_direct_valid": false,
+      "occupied_fraction": 0.23576853400222966
+    },
+    {
+      "id": "F_B2",
+      "family": "near_seabed",
+      "seed": 71302,
+      "extent_m": [
+        78,
+        50,
+        28
+      ],
+      "variant": 1,
+      "ridge_height_m": 7.0,
+      "start": [
+        5.0,
+        6.0,
+        5.5
+      ],
+      "goal": [
+        72.0,
+        43.0,
+        7.0
+      ],
+      "reachability": {
+        "body": "certified_reachable_geometry_only",
+        "margin": "certified_reachable_geometry_only"
+      },
+      "nominal_direct_valid": false,
+      "occupied_fraction": 0.23607371794871795
+    },
+    {
+      "id": "F_B3",
+      "family": "near_seabed",
+      "seed": 71303,
+      "extent_m": [
+        70,
+        54,
+        26
+      ],
+      "variant": 2,
+      "ridge_height_m": 6.5,
+      "start": [
+        5.0,
+        6.0,
+        5.5
+      ],
+      "goal": [
+        64.0,
+        47.0,
+        7.0
+      ],
+      "reachability": {
+        "body": "certified_reachable_geometry_only",
+        "margin": "certified_reachable_geometry_only"
+      },
+      "nominal_direct_valid": false,
+      "occupied_fraction": 0.24498626373626373
+    },
+    {
+      "id": "F_B4",
+      "family": "near_seabed",
+      "seed": 71304,
+      "extent_m": [
+        80,
+        48,
+        30
+      ],
+      "variant": 3,
+      "ridge_height_m": 7.5,
+      "start": [
+        5.0,
+        6.0,
+        5.5
+      ],
+      "goal": [
+        74.0,
+        41.0,
+        7.0
+      ],
+      "reachability": {
+        "body": "certified_reachable_geometry_only",
+        "margin": "certified_reachable_geometry_only"
+      },
+      "nominal_direct_valid": false,
+      "occupied_fraction": 0.22831705729166665
+    }
+  ],
+  "outcome_based_resampling": false
+}

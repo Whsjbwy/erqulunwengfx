@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "tasks": 18,
+  "geometry_successes": 18,
+  "planning_actual_total_s": 180.14507859999503,
+  "maximum_process_peak_rss_bytes": 226234368,
+  "maximum_deadline_overshoot_s": 0.02773179999894637,
+  "process_exit_code": 0,
+  "success_rate_not_used_as_gate": true,
+  "completed_jobs_reused_in216": true
+}
