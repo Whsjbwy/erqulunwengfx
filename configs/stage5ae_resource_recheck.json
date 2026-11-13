@@ -1,0 +1,16 @@
+{
+  "amendment": "single-task resource-confound recheck",
+  "registered_before_recheck": true,
+  "job_id": "independent_E_B2_rrt_star_body_seed0",
+  "scene": "E_B2",
+  "method": "rrt_star",
+  "mode": "body",
+  "seed": 0,
+  "planning_budget_s": 10,
+  "step_m": 5.0,
+  "conditions": "The original raw and same-source shortcut with legacy and frozen los_d2, all unchanged.",
+  "reason": "An accidentally started second worker competed with this original search before exclusive creation rejected the duplicate. Selection is based on the operational error, not the scientific outcome.",
+  "policy": "Run exactly once after the original full matrix finishes, under the new process lock. Preserve all360 primary tasks and all outcomes; save this recheck separately. Never substitute the new path or result into the primary CSV or select between repeats.",
+  "counts": "360 primary planning tasks plus one unarchived duplicate attempt plus one separate resource recheck; these are not362 independent scientific samples.",
+  "stop": "No parameter change, added seed, changed map or further repetition on an unfavorable recheck. Stop on technical failure and retain evidence."
+}

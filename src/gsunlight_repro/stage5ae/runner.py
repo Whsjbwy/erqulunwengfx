@@ -26,6 +26,7 @@ from ..stage5ar.runner import shortcut
 from ..stage5ar.storage import read_record
 from .curves import fillet
 from .diagnostics import detail
+from .runtime import experiment_lock
 from .storage import Records, public_output, write_json
 from .tracking import simulate
 from .verification import analytic_cases, folded_projection_case
@@ -548,14 +549,15 @@ def main() -> None:
     parser.add_argument("--output", type=Path, default=Path("results/stage5ae"))
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
-    configure_worker()
     runner = Runner(args.history, args.old_evidence, args.local_dir, args.output)
-    if args.phase in ("e1", "e1_pilot"):
-        runner.e1(args.phase == "e1_pilot")
-    elif args.phase in ("gate", "formal"):
-        runner.formal(args.phase == "gate")
-    else:
-        getattr(runner, args.phase)()
+    with experiment_lock(runner.local):
+        configure_worker()
+        if args.phase in ("e1", "e1_pilot"):
+            runner.e1(args.phase == "e1_pilot")
+        elif args.phase in ("gate", "formal"):
+            runner.formal(args.phase == "gate")
+        else:
+            getattr(runner, args.phase)()
 
 
 if __name__ == "__main__":
