@@ -240,6 +240,7 @@ class Runner:
     def freeze(self) -> None:
         """Record the unchanged one-choice parameters before new-map generation."""
         self.require("development")
+        self.require("development_audit")
         target = ROOT / "configs/stage5af_selected.json"
         value = {
             "lookahead_m": self.settings["lookahead_m"],
