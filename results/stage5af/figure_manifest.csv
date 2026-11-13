@@ -1,0 +1,61 @@
+figure,old_case_id,corrected_case_id,selection,corrected_class,case_id,job_id,processing,was_run,primary_class
+development_terminal.png,independent_E_O1_rrt_connect_body_seed0--raw--los_d2,independent_E_O1_rrt_connect_body_seed0--raw--los_terminal_v1,first3 historical IDs per O1/O3,tracking_error_limit,,,,,
+development_terminal.png,independent_E_O1_rrt_connect_body_seed0--shortcut--los_d2,independent_E_O1_rrt_connect_body_seed0--shortcut--los_terminal_v1,first3 historical IDs per O1/O3,tracking_error_limit,,,,,
+development_terminal.png,independent_E_O1_rrt_connect_body_seed2--raw--los_d2,independent_E_O1_rrt_connect_body_seed2--raw--los_terminal_v1,first3 historical IDs per O1/O3,tracking_error_limit,,,,,
+development_terminal.png,independent_E_O3_informed_rrt_star_body_seed0--raw--los_d2,independent_E_O3_informed_rrt_star_body_seed0--raw--los_terminal_v1,first3 historical IDs per O1/O3,tracking_error_limit,,,,,
+development_terminal.png,independent_E_O3_informed_rrt_star_body_seed0--shortcut--los_d2,independent_E_O3_informed_rrt_star_body_seed0--shortcut--los_terminal_v1,first3 historical IDs per O1/O3,tracking_error_limit,,,,,
+development_terminal.png,independent_E_O3_informed_rrt_star_body_seed1--raw--los_d2,independent_E_O3_informed_rrt_star_body_seed1--raw--los_terminal_v1,first3 historical IDs per O1/O3,tracking_error_limit,,,,,
+ordinary_tracks.png,,,,,independent_F_O1_rrt_connect_body_seed0--raw--legacy,independent_F_O1_rrt_connect_body_seed0,raw,True,tracking_error_limit
+ordinary_tracks.png,,,,,independent_F_O1_rrt_connect_body_seed0--raw--los_d2,independent_F_O1_rrt_connect_body_seed0,raw,True,swept_safety_reject
+ordinary_tracks.png,,,,,independent_F_O1_rrt_connect_body_seed0--raw--los_terminal_v1,independent_F_O1_rrt_connect_body_seed0,raw,True,swept_safety_reject
+ordinary_tracks.png,,,,,independent_F_O1_rrt_connect_body_seed0--shortcut--legacy,independent_F_O1_rrt_connect_body_seed0,shortcut,True,tracking_error_limit
+ordinary_tracks.png,,,,,independent_F_O1_rrt_connect_body_seed0--shortcut--los_d2,independent_F_O1_rrt_connect_body_seed0,shortcut,True,tracking_error_limit
+ordinary_tracks.png,,,,,independent_F_O1_rrt_connect_body_seed0--shortcut--los_terminal_v1,independent_F_O1_rrt_connect_body_seed0,shortcut,True,tracking_error_limit
+ordinary_tracks.png,,,,,independent_F_O1_rrt_star_body_seed0--raw--legacy,independent_F_O1_rrt_star_body_seed0,raw,True,tracking_error_limit
+ordinary_tracks.png,,,,,independent_F_O1_rrt_star_body_seed0--raw--los_d2,independent_F_O1_rrt_star_body_seed0,raw,True,tracking_error_limit
+ordinary_tracks.png,,,,,independent_F_O1_rrt_star_body_seed0--raw--los_terminal_v1,independent_F_O1_rrt_star_body_seed0,raw,True,tracking_error_limit
+ordinary_tracks.png,,,,,independent_F_O1_rrt_star_body_seed0--shortcut--legacy,independent_F_O1_rrt_star_body_seed0,shortcut,True,tracking_error_limit
+ordinary_tracks.png,,,,,independent_F_O1_rrt_star_body_seed0--shortcut--los_d2,independent_F_O1_rrt_star_body_seed0,shortcut,True,tracking_error_limit
+ordinary_tracks.png,,,,,independent_F_O1_rrt_star_body_seed0--shortcut--los_terminal_v1,independent_F_O1_rrt_star_body_seed0,shortcut,True,tracking_error_limit
+ordinary_tracks.png,,,,,independent_F_O1_informed_rrt_star_body_seed0--raw--legacy,independent_F_O1_informed_rrt_star_body_seed0,raw,True,tracking_error_limit
+ordinary_tracks.png,,,,,independent_F_O1_informed_rrt_star_body_seed0--raw--los_d2,independent_F_O1_informed_rrt_star_body_seed0,raw,True,tracking_error_limit
+ordinary_tracks.png,,,,,independent_F_O1_informed_rrt_star_body_seed0--raw--los_terminal_v1,independent_F_O1_informed_rrt_star_body_seed0,raw,True,tracking_error_limit
+ordinary_tracks.png,,,,,independent_F_O1_informed_rrt_star_body_seed0--shortcut--legacy,independent_F_O1_informed_rrt_star_body_seed0,shortcut,True,tracking_error_limit
+ordinary_tracks.png,,,,,independent_F_O1_informed_rrt_star_body_seed0--shortcut--los_d2,independent_F_O1_informed_rrt_star_body_seed0,shortcut,True,tracking_error_limit
+ordinary_tracks.png,,,,,independent_F_O1_informed_rrt_star_body_seed0--shortcut--los_terminal_v1,independent_F_O1_informed_rrt_star_body_seed0,shortcut,True,tracking_error_limit
+narrow_tracks.png,,,,,independent_F_N1_rrt_connect_body_seed0--raw--legacy,independent_F_N1_rrt_connect_body_seed0,raw,True,swept_safety_reject
+narrow_tracks.png,,,,,independent_F_N1_rrt_connect_body_seed0--raw--los_d2,independent_F_N1_rrt_connect_body_seed0,raw,True,swept_safety_reject
+narrow_tracks.png,,,,,independent_F_N1_rrt_connect_body_seed0--raw--los_terminal_v1,independent_F_N1_rrt_connect_body_seed0,raw,True,swept_safety_reject
+narrow_tracks.png,,,,,independent_F_N1_rrt_connect_body_seed0--shortcut--legacy,independent_F_N1_rrt_connect_body_seed0,shortcut,True,swept_safety_reject
+narrow_tracks.png,,,,,independent_F_N1_rrt_connect_body_seed0--shortcut--los_d2,independent_F_N1_rrt_connect_body_seed0,shortcut,True,swept_safety_reject
+narrow_tracks.png,,,,,independent_F_N1_rrt_connect_body_seed0--shortcut--los_terminal_v1,independent_F_N1_rrt_connect_body_seed0,shortcut,True,swept_safety_reject
+narrow_tracks.png,,,,,independent_F_N1_rrt_star_body_seed0--raw--legacy,independent_F_N1_rrt_star_body_seed0,raw,True,swept_safety_reject
+narrow_tracks.png,,,,,independent_F_N1_rrt_star_body_seed0--raw--los_d2,independent_F_N1_rrt_star_body_seed0,raw,True,swept_safety_reject
+narrow_tracks.png,,,,,independent_F_N1_rrt_star_body_seed0--raw--los_terminal_v1,independent_F_N1_rrt_star_body_seed0,raw,True,swept_safety_reject
+narrow_tracks.png,,,,,independent_F_N1_rrt_star_body_seed0--shortcut--legacy,independent_F_N1_rrt_star_body_seed0,shortcut,True,swept_safety_reject
+narrow_tracks.png,,,,,independent_F_N1_rrt_star_body_seed0--shortcut--los_d2,independent_F_N1_rrt_star_body_seed0,shortcut,True,swept_safety_reject
+narrow_tracks.png,,,,,independent_F_N1_rrt_star_body_seed0--shortcut--los_terminal_v1,independent_F_N1_rrt_star_body_seed0,shortcut,True,swept_safety_reject
+narrow_tracks.png,,,,,independent_F_N1_informed_rrt_star_body_seed0--raw--legacy,independent_F_N1_informed_rrt_star_body_seed0,raw,True,swept_safety_reject
+narrow_tracks.png,,,,,independent_F_N1_informed_rrt_star_body_seed0--raw--los_d2,independent_F_N1_informed_rrt_star_body_seed0,raw,True,swept_safety_reject
+narrow_tracks.png,,,,,independent_F_N1_informed_rrt_star_body_seed0--raw--los_terminal_v1,independent_F_N1_informed_rrt_star_body_seed0,raw,True,swept_safety_reject
+narrow_tracks.png,,,,,independent_F_N1_informed_rrt_star_body_seed0--shortcut--legacy,independent_F_N1_informed_rrt_star_body_seed0,shortcut,True,swept_safety_reject
+narrow_tracks.png,,,,,independent_F_N1_informed_rrt_star_body_seed0--shortcut--los_d2,independent_F_N1_informed_rrt_star_body_seed0,shortcut,True,swept_safety_reject
+narrow_tracks.png,,,,,independent_F_N1_informed_rrt_star_body_seed0--shortcut--los_terminal_v1,independent_F_N1_informed_rrt_star_body_seed0,shortcut,True,swept_safety_reject
+nearbed_tracks.png,,,,,independent_F_B1_rrt_connect_body_seed0--raw--legacy,independent_F_B1_rrt_connect_body_seed0,raw,True,success
+nearbed_tracks.png,,,,,independent_F_B1_rrt_connect_body_seed0--raw--los_d2,independent_F_B1_rrt_connect_body_seed0,raw,True,swept_safety_reject
+nearbed_tracks.png,,,,,independent_F_B1_rrt_connect_body_seed0--raw--los_terminal_v1,independent_F_B1_rrt_connect_body_seed0,raw,True,swept_safety_reject
+nearbed_tracks.png,,,,,independent_F_B1_rrt_connect_body_seed0--shortcut--legacy,independent_F_B1_rrt_connect_body_seed0,shortcut,True,success
+nearbed_tracks.png,,,,,independent_F_B1_rrt_connect_body_seed0--shortcut--los_d2,independent_F_B1_rrt_connect_body_seed0,shortcut,True,success
+nearbed_tracks.png,,,,,independent_F_B1_rrt_connect_body_seed0--shortcut--los_terminal_v1,independent_F_B1_rrt_connect_body_seed0,shortcut,True,success
+nearbed_tracks.png,,,,,independent_F_B1_rrt_star_body_seed0--raw--legacy,independent_F_B1_rrt_star_body_seed0,raw,True,success
+nearbed_tracks.png,,,,,independent_F_B1_rrt_star_body_seed0--raw--los_d2,independent_F_B1_rrt_star_body_seed0,raw,True,swept_safety_reject
+nearbed_tracks.png,,,,,independent_F_B1_rrt_star_body_seed0--raw--los_terminal_v1,independent_F_B1_rrt_star_body_seed0,raw,True,swept_safety_reject
+nearbed_tracks.png,,,,,independent_F_B1_rrt_star_body_seed0--shortcut--legacy,independent_F_B1_rrt_star_body_seed0,shortcut,True,success
+nearbed_tracks.png,,,,,independent_F_B1_rrt_star_body_seed0--shortcut--los_d2,independent_F_B1_rrt_star_body_seed0,shortcut,True,success
+nearbed_tracks.png,,,,,independent_F_B1_rrt_star_body_seed0--shortcut--los_terminal_v1,independent_F_B1_rrt_star_body_seed0,shortcut,True,success
+nearbed_tracks.png,,,,,independent_F_B1_informed_rrt_star_body_seed0--raw--legacy,independent_F_B1_informed_rrt_star_body_seed0,raw,True,success
+nearbed_tracks.png,,,,,independent_F_B1_informed_rrt_star_body_seed0--raw--los_d2,independent_F_B1_informed_rrt_star_body_seed0,raw,True,swept_safety_reject
+nearbed_tracks.png,,,,,independent_F_B1_informed_rrt_star_body_seed0--raw--los_terminal_v1,independent_F_B1_informed_rrt_star_body_seed0,raw,True,swept_safety_reject
+nearbed_tracks.png,,,,,independent_F_B1_informed_rrt_star_body_seed0--shortcut--legacy,independent_F_B1_informed_rrt_star_body_seed0,shortcut,True,success
+nearbed_tracks.png,,,,,independent_F_B1_informed_rrt_star_body_seed0--shortcut--los_d2,independent_F_B1_informed_rrt_star_body_seed0,shortcut,True,success
+nearbed_tracks.png,,,,,independent_F_B1_informed_rrt_star_body_seed0--shortcut--los_terminal_v1,independent_F_B1_informed_rrt_star_body_seed0,shortcut,True,success

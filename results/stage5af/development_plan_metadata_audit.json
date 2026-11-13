@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "planning_tasks_checked": 360,
+  "solved_tasks_checked": 306,
+  "checks": [
+    "10s_budget",
+    "effective_sphere_radius",
+    "empty_first_certificate_when_no_path",
+    "first_certificate_time",
+    "first_path_endpoints"
+  ],
+  "scope": "supplementary read-only metadata assertions; full314642-interval development audit not repeated"
+}

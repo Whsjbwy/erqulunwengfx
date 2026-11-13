@@ -1,0 +1,66 @@
+{
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.11.15 (main, Apr 14 2026, 14:31:26) [MSC v.1944 64 bit (AMD64)]",
+  "checks": [
+    {
+      "name": "pytest",
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "-v",
+        "--junitxml=D:\\2区论文复现\\local_only\\stage5af_audit\\final_pytest.xml"
+      ],
+      "started_utc": "2026-11-13T07:26:55.352125+00:00",
+      "log": "local_only/stage5af_audit/final_pytest.log",
+      "returncode": 0,
+      "elapsed_s": 14.170283600000403
+    },
+    {
+      "name": "ruff",
+      "command": [
+        "python",
+        "-m",
+        "ruff",
+        "check",
+        "."
+      ],
+      "started_utc": "2026-11-13T07:27:09.523143+00:00",
+      "log": "local_only/stage5af_audit/final_ruff.log",
+      "returncode": 0,
+      "elapsed_s": 0.12067400000159978
+    },
+    {
+      "name": "format",
+      "command": [
+        "python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "."
+      ],
+      "started_utc": "2026-11-13T07:27:09.643822+00:00",
+      "log": "local_only/stage5af_audit/final_format.log",
+      "returncode": 0,
+      "elapsed_s": 0.10985330000039539
+    },
+    {
+      "name": "compile",
+      "command": [
+        "python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "tests",
+        "scripts"
+      ],
+      "started_utc": "2026-11-13T07:27:09.754421+00:00",
+      "log": "local_only/stage5af_audit/final_compile.log",
+      "returncode": 0,
+      "elapsed_s": 0.15761059999931604
+    }
+  ],
+  "passed": true
+}

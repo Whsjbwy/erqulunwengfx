@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "phase": "development",
+  "planning_tasks": 360,
+  "geometric_tasks": 306,
+  "new_condition_records_checked": 612,
+  "trace_steps_checked": 314642,
+  "continuous_intervals_recertified": 314642,
+  "independent_rk4_steps": 1836,
+  "maximum_rk4_error_m": 2.1316282072803006e-13,
+  "preterminal_steps_rechecked": 306674,
+  "terminal_goal_targets_checked": 7968,
+  "first_safety_intervals_checked": 131
+}

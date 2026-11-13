@@ -1,0 +1,17 @@
+{
+  "complete": true,
+  "old_planning_tasks_reused": 360,
+  "old_solved_tasks": 306,
+  "old_reference_execution_conditions": 1224,
+  "new_development_conditions": 612,
+  "development_registered_conditions": 2160,
+  "independent_planning_trials": 216,
+  "independent_geometry_successes": 194,
+  "independent_actual_execution_conditions": 1164,
+  "independent_registered_conditions": 1296,
+  "saved_condition_records": 1776,
+  "prefix_reference_records": 1000,
+  "reused_prefix_steps": 435116,
+  "terminal54_recovered": 3,
+  "additional_unarchived_serialization_attempts": 1
+}

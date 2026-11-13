@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "baseline_commit": "c6f911cce08590e58bc9d3db9661ffd4e9e0fedb",
+  "changed_historical_tracked_files": [],
+  "new_stage_scopes_only": true,
+  "prepublication_files_reviewed": 59,
+  "public_result_bytes": 11718572,
+  "maximum_candidate_file_bytes": 2339692,
+  "credential_pattern_matches": 0,
+  "full_trajectory_archives_in_delivery": 0,
+  "scope": "Code/results before CI evidence; later additions limited to stage5af documentation and official CI summaries."
+}

@@ -1,0 +1,6 @@
+{
+  "lookahead_m": 2.0,
+  "terminal_distance_m": 2.0,
+  "selection": "single preregistered setting; no candidate search",
+  "third_processing": false
+}
