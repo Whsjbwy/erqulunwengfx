@@ -194,4 +194,4 @@ Gate1补强用例曾因插入位置错误实际2失败/1通过，修复后再验
 
 发布前`git diff --check`通过；相对PR #7的历史跟踪文件修改/删除为0，所有候选文件仅在新stage5af范围，凭据模式扫描无命中，未纳入完整轨迹、作者材料、环境或额外hash文件。完整原始1776个新条件档案中1000个采用精确前缀引用，复用435116步；后处理仅保留汇总元数据，避免在内存中重复囤积完整轨迹。
 
-分支为`audit/auv-stage5af-terminal`，PR以`audit/auv-stage5ae-evaluation`为目标，保持开放未合并。官方Windows CI与PR地址将在发布后实际核验并补充；不会仅凭本机检查声称Windows CI已通过。
+审核入口为[PR #8](https://github.com/Whsjbwy/erqulunwengfx/pull/8)，分支`audit/auv-stage5af-terminal`，目标`audit/auv-stage5ae-evaluation`，开放未合并。代码/真实结果提交`90e209c`的[Windows CI 43386891294](https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43386891294)已实际成功，job131757352097。完整官方日志已读取：Windows Server2025/Python3.11.9，483 passed in26.75s，编译、Ruff、190文件格式均成功；不能与本机13.62秒混记。精简证据在`windows_ci.json`，完整日志留本地。后续仅文档/CI证据提交的最新状态在PR实时检查核验，不无限循环提交“证据提交本身的证据”。

@@ -1,6 +1,6 @@
 # 阶段5A-F测试与安全核查记录
 
-**基线、Gate1、612开发重放、新216矩阵及两阶段独立审计已实际完成，本机全量483项测试通过。** Windows CI证据在发布后从官方日志核验并记录。测试数量与科研规划/执行条件分别统计。
+**基线、Gate1、612开发重放、新216矩阵及两阶段独立审计已实际完成，本机及官方Windows CI均483项测试通过。** 测试数量与科研规划/执行条件分别统计。
 
 ## 冻结基线审查
 
@@ -54,4 +54,6 @@ pilot12实际退出0，全612修正条件重放实际退出0。开发独立审�
 
 实际退出状态、开始时间与进程总耗时见`local_checks.json`，483项逐条见`pytest_results.csv`。完整原始日志和JUnit在`local_only/stage5af_audit/final_*`；记录脚本逐命令`subprocess.run`读取退出码，避免PowerShell管道掩盖失败。Ruff所计文件数不是测试数或科研样本数。
 
-`.github/workflows/stage5af-windows.yml`在本分支push和以5A-E为目标的PR上运行Windows/Python3.11、编译、pytest、Ruff与格式检查。官方job结果须实际读取，发布后补入`windows_ci.json`及此处。CI使用自编代码/合成数据，只检查单元及精简结果，不重跑216科研任务，不依赖本机完整轨迹或作者材料。所有依赖沿用固定pyproject，无新包、环境或额外文件hash清单。
+`.github/workflows/stage5af-windows.yml`在本分支push和以5A-E为目标的PR上运行Windows/Python3.11、编译、pytest、Ruff与格式检查。代码/结果提交`90e209c`的[官方PR Windows运行43386891294](https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43386891294)实际成功，job131757352097：**483 passed in26.75s**，编译、Ruff、190文件格式成功。runner为Windows Server2025/windows-2025-vs2026、Python3.11.9，与本机版本/耗时分别记录。完整官方job日志已读取并留在`local_only/stage5af_audit/windows_code_job_131757352097.log`，精简证据见`windows_ci.json`。
+
+审核[PR #8](https://github.com/Whsjbwy/erqulunwengfx/pull/8)以5A-E为目标，保持开放未合并。后续仅补文档/CI证据的最新提交须在交付前另核验PR实时检查，不无限提交“证据提交的证据”。CI只检查软件及精简结果，不重跑216科研任务，不依赖本机完整轨迹或作者材料。所有依赖沿用固定pyproject，无新包、环境或额外文件hash清单。

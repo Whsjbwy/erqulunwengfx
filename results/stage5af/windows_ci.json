@@ -1,0 +1,76 @@
+{
+  "passed": true,
+  "code_commit": "90e209c4e91f50a9def9fb928b46e1137fa1b798",
+  "run_id": 43386891294,
+  "run_url": "https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43386891294",
+  "job_id": 131757352097,
+  "job_conclusion": "success",
+  "official_full_job_log_read": true,
+  "local_full_log": "local_only/stage5af_audit/windows_code_job_131757352097.log",
+  "runner": "Microsoft Windows Server 2025 / windows-2025-vs2026",
+  "python": "3.11.9",
+  "pytest": {
+    "passed": 483,
+    "elapsed_s": 26.75
+  },
+  "ruff": "All checks passed!",
+  "format": "190 files already formatted",
+  "steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/checkout@v7",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/setup-python@v7",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run python -m pip install -e '.[dev]'",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run python -m compileall -q src tests scripts",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run python -m pytest -v",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run python -m ruff check .",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run python -m ruff format --check .",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Run actions/setup-python@v7",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Run actions/checkout@v7",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "scope": "Software and compact public results only; not a rerun of216 scientific planning tasks. Final documentation/evidence commit is separately checked in the PR before handoff."
+}
