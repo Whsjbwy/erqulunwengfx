@@ -1,0 +1,7 @@
+historical_stage,processing,controller,planning_trials_K,geometric_successes_G,actual_executions_E,strict_successes_S,geometric_success_rate_G_over_K,conditional_execution_rate_S_over_E,complete_task_rate_S_over_K,margin_policy
+5A-F,raw,legacy,216,194,194,74,0.8981481481481481,0.38144329896907214,0.3425925925925926,historical_body_or_margin_modes_mixed
+5A-F,raw,los_d2,216,194,194,17,0.8981481481481481,0.08762886597938144,0.0787037037037037,historical_body_or_margin_modes_mixed
+5A-F,raw,los_terminal_v1,216,194,194,17,0.8981481481481481,0.08762886597938144,0.0787037037037037,historical_body_or_margin_modes_mixed
+5A-F,shortcut,legacy,216,194,194,74,0.8981481481481481,0.38144329896907214,0.3425925925925926,historical_body_or_margin_modes_mixed
+5A-F,shortcut,los_d2,216,194,194,59,0.8981481481481481,0.30412371134020616,0.27314814814814814,historical_body_or_margin_modes_mixed
+5A-F,shortcut,los_terminal_v1,216,194,194,59,0.8981481481481481,0.30412371134020616,0.27314814814814814,historical_body_or_margin_modes_mixed

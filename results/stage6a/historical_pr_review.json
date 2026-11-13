@@ -1,0 +1,49 @@
+{
+  "checked_date": "2026-11-13",
+  "pull_requests": [
+    {
+      "pr": 5,
+      "url": "https://github.com/Whsjbwy/erqulunwengfx/pull/5",
+      "base": "repro/gsunlight-stage4a",
+      "head": "pivot/auv-rrt-stage5a",
+      "head_commit": "8c69bb505f8b0602d61559080f385627e2678b1f",
+      "state": "open",
+      "merged": false
+    },
+    {
+      "pr": 6,
+      "url": "https://github.com/Whsjbwy/erqulunwengfx/pull/6",
+      "base": "pivot/auv-rrt-stage5a",
+      "head": "audit/auv-stage5ar-execution",
+      "head_commit": "9dbd5ec2c5f4429fcf27d51661b1d936f5652237",
+      "state": "open",
+      "merged": false
+    },
+    {
+      "pr": 7,
+      "url": "https://github.com/Whsjbwy/erqulunwengfx/pull/7",
+      "base": "audit/auv-stage5ar-execution",
+      "head": "audit/auv-stage5ae-evaluation",
+      "head_commit": "c6f911cce08590e58bc9d3db9661ffd4e9e0fedb",
+      "state": "open",
+      "merged": false
+    },
+    {
+      "pr": 8,
+      "url": "https://github.com/Whsjbwy/erqulunwengfx/pull/8",
+      "base": "audit/auv-stage5ae-evaluation",
+      "head": "audit/auv-stage5af-terminal",
+      "head_commit": "f8d57ee501c2b8379bf66fa0905c20813a7c85da",
+      "state": "open",
+      "merged": false
+    }
+  ],
+  "ancestry": "All reviewed frozen heads are ancestors of the Stage6A base f8d57ee; no historical PR merged by this task.",
+  "historical_windows_ci": {
+    "run_id": 43387268496,
+    "job_id": 131758583396,
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43387268496"
+  }
+}

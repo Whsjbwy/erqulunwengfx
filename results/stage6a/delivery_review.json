@@ -1,0 +1,93 @@
+{
+  "checked_utc": "2026-11-13T11:06:14.649556+00:00",
+  "base_commit": "f8d57ee501c2b8379bf66fa0905c20813a7c85da",
+  "branch": "research/auv-executable-planning-stage6a",
+  "pr_base": "audit/auv-stage5af-terminal",
+  "historical_modified_or_deleted_files": 0,
+  "unexpected_scope_files": [],
+  "snapshot_files": [
+    ".github/workflows/stage6a-windows.yml",
+    "configs/stage6a_feasibility_protocol.json",
+    "configs/stage6a_future_experiment_protocol.json",
+    "docs/STAGE6A_BASELINE_CARD_CN.md",
+    "docs/STAGE6A_HYPOTHESES_CN.md",
+    "docs/STAGE6A_NEXT_DECISION_CN.md",
+    "docs/STAGE6A_NOVELTY_GAP_CN.md",
+    "docs/STAGE6A_PROTOCOL_CN.md",
+    "docs/STAGE6A_RESEARCH_DESIGN_CN.md",
+    "docs/STAGE6A_STRONG_BASELINES_CN.md",
+    "docs/STAGE6A_VALIDATION_CN.md",
+    "results/stage6a/README.md",
+    "results/stage6a/baseline_source_audit.json",
+    "results/stage6a/feasibility_acceptance.json",
+    "results/stage6a/feasibility_cases.csv",
+    "results/stage6a/feasibility_witnesses.png",
+    "results/stage6a/figure_qa.json",
+    "results/stage6a/historical_pr_review.json",
+    "results/stage6a/historical_review.json",
+    "results/stage6a/historical_success_rates.csv",
+    "results/stage6a/literature_matrix.csv",
+    "results/stage6a/literature_verification.json",
+    "results/stage6a/local_checks.json",
+    "results/stage6a/pytest_results.csv",
+    "scripts/stage6a_figures.py",
+    "src/gsunlight_repro/stage6a/__init__.py",
+    "src/gsunlight_repro/stage6a/feasibility.py",
+    "src/gsunlight_repro/stage6a/review.py",
+    "tests/test_stage6a_feasibility.py",
+    "tests/test_stage6a_review.py"
+  ],
+  "evidence_files_added_after_snapshot": [
+    "results/stage6a/delivery_review.json",
+    "results/stage6a/windows_ci.json"
+  ],
+  "snapshot_public_bytes": 286015,
+  "final_static_checks_after_plot_layout": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "tests",
+        "scripts"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "ruff",
+        "check",
+        "."
+      ],
+      "exit_code": 0,
+      "output": "All checks passed!\n"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "."
+      ],
+      "exit_code": 0,
+      "output": "205 files already formatted\n"
+    }
+  ],
+  "historical_reruns": 0,
+  "new_planner_searches": 0,
+  "original_planner_implemented": false,
+  "independent_maps_generated": false,
+  "future_experiments_authorized": false,
+  "native_ompl_baseline_executed": false,
+  "extra_file_hash_manifest_generated": false,
+  "full_trajectories_copied_into_git": false,
+  "decision": "Need-Baseline-Evidence",
+  "scope_passed": true
+}

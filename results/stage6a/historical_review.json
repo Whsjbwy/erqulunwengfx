@@ -1,0 +1,22 @@
+{
+  "stage5af_planning_trials": 216,
+  "stage5af_geometry_successes": 194,
+  "stage5af_registered_execution_rows": 1296,
+  "stage5af_actual_execution_rows": 1164,
+  "stage5af_fixed_los_conditions": 388,
+  "stage5af_fixed_los_failures": 312,
+  "stage5af_failure_phase_counts": {
+    "preterminal": 308,
+    "terminal": 4
+  },
+  "stage5af_reachability_task_counts": {
+    "certified_reachable_geometry_only": 207,
+    "certified_unreachable_aperture": 9
+  },
+  "sources": [
+    "results/stage5af/planning_runs.csv",
+    "results/stage5af/execution_runs.csv",
+    "results/stage5af/terminal_mechanisms.csv"
+  ],
+  "interpretation": "Historical mixed-radius diagnostic results, not Stage6A performance or the uniform-margin future benchmark. Conditions share paths/maps."
+}
