@@ -1,0 +1,18 @@
+{
+  "generator": "stage5ae-new-recipes-v1",
+  "spacing": [0.5, 0.5, 0.5],
+  "maps": [
+    {"id":"E_O1","family":"ordinary","recipe":"ellipsoid_chain","variant":0,"seed":65101,"extent_m":[60,42,24]},
+    {"id":"E_O2","family":"ordinary","recipe":"ellipsoid_chain","variant":1,"seed":65102,"extent_m":[64,46,26]},
+    {"id":"E_O3","family":"ordinary","recipe":"ellipsoid_chain","variant":2,"seed":65103,"extent_m":[58,44,22]},
+    {"id":"E_O4","family":"ordinary","recipe":"ellipsoid_chain","variant":3,"seed":65104,"extent_m":[66,40,28]},
+    {"id":"E_N1","family":"narrow","recipe":"offset_double_bulkhead","variant":0,"seed":65201,"extent_m":[56,40,20],"opening_m":3.5},
+    {"id":"E_N2","family":"narrow","recipe":"offset_double_bulkhead","variant":1,"seed":65202,"extent_m":[60,42,22],"opening_m":4.0},
+    {"id":"E_N3","family":"narrow","recipe":"offset_double_bulkhead","variant":2,"seed":65203,"extent_m":[64,44,24],"opening_m":3.0},
+    {"id":"E_N4","family":"narrow","recipe":"offset_double_bulkhead","variant":3,"seed":65204,"extent_m":[58,46,22],"opening_m":2.5},
+    {"id":"E_B1","family":"near_seabed","recipe":"wave_ramp_terraces","variant":0,"seed":65301,"extent_m":[58,40,22]},
+    {"id":"E_B2","family":"near_seabed","recipe":"wave_ramp_terraces","variant":1,"seed":65302,"extent_m":[62,42,24]},
+    {"id":"E_B3","family":"near_seabed","recipe":"wave_ramp_terraces","variant":2,"seed":65303,"extent_m":[66,38,24]},
+    {"id":"E_B4","family":"near_seabed","recipe":"wave_ramp_terraces","variant":3,"seed":65304,"extent_m":[60,46,26]}
+  ]
+}

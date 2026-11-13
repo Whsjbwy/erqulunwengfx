@@ -1,0 +1,32 @@
+{
+  "protocol_id": "stage5ae-v1",
+  "base_commit": "9dbd5ec2c5f4429fcf27d51661b1d936f5652237",
+  "base_branch": "audit/auv-stage5ar-execution",
+  "branch": "audit/auv-stage5ae-evaluation",
+  "methods": ["rrt_connect", "rrt_star", "informed_rrt_star"],
+  "modes": ["body", "margin"],
+  "planning_seeds": [0, 1, 2, 3, 4],
+  "planning_budget_s": 10,
+  "gate_seeds": [0, 1],
+  "gate_maps": ["E_O1", "E_N1", "E_B1"],
+  "expected_formal_trials": 360,
+  "controller_candidates": [
+    {"id": "los_d2", "kind": "los3d", "lookahead_m": 2.0},
+    {"id": "los_d4", "kind": "los3d", "lookahead_m": 4.0}
+  ],
+  "legacy": {"id": "legacy", "kind": "legacy", "lookahead_m": 3.0},
+  "los_progress_gain_s_inv": 1.0,
+  "selection": "Once on all157 old selected paths: maximize map-mean strict success; tie map-mean nominal success; tie minimize map-mean RMS error over all paths; final tie smaller lookahead. No new-map outcomes available during selection.",
+  "pilot": "Each of six old maps: earliest historical failure, then earliest success or latest failure if no success; ties job_id. Exactly12, fixed before new controller outcomes.",
+  "fixed_inputs": "Original goal-facing yaw, zero pitch, v1m/s, dt0.1s, yaw10deg/s, pitch rate5deg/s, pitch20deg, goal0.75m, error3m, time min(600,max(60,3L/v+30)), original sphere/margin and mission ceiling. No current or model calibration.",
+  "processing": ["raw", "shortcut"],
+  "curvature_reference": "Standard horizontal circular fillets, R=v/yaw_max. Exact line/arc primitives, chord enclosure certification. Nonhorizontal or insufficient segment length explicitly unsupported/rejected. No claim of qualified general3D smoothing; only raw/shortcut enter formal3D matrix.",
+  "e0_history": "Read all1099 5AR condition records once; augment every failure and list projection jumps>0.5m descriptively, not as automatic bugs. Replay fixed12 baselines against original track and old records.",
+  "local_tube": "1m reference arc-length neighborhood split at vertices; capped conservative physical/mission clearance and error/clearance ratio are warnings only. Continuous swept-sphere certification remains authoritative.",
+  "independent_maps": "12 new scenes from stage5ae_maps.json; new recipes, dimensions and endpoints; no reuse of old maps under new seeds. Generate/validate after development freeze; never select on outcomes.",
+  "gate": "E0 correctness -> E1 analytic/pilot/full development -> E2 pairing and bounded horizontal reference -> commit selected parameters -> E3 36-trial resource gate -> full360 reusing all completed jobs. Stop on program errors, drift, accepted unsafe geometry or unresolved guard timeout; no dropping failure cases.",
+  "denominators": "Geometry / known-feasible planning tasks; strict execution / eligible paths for each processing/controller; end-to-end / same known-feasible tasks. Envelope-unreachable, unknown and no-path kept separate.",
+  "uncertainty": "Map as cluster. Fixed RNG 65888, 2000 map-bootstrap replicates; exploratory percentile95% intervals and paired differences. No seed-level independence or significance claims.",
+  "storage": "Historical traces referenced in place; new compressed traces stored once outside repository; paths and controller conditions explicitly identified; no extra file hashes.",
+  "stop": "Go-to-innovation / Refine-controller / Pivot-model / Inconclusive based on all evidence, then stop for researcher review. No new planning algorithm."
+}
