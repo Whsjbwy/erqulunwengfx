@@ -53,4 +53,6 @@ PR #5的8c69bb5与PR #6的9dbd5ec和本地一致，检查时均开放且未合�
 
 ## GitHub Windows CI
 
-`.github/workflows/stage5ae-windows.yml`在本分支push和以5A-R为目标的PR上运行Windows/Python 3.11、编译、pytest、Ruff和格式检查。最终从官方job日志读取结果，公开精简`windows_ci.json`，完整日志保留本地。CI只核查软件和精简公开结果，不重新执行360次科研矩阵；本机Windows 11与GitHub镜像及Python补丁版本分别记账。
+`.github/workflows/stage5ae-windows.yml`在本分支push和以5A-R为目标的PR上运行Windows/Python 3.11、编译、pytest、Ruff和格式检查。代码/结果提交`b55c618`的[PR Windows运行43370148148](https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43370148148)已实际成功，job131703760406。完整官方日志已读取：469 passed in19.94s，编译和Ruff成功，169 files already formatted。镜像为Microsoft Windows Server 2025 / windows-2025-vs2026，Python3.11.9，不能与本机Windows11/Python3.11.15及10.24秒混记。
+
+精简官方证据在[windows_ci.json](../results/stage5ae/windows_ci.json)，完整97KB日志留在`local_only/stage5ae_audit/windows_code_job_131703760406.log`。CI只核查软件和精简公开结果，不重新执行360次科研矩阵。审核入口[PR #7](https://github.com/Whsjbwy/erqulunwengfx/pull/7)，目标5A-R，保持开放未合并。之后仅补文档/CI证据的最终提交另核验实时检查，不无限循环提交“证据提交本身的证据”。

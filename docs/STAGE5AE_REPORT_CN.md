@@ -186,3 +186,5 @@ LOS Δ=2只是在两候选间胜出，不能据总体41大于31就断言其地�
 公开[逐次CSV和图表](../results/stage5ae/README.md)、[协议](STAGE5AE_PROTOCOL_CN.md)、[命令](STAGE5AE_COMMANDS_CN.md)和[软件/Windows检查](STAGE5AE_TEST_RESULTS_CN.md)分开保存。完整坐标、首解证书、连续区间轨迹留在`D:\2区论文复现\local_only\stage5ae`单份存储，旧轨迹原位引用。不分发作者材料、环境、凭据，不额外生成文件哈希清单。
 
 本阶段所有成功都仅为明确假设下的静态仿真成功，没有真实AUV海试、姿态相关机体校准或标定水动力证据。阶段结束后停止等待科研审核，不自行进入下一阶段。
+
+交付分支为`audit/auv-stage5ae-evaluation`，审核[PR #7](https://github.com/Whsjbwy/erqulunwengfx/pull/7)以5A-R为目标，未合并。代码/结果提交b55c618的[Windows CI](https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43370148148)实际469 passed in19.94s，编译、Ruff及169文件格式检查成功；官方日志已读取并归档精简证据。后续只补文档与证据，最终提交状态在PR实时检查另核验。
