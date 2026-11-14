@@ -1,0 +1,23 @@
+{
+  "start": [
+    29.06704055326371,
+    19.137751231382367,
+    15.25
+  ],
+  "middle": [
+    29.102395892323038,
+    19.102395892323038,
+    15.25
+  ],
+  "end": [
+    29.137751231382367,
+    19.06704055326371,
+    15.25
+  ],
+  "start_free": true,
+  "end_free": true,
+  "middle_free": false,
+  "middle_gap_m": -0.00039999999999751346,
+  "full_segment_certified": false,
+  "interpretation": "Rejected interval endpoints are not collision instant positions; actual middle sphere intersection independently demonstrated."
+}

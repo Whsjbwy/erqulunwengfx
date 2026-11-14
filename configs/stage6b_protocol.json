@@ -38,6 +38,7 @@
     "control_sampler": "Official default uniform real-vector control; RRT SimpleDirectedControlSampler one candidate and uniform integer duration; SST official uniform control and duration; identical bounds/support",
     "algorithm_differences": "Official SST rejects incomplete sampled durations; official control RRT can retain valid prefixes. Preserve and disclose these tree semantics, do not patch algorithms.",
     "objective": "Control arc length v*T at frozen v=1, provided through the official optimization objective API; no new tree algorithm",
+    "cost_threshold": "positive infinity through the official objective API, so SST stops at the first finite exact solution just as RRT; no state-only intermediate callback treated as a control certificate",
     "termination": "First returned official exact solution or common8s cap; approximate/no_solution retained, no approximate upgraded to exact",
     "historical_reachability": "F_O1/F_N1/F_B1 geometry_only_kinodynamic_unknown; six analytic tasks have independent supplied-control witnesses hidden from planner requests",
     "initial_state": "Use exact registered6A initial state for analytic tasks; oldF uses frozen goal-facing yaw and zero pitch; native and LOS share same q0",

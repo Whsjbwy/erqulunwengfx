@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "cases": 13,
+  "accepted_intervals": 930,
+  "maximum_position_error_m": 0.0,
+  "maximum_angle_or_speed_error": 0.0,
+  "independent_rk4_intervals": 28,
+  "maximum_rk4_error_m": 1.2079226507921703e-13,
+  "actual_adapter_propagator_calls": 936,
+  "searches_started": 0
+}
