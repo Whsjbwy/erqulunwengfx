@@ -1,0 +1,14 @@
+case,passed,reason,accepted_intervals,maximum_state_error,actual_propagator_calls
+climb,True,ok,160,0.0,160
+combined,True,ok,80,0.0,80
+dive,True,ok,160,0.0,160
+hover_not_in_model,True,frozen_speed,0,0.0,0
+left_arc,True,ok,90,0.0,90
+mid_segment_reject,True,physical_obstacle,0,0.0,1
+mission_band_reject,True,mission_ceiling,61,0.0,62
+obstacle_reject,True,physical_obstacle,87,0.0,88
+pitch_angle_reject,True,pitch_bound,2,0.0,3
+pitch_rate_reject,True,pitch_rate,0,0.0,1
+right_arc,True,ok,90,0.0,90
+straight,True,ok,200,0.0,200
+yaw_rate_reject,True,yaw_rate,0,0.0,1

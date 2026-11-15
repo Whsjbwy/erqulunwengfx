@@ -1,0 +1,7 @@
+{
+  "initial_attempt": "Sandbox subst Z: D:/2区论文复现",
+  "result": "Access denied; no mapping created",
+  "dependent_build": "Not started: WinError3 creating Z:/local_only/stage6c_native",
+  "recovery": "Use reviewed native build permission for temporary same-directory alias; no installation or source copy",
+  "not_in_numbered_build_command_count": true
+}
