@@ -1,0 +1,77 @@
+{
+  "source": "Existing planning_runs.csv and local numeric records only",
+  "new_searches_or_executions": 0,
+  "registered_runs_shown": 36,
+  "native_M": 21,
+  "los_E": 21,
+  "los_S": 11,
+  "los_outcome_counts": {
+    "not_run_no_strict_native_trajectory": 15,
+    "goal_reached": 11,
+    "tracking_error_limit": 6,
+    "goal_reached_required_margin_violated": 4
+  },
+  "selection_rule": "First native exact job_id in lexicographic order within each fixed case",
+  "selected": [
+    {
+      "job_id": "straight--rrt--seed1",
+      "native_samples": 959,
+      "los_samples": 967,
+      "los_failure_reason": "goal_reached",
+      "reference_bridge_length_m": 0.4860724653414956,
+      "margin_rejected_endpoint_shown": false
+    },
+    {
+      "job_id": "climb--rrt--seed0",
+      "native_samples": 172,
+      "los_samples": 209,
+      "los_failure_reason": "tracking_error_limit",
+      "reference_bridge_length_m": 0.7370324328444067,
+      "margin_rejected_endpoint_shown": false
+    },
+    {
+      "job_id": "dive--rrt--seed0",
+      "native_samples": 1169,
+      "los_samples": 1221,
+      "los_failure_reason": "tracking_error_limit",
+      "reference_bridge_length_m": 0.7271196389960597,
+      "margin_rejected_endpoint_shown": false
+    },
+    {
+      "job_id": "F_O1--rrt--seed0",
+      "native_samples": 1568,
+      "los_samples": 1584,
+      "los_failure_reason": "goal_reached_required_margin_violated",
+      "reference_bridge_length_m": 0.6293922020332249,
+      "margin_rejected_endpoint_shown": true
+    }
+  ],
+  "notes": [
+    "Bridge is reference-only, never native control",
+    "2D projection is not a 3D safety certificate",
+    "Rejected interval endpoints are not collision instants"
+  ],
+  "visual_review": {
+    "status": "passed",
+    "method": "Actual view_image inspection of both final exported PNG files",
+    "reviewed_images": [
+      {
+        "file": "native_los_matrix.png",
+        "width_px": 2052,
+        "height_px": 1206
+      },
+      {
+        "file": "trajectory_comparison.png",
+        "width_px": 2160,
+        "height_px": 2376
+      }
+    ],
+    "observations": [
+      "All 36 registered results remain visible; counts match the source table",
+      "Fixed examples retain one strict LOS success and three failures",
+      "Titles, axes, legends and notes are readable and do not cover traces",
+      "Reference-only bridges, independent axis scales and rejected-interval endpoints are explicitly labelled"
+    ],
+    "pdf_exports_retained": false
+  }
+}

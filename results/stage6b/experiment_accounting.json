@@ -1,0 +1,10 @@
+{
+  "registered": 36,
+  "actually_run": 36,
+  "complete": true,
+  "model_successes": 21,
+  "actual_los_executions": 21,
+  "strict_los_successes": 11,
+  "pilot_only": false,
+  "scope": "development correctness smoke, not algorithm superiority evidence"
+}

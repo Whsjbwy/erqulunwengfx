@@ -1,0 +1,508 @@
+{
+  "collected_utc": "2026-11-15T08:21:56.319687+00:00",
+  "source": "workspace/local_only/stage6b_native/build_status.json",
+  "commands_count": 21,
+  "failed_commands": 6,
+  "successful_commands": 15,
+  "packages": {
+    "llvm": {
+      "url": "https://github.com/mstorsjo/llvm-mingw/releases/download/20261104/llvm-mingw-20261104-ucrt-x86_64.zip",
+      "downloaded_bytes": 191037046,
+      "download_s": 48.986983200000395,
+      "extracted": true
+    },
+    "cmake": {
+      "url": "https://github.com/Kitware/CMake/releases/download/v3.31.8/cmake-3.31.8-windows-x86_64.zip",
+      "downloaded_bytes": 46709267,
+      "download_s": 13.827813500000047,
+      "extracted": true
+    },
+    "ninja": {
+      "url": "https://github.com/ninja-build/ninja/releases/download/v1.13.2/ninja-win.zip",
+      "downloaded_bytes": 291570,
+      "download_s": 2.122443200001726,
+      "extracted": true
+    },
+    "boost": {
+      "url": "https://github.com/boostorg/boost/releases/download/boost-1.89.0/boost-1.89.0-cmake.tar.xz",
+      "downloaded_bytes": 102078704,
+      "download_s": 27.081469699998706,
+      "extracted": true
+    },
+    "eigen": {
+      "url": "https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.gz",
+      "downloaded_bytes": 2705005,
+      "download_s": 3.747264900001028,
+      "extracted": true
+    },
+    "ompl": {
+      "url": "https://github.com/ompl/ompl/archive/refs/tags/2.0.2.tar.gz",
+      "downloaded_bytes": 77135911,
+      "download_s": 30.610765299999912,
+      "extracted": true
+    }
+  },
+  "commands": [
+    {
+      "number": 0,
+      "label": "boost-configure",
+      "arguments": [
+        "D:\\2区论文复现\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "-S",
+        "D:\\2区论文复现\\local_only\\stage6b_native\\packages\\boost-1.89.0",
+        "-B",
+        "D:\\2区论文复现\\local_only\\stage6b_native\\build\\boost",
+        "-G",
+        "Ninja",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_C_COMPILER=D:\\2区论文复现\\local_only\\stage6b_native\\packages\\llvm-mingw-20261104-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang.exe",
+        "-DCMAKE_CXX_COMPILER=D:\\2区论文复现\\local_only\\stage6b_native\\packages\\llvm-mingw-20261104-ucrt-x86_64\\bin\\x86_64-w64-mingw32-clang++.exe",
+        "-DCMAKE_INSTALL_PREFIX=D:\\2区论文复现\\local_only\\stage6b_native\\prefix",
+        "-DCMAKE_PREFIX_PATH=D:\\2区论文复现\\local_only\\stage6b_native\\prefix",
+        "-DBOOST_INCLUDE_LIBRARIES=serialization;program_options",
+        "-DBUILD_SHARED_LIBS=OFF"
+      ],
+      "exit_code": 1,
+      "elapsed_s": 0.6958102999997209,
+      "local_log": "build-00-boost-configure.log"
+    },
+    {
+      "number": 1,
+      "label": "boost-configure",
+      "arguments": [
+        "D:\\2区论文复现\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "-S",
+        "D:\\2区论文复现\\local_only\\stage6b_native\\packages\\boost-1.89.0",
+        "-B",
+        "D:\\2区论文复现\\local_only\\stage6b_native\\build\\boost-native",
+        "-G",
+        "Ninja",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_C_COMPILER=D:/2区论文复现/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang.exe",
+        "-DCMAKE_CXX_COMPILER=D:/2区论文复现/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang++.exe",
+        "-DCMAKE_INSTALL_PREFIX=D:/2区论文复现/local_only/stage6b_native/prefix",
+        "-DCMAKE_PREFIX_PATH=D:/2区论文复现/local_only/stage6b_native/prefix",
+        "-DBOOST_INCLUDE_LIBRARIES=serialization;program_options",
+        "-DBUILD_SHARED_LIBS=OFF"
+      ],
+      "exit_code": 3221226505,
+      "elapsed_s": 0.447840200002247,
+      "local_log": "build-01-boost-configure.log"
+    },
+    {
+      "number": 2,
+      "label": "boost-configure",
+      "arguments": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "-S",
+        "Z:\\local_only\\stage6b_native\\packages\\boost-1.89.0",
+        "-B",
+        "Z:\\local_only\\stage6b_native\\build\\boost-native",
+        "-G",
+        "Ninja",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_C_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang.exe",
+        "-DCMAKE_CXX_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang++.exe",
+        "-DCMAKE_INSTALL_PREFIX=Z:/local_only/stage6b_native/prefix",
+        "-DCMAKE_PREFIX_PATH=Z:/local_only/stage6b_native/prefix",
+        "-DBOOST_INCLUDE_LIBRARIES=serialization;program_options",
+        "-DBUILD_SHARED_LIBS=OFF"
+      ],
+      "exit_code": 3221226505,
+      "elapsed_s": 1.2915055999983451,
+      "local_log": "build-02-boost-configure.log"
+    },
+    {
+      "number": 3,
+      "label": "boost-configure",
+      "arguments": [
+        "D:\\2区论文复现\\erqulunwengfx\\..\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "-S",
+        "D:\\2区论文复现\\erqulunwengfx\\..\\local_only\\stage6b_native\\packages\\boost-1.89.0",
+        "-B",
+        "D:\\2区论文复现\\erqulunwengfx\\..\\local_only\\stage6b_native\\build\\boost-utf8",
+        "-G",
+        "Ninja",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_POLICY_DEFAULT_CMP0176=NEW",
+        "-DCMAKE_C_COMPILER=D:/2区论文复现/erqulunwengfx/../local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang.exe",
+        "-DCMAKE_CXX_COMPILER=D:/2区论文复现/erqulunwengfx/../local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang++.exe",
+        "-DCMAKE_INSTALL_PREFIX=D:/2区论文复现/erqulunwengfx/../local_only/stage6b_native/prefix",
+        "-DCMAKE_PREFIX_PATH=D:/2区论文复现/erqulunwengfx/../local_only/stage6b_native/prefix",
+        "-DBOOST_INCLUDE_LIBRARIES=serialization;program_options",
+        "-DBUILD_SHARED_LIBS=OFF"
+      ],
+      "exit_code": 3221226505,
+      "elapsed_s": 0.243977599999198,
+      "local_log": "build-03-boost-configure.log"
+    },
+    {
+      "number": 4,
+      "label": "boost-configure",
+      "arguments": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "-S",
+        "Z:\\local_only\\stage6b_native\\packages\\boost-1.89.0",
+        "-B",
+        "Z:\\local_only\\stage6b_native\\build\\boost-portable",
+        "-G",
+        "Ninja",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_POLICY_DEFAULT_CMP0176=NEW",
+        "-DCMAKE_C_FLAGS=-no-canonical-prefixes",
+        "-DCMAKE_CXX_FLAGS=-no-canonical-prefixes",
+        "-DCMAKE_C_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang.exe",
+        "-DCMAKE_CXX_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang++.exe",
+        "-DCMAKE_INSTALL_PREFIX=Z:/local_only/stage6b_native/prefix",
+        "-DCMAKE_PREFIX_PATH=Z:/local_only/stage6b_native/prefix",
+        "-DBOOST_INCLUDE_LIBRARIES=serialization;program_options",
+        "-DBUILD_SHARED_LIBS=OFF"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 5.509825799999817,
+      "local_log": "build-04-boost-configure.log"
+    },
+    {
+      "number": 5,
+      "label": "boost-install",
+      "arguments": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "--build",
+        "Z:\\local_only\\stage6b_native\\build\\boost-portable",
+        "--target",
+        "install",
+        "--parallel",
+        "2"
+      ],
+      "exit_code": 1,
+      "elapsed_s": 4.5344823000014,
+      "local_log": "build-05-boost-install.log"
+    },
+    {
+      "number": 6,
+      "label": "boost-configure",
+      "arguments": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "-S",
+        "Z:\\local_only\\stage6b_native\\packages\\boost-1.89.0",
+        "-B",
+        "Z:\\local_only\\stage6b_native\\build\\boost-portable",
+        "-G",
+        "Ninja",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_POLICY_DEFAULT_CMP0176=NEW",
+        "-DCMAKE_C_FLAGS=-no-canonical-prefixes -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00",
+        "-DCMAKE_CXX_FLAGS=-no-canonical-prefixes -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00",
+        "-DCMAKE_C_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang.exe",
+        "-DCMAKE_CXX_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang++.exe",
+        "-DCMAKE_INSTALL_PREFIX=Z:/local_only/stage6b_native/prefix",
+        "-DCMAKE_PREFIX_PATH=Z:/local_only/stage6b_native/prefix",
+        "-DBOOST_INCLUDE_LIBRARIES=serialization;program_options",
+        "-DBUILD_SHARED_LIBS=OFF"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 1.1423089999989315,
+      "local_log": "build-06-boost-configure.log"
+    },
+    {
+      "number": 7,
+      "label": "boost-install",
+      "arguments": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "--build",
+        "Z:\\local_only\\stage6b_native\\build\\boost-portable",
+        "--target",
+        "install",
+        "--parallel",
+        "2"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 33.76864810000188,
+      "local_log": "build-07-boost-install.log"
+    },
+    {
+      "number": 8,
+      "label": "eigen-configure",
+      "arguments": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "-S",
+        "Z:\\local_only\\stage6b_native\\packages\\eigen-3.4.0",
+        "-B",
+        "Z:\\local_only\\stage6b_native\\build\\eigen-portable",
+        "-G",
+        "Ninja",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_POLICY_DEFAULT_CMP0176=NEW",
+        "-DCMAKE_C_FLAGS=-no-canonical-prefixes -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00",
+        "-DCMAKE_CXX_FLAGS=-no-canonical-prefixes -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00",
+        "-DCMAKE_C_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang.exe",
+        "-DCMAKE_CXX_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang++.exe",
+        "-DCMAKE_INSTALL_PREFIX=Z:/local_only/stage6b_native/prefix",
+        "-DCMAKE_PREFIX_PATH=Z:/local_only/stage6b_native/prefix",
+        "-DBUILD_TESTING=OFF",
+        "-DEIGEN_BUILD_DOC=OFF"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 12.298725000000559,
+      "local_log": "build-08-eigen-configure.log"
+    },
+    {
+      "number": 9,
+      "label": "eigen-install",
+      "arguments": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "--build",
+        "Z:\\local_only\\stage6b_native\\build\\eigen-portable",
+        "--target",
+        "install",
+        "--parallel",
+        "2"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 1.0187361999996938,
+      "local_log": "build-09-eigen-install.log"
+    },
+    {
+      "number": 10,
+      "label": "ompl-configure",
+      "arguments": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "-S",
+        "Z:\\local_only\\stage6b_native\\packages\\ompl-2.0.2",
+        "-B",
+        "Z:\\local_only\\stage6b_native\\build\\ompl-portable",
+        "-G",
+        "Ninja",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_POLICY_DEFAULT_CMP0176=NEW",
+        "-DCMAKE_C_FLAGS=-no-canonical-prefixes -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00",
+        "-DCMAKE_CXX_FLAGS=-no-canonical-prefixes -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00",
+        "-DCMAKE_C_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang.exe",
+        "-DCMAKE_CXX_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang++.exe",
+        "-DCMAKE_INSTALL_PREFIX=Z:/local_only/stage6b_native/prefix",
+        "-DCMAKE_PREFIX_PATH=Z:/local_only/stage6b_native/prefix",
+        "-DOMPL_BUILD_VAMP=OFF",
+        "-DOMPL_BUILD_PYTHON_BINDINGS=OFF",
+        "-DOMPL_BUILD_SHARED=OFF",
+        "-DOMPL_BUILD_TESTS=OFF",
+        "-DOMPL_BUILD_DEMOS=OFF"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 5.484100800000306,
+      "local_log": "build-10-ompl-configure.log"
+    },
+    {
+      "number": 11,
+      "label": "ompl-install",
+      "arguments": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "--build",
+        "Z:\\local_only\\stage6b_native\\build\\ompl-portable",
+        "--target",
+        "install",
+        "--parallel",
+        "2"
+      ],
+      "exit_code": 1,
+      "elapsed_s": 4.861948900001153,
+      "local_log": "build-11-ompl-install.log"
+    },
+    {
+      "number": 12,
+      "label": "boost-configure",
+      "arguments": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "-S",
+        "Z:\\local_only\\stage6b_native\\packages\\boost-1.89.0",
+        "-B",
+        "Z:\\local_only\\stage6b_native\\build\\boost-portable",
+        "-G",
+        "Ninja",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_POLICY_DEFAULT_CMP0176=NEW",
+        "-DCMAKE_C_FLAGS=-no-canonical-prefixes -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00",
+        "-DCMAKE_CXX_FLAGS=-no-canonical-prefixes -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00",
+        "-DCMAKE_C_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang.exe",
+        "-DCMAKE_CXX_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang++.exe",
+        "-DCMAKE_INSTALL_PREFIX=Z:/local_only/stage6b_native/prefix",
+        "-DCMAKE_PREFIX_PATH=Z:/local_only/stage6b_native/prefix",
+        "-DBOOST_INCLUDE_LIBRARIES=serialization;program_options;math;graph;random;algorithm;range;foreach;dynamic_bitset;numeric/odeint",
+        "-DBUILD_SHARED_LIBS=OFF"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 6.451086100001703,
+      "local_log": "build-12-boost-configure.log"
+    },
+    {
+      "number": 13,
+      "label": "boost-install",
+      "arguments": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "--build",
+        "Z:\\local_only\\stage6b_native\\build\\boost-portable",
+        "--target",
+        "install",
+        "--parallel",
+        "2"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 15.411136599999736,
+      "local_log": "build-13-boost-install.log"
+    },
+    {
+      "number": 14,
+      "label": "eigen-configure",
+      "arguments": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "-S",
+        "Z:\\local_only\\stage6b_native\\packages\\eigen-3.4.0",
+        "-B",
+        "Z:\\local_only\\stage6b_native\\build\\eigen-portable",
+        "-G",
+        "Ninja",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_POLICY_DEFAULT_CMP0176=NEW",
+        "-DCMAKE_C_FLAGS=-no-canonical-prefixes -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00",
+        "-DCMAKE_CXX_FLAGS=-no-canonical-prefixes -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00",
+        "-DCMAKE_C_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang.exe",
+        "-DCMAKE_CXX_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang++.exe",
+        "-DCMAKE_INSTALL_PREFIX=Z:/local_only/stage6b_native/prefix",
+        "-DCMAKE_PREFIX_PATH=Z:/local_only/stage6b_native/prefix",
+        "-DBUILD_TESTING=OFF",
+        "-DEIGEN_BUILD_DOC=OFF"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 0.813401999999769,
+      "local_log": "build-14-eigen-configure.log"
+    },
+    {
+      "number": 15,
+      "label": "eigen-install",
+      "arguments": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "--build",
+        "Z:\\local_only\\stage6b_native\\build\\eigen-portable",
+        "--target",
+        "install",
+        "--parallel",
+        "2"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 0.3738283999991836,
+      "local_log": "build-15-eigen-install.log"
+    },
+    {
+      "number": 16,
+      "label": "ompl-configure",
+      "arguments": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "-S",
+        "Z:\\local_only\\stage6b_native\\packages\\ompl-2.0.2",
+        "-B",
+        "Z:\\local_only\\stage6b_native\\build\\ompl-portable",
+        "-G",
+        "Ninja",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_POLICY_DEFAULT_CMP0176=NEW",
+        "-DCMAKE_C_FLAGS=-no-canonical-prefixes -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00",
+        "-DCMAKE_CXX_FLAGS=-no-canonical-prefixes -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00",
+        "-DCMAKE_C_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang.exe",
+        "-DCMAKE_CXX_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang++.exe",
+        "-DCMAKE_INSTALL_PREFIX=Z:/local_only/stage6b_native/prefix",
+        "-DCMAKE_PREFIX_PATH=Z:/local_only/stage6b_native/prefix",
+        "-DOMPL_BUILD_VAMP=OFF",
+        "-DOMPL_BUILD_PYTHON_BINDINGS=OFF",
+        "-DOMPL_BUILD_SHARED=OFF",
+        "-DOMPL_BUILD_TESTS=OFF",
+        "-DOMPL_BUILD_DEMOS=OFF"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 0.9491358000013861,
+      "local_log": "build-16-ompl-configure.log"
+    },
+    {
+      "number": 17,
+      "label": "ompl-install",
+      "arguments": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "--build",
+        "Z:\\local_only\\stage6b_native\\build\\ompl-portable",
+        "--target",
+        "install",
+        "--parallel",
+        "2"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 135.18432689999827,
+      "local_log": "build-17-ompl-install.log"
+    },
+    {
+      "number": 18,
+      "label": "adapter-configure",
+      "arguments": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "-S",
+        "Z:\\erqulunwengfx\\native\\stage6b",
+        "-B",
+        "Z:\\local_only\\stage6b_native\\build\\adapter",
+        "-G",
+        "Ninja",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_POLICY_DEFAULT_CMP0176=NEW",
+        "-DCMAKE_C_FLAGS=-no-canonical-prefixes -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00",
+        "-DCMAKE_CXX_FLAGS=-no-canonical-prefixes -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00",
+        "-DCMAKE_C_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang.exe",
+        "-DCMAKE_CXX_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang++.exe",
+        "-DCMAKE_INSTALL_PREFIX=Z:/local_only/stage6b_native/prefix",
+        "-DCMAKE_PREFIX_PATH=Z:/local_only/stage6b_native/prefix",
+        "-DSTAGE6B_JSON_INCLUDE=Z:/local_only/stage6b_native/include"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 1.8886893999988388,
+      "local_log": "build-18-adapter-configure.log"
+    },
+    {
+      "number": 19,
+      "label": "adapter-build",
+      "arguments": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "--build",
+        "Z:\\local_only\\stage6b_native\\build\\adapter",
+        "--parallel",
+        "2"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 2.982603199998266,
+      "local_log": "build-19-adapter-build.log"
+    },
+    {
+      "number": 20,
+      "label": "adapter-ctest",
+      "arguments": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\ctest.exe",
+        "--test-dir",
+        "Z:\\local_only\\stage6b_native\\build\\adapter",
+        "--output-on-failure"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 0.20870550000108778,
+      "local_log": "build-20-adapter-ctest.log"
+    }
+  ],
+  "additional_diagnostic": {
+    "calls": 1,
+    "local_log": "cmake_diagnostic_trace.log",
+    "in_numbered_command_count": false,
+    "structured_exit_code": null
+  },
+  "final_adapter_ctest": {
+    "tests": 1,
+    "passed": 1,
+    "internal_groups": 6
+  },
+  "official_ompl_upstream_test_suite_run": false,
+  "no_system_install_or_wsl": true,
+  "file_hash_manifests": false,
+  "current_subst_mappings": [],
+  "path_alias_note": "Z: was an alias for the original D: workspace; none remains at collection. This check does not claim an explicit cleanup command occurred in this session."
+}

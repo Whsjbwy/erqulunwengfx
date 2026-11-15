@@ -1,0 +1,43 @@
+name: Stage 6B Windows official OMPL acceptance
+on:
+  push:
+    branches: [research/auv-control-baselines-stage6b]
+  pull_request:
+    branches: [research/auv-executable-planning-stage6a]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native-and-python:
+    runs-on: windows-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - name: Install existing Python dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Python compilation and full tests
+        run: |
+          python -m compileall -q src tests scripts
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m pytest -q
+      - name: Ruff and formatting
+        run: |
+          python -m ruff check .
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m ruff format --check .
+      - name: Build official pinned OMPL and run CTest
+        run: |
+          python scripts/stage6b_build.py --local-root "$env:RUNNER_TEMP/auv-stage6b" --jobs 2
+      - name: Validate thirteen actual OMPL interface cases
+        run: |
+          python -m gsunlight_repro.stage6b.runner accept --executable "$env:RUNNER_TEMP/auv-stage6b/build/adapter/auv6b_runner.exe" --build-root "$env:RUNNER_TEMP/auv-stage6b" --local-root "$env:RUNNER_TEMP/auv-stage6b-records" --output results/stage6b/ci-validation
+      - name: Show native build diagnostics on failure
+        if: failure()
+        run: |
+          $taskLogs = Get-ChildItem -LiteralPath "$env:RUNNER_TEMP/auv-stage6b" -Filter 'build-*.log' -ErrorAction SilentlyContinue | Sort-Object Name | Select-Object -Last 3
+          foreach ($taskLog in $taskLogs) { Get-Content -LiteralPath $taskLog.FullName -Tail 55 }

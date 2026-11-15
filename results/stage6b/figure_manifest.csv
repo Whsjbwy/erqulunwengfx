@@ -1,0 +1,41 @@
+figure,job_id,scenario,algorithm,seed_label,selection_rule,native_status,native_M,los_was_run,los_strict_success,los_failure_reason
+native_los_matrix,straight--rrt--seed0,straight,rrt,0,All 36 fixed registered runs; no selection,approximate,False,False,False,not_run_no_strict_native_trajectory
+native_los_matrix,straight--sst--seed0,straight,sst,0,All 36 fixed registered runs; no selection,approximate,False,False,False,not_run_no_strict_native_trajectory
+native_los_matrix,straight--rrt--seed1,straight,rrt,1,All 36 fixed registered runs; no selection,exact,True,True,True,goal_reached
+native_los_matrix,straight--sst--seed1,straight,sst,1,All 36 fixed registered runs; no selection,approximate,False,False,False,not_run_no_strict_native_trajectory
+native_los_matrix,left_arc--rrt--seed0,left_arc,rrt,0,All 36 fixed registered runs; no selection,exact,True,True,True,goal_reached
+native_los_matrix,left_arc--sst--seed0,left_arc,sst,0,All 36 fixed registered runs; no selection,approximate,False,False,False,not_run_no_strict_native_trajectory
+native_los_matrix,left_arc--rrt--seed1,left_arc,rrt,1,All 36 fixed registered runs; no selection,exact,True,True,True,goal_reached
+native_los_matrix,left_arc--sst--seed1,left_arc,sst,1,All 36 fixed registered runs; no selection,approximate,False,False,False,not_run_no_strict_native_trajectory
+native_los_matrix,right_arc--rrt--seed0,right_arc,rrt,0,All 36 fixed registered runs; no selection,exact,True,True,True,goal_reached
+native_los_matrix,right_arc--sst--seed0,right_arc,sst,0,All 36 fixed registered runs; no selection,exact,True,True,True,goal_reached
+native_los_matrix,right_arc--rrt--seed1,right_arc,rrt,1,All 36 fixed registered runs; no selection,exact,True,True,True,goal_reached
+native_los_matrix,right_arc--sst--seed1,right_arc,sst,1,All 36 fixed registered runs; no selection,approximate,False,False,False,not_run_no_strict_native_trajectory
+native_los_matrix,climb--rrt--seed0,climb,rrt,0,All 36 fixed registered runs; no selection,exact,True,True,False,tracking_error_limit
+native_los_matrix,climb--sst--seed0,climb,sst,0,All 36 fixed registered runs; no selection,approximate,False,False,False,not_run_no_strict_native_trajectory
+native_los_matrix,climb--rrt--seed1,climb,rrt,1,All 36 fixed registered runs; no selection,exact,True,True,True,goal_reached
+native_los_matrix,climb--sst--seed1,climb,sst,1,All 36 fixed registered runs; no selection,approximate,False,False,False,not_run_no_strict_native_trajectory
+native_los_matrix,dive--rrt--seed0,dive,rrt,0,All 36 fixed registered runs; no selection,exact,True,True,False,tracking_error_limit
+native_los_matrix,dive--sst--seed0,dive,sst,0,All 36 fixed registered runs; no selection,approximate,False,False,False,not_run_no_strict_native_trajectory
+native_los_matrix,dive--rrt--seed1,dive,rrt,1,All 36 fixed registered runs; no selection,exact,True,True,False,tracking_error_limit
+native_los_matrix,dive--sst--seed1,dive,sst,1,All 36 fixed registered runs; no selection,exact,True,True,False,tracking_error_limit
+native_los_matrix,combined--rrt--seed0,combined,rrt,0,All 36 fixed registered runs; no selection,approximate,False,False,False,not_run_no_strict_native_trajectory
+native_los_matrix,combined--sst--seed0,combined,sst,0,All 36 fixed registered runs; no selection,exact,True,True,True,goal_reached
+native_los_matrix,combined--rrt--seed1,combined,rrt,1,All 36 fixed registered runs; no selection,exact,True,True,False,tracking_error_limit
+native_los_matrix,combined--sst--seed1,combined,sst,1,All 36 fixed registered runs; no selection,exact,True,True,True,goal_reached
+native_los_matrix,F_O1--rrt--seed0,F_O1,rrt,0,All 36 fixed registered runs; no selection,exact,True,True,False,goal_reached_required_margin_violated
+native_los_matrix,F_O1--sst--seed0,F_O1,sst,0,All 36 fixed registered runs; no selection,approximate,False,False,False,not_run_no_strict_native_trajectory
+native_los_matrix,F_O1--rrt--seed1,F_O1,rrt,1,All 36 fixed registered runs; no selection,exact,True,True,True,goal_reached
+native_los_matrix,F_O1--sst--seed1,F_O1,sst,1,All 36 fixed registered runs; no selection,exact,True,True,False,goal_reached_required_margin_violated
+native_los_matrix,F_N1--rrt--seed0,F_N1,rrt,0,All 36 fixed registered runs; no selection,approximate,False,False,False,not_run_no_strict_native_trajectory
+native_los_matrix,F_N1--sst--seed0,F_N1,sst,0,All 36 fixed registered runs; no selection,exact,True,True,False,goal_reached_required_margin_violated
+native_los_matrix,F_N1--rrt--seed1,F_N1,rrt,1,All 36 fixed registered runs; no selection,approximate,False,False,False,not_run_no_strict_native_trajectory
+native_los_matrix,F_N1--sst--seed1,F_N1,sst,1,All 36 fixed registered runs; no selection,approximate,False,False,False,not_run_no_strict_native_trajectory
+native_los_matrix,F_B1--rrt--seed0,F_B1,rrt,0,All 36 fixed registered runs; no selection,approximate,False,False,False,not_run_no_strict_native_trajectory
+native_los_matrix,F_B1--sst--seed0,F_B1,sst,0,All 36 fixed registered runs; no selection,exact,True,True,True,goal_reached
+native_los_matrix,F_B1--rrt--seed1,F_B1,rrt,1,All 36 fixed registered runs; no selection,exact,True,True,False,goal_reached_required_margin_violated
+native_los_matrix,F_B1--sst--seed1,F_B1,sst,1,All 36 fixed registered runs; no selection,exact,True,True,False,tracking_error_limit
+trajectory_comparison,straight--rrt--seed1,straight,rrt,1,First native exact job_id in lexicographic order within each fixed case,exact,True,True,True,goal_reached
+trajectory_comparison,climb--rrt--seed0,climb,rrt,0,First native exact job_id in lexicographic order within each fixed case,exact,True,True,False,tracking_error_limit
+trajectory_comparison,dive--rrt--seed0,dive,rrt,0,First native exact job_id in lexicographic order within each fixed case,exact,True,True,False,tracking_error_limit
+trajectory_comparison,F_O1--rrt--seed0,F_O1,rrt,0,First native exact job_id in lexicographic order within each fixed case,exact,True,True,False,goal_reached_required_margin_violated
