@@ -1,0 +1,290 @@
+[
+  {
+    "job_id": "straight--rrt--seed0",
+    "scenario": "straight",
+    "algorithm": "rrt",
+    "seed_label": 0,
+    "ompl_seed": 1,
+    "reachability": "known_control_witness"
+  },
+  {
+    "job_id": "straight--sst--seed0",
+    "scenario": "straight",
+    "algorithm": "sst",
+    "seed_label": 0,
+    "ompl_seed": 1,
+    "reachability": "known_control_witness"
+  },
+  {
+    "job_id": "straight--rrt--seed1",
+    "scenario": "straight",
+    "algorithm": "rrt",
+    "seed_label": 1,
+    "ompl_seed": 2,
+    "reachability": "known_control_witness"
+  },
+  {
+    "job_id": "straight--sst--seed1",
+    "scenario": "straight",
+    "algorithm": "sst",
+    "seed_label": 1,
+    "ompl_seed": 2,
+    "reachability": "known_control_witness"
+  },
+  {
+    "job_id": "left_arc--rrt--seed0",
+    "scenario": "left_arc",
+    "algorithm": "rrt",
+    "seed_label": 0,
+    "ompl_seed": 1,
+    "reachability": "known_control_witness"
+  },
+  {
+    "job_id": "left_arc--sst--seed0",
+    "scenario": "left_arc",
+    "algorithm": "sst",
+    "seed_label": 0,
+    "ompl_seed": 1,
+    "reachability": "known_control_witness"
+  },
+  {
+    "job_id": "left_arc--rrt--seed1",
+    "scenario": "left_arc",
+    "algorithm": "rrt",
+    "seed_label": 1,
+    "ompl_seed": 2,
+    "reachability": "known_control_witness"
+  },
+  {
+    "job_id": "left_arc--sst--seed1",
+    "scenario": "left_arc",
+    "algorithm": "sst",
+    "seed_label": 1,
+    "ompl_seed": 2,
+    "reachability": "known_control_witness"
+  },
+  {
+    "job_id": "right_arc--rrt--seed0",
+    "scenario": "right_arc",
+    "algorithm": "rrt",
+    "seed_label": 0,
+    "ompl_seed": 1,
+    "reachability": "known_control_witness"
+  },
+  {
+    "job_id": "right_arc--sst--seed0",
+    "scenario": "right_arc",
+    "algorithm": "sst",
+    "seed_label": 0,
+    "ompl_seed": 1,
+    "reachability": "known_control_witness"
+  },
+  {
+    "job_id": "right_arc--rrt--seed1",
+    "scenario": "right_arc",
+    "algorithm": "rrt",
+    "seed_label": 1,
+    "ompl_seed": 2,
+    "reachability": "known_control_witness"
+  },
+  {
+    "job_id": "right_arc--sst--seed1",
+    "scenario": "right_arc",
+    "algorithm": "sst",
+    "seed_label": 1,
+    "ompl_seed": 2,
+    "reachability": "known_control_witness"
+  },
+  {
+    "job_id": "climb--rrt--seed0",
+    "scenario": "climb",
+    "algorithm": "rrt",
+    "seed_label": 0,
+    "ompl_seed": 1,
+    "reachability": "known_control_witness"
+  },
+  {
+    "job_id": "climb--sst--seed0",
+    "scenario": "climb",
+    "algorithm": "sst",
+    "seed_label": 0,
+    "ompl_seed": 1,
+    "reachability": "known_control_witness"
+  },
+  {
+    "job_id": "climb--rrt--seed1",
+    "scenario": "climb",
+    "algorithm": "rrt",
+    "seed_label": 1,
+    "ompl_seed": 2,
+    "reachability": "known_control_witness"
+  },
+  {
+    "job_id": "climb--sst--seed1",
+    "scenario": "climb",
+    "algorithm": "sst",
+    "seed_label": 1,
+    "ompl_seed": 2,
+    "reachability": "known_control_witness"
+  },
+  {
+    "job_id": "dive--rrt--seed0",
+    "scenario": "dive",
+    "algorithm": "rrt",
+    "seed_label": 0,
+    "ompl_seed": 1,
+    "reachability": "known_control_witness"
+  },
+  {
+    "job_id": "dive--sst--seed0",
+    "scenario": "dive",
+    "algorithm": "sst",
+    "seed_label": 0,
+    "ompl_seed": 1,
+    "reachability": "known_control_witness"
+  },
+  {
+    "job_id": "dive--rrt--seed1",
+    "scenario": "dive",
+    "algorithm": "rrt",
+    "seed_label": 1,
+    "ompl_seed": 2,
+    "reachability": "known_control_witness"
+  },
+  {
+    "job_id": "dive--sst--seed1",
+    "scenario": "dive",
+    "algorithm": "sst",
+    "seed_label": 1,
+    "ompl_seed": 2,
+    "reachability": "known_control_witness"
+  },
+  {
+    "job_id": "combined--rrt--seed0",
+    "scenario": "combined",
+    "algorithm": "rrt",
+    "seed_label": 0,
+    "ompl_seed": 1,
+    "reachability": "known_control_witness"
+  },
+  {
+    "job_id": "combined--sst--seed0",
+    "scenario": "combined",
+    "algorithm": "sst",
+    "seed_label": 0,
+    "ompl_seed": 1,
+    "reachability": "known_control_witness"
+  },
+  {
+    "job_id": "combined--rrt--seed1",
+    "scenario": "combined",
+    "algorithm": "rrt",
+    "seed_label": 1,
+    "ompl_seed": 2,
+    "reachability": "known_control_witness"
+  },
+  {
+    "job_id": "combined--sst--seed1",
+    "scenario": "combined",
+    "algorithm": "sst",
+    "seed_label": 1,
+    "ompl_seed": 2,
+    "reachability": "known_control_witness"
+  },
+  {
+    "job_id": "F_O1--rrt--seed0",
+    "scenario": "F_O1",
+    "algorithm": "rrt",
+    "seed_label": 0,
+    "ompl_seed": 1,
+    "reachability": "geometry_only_kinodynamic_unknown"
+  },
+  {
+    "job_id": "F_O1--sst--seed0",
+    "scenario": "F_O1",
+    "algorithm": "sst",
+    "seed_label": 0,
+    "ompl_seed": 1,
+    "reachability": "geometry_only_kinodynamic_unknown"
+  },
+  {
+    "job_id": "F_O1--rrt--seed1",
+    "scenario": "F_O1",
+    "algorithm": "rrt",
+    "seed_label": 1,
+    "ompl_seed": 2,
+    "reachability": "geometry_only_kinodynamic_unknown"
+  },
+  {
+    "job_id": "F_O1--sst--seed1",
+    "scenario": "F_O1",
+    "algorithm": "sst",
+    "seed_label": 1,
+    "ompl_seed": 2,
+    "reachability": "geometry_only_kinodynamic_unknown"
+  },
+  {
+    "job_id": "F_N1--rrt--seed0",
+    "scenario": "F_N1",
+    "algorithm": "rrt",
+    "seed_label": 0,
+    "ompl_seed": 1,
+    "reachability": "geometry_only_kinodynamic_unknown"
+  },
+  {
+    "job_id": "F_N1--sst--seed0",
+    "scenario": "F_N1",
+    "algorithm": "sst",
+    "seed_label": 0,
+    "ompl_seed": 1,
+    "reachability": "geometry_only_kinodynamic_unknown"
+  },
+  {
+    "job_id": "F_N1--rrt--seed1",
+    "scenario": "F_N1",
+    "algorithm": "rrt",
+    "seed_label": 1,
+    "ompl_seed": 2,
+    "reachability": "geometry_only_kinodynamic_unknown"
+  },
+  {
+    "job_id": "F_N1--sst--seed1",
+    "scenario": "F_N1",
+    "algorithm": "sst",
+    "seed_label": 1,
+    "ompl_seed": 2,
+    "reachability": "geometry_only_kinodynamic_unknown"
+  },
+  {
+    "job_id": "F_B1--rrt--seed0",
+    "scenario": "F_B1",
+    "algorithm": "rrt",
+    "seed_label": 0,
+    "ompl_seed": 1,
+    "reachability": "geometry_only_kinodynamic_unknown"
+  },
+  {
+    "job_id": "F_B1--sst--seed0",
+    "scenario": "F_B1",
+    "algorithm": "sst",
+    "seed_label": 0,
+    "ompl_seed": 1,
+    "reachability": "geometry_only_kinodynamic_unknown"
+  },
+  {
+    "job_id": "F_B1--rrt--seed1",
+    "scenario": "F_B1",
+    "algorithm": "rrt",
+    "seed_label": 1,
+    "ompl_seed": 2,
+    "reachability": "geometry_only_kinodynamic_unknown"
+  },
+  {
+    "job_id": "F_B1--sst--seed1",
+    "scenario": "F_B1",
+    "algorithm": "sst",
+    "seed_label": 1,
+    "ompl_seed": 2,
+    "reachability": "geometry_only_kinodynamic_unknown"
+  }
+]
