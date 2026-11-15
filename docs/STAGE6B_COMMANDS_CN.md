@@ -52,7 +52,20 @@ runner先核对官方构建和CTest真实成功记录，再调用原生接口。
 
 两条搜索入口不能并发运行，目录锁负责阻止同一记录树多worker。pilot属于36任务，不额外再计2次；标签种子0/1预先映射原生1/2。每任务新原生进程，模型和采样支持一致，规划总预算10秒含桥接与独立证书，搜索最多8秒。完整参数见[冻结配置](../configs/stage6b_protocol.json)。
 
-冻结LOS由同一runner为严格合格exact参考执行，使用显式共同初态；原生控制可行与LOS严格成功分开统计。approximate、no_solution、deadline和接口失败全部保留，不通过另挑种子或改阈值补成功。本文不在搜索进行中填写最终成功数。
+冻结LOS由同一runner为严格合格exact参考执行，使用显式共同初态；原生控制可行与LOS严格成功分开统计。approximate、no_solution、deadline和接口失败全部保留，不通过另挑种子或改阈值补成功。上述搜索现已完成36次，原生严格成功21次、合格LOS执行21次且严格成功11次；原始记录不再重跑。
+
+## 对已保存记录的只读审计和图表
+
+以下入口已实际执行，只重建/检查既有轨迹或绘图，不启动规划器和LOS：
+
+```powershell
+.\.venv\Scripts\python.exe -m gsunlight_repro.stage6b.analysis --local-root ..\local_only\stage6b_runs
+.\.venv\Scripts\python.exe -m gsunlight_repro.stage6b.plots --local-root ..\local_only\stage6b_runs --output results\stage6b
+```
+
+分析入口输出派生CSV和审计JSON，不改原始搜索CSV或完整记录。图表选择规则写入manifest；生成后已实际查看两张PNG并记录视觉QA，重跑绘图会将视觉QA状态重置为pending，须重新看图，不能沿用旧QA。
+
+完整实际质量命令、逐项退出码、497项测试记录和Windows官方源码构建/接口CI见[测试记录](STAGE6B_TEST_RESULTS_CN.md)。本机完整原日志与JUnit为`local_only/stage6b_quality`，公开精简证据位于`results/stage6b`。
 
 ## 证据路径与临时映射清理
 

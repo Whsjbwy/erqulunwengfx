@@ -1,0 +1,98 @@
+{
+  "checked_utc": "2026-11-15T08:25:27.560352+00:00",
+  "baseline_stage6a_commit": "4553d0f7e14207c92eb69dafd444cfdab395bcf7",
+  "local_head_before_final_delivery_commit": "21fe832ddf89518681820016d7520d53d84528ff",
+  "branch": "research/auv-control-baselines-stage6b",
+  "target_branch": "research/auv-executable-planning-stage6a",
+  "pr_url": "https://github.com/Whsjbwy/erqulunwengfx/pull/10",
+  "historical_files_modified_or_deleted": [],
+  "all_changes_are_new_stage6b_files_relative_to_6a": true,
+  "public_file_count_including_this_review": 47,
+  "public_files": [
+    ".github/workflows/stage6b-windows.yml",
+    "configs/stage6b_protocol.json",
+    "docs/STAGE6B_BUILD_CN.md",
+    "docs/STAGE6B_COMMANDS_CN.md",
+    "docs/STAGE6B_LITERATURE_AUDIT_CN.md",
+    "docs/STAGE6B_MODEL_MAPPING_CN.md",
+    "docs/STAGE6B_PROTOCOL_CN.md",
+    "docs/STAGE6B_REPORT_CN.md",
+    "docs/STAGE6B_TEST_RESULTS_CN.md",
+    "native/stage6b/CMakeLists.txt",
+    "native/stage6b/model.cpp",
+    "native/stage6b/model.hpp",
+    "native/stage6b/model_tests.cpp",
+    "native/stage6b/ompl_runner.cpp",
+    "results/stage6b/README.md",
+    "results/stage6b/build_evidence.json",
+    "results/stage6b/delivery_review.json",
+    "results/stage6b/experiment_accounting.json",
+    "results/stage6b/failure_counts.csv",
+    "results/stage6b/figure_manifest.csv",
+    "results/stage6b/figure_qa.json",
+    "results/stage6b/final_source_checks.json",
+    "results/stage6b/interface_acceptance.json",
+    "results/stage6b/interface_cases.csv",
+    "results/stage6b/literature_followup.csv",
+    "results/stage6b/local_checks.json",
+    "results/stage6b/middle_collision.json",
+    "results/stage6b/native_los_matrix.png",
+    "results/stage6b/paired_outcomes.csv",
+    "results/stage6b/planning_runs.csv",
+    "results/stage6b/pytest_results.csv",
+    "results/stage6b/rates.csv",
+    "results/stage6b/search_manifest.json",
+    "results/stage6b/terminal_diagnostics.csv",
+    "results/stage6b/trace_audit.json",
+    "results/stage6b/trajectory_comparison.png",
+    "results/stage6b/trajectory_metrics.csv",
+    "results/stage6b/windows_ci.json",
+    "scripts/stage6b_build.py",
+    "src/gsunlight_repro/stage6b/__init__.py",
+    "src/gsunlight_repro/stage6b/analysis.py",
+    "src/gsunlight_repro/stage6b/bridge.py",
+    "src/gsunlight_repro/stage6b/plots.py",
+    "src/gsunlight_repro/stage6b/replay.py",
+    "src/gsunlight_repro/stage6b/runner.py",
+    "src/gsunlight_repro/stage6b/scenarios.py",
+    "tests/test_stage6b_contract.py"
+  ],
+  "public_bytes_excluding_this_review": 1095552,
+  "largest_public_files": [
+    [
+      "results/stage6b/trajectory_comparison.png",
+      494484
+    ],
+    [
+      "results/stage6b/native_los_matrix.png",
+      149250
+    ],
+    [
+      "src/gsunlight_repro/stage6b/analysis.py",
+      48990
+    ],
+    [
+      "results/stage6b/pytest_results.csv",
+      47991
+    ],
+    [
+      "results/stage6b/trace_audit.json",
+      42765
+    ]
+  ],
+  "original_experiment_csv_configuration_and_manifest_unchanged_since_search_commit": true,
+  "raw_search_records": 36,
+  "raw_files_per_search": [
+    "condition_summary.json",
+    "independent_record.json.gz",
+    "input.json",
+    "output.json",
+    "stderr.log",
+    "stdout.log"
+  ],
+  "partial_or_extra_search_directories": [],
+  "large_raw_traces_vendor_sources_binaries_or_archives_in_public_diff": false,
+  "extra_file_hash_manifests": false,
+  "final_head_ci_location": "PR checks; windows_ci.json preserves the already completed build/test run(s).",
+  "review_scope": "Working-tree and Git object diff against frozen 6A, no file hash list. All changed paths are stage6B additions; source/config freeze and original experiment artifacts were preserved."
+}

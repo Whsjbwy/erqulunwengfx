@@ -1,0 +1,43 @@
+{
+  "checked_utc": "2026-11-15T08:24:57.891Z",
+  "scope": "Final analysis/plot source, before delivery commit. No new searches or LOS simulations. Prior full native test evidence is unchanged.",
+  "checks": [
+    {
+      "name": "pytest",
+      "command": ".\\.venv\\Scripts\\python.exe -m pytest -q --junitxml=..\\local_only\\stage6b_quality\\pytest_final_source.xml",
+      "chunk_id": "ec9775",
+      "wall_time_seconds": 10.0118474,
+      "original_token_count": 122,
+      "output": "........................................................................ [ 14%]\r\n........................................................................ [ 28%]\r\n........................................................................ [ 43%]\r\n........................................................................ [ 57%]\r\n........................................................................ [ 72%]\r\n........................................................................ [ 86%]\r\n.................................................................        [100%]\r\n497 passed in 12.06s\r\n",
+      "exit_code": 0
+    },
+    {
+      "name": "ruff",
+      "command": ".\\.venv\\Scripts\\python.exe -m ruff check .",
+      "chunk_id": "542743",
+      "wall_time_seconds": 0.4877743,
+      "exit_code": 0,
+      "original_token_count": 5,
+      "output": "All checks passed!\n"
+    },
+    {
+      "name": "format",
+      "command": ".\\.venv\\Scripts\\python.exe -m ruff format --check .",
+      "chunk_id": "6983ba",
+      "wall_time_seconds": 0.5215402,
+      "exit_code": 0,
+      "original_token_count": 7,
+      "output": "222 files already formatted\n"
+    },
+    {
+      "name": "compile",
+      "command": ".\\.venv\\Scripts\\python.exe -m compileall -q src tests scripts",
+      "chunk_id": "93c62f",
+      "wall_time_seconds": 0.5899874,
+      "exit_code": 0,
+      "original_token_count": 0,
+      "output": ""
+    }
+  ],
+  "passed": true
+}

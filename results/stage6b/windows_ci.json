@@ -1,0 +1,119 @@
+{
+  "checked_utc": "2026-11-15T08:21:55.338Z",
+  "workflow": ".github/workflows/stage6b-windows.yml",
+  "evidence_scope": "First complete Windows source-build run before the final read-only analysis/report commit; final HEAD check is recorded separately in the PR.",
+  "runs": [
+    {
+      "run_id": 43693078784,
+      "url": "https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43693078784",
+      "head_commit": "21fe832ddf89518681820016d7520d53d84528ff",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 132747602159,
+          "name": "native-and-python",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 43693078784,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v7",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v7",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Install existing Python dependencies",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Python compilation and full tests",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Ruff and formatting",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Build official pinned OMPL and run CTest",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Validate thirteen actual OMPL interface cases",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Show native build diagnostics on failure",
+              "status": "completed",
+              "conclusion": "skipped",
+              "number": 9
+            },
+            {
+              "name": "Post Run actions/setup-python@v7",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 17
+            },
+            {
+              "name": "Post Run actions/checkout@v7",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 18
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 19
+            }
+          ]
+        }
+      ],
+      "pytest": {
+        "passed": 497,
+        "duration_s": 26.64
+      },
+      "ruff": "All checks passed",
+      "format_files": 217,
+      "official_native_build": true,
+      "adapter_ctest_exit_code": 0,
+      "acceptance": {
+        "passed": true,
+        "cases": 13,
+        "accepted_intervals": 930,
+        "maximum_position_error_m": 0,
+        "maximum_angle_or_speed_error": 0,
+        "independent_rk4_intervals": 28,
+        "maximum_rk4_error_m": 1.2079226507921703e-13,
+        "actual_adapter_propagator_calls": 936,
+        "searches_started": 0
+      },
+      "full_log": "workspace/local_only/stage6b_quality/windows_ci_43693078784.log"
+    }
+  ],
+  "additional_planning_searches": 0,
+  "note": "Cloud acceptance is a deterministic rerun, excluded from the 36 local search denominator. windows-latest is not local Windows 11 hardware. Build step reports CTest exit 0, not the full OMPL upstream suite."
+}
