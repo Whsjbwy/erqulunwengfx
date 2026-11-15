@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "command": ".venv/Scripts/python.exe -m pytest tests/test_stage6c_reference.py -q",
+  "exit_code": 0,
+  "output": ".............                                                            [100%]\r\n13 passed in 0.15s\r\n",
+  "test_cases": 13,
+  "new_searches": 0,
+  "new_los_executions": 0
+}
