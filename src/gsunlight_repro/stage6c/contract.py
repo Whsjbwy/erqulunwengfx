@@ -79,12 +79,13 @@ def run(source_root: Path, local_root: Path, output: Path) -> dict:
             ):
                 raise ValueError("New strict LOS success is a safety false positive")
         audit_wall = time.perf_counter() - started - execution_finished
+        certified_finished = execution_finished + audit_wall
         planning_charge = float(old["independent_certificate_finish_s"])
         new_success = bool(
             was_run
             and summary["execution_success"]
-            and execution_finished <= 20
-            and planning_charge + execution_finished <= 30
+            and certified_finished <= 20
+            and planning_charge + certified_finished <= 30
         )
         old_success = boolean(old["los_strict_success"])
         outcome = (
@@ -100,9 +101,9 @@ def run(source_root: Path, local_root: Path, output: Path) -> dict:
             "interface_rejected_" + geometry["reference_rejection"]
             if not was_run
             else "execution_deadline"
-            if execution_finished > 20
+            if certified_finished > 20
             else "pipeline_deadline"
-            if planning_charge + execution_finished > 30
+            if planning_charge + certified_finished > 30
             else summary["failure_reason"]
         )
         bridge = float(old["reference_bridge_length_m"])
@@ -125,8 +126,9 @@ def run(source_root: Path, local_root: Path, output: Path) -> dict:
             "reference_geometry_finish_s": geometry_finished,
             "adaptation_and_execution_wall_s": execution_finished,
             "posthoc_los_audit_wall_s": audit_wall,
+            "adaptation_execution_and_audit_wall_s": certified_finished,
             "original_planning_charge_s": planning_charge,
-            "pipeline_wall_s": planning_charge + execution_finished,
+            "pipeline_wall_s": planning_charge + certified_finished,
             "baseline_simulation_limit_s": stored["tracking"]["simulation_limit_s"],
             "adapted_simulation_limit_s": summary.get("simulation_limit_s"),
             "goal_bridge_length_m": bridge,
