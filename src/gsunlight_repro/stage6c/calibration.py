@@ -41,6 +41,18 @@ def manifest(protocol: dict) -> list[dict[str, Any]]:
     ]
 
 
+def validate_events(events: list[dict[str, Any]]) -> list[float]:
+    """Use integer0.1s counts; official floating-cost ties are valid updates."""
+    counts = [int(event["certificate_intervals"]) for event in events]
+    costs = [float(event["cost"]) for event in events]
+    if any(
+        not np.isclose(cost, count * 0.1, rtol=0, atol=1e-9)
+        for cost, count in zip(costs, counts, strict=True)
+    ) or any(b > a for a, b in zip(counts[:-1], counts[1:], strict=True)):
+        raise ValueError("Official incumbent history has increasing control cost")
+    return costs
+
+
 def available_memory() -> int:
     """Read Windows available physical RAM without CIM or changing settings."""
     from ctypes import wintypes
@@ -155,9 +167,7 @@ def run(
             exact = bool(audit["model_feasible"])
             model = bool(exact and certificate_finished <= 10.0)
             events = payload["improvement_events"]
-            costs = [float(event["cost"]) for event in events]
-            if any(b >= a - 1e-9 for a, b in zip(costs[:-1], costs[1:], strict=True)):
-                raise ValueError("Official incumbent cost history is not improving")
+            costs = validate_events(events)
             duration = sum(
                 float(control["duration_s"]) for control in payload["controls"]
             )
@@ -293,6 +303,10 @@ def run(
             if row["peak_native_rss_bytes"] > 2**30 or size > 5 * 2**20:
                 raise RuntimeError("Pilot RSS/record size resource gate failed")
         accounting = {
+            "instrumentation_failures": sum(
+                r["failure_reason"] == "instrumentation_failed_missing_original_clock"
+                for r in rows
+            ),
             "registered": len(tasks),
             "actually_run": len(rows),
             "complete": len(rows) == len(tasks),

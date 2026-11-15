@@ -1,0 +1,36 @@
+{
+  "job_id": "straight--sst_radius2_anytime--seed1",
+  "original_clock_available": false,
+  "searches_reexecuted": 0,
+  "los_executions": 0,
+  "posthoc_recovery_utc": "2026-11-15T09:33:58.685610+00:00",
+  "posthoc_recovery_wall_s": 0.16787169999952312,
+  "first_and_final_independent_model_certificates": true,
+  "original_strict_M": false,
+  "original_strict_S": false,
+  "cost_events_integer_nonincreasing": true,
+  "available_memory_bytes": 17467981824,
+  "resource_pilots": [
+    {
+      "job_id": "straight--rrt_first--seed1",
+      "rss_bytes": 66588672,
+      "record_bytes": 416279
+    },
+    {
+      "job_id": "straight--sst_default_first--seed1",
+      "rss_bytes": 77975552,
+      "record_bytes": 107017
+    },
+    {
+      "job_id": "straight--sst_radius2_anytime--seed1",
+      "rss_bytes": 79556608,
+      "record_bytes": 126699
+    },
+    {
+      "job_id": "straight--sst_radius2_first--seed1",
+      "rss_bytes": 60006400,
+      "record_bytes": 445001
+    }
+  ],
+  "resource_gate_passed": true
+}

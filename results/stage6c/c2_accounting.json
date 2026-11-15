@@ -1,0 +1,10 @@
+{
+  "registered": 72,
+  "actually_run": 3,
+  "complete": false,
+  "pilot_only": true,
+  "native_M": 2,
+  "reference_Gref": 2,
+  "actual_E": 2,
+  "strict_S": 2
+}
