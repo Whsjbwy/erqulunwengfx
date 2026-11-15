@@ -1,0 +1,5 @@
+outcome,count,denominator
+kept_success,11,21
+regressed,0,21
+recovered,3,21
+kept_failure,7,21

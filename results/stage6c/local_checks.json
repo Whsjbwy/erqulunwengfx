@@ -1,0 +1,104 @@
+{
+  "checked_utc": "2026-11-15T10:04:09.168949+00:00",
+  "passed": true,
+  "checks": [
+    {
+      "name": "compile",
+      "command": [
+        "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "tests",
+        "scripts"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 0.1588320000009844,
+      "output": ""
+    },
+    {
+      "name": "pytest",
+      "command": [
+        "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "--junitxml=D:\\2区论文复现\\local_only\\stage6c_quality\\pytest.xml"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 12.59429519999685,
+      "output": "........................................................................ [ 14%]\r\n........................................................................ [ 28%]\r\n........................................................................ [ 42%]\r\n........................................................................ [ 56%]\r\n........................................................................ [ 70%]\r\n........................................................................ [ 84%]\r\n........................................................................ [ 98%]\r\n.........                                                                [100%]\r\n513 passed in 12.12s\r\n"
+    },
+    {
+      "name": "ruff",
+      "command": [
+        "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "."
+      ],
+      "exit_code": 0,
+      "elapsed_s": 0.10153589999754331,
+      "output": "All checks passed!\n"
+    },
+    {
+      "name": "format",
+      "command": [
+        "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "."
+      ],
+      "exit_code": 0,
+      "elapsed_s": 0.10654849999991711,
+      "output": "238 files already formatted\n"
+    },
+    {
+      "name": "native_model",
+      "command": [
+        "D:\\2区论文复现\\local_only\\stage6c_native\\build\\auv6c_model_tests.exe"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 0.04530919999888283,
+      "output": "PASSED analytic_motion\r\nPASSED strict_model_limits\r\nPASSED closed_box_contact\r\nPASSED short_interval_midpoint_collision\r\nPASSED mission_frame_and_boundary\r\nPASSED malformed_inputs_fail_closed\r\n6 native model test groups passed\r\n"
+    },
+    {
+      "name": "native_adapter",
+      "command": [
+        "D:\\2区论文复现\\local_only\\stage6c_native\\build\\auv6c_adapter_tests.exe"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 0.04096239999853424,
+      "output": "PASSED mixed_metric, goal_equality, forward_only\r\n"
+    },
+    {
+      "name": "clang_format",
+      "command": [
+        "D:\\2区论文复现\\local_only\\stage6b_native\\packages\\llvm-mingw-20261104-ucrt-x86_64\\bin\\clang-format.exe",
+        "--dry-run",
+        "--Werror",
+        "-style={BasedOnStyle: LLVM, IndentWidth: 4, ColumnLimit: 100}",
+        "D:\\2区论文复现\\erqulunwengfx\\native\\stage6c\\adapter.hpp",
+        "D:\\2区论文复现\\erqulunwengfx\\native\\stage6c\\adapter_tests.cpp",
+        "D:\\2区论文复现\\erqulunwengfx\\native\\stage6c\\ompl_runner.cpp"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 0.04133699999874807,
+      "output": ""
+    }
+  ],
+  "pytest_cases": 513,
+  "pytest_passed": 513,
+  "original_ctest": {
+    "tests": 2,
+    "passed": 2,
+    "log": "workspace/local_only/stage6c_native/build-04-ctest.log"
+  },
+  "new_searches": 0,
+  "new_los_executions": 0,
+  "full_local_evidence": "workspace/local_only/stage6c_quality"
+}

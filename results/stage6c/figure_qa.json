@@ -1,0 +1,27 @@
+{
+  "visual_qa": "passed",
+  "figures": [
+    {
+      "file": "c1_all_trajectories.png",
+      "width": 2295,
+      "height": 3105
+    },
+    {
+      "file": "c2_all_outcomes.png",
+      "width": 1950,
+      "height": 900
+    },
+    {
+      "file": "c2_native_cost_curves.png",
+      "width": 1960,
+      "height": 2100
+    }
+  ],
+  "all_C1_pairs": 21,
+  "all_C2_conditions": 72,
+  "source": "Saved numeric records only",
+  "new_searches": 0,
+  "new_simulations": 0,
+  "checked_with": "functions.view_image: all three final PNGs",
+  "notes": "All21 pairs/all72 outcomes/all18 anytime groups visible. Initial C1 legend overlap fixed and final image reinspected. Candidate endpoints and varying panel scales labelled. No result-based selection."
+}

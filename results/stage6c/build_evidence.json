@@ -1,0 +1,95 @@
+{
+  "official_ompl": "2.0.2",
+  "dependency_root": "Z:\\local_only\\stage6b_native",
+  "commands": [
+    {
+      "label": "configure",
+      "command": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "-S",
+        "Z:/erqulunwengfx/native/stage6c",
+        "-B",
+        "Z:/local_only/stage6c_native/build",
+        "-G",
+        "Ninja",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_POLICY_DEFAULT_CMP0176=NEW",
+        "-DCMAKE_MAKE_PROGRAM=Z:/local_only/stage6b_native/packages/ninja/ninja.exe",
+        "-DCMAKE_CXX_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang++.exe",
+        "-DCMAKE_CXX_FLAGS=-no-canonical-prefixes -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00",
+        "-DCMAKE_PREFIX_PATH=Z:/local_only/stage6b_native/prefix",
+        "-DSTAGE6C_JSON_INCLUDE=Z:/local_only/stage6b_native/include"
+      ],
+      "exit_code": 0,
+      "wall_s": 3.2337600000028033,
+      "log": "build-00-configure.log"
+    },
+    {
+      "label": "build",
+      "command": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "--build",
+        "Z:\\local_only\\stage6c_native\\build",
+        "--parallel",
+        "2"
+      ],
+      "exit_code": 1,
+      "wall_s": 2.1713550000022224,
+      "log": "build-01-build.log"
+    },
+    {
+      "label": "configure",
+      "command": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "-S",
+        "Z:/erqulunwengfx/native/stage6c",
+        "-B",
+        "Z:/local_only/stage6c_native/build",
+        "-G",
+        "Ninja",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_POLICY_DEFAULT_CMP0176=NEW",
+        "-DCMAKE_MAKE_PROGRAM=Z:/local_only/stage6b_native/packages/ninja/ninja.exe",
+        "-DCMAKE_CXX_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang++.exe",
+        "-DCMAKE_CXX_FLAGS=-no-canonical-prefixes -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00",
+        "-DCMAKE_PREFIX_PATH=Z:/local_only/stage6b_native/prefix",
+        "-DSTAGE6C_JSON_INCLUDE=Z:/local_only/stage6b_native/include"
+      ],
+      "exit_code": 0,
+      "wall_s": 0.3894043000000238,
+      "log": "build-02-configure.log"
+    },
+    {
+      "label": "build",
+      "command": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "--build",
+        "Z:\\local_only\\stage6c_native\\build",
+        "--parallel",
+        "2"
+      ],
+      "exit_code": 0,
+      "wall_s": 2.8207901999994647,
+      "log": "build-03-build.log"
+    },
+    {
+      "label": "ctest",
+      "command": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\ctest.exe",
+        "--test-dir",
+        "Z:\\local_only\\stage6c_native\\build",
+        "--output-on-failure"
+      ],
+      "exit_code": 0,
+      "wall_s": 0.9335771999976714,
+      "log": "build-04-ctest.log"
+    }
+  ],
+  "numbered_commands": 5,
+  "failed_commands": 1,
+  "ctest_tests": 2,
+  "ctest_passed": 2,
+  "preflight": "build_preflight.json records one preceding sandbox alias failure",
+  "official_sources_copied_into_git": false,
+  "historical_dependency_tree_reused": true
+}
