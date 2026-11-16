@@ -1,0 +1,68 @@
+[
+  {
+    "check": "compileall",
+    "command": [
+      "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+      "-m",
+      "compileall",
+      "-q",
+      "src",
+      "tests",
+      "scripts"
+    ],
+    "exit_code": 0,
+    "wall_s": 0.16321740000421414
+  },
+  {
+    "check": "pytest",
+    "command": [
+      "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "-q",
+      "--junitxml=D:\\2区论文复现\\erqulunwengfx\\results\\stage6dr\\local-quality\\pytest.xml"
+    ],
+    "exit_code": 0,
+    "wall_s": 13.188896899999236
+  },
+  {
+    "check": "ruff",
+    "command": [
+      "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "check",
+      "."
+    ],
+    "exit_code": 0,
+    "wall_s": 0.10802630000398494
+  },
+  {
+    "check": "python-format",
+    "command": [
+      "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "format",
+      "--check",
+      "."
+    ],
+    "exit_code": 0,
+    "wall_s": 0.10148959999787621
+  },
+  {
+    "check": "clang-format",
+    "command": [
+      "D:\\2区论文复现\\local_only\\stage6b_native\\packages\\llvm-mingw-20261104-ucrt-x86_64\\bin\\clang-format.exe",
+      "--dry-run",
+      "--Werror",
+      "-style={BasedOnStyle: LLVM, IndentWidth: 4, ColumnLimit: 100}",
+      "native\\stage6dr\\adapter.hpp",
+      "native\\stage6dr\\probe.hpp",
+      "native\\stage6dr\\contract_tests.cpp",
+      "native\\stage6dr\\runner.cpp"
+    ],
+    "exit_code": 0,
+    "wall_s": 0.04296030000114115
+  }
+]

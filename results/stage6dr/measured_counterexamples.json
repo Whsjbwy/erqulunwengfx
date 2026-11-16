@@ -1,0 +1,749 @@
+{
+  "original_interval_89": {
+    "initial": {
+      "geometry_reason": "ok",
+      "geometry_valid": true,
+      "mapping_performed": true,
+      "model_reason": "ok",
+      "model_valid": true,
+      "satisfies_bounds": true,
+      "si_is_valid": true,
+      "state": [
+        16.82514484132251,
+        22.0,
+        6.657280095916341,
+        0.0,
+        0.3403392041388945,
+        1.0
+      ]
+    },
+    "reason": "ok",
+    "accepted_intervals": 1,
+    "trace": [
+      {
+        "accepted_steps": 1,
+        "agreement": true,
+        "angle_or_speed_error": 0.0,
+        "candidate": {
+          "geometry_reason": "ok",
+          "geometry_valid": true,
+          "mapping_performed": true,
+          "model_reason": "ok",
+          "model_valid": true,
+          "satisfies_bounds": true,
+          "si_is_valid": true,
+          "state": [
+            16.919262144204044,
+            22.0,
+            6.691071660492486,
+            0.0,
+            0.3490658503988662,
+            1.0
+          ]
+        },
+        "control": [
+          0.0,
+          0.08726646259971647
+        ],
+        "expected_steps": 1,
+        "frozen_interval_reason": "ok",
+        "frozen_interval_valid": true,
+        "interval_index": 0,
+        "position_error_m": 0.0,
+        "propagation_invoked": true,
+        "returned_si_valid": true,
+        "returned_state": [
+          16.919262144204044,
+          22.0,
+          6.691071660492486,
+          0.0,
+          0.3490658503988662,
+          1.0
+        ],
+        "source": {
+          "geometry_reason": "ok",
+          "geometry_valid": true,
+          "mapping_performed": true,
+          "model_reason": "ok",
+          "model_valid": true,
+          "satisfies_bounds": true,
+          "si_is_valid": true,
+          "state": [
+            16.82514484132251,
+            22.0,
+            6.657280095916341,
+            0.0,
+            0.3403392041388945,
+            1.0
+          ]
+        },
+        "time_end_s": 0.1,
+        "time_start_s": 0.0
+      }
+    ]
+  },
+  "pos_candidate_one_ulp_outside": {
+    "initial": {
+      "geometry_reason": "ok",
+      "geometry_valid": true,
+      "mapping_performed": true,
+      "model_reason": "ok",
+      "model_valid": true,
+      "satisfies_bounds": true,
+      "si_is_valid": true,
+      "state": [
+        5.0,
+        5.0,
+        5.0,
+        0.0,
+        0.3490658503998659,
+        1.0
+      ]
+    },
+    "reason": "pitch_bound",
+    "accepted_intervals": 0,
+    "trace": [
+      {
+        "accepted_steps": 0,
+        "agreement": true,
+        "angle_or_speed_error": 0.0,
+        "candidate": {
+          "geometry_reason": "ok",
+          "geometry_valid": true,
+          "mapping_performed": true,
+          "model_reason": "pitch_bound",
+          "model_valid": false,
+          "satisfies_bounds": true,
+          "si_is_valid": false,
+          "state": [
+            5.093969262078557,
+            5.0,
+            5.034202014332661,
+            0.0,
+            0.34906585039986593,
+            1.0
+          ]
+        },
+        "control": [
+          0.0,
+          5.551115123125783e-16
+        ],
+        "expected_steps": 0,
+        "frozen_interval_reason": "pitch_bound",
+        "frozen_interval_valid": false,
+        "interval_index": 0,
+        "position_error_m": 0.0,
+        "propagation_invoked": true,
+        "returned_si_valid": true,
+        "returned_state": [
+          5.0,
+          5.0,
+          5.0,
+          0.0,
+          0.3490658503998659,
+          1.0
+        ],
+        "source": {
+          "geometry_reason": "ok",
+          "geometry_valid": true,
+          "mapping_performed": true,
+          "model_reason": "ok",
+          "model_valid": true,
+          "satisfies_bounds": true,
+          "si_is_valid": true,
+          "state": [
+            5.0,
+            5.0,
+            5.0,
+            0.0,
+            0.3490658503998659,
+            1.0
+          ]
+        },
+        "time_end_s": 0.1,
+        "time_start_s": 0.0
+      }
+    ]
+  },
+  "neg_candidate_one_ulp_outside": {
+    "initial": {
+      "geometry_reason": "ok",
+      "geometry_valid": true,
+      "mapping_performed": true,
+      "model_reason": "ok",
+      "model_valid": true,
+      "satisfies_bounds": true,
+      "si_is_valid": true,
+      "state": [
+        5.0,
+        5.0,
+        5.0,
+        0.0,
+        -0.3490658503998659,
+        1.0
+      ]
+    },
+    "reason": "pitch_bound",
+    "accepted_intervals": 0,
+    "trace": [
+      {
+        "accepted_steps": 0,
+        "agreement": true,
+        "angle_or_speed_error": 0.0,
+        "candidate": {
+          "geometry_reason": "ok",
+          "geometry_valid": true,
+          "mapping_performed": true,
+          "model_reason": "pitch_bound",
+          "model_valid": false,
+          "satisfies_bounds": true,
+          "si_is_valid": false,
+          "state": [
+            5.093969262078557,
+            5.0,
+            4.965797985667339,
+            0.0,
+            -0.34906585039986593,
+            1.0
+          ]
+        },
+        "control": [
+          0.0,
+          -5.551115123125783e-16
+        ],
+        "expected_steps": 0,
+        "frozen_interval_reason": "pitch_bound",
+        "frozen_interval_valid": false,
+        "interval_index": 0,
+        "position_error_m": 0.0,
+        "propagation_invoked": true,
+        "returned_si_valid": true,
+        "returned_state": [
+          5.0,
+          5.0,
+          5.0,
+          0.0,
+          -0.3490658503998659,
+          1.0
+        ],
+        "source": {
+          "geometry_reason": "ok",
+          "geometry_valid": true,
+          "mapping_performed": true,
+          "model_reason": "ok",
+          "model_valid": true,
+          "satisfies_bounds": true,
+          "si_is_valid": true,
+          "state": [
+            5.0,
+            5.0,
+            5.0,
+            0.0,
+            -0.3490658503998659,
+            1.0
+          ]
+        },
+        "time_end_s": 0.1,
+        "time_start_s": 0.0
+      }
+    ]
+  },
+  "mid_segment_reject": {
+    "initial": {
+      "geometry_reason": "ok",
+      "geometry_valid": true,
+      "mapping_performed": true,
+      "model_reason": "ok",
+      "model_valid": true,
+      "satisfies_bounds": true,
+      "si_is_valid": true,
+      "state": [
+        29.06704055326371,
+        19.137751231382367,
+        15.25,
+        -0.7853981633974483,
+        0.0,
+        1.0
+      ]
+    },
+    "reason": "physical_obstacle",
+    "accepted_intervals": 0,
+    "trace": [
+      {
+        "accepted_steps": 0,
+        "agreement": true,
+        "angle_or_speed_error": 0.0,
+        "candidate": {
+          "geometry_reason": "ok",
+          "geometry_valid": true,
+          "mapping_performed": true,
+          "model_reason": "ok",
+          "model_valid": true,
+          "satisfies_bounds": true,
+          "si_is_valid": true,
+          "state": [
+            29.137751231382364,
+            19.067040553263713,
+            15.25,
+            -0.7853981633974483,
+            0.0,
+            1.0
+          ]
+        },
+        "control": [
+          0.0,
+          0.0
+        ],
+        "expected_steps": 0,
+        "frozen_interval_reason": "physical_obstacle",
+        "frozen_interval_valid": false,
+        "interval_index": 0,
+        "position_error_m": 0.0,
+        "propagation_invoked": true,
+        "returned_si_valid": true,
+        "returned_state": [
+          29.06704055326371,
+          19.137751231382367,
+          15.25,
+          -0.7853981633974483,
+          0.0,
+          1.0
+        ],
+        "source": {
+          "geometry_reason": "ok",
+          "geometry_valid": true,
+          "mapping_performed": true,
+          "model_reason": "ok",
+          "model_valid": true,
+          "satisfies_bounds": true,
+          "si_is_valid": true,
+          "state": [
+            29.06704055326371,
+            19.137751231382367,
+            15.25,
+            -0.7853981633974483,
+            0.0,
+            1.0
+          ]
+        },
+        "time_end_s": 0.1,
+        "time_start_s": 0.0
+      }
+    ]
+  },
+  "face_contact": {
+    "initial": {
+      "geometry_reason": "ok",
+      "geometry_valid": true,
+      "mapping_performed": true,
+      "model_reason": "ok",
+      "model_valid": true,
+      "satisfies_bounds": true,
+      "si_is_valid": true,
+      "state": [
+        28.63019609728144,
+        20.25,
+        15.25,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "reason": "physical_obstacle",
+    "accepted_intervals": 0,
+    "trace": [
+      {
+        "accepted_steps": 0,
+        "agreement": true,
+        "angle_or_speed_error": 0.0,
+        "candidate": {
+          "geometry_reason": "physical_obstacle",
+          "geometry_valid": false,
+          "mapping_performed": true,
+          "model_reason": "ok",
+          "model_valid": true,
+          "satisfies_bounds": true,
+          "si_is_valid": false,
+          "state": [
+            28.730196097281443,
+            20.25,
+            15.25,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "control": [
+          0.0,
+          0.0
+        ],
+        "expected_steps": 0,
+        "frozen_interval_reason": "physical_obstacle",
+        "frozen_interval_valid": false,
+        "interval_index": 0,
+        "position_error_m": 0.0,
+        "propagation_invoked": true,
+        "returned_si_valid": true,
+        "returned_state": [
+          28.63019609728144,
+          20.25,
+          15.25,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "source": {
+          "geometry_reason": "ok",
+          "geometry_valid": true,
+          "mapping_performed": true,
+          "model_reason": "ok",
+          "model_valid": true,
+          "satisfies_bounds": true,
+          "si_is_valid": true,
+          "state": [
+            28.63019609728144,
+            20.25,
+            15.25,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "time_end_s": 0.1,
+        "time_start_s": 0.0
+      }
+    ]
+  },
+  "edge_contact": {
+    "initial": {
+      "geometry_reason": "ok",
+      "geometry_valid": true,
+      "mapping_performed": true,
+      "model_reason": "ok",
+      "model_valid": true,
+      "satisfies_bounds": true,
+      "si_is_valid": true,
+      "state": [
+        29.03140237149191,
+        19.03140237149191,
+        15.25,
+        0.7853981633974483,
+        0.0,
+        1.0
+      ]
+    },
+    "reason": "physical_obstacle",
+    "accepted_intervals": 0,
+    "trace": [
+      {
+        "accepted_steps": 0,
+        "agreement": true,
+        "angle_or_speed_error": 0.0,
+        "candidate": {
+          "geometry_reason": "physical_obstacle",
+          "geometry_valid": false,
+          "mapping_performed": true,
+          "model_reason": "ok",
+          "model_valid": true,
+          "satisfies_bounds": true,
+          "si_is_valid": false,
+          "state": [
+            29.102113049610566,
+            19.102113049610566,
+            15.25,
+            0.7853981633974483,
+            0.0,
+            1.0
+          ]
+        },
+        "control": [
+          0.0,
+          0.0
+        ],
+        "expected_steps": 0,
+        "frozen_interval_reason": "physical_obstacle",
+        "frozen_interval_valid": false,
+        "interval_index": 0,
+        "position_error_m": 0.0,
+        "propagation_invoked": true,
+        "returned_si_valid": true,
+        "returned_state": [
+          29.03140237149191,
+          19.03140237149191,
+          15.25,
+          0.7853981633974483,
+          0.0,
+          1.0
+        ],
+        "source": {
+          "geometry_reason": "ok",
+          "geometry_valid": true,
+          "mapping_performed": true,
+          "model_reason": "ok",
+          "model_valid": true,
+          "satisfies_bounds": true,
+          "si_is_valid": true,
+          "state": [
+            29.03140237149191,
+            19.03140237149191,
+            15.25,
+            0.7853981633974483,
+            0.0,
+            1.0
+          ]
+        },
+        "time_end_s": 0.1,
+        "time_start_s": 0.0
+      }
+    ]
+  },
+  "corner_contact": {
+    "initial": {
+      "geometry_reason": "ok",
+      "geometry_valid": true,
+      "mapping_performed": true,
+      "model_reason": "ok",
+      "model_valid": true,
+      "satisfies_bounds": true,
+      "si_is_valid": true,
+      "state": [
+        29.046117545895996,
+        19.046117545895996,
+        14.762136048531874,
+        0.7853981633974483,
+        0.17453292519943295,
+        1.0
+      ]
+    },
+    "reason": "physical_obstacle",
+    "accepted_intervals": 0,
+    "trace": [
+      {
+        "accepted_steps": 0,
+        "agreement": true,
+        "angle_or_speed_error": 0.0,
+        "candidate": {
+          "geometry_reason": "physical_obstacle",
+          "geometry_valid": false,
+          "mapping_performed": true,
+          "model_reason": "ok",
+          "model_valid": true,
+          "satisfies_bounds": true,
+          "si_is_valid": false,
+          "state": [
+            29.115753969927997,
+            19.115753969927997,
+            14.779500866298566,
+            0.7853981633974483,
+            0.17453292519943295,
+            1.0
+          ]
+        },
+        "control": [
+          0.0,
+          0.0
+        ],
+        "expected_steps": 0,
+        "frozen_interval_reason": "physical_obstacle",
+        "frozen_interval_valid": false,
+        "interval_index": 0,
+        "position_error_m": 0.0,
+        "propagation_invoked": true,
+        "returned_si_valid": true,
+        "returned_state": [
+          29.046117545895996,
+          19.046117545895996,
+          14.762136048531874,
+          0.7853981633974483,
+          0.17453292519943295,
+          1.0
+        ],
+        "source": {
+          "geometry_reason": "ok",
+          "geometry_valid": true,
+          "mapping_performed": true,
+          "model_reason": "ok",
+          "model_valid": true,
+          "satisfies_bounds": true,
+          "si_is_valid": true,
+          "state": [
+            29.046117545895996,
+            19.046117545895996,
+            14.762136048531874,
+            0.7853981633974483,
+            0.17453292519943295,
+            1.0
+          ]
+        },
+        "time_end_s": 0.1,
+        "time_start_s": 0.0
+      }
+    ]
+  },
+  "workspace_escape": {
+    "initial": {
+      "geometry_reason": "ok",
+      "geometry_valid": true,
+      "mapping_performed": true,
+      "model_reason": "ok",
+      "model_valid": true,
+      "satisfies_bounds": true,
+      "si_is_valid": true,
+      "state": [
+        1.319803902718557,
+        5.0,
+        5.0,
+        -3.141592653589793,
+        0.0,
+        1.0
+      ]
+    },
+    "reason": "workspace_boundary",
+    "accepted_intervals": 0,
+    "trace": [
+      {
+        "accepted_steps": 0,
+        "agreement": true,
+        "angle_or_speed_error": 0.0,
+        "candidate": {
+          "geometry_reason": "workspace_boundary",
+          "geometry_valid": false,
+          "mapping_performed": true,
+          "model_reason": "ok",
+          "model_valid": true,
+          "satisfies_bounds": true,
+          "si_is_valid": false,
+          "state": [
+            1.219803902718557,
+            5.0,
+            5.0,
+            -3.141592653589793,
+            0.0,
+            1.0
+          ]
+        },
+        "control": [
+          0.0,
+          0.0
+        ],
+        "expected_steps": 0,
+        "frozen_interval_reason": "workspace_boundary",
+        "frozen_interval_valid": false,
+        "interval_index": 0,
+        "position_error_m": 0.0,
+        "propagation_invoked": true,
+        "returned_si_valid": true,
+        "returned_state": [
+          1.319803902718557,
+          5.0,
+          5.0,
+          -3.141592653589793,
+          0.0,
+          1.0
+        ],
+        "source": {
+          "geometry_reason": "ok",
+          "geometry_valid": true,
+          "mapping_performed": true,
+          "model_reason": "ok",
+          "model_valid": true,
+          "satisfies_bounds": true,
+          "si_is_valid": true,
+          "state": [
+            1.319803902718557,
+            5.0,
+            5.0,
+            -3.141592653589793,
+            0.0,
+            1.0
+          ]
+        },
+        "time_end_s": 0.1,
+        "time_start_s": 0.0
+      }
+    ]
+  },
+  "nonfinite_yaw_control": {
+    "initial": {
+      "geometry_reason": "ok",
+      "geometry_valid": true,
+      "mapping_performed": true,
+      "model_reason": "ok",
+      "model_valid": true,
+      "satisfies_bounds": true,
+      "si_is_valid": true,
+      "state": [
+        5.0,
+        5.0,
+        5.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "reason": "invalid_control",
+    "accepted_intervals": 0,
+    "trace": [
+      {
+        "accepted_steps": 0,
+        "agreement": true,
+        "angle_or_speed_error": 0.0,
+        "candidate": {
+          "geometry_reason": "ok",
+          "geometry_valid": true,
+          "mapping_performed": true,
+          "model_reason": "ok",
+          "model_valid": true,
+          "satisfies_bounds": true,
+          "si_is_valid": true,
+          "state": [
+            5.0,
+            5.0,
+            5.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "control": [
+          "nan",
+          0.0
+        ],
+        "expected_steps": 0,
+        "frozen_interval_reason": "invalid_control",
+        "frozen_interval_valid": false,
+        "interval_index": 0,
+        "position_error_m": 0.0,
+        "propagation_invoked": true,
+        "returned_si_valid": true,
+        "returned_state": [
+          5.0,
+          5.0,
+          5.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "source": {
+          "geometry_reason": "ok",
+          "geometry_valid": true,
+          "mapping_performed": true,
+          "model_reason": "ok",
+          "model_valid": true,
+          "satisfies_bounds": true,
+          "si_is_valid": true,
+          "state": [
+            5.0,
+            5.0,
+            5.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "time_end_s": 0.1,
+        "time_start_s": 0.0
+      }
+    ]
+  }
+}

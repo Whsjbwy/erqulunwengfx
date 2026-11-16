@@ -1,0 +1,11 @@
+{
+  "command": [
+    "D:\\2区论文复现\\local_only\\stage6dr_native\\build\\auv6dr_runner.exe",
+    "D:\\2区论文复现\\erqulunwengfx\\results\\stage6dr\\local-quality\\forbidden-plan-input.json",
+    "D:\\2区论文复现\\erqulunwengfx\\results\\stage6dr\\local-quality\\forbidden-plan-output.json"
+  ],
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Only deterministic inspect/replay modes are permitted\n",
+  "rejected_before_geometry_or_search": true
+}

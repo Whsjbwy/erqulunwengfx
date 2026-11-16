@@ -1,0 +1,14 @@
+Internal ctest changing into directory: Z:/local_only/stage6dr_native/build
+Test project Z:/local_only/stage6dr_native/build
+    Start 1: frozen_model_geometry
+1/4 Test #1: frozen_model_geometry ...............   Passed    0.13 sec
+    Start 2: frozen_adapter_metric
+2/4 Test #2: frozen_adapter_metric ...............   Passed    0.16 sec
+    Start 3: original_failure_remains_detected
+3/4 Test #3: original_failure_remains_detected ...   Passed    0.17 sec
+    Start 4: repaired_pitch_contract
+4/4 Test #4: repaired_pitch_contract .............   Passed    0.16 sec
+
+100% tests passed, 0 tests failed out of 4
+
+Total Test time (real) =   0.63 sec

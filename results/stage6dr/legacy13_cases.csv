@@ -1,0 +1,14 @@
+case_id,category,mode,input_pitch_rad,input_speed_m_s,model_valid,model_reason,mapping_performed,satisfies_bounds,si_is_valid,python_initial_reason,python_final_reason,native_reason,accepted_intervals,actual_propagator_calls,last_actual_steps,last_expected_steps,maximum_position_error_m,maximum_angle_or_speed_error,maximum_rk4_error_m,input_roundtrip_verified,passed,planning_searches
+straight,legacy13,replay,0.0,1.0,True,ok,True,True,True,ok,ok,ok,200,200,1,1,0.0,0.0,1.2079226507921703e-13,True,True,0
+left_arc,legacy13,replay,0.0,1.0,True,ok,True,True,True,ok,ok,ok,90,90,1,1,0.0,0.0,1.7763568394002505e-14,True,True,0
+right_arc,legacy13,replay,0.0,1.0,True,ok,True,True,True,ok,ok,ok,90,90,1,1,0.0,0.0,1.517719948885615e-14,True,True,0
+climb,legacy13,replay,0.0,1.0,True,ok,True,True,True,ok,ok,ok,160,160,1,1,0.0,0.0,6.039613253960852e-14,True,True,0
+dive,legacy13,replay,0.0,1.0,True,ok,True,True,True,ok,ok,ok,160,160,1,1,0.0,0.0,4.6897166265737003e-14,True,True,0
+combined,legacy13,replay,0.0,1.0,True,ok,True,True,True,ok,ok,ok,80,80,1,1,0.0,0.0,1.8460441789282214e-14,True,True,0
+yaw_rate_reject,legacy13,replay,0.0,1.0,True,ok,True,True,True,ok,yaw_rate,yaw_rate,0,1,0,0,,,0.0,True,True,0
+pitch_rate_reject,legacy13,replay,0.0,1.0,True,ok,True,True,True,ok,pitch_rate,pitch_rate,0,1,0,0,,,0.0,True,True,0
+pitch_angle_reject,legacy13,replay,0.33161255787892263,1.0,True,ok,True,True,True,ok,pitch_bound,pitch_bound,2,3,0,0,0.0,0.0,1.0805156823142815e-14,True,True,0
+obstacle_reject,legacy13,replay,0.0,1.0,True,ok,True,True,True,ok,physical_obstacle,physical_obstacle,87,88,0,0,0.0,0.0,5.684341886080802e-14,True,True,0
+mission_band_reject,legacy13,replay,0.0,1.0,True,ok,True,True,True,ok,mission_ceiling,mission_ceiling,61,62,0,0,0.0,0.0,4.6897166265737003e-14,True,True,0
+hover_not_in_model,legacy13,replay,0.0,0.0,False,frozen_speed,False,,,frozen_speed,frozen_speed,frozen_speed,0,0,,,,,0.0,True,True,0
+mid_segment_reject,legacy13,replay,0.0,1.0,True,ok,True,True,True,ok,physical_obstacle,physical_obstacle,0,1,0,0,,,3.517007107451656e-14,True,True,0
