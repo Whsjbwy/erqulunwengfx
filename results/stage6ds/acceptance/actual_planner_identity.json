@@ -1,0 +1,387 @@
+[
+  {
+    "condition": "rrt_first",
+    "identity": {
+      "actual_settings": {
+        "goal_bias": 0.05
+      },
+      "adapter": {
+        "adapter_id": "auv_pitch_contract_v1",
+        "backward_propagation": false,
+        "control_high": [
+          0.17453292519943295,
+          0.08726646259971647
+        ],
+        "control_low": [
+          -0.17453292519943295,
+          -0.08726646259971647
+        ],
+        "declared_pitch_high_rad": 0.3490658503998659,
+        "declared_pitch_low_rad": -0.3490658503998659,
+        "final_model_filter": "unchanged auv6b::validate_state",
+        "frozen_pitch_tolerance_rad": 1e-12,
+        "maximum_steps": 50,
+        "minimum_steps": 1,
+        "nominal_pitch_limit_rad": 0.3490658503988659,
+        "position_high": [
+          56.0,
+          44.0,
+          28.0
+        ],
+        "position_low": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "propagator": "unchanged auv6c::Propagator",
+        "state_dimension": 5,
+        "step_s": 0.1,
+        "subspace_weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "binary_id": "auv_obstacle_baselines_v1",
+      "cost_threshold": "infinity",
+      "objective": "official ControlDurationObjective",
+      "official_class": "ompl::control::RRT",
+      "planner_si_same_object": true,
+      "search_mode": "first",
+      "signed_probes": [
+        {
+          "inside": {
+            "geometry_reason": "ok",
+            "geometry_valid": true,
+            "mapping_performed": true,
+            "model_reason": "ok",
+            "model_valid": true,
+            "satisfies_bounds": true,
+            "si_is_valid": true,
+            "state": [
+              8.0,
+              12.0,
+              10.0,
+              0.0,
+              -0.3490658503993659,
+              1.0
+            ]
+          },
+          "outside": {
+            "geometry_reason": "ok",
+            "geometry_valid": true,
+            "mapping_performed": true,
+            "model_reason": "pitch_bound",
+            "model_valid": false,
+            "satisfies_bounds": true,
+            "si_is_valid": false,
+            "state": [
+              8.0,
+              12.0,
+              10.0,
+              0.0,
+              -0.34906585039986593,
+              1.0
+            ]
+          }
+        },
+        {
+          "inside": {
+            "geometry_reason": "ok",
+            "geometry_valid": true,
+            "mapping_performed": true,
+            "model_reason": "ok",
+            "model_valid": true,
+            "satisfies_bounds": true,
+            "si_is_valid": true,
+            "state": [
+              8.0,
+              12.0,
+              10.0,
+              0.0,
+              0.3490658503993659,
+              1.0
+            ]
+          },
+          "outside": {
+            "geometry_reason": "ok",
+            "geometry_valid": true,
+            "mapping_performed": true,
+            "model_reason": "pitch_bound",
+            "model_valid": false,
+            "satisfies_bounds": true,
+            "si_is_valid": false,
+            "state": [
+              8.0,
+              12.0,
+              10.0,
+              0.0,
+              0.34906585039986593,
+              1.0
+            ]
+          }
+        }
+      ]
+    },
+    "new_planning_searches": 0,
+    "ompl_version": "2.0.2"
+  },
+  {
+    "condition": "sst_radius2_first",
+    "identity": {
+      "actual_settings": {
+        "goal_bias": 0.05,
+        "pruning_radius": 0.1,
+        "selection_radius": 2.0
+      },
+      "adapter": {
+        "adapter_id": "auv_pitch_contract_v1",
+        "backward_propagation": false,
+        "control_high": [
+          0.17453292519943295,
+          0.08726646259971647
+        ],
+        "control_low": [
+          -0.17453292519943295,
+          -0.08726646259971647
+        ],
+        "declared_pitch_high_rad": 0.3490658503998659,
+        "declared_pitch_low_rad": -0.3490658503998659,
+        "final_model_filter": "unchanged auv6b::validate_state",
+        "frozen_pitch_tolerance_rad": 1e-12,
+        "maximum_steps": 50,
+        "minimum_steps": 1,
+        "nominal_pitch_limit_rad": 0.3490658503988659,
+        "position_high": [
+          56.0,
+          44.0,
+          28.0
+        ],
+        "position_low": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "propagator": "unchanged auv6c::Propagator",
+        "state_dimension": 5,
+        "step_s": 0.1,
+        "subspace_weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "binary_id": "auv_obstacle_baselines_v1",
+      "cost_threshold": "infinity",
+      "objective": "official ControlDurationObjective",
+      "official_class": "ompl::control::SST",
+      "planner_si_same_object": true,
+      "search_mode": "first",
+      "signed_probes": [
+        {
+          "inside": {
+            "geometry_reason": "ok",
+            "geometry_valid": true,
+            "mapping_performed": true,
+            "model_reason": "ok",
+            "model_valid": true,
+            "satisfies_bounds": true,
+            "si_is_valid": true,
+            "state": [
+              8.0,
+              12.0,
+              10.0,
+              0.0,
+              -0.3490658503993659,
+              1.0
+            ]
+          },
+          "outside": {
+            "geometry_reason": "ok",
+            "geometry_valid": true,
+            "mapping_performed": true,
+            "model_reason": "pitch_bound",
+            "model_valid": false,
+            "satisfies_bounds": true,
+            "si_is_valid": false,
+            "state": [
+              8.0,
+              12.0,
+              10.0,
+              0.0,
+              -0.34906585039986593,
+              1.0
+            ]
+          }
+        },
+        {
+          "inside": {
+            "geometry_reason": "ok",
+            "geometry_valid": true,
+            "mapping_performed": true,
+            "model_reason": "ok",
+            "model_valid": true,
+            "satisfies_bounds": true,
+            "si_is_valid": true,
+            "state": [
+              8.0,
+              12.0,
+              10.0,
+              0.0,
+              0.3490658503993659,
+              1.0
+            ]
+          },
+          "outside": {
+            "geometry_reason": "ok",
+            "geometry_valid": true,
+            "mapping_performed": true,
+            "model_reason": "pitch_bound",
+            "model_valid": false,
+            "satisfies_bounds": true,
+            "si_is_valid": false,
+            "state": [
+              8.0,
+              12.0,
+              10.0,
+              0.0,
+              0.34906585039986593,
+              1.0
+            ]
+          }
+        }
+      ]
+    },
+    "new_planning_searches": 0,
+    "ompl_version": "2.0.2"
+  },
+  {
+    "condition": "sst_radius2_anytime",
+    "identity": {
+      "actual_settings": {
+        "goal_bias": 0.05,
+        "pruning_radius": 0.1,
+        "selection_radius": 2.0
+      },
+      "adapter": {
+        "adapter_id": "auv_pitch_contract_v1",
+        "backward_propagation": false,
+        "control_high": [
+          0.17453292519943295,
+          0.08726646259971647
+        ],
+        "control_low": [
+          -0.17453292519943295,
+          -0.08726646259971647
+        ],
+        "declared_pitch_high_rad": 0.3490658503998659,
+        "declared_pitch_low_rad": -0.3490658503998659,
+        "final_model_filter": "unchanged auv6b::validate_state",
+        "frozen_pitch_tolerance_rad": 1e-12,
+        "maximum_steps": 50,
+        "minimum_steps": 1,
+        "nominal_pitch_limit_rad": 0.3490658503988659,
+        "position_high": [
+          56.0,
+          44.0,
+          28.0
+        ],
+        "position_low": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "propagator": "unchanged auv6c::Propagator",
+        "state_dimension": 5,
+        "step_s": 0.1,
+        "subspace_weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "binary_id": "auv_obstacle_baselines_v1",
+      "cost_threshold": 0.0,
+      "objective": "official ControlDurationObjective",
+      "official_class": "ompl::control::SST",
+      "planner_si_same_object": true,
+      "search_mode": "anytime",
+      "signed_probes": [
+        {
+          "inside": {
+            "geometry_reason": "ok",
+            "geometry_valid": true,
+            "mapping_performed": true,
+            "model_reason": "ok",
+            "model_valid": true,
+            "satisfies_bounds": true,
+            "si_is_valid": true,
+            "state": [
+              8.0,
+              12.0,
+              10.0,
+              0.0,
+              -0.3490658503993659,
+              1.0
+            ]
+          },
+          "outside": {
+            "geometry_reason": "ok",
+            "geometry_valid": true,
+            "mapping_performed": true,
+            "model_reason": "pitch_bound",
+            "model_valid": false,
+            "satisfies_bounds": true,
+            "si_is_valid": false,
+            "state": [
+              8.0,
+              12.0,
+              10.0,
+              0.0,
+              -0.34906585039986593,
+              1.0
+            ]
+          }
+        },
+        {
+          "inside": {
+            "geometry_reason": "ok",
+            "geometry_valid": true,
+            "mapping_performed": true,
+            "model_reason": "ok",
+            "model_valid": true,
+            "satisfies_bounds": true,
+            "si_is_valid": true,
+            "state": [
+              8.0,
+              12.0,
+              10.0,
+              0.0,
+              0.3490658503993659,
+              1.0
+            ]
+          },
+          "outside": {
+            "geometry_reason": "ok",
+            "geometry_valid": true,
+            "mapping_performed": true,
+            "model_reason": "pitch_bound",
+            "model_valid": false,
+            "satisfies_bounds": true,
+            "si_is_valid": false,
+            "state": [
+              8.0,
+              12.0,
+              10.0,
+              0.0,
+              0.34906585039986593,
+              1.0
+            ]
+          }
+        }
+      ]
+    },
+    "new_planning_searches": 0,
+    "ompl_version": "2.0.2"
+  }
+]

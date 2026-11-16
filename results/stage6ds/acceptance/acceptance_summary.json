@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "binary_id": "auv_obstacle_baselines_v1",
+  "boundary_cases": 69,
+  "legacy_cases": 13,
+  "legacy_accepted_intervals": 930,
+  "map_accepted_intervals": 2440,
+  "terrain_1_intervals": 370,
+  "planner_identity_checks": 3,
+  "interval_attempts": 3398,
+  "maximum_position_error_m": 0,
+  "maximum_rk4_error_m": 1.2079226507921703e-13,
+  "new_planning_searches": 0
+}

@@ -1,0 +1,17 @@
+["Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\ctest.exe", "--test-dir", "Z:\\local_only\\stage6ds_native\\build", "--output-on-failure"]
+Internal ctest changing into directory: Z:/local_only/stage6ds_native/build
+Test project Z:/local_only/stage6ds_native/build
+    Start 1: actual_planner_pitch_identity
+1/5 Test #1: actual_planner_pitch_identity .......   Passed    0.02 sec
+    Start 2: frozen_model_geometry
+2/5 Test #2: frozen_model_geometry ...............   Passed    0.02 sec
+    Start 3: frozen_adapter_metric
+3/5 Test #3: frozen_adapter_metric ...............   Passed    0.01 sec
+    Start 4: original_failure_remains_detected
+4/5 Test #4: original_failure_remains_detected ...   Passed    0.01 sec
+    Start 5: repaired_pitch_contract
+5/5 Test #5: repaired_pitch_contract .............   Passed    0.01 sec
+
+100% tests passed, 0 tests failed out of 5
+
+Total Test time (real) =   0.10 sec

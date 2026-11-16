@@ -1,0 +1,14 @@
+case_id,old_source,accepted_states,maximum_state_error,reason_unchanged,passed
+straight,preserved_native_output,200,0.0,True,True
+left_arc,preserved_native_output,90,0.0,True,True
+right_arc,preserved_native_output,90,0.0,True,True
+climb,preserved_native_output,160,0.0,True,True
+dive,preserved_native_output,160,0.0,True,True
+combined,preserved_native_output,80,0.0,True,True
+yaw_rate_reject,preserved_native_output,0,0.0,True,True
+pitch_rate_reject,preserved_native_output,0,0.0,True,True
+pitch_angle_reject,preserved_native_output,2,0.0,True,True
+obstacle_reject,preserved_native_output,87,0.0,True,True
+mission_band_reject,preserved_native_output,61,0.0,True,True
+hover_not_in_model,preserved_native_output,0,0.0,True,True
+mid_segment_reject,preserved_native_output,0,0.0,True,True

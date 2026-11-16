@@ -1,0 +1,58 @@
+--- frozen6C-plan
++++ new6DS-plan
+@@ -1,8 +1,14 @@
+-static Json plan(const Json &request) {
++inline Json plan(const Json &request) {
+     const auto beginning = Clock::now();
++    if (request.contains("controls") || request.at("search_budget_s") != 8.0 ||
++        request.at("goal_bias") != 0.05 || request.at("selection_radius") != 2.0 ||
++        request.at("pruning_radius") != 0.1 || request.at("propagation_min_steps") != 1 ||
++        request.at("propagation_max_steps") != 50 ||
++        (request.at("search_mode") != "first" && request.at("search_mode") != "anytime"))
++        throw std::invalid_argument("Request differs from frozen6D parameters or leaks controls");
+     const unsigned seed = request.at("seed");
+-    if (!seed)
+-        throw std::invalid_argument("Zero seed is not permitted");
++    if (seed < 1 || seed > 3)
++        throw std::invalid_argument("Only frozen native seeds1/2/3 are permitted");
+     ompl::RNG::setSeed(seed);
+     const auto &scene = request.at("scenario");
+     auto g = geometry(scene);
+@@ -14,8 +20,8 @@
+         if (!std::isfinite(x))
+             throw std::invalid_argument("Nonfinite goal");
+     Counters counts;
+-    auto si = information(g, counts, request.at("propagation_min_steps"),
+-                          request.at("propagation_max_steps"));
++    auto si = auv6dr::information(g, counts, request.at("propagation_min_steps"),
++                                  request.at("propagation_max_steps"));
+     auto problem = std::make_shared<ob::ProblemDefinition>(si);
+     ob::ScopedState<> start(si->getStateSpace());
+     write_state(start.get(), initial);
+@@ -66,6 +72,16 @@
+     const double cap = request.at("search_budget_s");
+     if (!(cap > 0 && cap <= 8))
+         throw std::invalid_argument("Unregistered search budget");
++    auto identity = planner_identity(planner, si, initial, g);
++    identity["search_mode"] = request.at("search_mode");
++    identity["objective"] = "official ControlDurationObjective";
++    const double threshold = objective->getCostThreshold().value();
++    if ((anytime && threshold != 0.0) || (!anytime && !std::isinf(threshold)))
++        throw std::runtime_error("Actual stopping objective differs from frozen6D");
++    identity["cost_threshold"] = anytime ? Json(threshold) : Json("infinity");
++    if (request.at("mode") == "planner_check")
++        return {
++            {"identity", identity}, {"ompl_version", OMPL_VERSION}, {"new_planning_searches", 0}};
+     const auto status =
+         planner->solve(ob::PlannerTerminationCondition([&] { return elapsed(beginning) >= cap; }));
+     Json output = {{"ompl_version", OMPL_VERSION},
+@@ -89,6 +105,9 @@
+         output["first_path_is_final"] = !first.is_null() && first == data;
+         output["first_path"] = first.is_null() || first == data ? Json(nullptr) : first;
+     }
++    output["identity"] = identity;
++    output["adapter"] = identity.at("adapter");
++    output["binary_id"] = binary_id;
+     output["improvement_events"] = events;
+     output["peak_native_rss_bytes"] = peak_memory();
+     output["propagated_intervals"] = counts.intervals;

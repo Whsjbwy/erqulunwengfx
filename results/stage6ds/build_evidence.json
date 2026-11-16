@@ -1,0 +1,120 @@
+{
+  "packages": {},
+  "commands": [
+    {
+      "label": "configure",
+      "arguments": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "-S",
+        "Z:/erqulunwengfx/native/stage6ds",
+        "-B",
+        "Z:/local_only/stage6ds_native/build",
+        "-G",
+        "Ninja",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_MAKE_PROGRAM=Z:/local_only/stage6b_native/packages/ninja/ninja.exe",
+        "-DCMAKE_CXX_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang++.exe",
+        "-DCMAKE_CXX_FLAGS=-no-canonical-prefixes -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00",
+        "-DCMAKE_PREFIX_PATH=Z:/local_only/stage6b_native/prefix",
+        "-DSTAGE6DR_JSON_INCLUDE=Z:/local_only/stage6b_native/include"
+      ],
+      "exit_code": 1,
+      "elapsed_s": 2.1685108999954537,
+      "log": "build-00-configure.log"
+    },
+    {
+      "label": "configure",
+      "arguments": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "-S",
+        "Z:/erqulunwengfx/native/stage6ds",
+        "-B",
+        "Z:/local_only/stage6ds_native/build",
+        "-G",
+        "Ninja",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_MAKE_PROGRAM=Z:/local_only/stage6b_native/packages/ninja/ninja.exe",
+        "-DCMAKE_CXX_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang++.exe",
+        "-DCMAKE_CXX_FLAGS=-no-canonical-prefixes -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00",
+        "-DCMAKE_PREFIX_PATH=Z:/local_only/stage6b_native/prefix",
+        "-DSTAGE6DR_JSON_INCLUDE=Z:/local_only/stage6b_native/include"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 0.5145548000000417,
+      "log": "build-01-configure.log"
+    },
+    {
+      "label": "build",
+      "arguments": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "--build",
+        "Z:\\local_only\\stage6ds_native\\build",
+        "--parallel",
+        "2"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 7.766828199994052,
+      "log": "build-02-build.log"
+    },
+    {
+      "label": "ctest",
+      "arguments": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\ctest.exe",
+        "--test-dir",
+        "Z:\\local_only\\stage6ds_native\\build",
+        "--output-on-failure"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 0.9405399000024772,
+      "log": "build-03-ctest.log"
+    },
+    {
+      "label": "configure",
+      "arguments": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "-S",
+        "Z:/erqulunwengfx/native/stage6ds",
+        "-B",
+        "Z:/local_only/stage6ds_native/build",
+        "-G",
+        "Ninja",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_MAKE_PROGRAM=Z:/local_only/stage6b_native/packages/ninja/ninja.exe",
+        "-DCMAKE_CXX_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang++.exe",
+        "-DCMAKE_CXX_FLAGS=-no-canonical-prefixes -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00",
+        "-DCMAKE_PREFIX_PATH=Z:/local_only/stage6b_native/prefix",
+        "-DSTAGE6DR_JSON_INCLUDE=Z:/local_only/stage6b_native/include"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 0.5042163000034634,
+      "log": "build-04-configure.log"
+    },
+    {
+      "label": "build",
+      "arguments": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "--build",
+        "Z:\\local_only\\stage6ds_native\\build",
+        "--parallel",
+        "2"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 3.3666177000050084,
+      "log": "build-05-build.log"
+    },
+    {
+      "label": "ctest",
+      "arguments": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\ctest.exe",
+        "--test-dir",
+        "Z:\\local_only\\stage6ds_native\\build",
+        "--output-on-failure"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 0.16345249999722,
+      "log": "build-06-ctest.log"
+    }
+  ],
+  "file_hash_manifests": false,
+  "stage": "6DS"
+}
