@@ -1,0 +1,7 @@
+case_id,category,mode,input_pitch_rad,input_speed_m_s,model_valid,model_reason,mapping_performed,satisfies_bounds,si_is_valid,python_initial_reason,python_final_reason,native_reason,accepted_intervals,actual_propagator_calls,last_actual_steps,last_expected_steps,maximum_position_error_m,maximum_angle_or_speed_error,maximum_rk4_error_m,input_roundtrip_verified,passed,planning_searches
+terrain_1,supplied_obstacle_witness,replay,0.0,1.0,True,ok,True,True,True,ok,ok,ok,370,370,1,1,0.0,0.0,1.2079226507921703e-13,True,True,0
+wide_1,supplied_obstacle_witness,replay,0.0,1.0,True,ok,True,True,True,ok,ok,ok,500,500,1,1,0.0,0.0,1.2079226507921703e-13,True,True,0
+wide_2,supplied_obstacle_witness,replay,0.0,1.0,True,ok,True,True,True,ok,ok,ok,500,500,1,1,0.0,0.0,1.2079226507921703e-13,True,True,0
+turn_1,supplied_obstacle_witness,replay,0.0,1.0,True,ok,True,True,True,ok,ok,ok,350,350,1,1,0.0,0.0,5.695433295429594e-14,True,True,0
+turn_2,supplied_obstacle_witness,replay,0.0,1.0,True,ok,True,True,True,ok,ok,ok,350,350,1,1,0.0,0.0,5.695433295429594e-14,True,True,0
+terrain_2,supplied_obstacle_witness,replay,0.0,1.0,True,ok,True,True,True,ok,ok,ok,370,370,1,1,0.0,0.0,1.2079226507921703e-13,True,True,0

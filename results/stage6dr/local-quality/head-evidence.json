@@ -1,0 +1,111 @@
+{
+  "checked_out_head": "8bb8225c043eb091f3225d5059c0ac872c064772",
+  "requested_pr_head": null,
+  "exact_pr_head_ci": false,
+  "platform": "Windows-10-10.0.26200-SP0",
+  "pytest": {
+    "tests": 534,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "engineering_checks_passed": true,
+  "original_adapter_mismatch_still_detected": true,
+  "new_model_interface_passed": true,
+  "model_interface": "MODEL-INTERFACE PASS",
+  "acceptance": {
+    "local_model_interface_passed": true,
+    "adapter_id": "auv_pitch_contract_v1",
+    "original_failure_reproduced": true,
+    "boundary_cases": 69,
+    "legacy_cases": 13,
+    "legacy_accepted_intervals": 930,
+    "maps": 6,
+    "map_accepted_intervals": 2440,
+    "terrain_1_intervals": 370,
+    "measured_interval_attempts": 3398,
+    "maximum_position_error_m": 0,
+    "maximum_rk4_error_m": 1.2079226507921703e-13,
+    "old_new_cases_compared": 17,
+    "new_planning_searches": 0,
+    "planning_searches_authorized": 0,
+    "h1_authorized": false,
+    "final_head_ci": "Required separately; exact-head runtime artifact binds final MODEL-INTERFACE verdict"
+  },
+  "native_build": {
+    "stage": "6DR",
+    "ompl_version": "2.0.2",
+    "commands": [
+      {
+        "label": "configure",
+        "command": [
+          "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+          "-S",
+          "Z:/erqulunwengfx/native/stage6dr",
+          "-B",
+          "Z:/local_only/stage6dr_native/build",
+          "-G",
+          "Ninja",
+          "-DCMAKE_BUILD_TYPE=Release",
+          "-DCMAKE_MAKE_PROGRAM=Z:/local_only/stage6b_native/packages/ninja/ninja.exe",
+          "-DCMAKE_CXX_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang++.exe",
+          "-DCMAKE_CXX_FLAGS=-no-canonical-prefixes -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00",
+          "-DCMAKE_PREFIX_PATH=Z:/local_only/stage6b_native/prefix",
+          "-DSTAGE6DR_JSON_INCLUDE=Z:/local_only/stage6b_native/include"
+        ],
+        "exit_code": 3221226505,
+        "wall_s": 0.9452015999995638,
+        "log": "build-00-configure.log"
+      },
+      {
+        "label": "configure",
+        "command": [
+          "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+          "-S",
+          "Z:/erqulunwengfx/native/stage6dr",
+          "-B",
+          "Z:/local_only/stage6dr_native/build",
+          "-G",
+          "Ninja",
+          "-DCMAKE_BUILD_TYPE=Release",
+          "-DCMAKE_MAKE_PROGRAM=Z:/local_only/stage6b_native/packages/ninja/ninja.exe",
+          "-DCMAKE_CXX_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang++.exe",
+          "-DCMAKE_CXX_FLAGS=-no-canonical-prefixes -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00",
+          "-DCMAKE_PREFIX_PATH=Z:/local_only/stage6b_native/prefix",
+          "-DSTAGE6DR_JSON_INCLUDE=Z:/local_only/stage6b_native/include"
+        ],
+        "exit_code": 0,
+        "wall_s": 2.344628200000443,
+        "log": "build-01-configure.log"
+      },
+      {
+        "label": "build",
+        "command": [
+          "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+          "--build",
+          "Z:\\local_only\\stage6dr_native\\build",
+          "--parallel",
+          "2"
+        ],
+        "exit_code": 0,
+        "wall_s": 5.0829110000049695,
+        "log": "build-02-build.log"
+      },
+      {
+        "label": "ctest",
+        "command": [
+          "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\ctest.exe",
+          "--test-dir",
+          "Z:\\local_only\\stage6dr_native\\build",
+          "--output-on-failure"
+        ],
+        "exit_code": 0,
+        "wall_s": 0.7108986000021105,
+        "log": "build-03-ctest.log"
+      }
+    ]
+  },
+  "new_planning_searches": 0,
+  "h1_authorized": false,
+  "scope": "Only interface acceptance; stop for researcher review"
+}

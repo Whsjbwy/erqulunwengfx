@@ -9,8 +9,6 @@ import subprocess
 import time
 from pathlib import Path
 
-from gsunlight_repro.stage6c.acceptance import environment
-
 
 def main() -> None:
     """Preserve attempts in a dedicated6DR root and run four explicit CTests."""
@@ -35,13 +33,14 @@ def main() -> None:
     root.mkdir(parents=True, exist_ok=True)
     temporary = root / "tmp"
     temporary.mkdir(exist_ok=True)
+    llvm = dep / "packages/llvm-mingw-20261104-ucrt-x86_64/bin"
+    # Preserve a caller-provided ASCII alias for compiler discovery on Windows.
     child_env = {
         **os.environ,
-        **environment(dep),
+        "PATH": str(llvm.absolute()) + os.pathsep + os.environ["PATH"],
         "TEMP": str(temporary),
         "TMP": str(temporary),
     }
-    llvm = dep / "packages/llvm-mingw-20261104-ucrt-x86_64/bin"
     cmake = dep / "packages/cmake-3.31.8-windows-x86_64/bin/cmake.exe"
     configure = [
         str(cmake),

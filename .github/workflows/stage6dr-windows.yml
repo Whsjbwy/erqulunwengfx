@@ -1,0 +1,48 @@
+name: Stage 6D-R Windows model-interface acceptance
+on:
+  pull_request:
+    branches: [research/auv-h1-admission-stage6d]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  deterministic-interface-only:
+    runs-on: windows-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - name: Install existing Python dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Build pinned official OMPL and frozen6B adapter
+        run: python scripts/stage6b_build.py --local-root "$env:RUNNER_TEMP/auv-dependencies" --jobs 2
+      - name: Build isolated repair and retain original failure test
+        run: python scripts/stage6dr_build.py --dependency-root "$env:RUNNER_TEMP/auv-dependencies" --local-root "$env:RUNNER_TEMP/auv-stage6dr-native"
+      - name: Generate thirteen frozen deterministic fixtures
+        run: python -m gsunlight_repro.stage6b.runner accept --executable "$env:RUNNER_TEMP/auv-dependencies/build/adapter/auv6b_runner.exe" --build-root "$env:RUNNER_TEMP/auv-dependencies" --local-root "$env:RUNNER_TEMP/auv-frozen-fixtures" --output results/stage6b/ci-stage6dr-fixtures
+      - name: Reproduce original failure and accept deterministic repaired interface
+        run: python -m gsunlight_repro.stage6dr.acceptance --executable "$env:RUNNER_TEMP/auv-stage6dr-native/build/auv6dr_runner.exe" --original-probe "$env:RUNNER_TEMP/auv-stage6dr-native/build/auv6dr_original_probe.exe" --dependency-root "$env:RUNNER_TEMP/auv-dependencies" --build-root "$env:RUNNER_TEMP/auv-stage6dr-native" --legacy-root "$env:RUNNER_TEMP/auv-frozen-fixtures" --local-root "$env:RUNNER_TEMP/auv-stage6dr-runs" --output results/stage6dr/ci-validation
+      - name: Actual checks and separate exact HEAD verdicts
+        env:
+          STAGE6DR_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: python scripts/stage6dr_quality.py --dependency-root "$env:RUNNER_TEMP/auv-dependencies" --build-root "$env:RUNNER_TEMP/auv-stage6dr-native" --acceptance-root results/stage6dr/ci-validation --output results/stage6dr/ci-quality
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: stage6dr-windows-model-interface-evidence
+          path: |
+            results/stage6dr/ci-validation/
+            results/stage6dr/ci-quality/
+          if-no-files-found: warn
+      - name: Show native diagnostics on failure
+        if: failure()
+        run: |
+          foreach ($taskRoot in @("$env:RUNNER_TEMP/auv-dependencies", "$env:RUNNER_TEMP/auv-stage6dr-native")) {
+            $taskLogs = Get-ChildItem -LiteralPath $taskRoot -Filter 'build-*.log' -ErrorAction SilentlyContinue | Sort-Object Name | Select-Object -Last 2
+            foreach ($taskLog in $taskLogs) { Get-Content -LiteralPath $taskLog.FullName -Tail 45 }
+          }

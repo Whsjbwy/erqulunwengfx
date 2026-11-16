@@ -1,0 +1,1738 @@
+[
+  {
+    "group": "boundary",
+    "case_id": "original_interval_89",
+    "mode": "replay",
+    "initial": [
+      16.82514484132251,
+      22.0,
+      6.657280095916341,
+      0.0,
+      0.3403392041388945,
+      1.0
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0,
+        "pitch_rate_rad_s": 0.08726646259971647,
+        "duration_s": 0.1
+      }
+    ],
+    "source_interval_offset": 89
+  },
+  {
+    "group": "boundary",
+    "case_id": "neg_nominal_ulp_-8",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      -0.34906585039886545,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "neg_nominal_ulp_-4",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      -0.3490658503988657,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "neg_nominal_ulp_-1",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      -0.34906585039886584,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "neg_nominal_ulp_+0",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      -0.3490658503988659,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "neg_nominal_ulp_+1",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      -0.34906585039886595,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "neg_nominal_ulp_+4",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      -0.3490658503988661,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "neg_nominal_ulp_+8",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      -0.34906585039886634,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "neg_envelope_ulp_-4",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      -0.34906585039986565,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "neg_envelope_ulp_-1",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      -0.3490658503998658,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "neg_envelope_ulp_+0",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      -0.3490658503998659,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "neg_envelope_ulp_+1",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      -0.34906585039986593,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "neg_envelope_ulp_+4",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      -0.3490658503998661,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "neg_offset_0",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      -0.3490658503993659,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "neg_offset_1",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      -0.3490658503998559,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "neg_offset_2",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      -0.3490658504008659,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "neg_offset_3",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      -0.3490658513988659,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "neg_nominal_zero_control",
+    "mode": "replay",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      -0.3490658503988659,
+      1
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 0.1
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "neg_envelope_zero_control",
+    "mode": "replay",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      -0.3490658503998659,
+      1
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 0.1
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "neg_candidate_one_ulp_outside",
+    "mode": "replay",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      -0.3490658503998659,
+      1
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": -5.551115123125783e-16,
+        "duration_s": 0.1
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "neg_yaw_legal",
+    "mode": "replay",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0,
+      1
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": -0.17453292519943295,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 0.1
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "neg_yaw_illegal",
+    "mode": "replay",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0,
+      1
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": -0.17453292619943295,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 0.1
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "neg_pitch_legal",
+    "mode": "replay",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0,
+      1
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": -0.08726646259971647,
+        "duration_s": 0.1
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "neg_pitch_illegal",
+    "mode": "replay",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0,
+      1
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": -0.08726646359971647,
+        "duration_s": 0.1
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "pos_nominal_ulp_-8",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0.34906585039886545,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "pos_nominal_ulp_-4",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0.3490658503988657,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "pos_nominal_ulp_-1",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0.34906585039886584,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "pos_nominal_ulp_+0",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0.3490658503988659,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "pos_nominal_ulp_+1",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0.34906585039886595,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "pos_nominal_ulp_+4",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0.3490658503988661,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "pos_nominal_ulp_+8",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0.34906585039886634,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "pos_envelope_ulp_-4",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0.34906585039986565,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "pos_envelope_ulp_-1",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0.3490658503998658,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "pos_envelope_ulp_+0",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0.3490658503998659,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "pos_envelope_ulp_+1",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0.34906585039986593,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "pos_envelope_ulp_+4",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0.3490658503998661,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "pos_offset_0",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0.3490658503993659,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "pos_offset_1",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0.3490658503998559,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "pos_offset_2",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0.3490658504008659,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "pos_offset_3",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0.3490658513988659,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "pos_nominal_zero_control",
+    "mode": "replay",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0.3490658503988659,
+      1
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 0.1
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "pos_envelope_zero_control",
+    "mode": "replay",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0.3490658503998659,
+      1
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 0.1
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "pos_candidate_one_ulp_outside",
+    "mode": "replay",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0.3490658503998659,
+      1
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 5.551115123125783e-16,
+        "duration_s": 0.1
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "pos_yaw_legal",
+    "mode": "replay",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0,
+      1
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.17453292519943295,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 0.1
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "pos_yaw_illegal",
+    "mode": "replay",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0,
+      1
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.17453292619943295,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 0.1
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "pos_pitch_legal",
+    "mode": "replay",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0,
+      1
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.08726646259971647,
+        "duration_s": 0.1
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "pos_pitch_illegal",
+    "mode": "replay",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0,
+      1
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.08726646359971647,
+        "duration_s": 0.1
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "near_zero_0",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "near_zero_1",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      5e-324,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "near_zero_2",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      -5e-324,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "near_zero_3",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      1e-16,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "near_zero_4",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      -1e-16,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "near_zero_5",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      1e-12,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "near_zero_6",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      -1e-12,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "invalid_speed_0",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0,
+      0.0
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "invalid_speed_1",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0,
+      1.1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "canonical_yaw_lower",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      -3.141592653589793,
+      0,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "noncanonical_yaw_upper",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      3.141592653589793,
+      0,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "nonfinite_pitch_0",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      "nan",
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "nonfinite_pitch_1",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      "+inf",
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "nonfinite_pitch_2",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      "-inf",
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "nonfinite_yaw",
+    "mode": "inspect",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      "nan",
+      0,
+      1
+    ],
+    "controls": [],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "nonfinite_yaw_control",
+    "mode": "replay",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0,
+      1
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": "nan",
+        "pitch_rate_rad_s": 0,
+        "duration_s": 0.1
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "nonfinite_pitch_control",
+    "mode": "replay",
+    "initial": [
+      5.0,
+      5.0,
+      5.0,
+      0,
+      0,
+      1
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0,
+        "pitch_rate_rad_s": "+inf",
+        "duration_s": 0.1
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "mid_segment_reject",
+    "mode": "replay",
+    "initial": [
+      29.06704055326371,
+      19.137751231382367,
+      15.25,
+      -0.7853981633974483,
+      0.0,
+      1.0
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 0.1
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "face_contact",
+    "mode": "replay",
+    "initial": [
+      28.63019609728144,
+      20.25,
+      15.25,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 0.1
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "edge_contact",
+    "mode": "replay",
+    "initial": [
+      29.03140237149191,
+      19.03140237149191,
+      15.25,
+      0.7853981633974483,
+      0.0,
+      1.0
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 0.1
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "corner_contact",
+    "mode": "replay",
+    "initial": [
+      29.046117545895996,
+      19.046117545895996,
+      14.762136048531874,
+      0.7853981633974483,
+      0.17453292519943295,
+      1.0
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 0.1
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "boundary",
+    "case_id": "workspace_escape",
+    "mode": "replay",
+    "initial": [
+      1.319803902718557,
+      5,
+      5,
+      -3.141592653589793,
+      0,
+      1
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 0.1
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "legacy13",
+    "case_id": "straight",
+    "mode": "replay",
+    "initial": [
+      20,
+      20,
+      15,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 20.0
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "legacy13",
+    "case_id": "left_arc",
+    "mode": "replay",
+    "initial": [
+      20,
+      20,
+      15,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.17453292519943295,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 9.0
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "legacy13",
+    "case_id": "right_arc",
+    "mode": "replay",
+    "initial": [
+      20,
+      20,
+      15,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": -0.17453292519943295,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 9.0
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "legacy13",
+    "case_id": "climb",
+    "mode": "replay",
+    "initial": [
+      20,
+      20,
+      15,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.04363323129985824,
+        "duration_s": 4.0
+      },
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 8.0
+      },
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": -0.04363323129985824,
+        "duration_s": 4.0
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "legacy13",
+    "case_id": "dive",
+    "mode": "replay",
+    "initial": [
+      20,
+      20,
+      15,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": -0.04363323129985824,
+        "duration_s": 4.0
+      },
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 8.0
+      },
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.04363323129985824,
+        "duration_s": 4.0
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "legacy13",
+    "case_id": "combined",
+    "mode": "replay",
+    "initial": [
+      20,
+      20,
+      15,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.08726646259971647,
+        "pitch_rate_rad_s": 0.03490658503988659,
+        "duration_s": 4.0
+      },
+      {
+        "yaw_rate_rad_s": -0.08726646259971647,
+        "pitch_rate_rad_s": -0.03490658503988659,
+        "duration_s": 4.0
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "legacy13",
+    "case_id": "yaw_rate_reject",
+    "mode": "replay",
+    "initial": [
+      20,
+      20,
+      15,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.19198621771937624,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 1.0
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "legacy13",
+    "case_id": "pitch_rate_reject",
+    "mode": "replay",
+    "initial": [
+      20,
+      20,
+      15,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.10471975511965978,
+        "duration_s": 1.0
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "legacy13",
+    "case_id": "pitch_angle_reject",
+    "mode": "replay",
+    "initial": [
+      20,
+      20,
+      15,
+      0.0,
+      0.33161255787892263,
+      1.0
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.08726646259971647,
+        "duration_s": 0.4
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "legacy13",
+    "case_id": "obstacle_reject",
+    "mode": "replay",
+    "initial": [
+      20,
+      20,
+      15,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 20.0
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "legacy13",
+    "case_id": "mission_band_reject",
+    "mode": "replay",
+    "initial": [
+      20,
+      20,
+      15,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.04363323129985824,
+        "duration_s": 4.0
+      },
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 8.0
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "legacy13",
+    "case_id": "hover_not_in_model",
+    "mode": "replay",
+    "initial": [
+      20,
+      20,
+      15,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 1.0
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "legacy13",
+    "case_id": "mid_segment_reject",
+    "mode": "replay",
+    "initial": [
+      29.06704055326371,
+      19.137751231382367,
+      15.25,
+      -0.7853981633974483,
+      0.0,
+      1.0
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 0.1
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "maps6",
+    "case_id": "terrain_1",
+    "mode": "replay",
+    "initial": [
+      8,
+      22,
+      6,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 5.0
+      },
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.08726646259971647,
+        "duration_s": 4.0
+      },
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 18.0
+      },
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": -0.08726646259971647,
+        "duration_s": 4.0
+      },
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 6.0
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "maps6",
+    "case_id": "wide_1",
+    "mode": "replay",
+    "initial": [
+      8,
+      12,
+      10,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 6.0
+      },
+      {
+        "yaw_rate_rad_s": 0.17453292519943295,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 6.0
+      },
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 6.0
+      },
+      {
+        "yaw_rate_rad_s": -0.17453292519943295,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 6.0
+      },
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 4.0
+      },
+      {
+        "yaw_rate_rad_s": -0.17453292519943295,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 6.0
+      },
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 6.0
+      },
+      {
+        "yaw_rate_rad_s": 0.17453292519943295,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 6.0
+      },
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 4.0
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "maps6",
+    "case_id": "wide_2",
+    "mode": "replay",
+    "initial": [
+      8,
+      14,
+      10,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 6.0
+      },
+      {
+        "yaw_rate_rad_s": 0.17453292519943295,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 6.0
+      },
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 6.0
+      },
+      {
+        "yaw_rate_rad_s": -0.17453292519943295,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 6.0
+      },
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 4.0
+      },
+      {
+        "yaw_rate_rad_s": -0.17453292519943295,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 6.0
+      },
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 6.0
+      },
+      {
+        "yaw_rate_rad_s": 0.17453292519943295,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 6.0
+      },
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 4.0
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "maps6",
+    "case_id": "turn_1",
+    "mode": "replay",
+    "initial": [
+      8,
+      10,
+      10,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 10.0
+      },
+      {
+        "yaw_rate_rad_s": 0.17453292519943295,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 9.0
+      },
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 16.0
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "maps6",
+    "case_id": "turn_2",
+    "mode": "replay",
+    "initial": [
+      8,
+      10,
+      10,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 10.0
+      },
+      {
+        "yaw_rate_rad_s": 0.17453292519943295,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 9.0
+      },
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 16.0
+      }
+    ],
+    "source_interval_offset": 0
+  },
+  {
+    "group": "maps6",
+    "case_id": "terrain_2",
+    "mode": "replay",
+    "initial": [
+      8,
+      22,
+      6,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "controls": [
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 5.0
+      },
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.08726646259971647,
+        "duration_s": 4.0
+      },
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 18.0
+      },
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": -0.08726646259971647,
+        "duration_s": 4.0
+      },
+      {
+        "yaw_rate_rad_s": 0.0,
+        "pitch_rate_rad_s": 0.0,
+        "duration_s": 6.0
+      }
+    ],
+    "source_interval_offset": 0
+  }
+]

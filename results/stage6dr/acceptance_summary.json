@@ -1,0 +1,19 @@
+{
+  "local_model_interface_passed": true,
+  "adapter_id": "auv_pitch_contract_v1",
+  "original_failure_reproduced": true,
+  "boundary_cases": 69,
+  "legacy_cases": 13,
+  "legacy_accepted_intervals": 930,
+  "maps": 6,
+  "map_accepted_intervals": 2440,
+  "terrain_1_intervals": 370,
+  "measured_interval_attempts": 3398,
+  "maximum_position_error_m": 0,
+  "maximum_rk4_error_m": 1.2079226507921703e-13,
+  "old_new_cases_compared": 17,
+  "new_planning_searches": 0,
+  "planning_searches_authorized": 0,
+  "h1_authorized": false,
+  "final_head_ci": "Required separately; exact-head runtime artifact binds final MODEL-INTERFACE verdict"
+}
