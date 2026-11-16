@@ -1,0 +1,7 @@
+map,family,registered,occupied_voxels,status,native_attempted,joint_certified_witness
+wide_1,wide_bypass,True,15360,native_and_independent_passed,True,True
+wide_2,wide_bypass,True,15744,native_and_independent_passed,True,True
+turn_1,turning_corridor,True,451584,native_and_independent_passed,True,True
+turn_2,turning_corridor,True,476000,native_and_independent_passed,True,True
+terrain_1,terrain_climb,True,108600,native_interface_exception,True,False
+terrain_2,terrain_climb,True,119200,not_run_after_stop,False,False

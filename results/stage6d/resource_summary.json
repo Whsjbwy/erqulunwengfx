@@ -1,0 +1,29 @@
+{
+  "local_directories": {
+    "stage6d_runs": {
+      "files": 114,
+      "bytes": 12964583
+    },
+    "stage6d_diagnostic": {
+      "files": 6,
+      "bytes": 18188
+    },
+    "stage6d_native": {
+      "files": 84,
+      "bytes": 4616835
+    },
+    "stage6d_probe": {
+      "files": 25,
+      "bytes": 2109719
+    },
+    "stage6d_quality": {
+      "files": 27,
+      "bytes": 88535
+    }
+  },
+  "new_searches": 0,
+  "planning_RSS_bytes": null,
+  "GPU_used": false,
+  "old_maps_and_dependencies_reused": true,
+  "full_traces_copied_from_old_stages": false
+}

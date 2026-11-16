@@ -1,0 +1,16 @@
+{
+  "registered": 54,
+  "actually_started": 0,
+  "actually_completed": 0,
+  "M": null,
+  "E": 0,
+  "S": null,
+  "M_over_K": null,
+  "reason": "BLOCKED: frozen model/SI pitch predicates differ",
+  "witness_registered": 6,
+  "witness_native_attempted": 5,
+  "witness_joint_passed": 4,
+  "witness_native_exception": 1,
+  "witness_not_run": 1,
+  "no_rerun_or_seed_selection": true
+}

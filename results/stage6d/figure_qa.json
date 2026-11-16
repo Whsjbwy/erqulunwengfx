@@ -1,0 +1,10 @@
+{
+  "status": "passed actual visual inspection",
+  "checked_with": "functions.view_image: all three final figures",
+  "notes": "All21 paths/four versions shown. Initial faint3D obstacle surface replaced with actual XY/XZ occupancy slices and the final map layout reinspected. terrain_1 is explicitly Python-only diagnosis and terrain_2 not run. No new simulation or search.",
+  "files": [
+    "d1_all21_trajectories.png",
+    "d2_maps_and_witness_status.png",
+    "pitch_mapping_failure.png"
+  ]
+}

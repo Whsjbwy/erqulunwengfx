@@ -220,6 +220,9 @@ def run(
     pilot_only: bool = False,
 ) -> dict[str, Any]:
     """Reuse three pilots verbatim; reject partial directories instead of rerunning."""
+    failure = output / "model_mapping_failure.json"
+    if failure.exists() and not read_json(failure)["model_mapping_gate_passed"]:
+        raise RuntimeError("Stage6D model mapping is BLOCKED; no planning is allowed")
     if not read_json(output / "d2_witness_acceptance.json")["passed"]:
         raise RuntimeError("All six control witnesses must pass before searching")
     cfg = read_config("stage6d_protocol.json")["d2"]

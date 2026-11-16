@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "script_compile",
+      "command": [
+        "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+        "-m",
+        "compileall",
+        "-q",
+        "scripts/stage6d_checks.py"
+      ],
+      "exit_code": 0,
+      "wall_s": 0.08564089999890712,
+      "output": ""
+    },
+    {
+      "name": "script_ruff",
+      "command": [
+        "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "scripts/stage6d_checks.py"
+      ],
+      "exit_code": 0,
+      "wall_s": 0.09632260000034876,
+      "output": "All checks passed!\n"
+    },
+    {
+      "name": "script_format",
+      "command": [
+        "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "scripts/stage6d_checks.py"
+      ],
+      "exit_code": 0,
+      "wall_s": 0.099102899999707,
+      "output": "1 file already formatted\n"
+    },
+    {
+      "name": "ctest_frozen_two",
+      "command": [
+        "D:\\2区论文复现\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\ctest.exe",
+        "--test-dir",
+        "D:\\2区论文复现\\local_only\\stage6d_native\\build",
+        "--output-on-failure"
+      ],
+      "exit_code": 0,
+      "wall_s": 0.093162699999084,
+      "output": "Internal ctest changing into directory: D:/2区论文复现/local_only/stage6d_native/build\nTest project D:/2区论文复现/local_only/stage6d_native/build\n    Start 1: frozen_model_geometry\n1/2 Test #1: frozen_model_geometry ............   Passed    0.02 sec\n    Start 2: official_adapter_metric\n2/2 Test #2: official_adapter_metric ..........   Passed    0.01 sec\n\n100% tests passed, 0 tests failed out of 2\n\nTotal Test time (real) =   0.04 sec\n"
+    },
+    {
+      "name": "ctest_detect_known_gap",
+      "command": [
+        "D:\\2区论文复现\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\ctest.exe",
+        "--test-dir",
+        "D:\\2区论文复现\\local_only\\stage6d_probe\\build",
+        "--output-on-failure"
+      ],
+      "exit_code": 0,
+      "wall_s": 0.07918430000063381,
+      "output": "Internal ctest changing into directory: D:/2区论文复现/local_only/stage6d_probe/build\nTest project D:/2区论文复现/local_only/stage6d_probe/build\n    Start 1: detect_frozen_pitch_contract_gap\n1/1 Test #1: detect_frozen_pitch_contract_gap ...   Passed    0.02 sec\n\n100% tests passed, 0 tests failed out of 1\n\nTotal Test time (real) =   0.02 sec\n"
+    }
+  ],
+  "previous_actual_pytest_passed": 529,
+  "pytest_repeated": false,
+  "retained_failed_check": "final_checks.json",
+  "cause": "Relative DLL PATH failed after CTest changed its working directory; reuse absolute frozen environment helper.",
+  "scientific_model_gate_passed": false
+}

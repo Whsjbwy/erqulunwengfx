@@ -12,6 +12,7 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 from gsunlight_repro.stage5a.analysis import write_csv
+from gsunlight_repro.stage6c.acceptance import environment as native_environment
 from gsunlight_repro.stage6d.common import PUBLIC, save_json
 
 
@@ -22,11 +23,12 @@ def main() -> None:
     parser.add_argument("--local-root", type=Path, required=True)
     parser.add_argument("--dependency-root", type=Path, required=True)
     parser.add_argument("--build-root", type=Path, required=True)
+    parser.add_argument("--probe-root", type=Path)
     args = parser.parse_args()
     folder = args.local_root / args.phase
     folder.mkdir(parents=True, exist_ok=False)
     llvm = args.dependency_root / "packages/llvm-mingw-20261104-ucrt-x86_64/bin"
-    environment = {**os.environ, "PATH": str(llvm) + os.pathsep + os.environ["PATH"]}
+    environment = {**os.environ, **native_environment(args.dependency_root)}
     tests = (
         ["tests/test_stage6d_reference.py", "tests/test_stage6d_maps.py"]
         if args.phase == "gate"
@@ -62,6 +64,35 @@ def main() -> None:
             ],
         ),
     ]
+    if args.phase == "final":
+        if args.probe_root is None:
+            raise ValueError("Final checks require the separate diagnostic build")
+        commands[-1][1].append("native/stage6d/interface_probe.cpp")
+        ctest = (
+            args.dependency_root / "packages/cmake-3.31.8-windows-x86_64/bin/ctest.exe"
+        )
+        commands.extend(
+            [
+                (
+                    "ctest_frozen_two",
+                    [
+                        str(ctest),
+                        "--test-dir",
+                        str(args.build_root / "build"),
+                        "--output-on-failure",
+                    ],
+                ),
+                (
+                    "ctest_detect_known_gap",
+                    [
+                        str(ctest),
+                        "--test-dir",
+                        str(args.probe_root / "build"),
+                        "--output-on-failure",
+                    ],
+                ),
+            ]
+        )
     evidence = []
     for name, command in commands:
         started = time.perf_counter()

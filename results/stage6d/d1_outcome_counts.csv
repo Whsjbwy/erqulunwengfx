@@ -1,0 +1,13 @@
+version,reason,strict_success,count
+A,goal_reached,True,11
+A,goal_reached_required_margin_violated,False,4
+A,tracking_error_limit,False,6
+B,goal_reached,True,11
+B,goal_reached_required_margin_violated,False,4
+B,tracking_error_limit,False,6
+C,goal_reached,True,14
+C,goal_reached_required_margin_violated,False,4
+C,tracking_error_limit,False,3
+D,goal_reached,True,14
+D,goal_reached_required_margin_violated,False,4
+D,tracking_error_limit,False,3

@@ -1,0 +1,88 @@
+{
+  "passed": false,
+  "checks": [
+    {
+      "name": "compile",
+      "command": [
+        "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "tests",
+        "scripts"
+      ],
+      "exit_code": 0,
+      "wall_s": 0.1771454999998241,
+      "output": ""
+    },
+    {
+      "name": "pytest",
+      "command": [
+        "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "--junitxml=..\\local_only\\stage6d_quality\\final\\pytest.xml"
+      ],
+      "exit_code": 0,
+      "wall_s": 14.5596641000011,
+      "output": "........................................................................ [ 13%]\r\n........................................................................ [ 27%]\r\n........................................................................ [ 40%]\r\n........................................................................ [ 54%]\r\n........................................................................ [ 68%]\r\n........................................................................ [ 81%]\r\n........................................................................ [ 95%]\r\n.........................                                                [100%]\r\n529 passed in 14.03s\r\n"
+    },
+    {
+      "name": "ruff",
+      "command": [
+        "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "."
+      ],
+      "exit_code": 0,
+      "wall_s": 0.12014620000081777,
+      "output": "All checks passed!\n"
+    },
+    {
+      "name": "format",
+      "command": [
+        "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "."
+      ],
+      "exit_code": 0,
+      "wall_s": 0.11997479999990901,
+      "output": "263 files already formatted\n"
+    },
+    {
+      "name": "clang-format",
+      "command": [
+        "..\\local_only\\stage6b_native\\packages\\llvm-mingw-20261104-ucrt-x86_64\\bin\\clang-format.exe",
+        "--dry-run",
+        "--Werror",
+        "-style={BasedOnStyle: LLVM, IndentWidth: 4, ColumnLimit: 100}",
+        "native/stage6c/adapter.hpp",
+        "native/stage6c/adapter_tests.cpp",
+        "native/stage6c/ompl_runner.cpp",
+        "native/stage6d/interface_probe.cpp"
+      ],
+      "exit_code": 0,
+      "wall_s": 0.05120870000064315,
+      "output": ""
+    },
+    {
+      "name": "ctest_frozen_two",
+      "command": [
+        "..\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\ctest.exe",
+        "--test-dir",
+        "..\\local_only\\stage6d_native\\build",
+        "--output-on-failure"
+      ],
+      "exit_code": 8,
+      "wall_s": 0.1377252000002045,
+      "output": "Internal ctest changing into directory: D:/2区论文复现/local_only/stage6d_native/build\nTest project D:/2区论文复现/local_only/stage6d_native/build\n    Start 1: frozen_model_geometry\n1/2 Test #1: frozen_model_geometry ............Exit code 0xc0000135\n***Exception:   0.02 sec\n\n    Start 2: official_adapter_metric\n2/2 Test #2: official_adapter_metric ..........Exit code 0xc0000135\n***Exception:   0.02 sec\n\n\n0% tests passed, 2 tests failed out of 2\n\nTotal Test time (real) =   0.04 sec\n\nThe following tests FAILED:\n\t  1 - frozen_model_geometry (Exit code 0xc0000135\n)\n\t  2 - official_adapter_metric (Exit code 0xc0000135\n)\nErrors while running CTest\n"
+    }
+  ]
+}
