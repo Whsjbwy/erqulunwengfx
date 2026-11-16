@@ -1,0 +1,10 @@
+{
+  "decision": "PIVOT",
+  "scope": "Current H1 clearance-attitude duration hypothesis on the registered obstacle development tasks",
+  "basis": "Frozen final-certificate SST first succeeds on17/18 and reaches>=2/3 on6/6 maps; SST anytime reaches the preregistered>=5/6 threshold. Available-incumbent disclosure strengthens rather than weakens this counterevidence.",
+  "model_safety_gate": "PASS for the current frozen five-state model and actual repaired planner entry",
+  "novelty": "Not established; DIRT/RDG overlap is real but mathematical equivalence is not proven; Feng full text remains inaccessible",
+  "independent_generalization_verified": false,
+  "h1_implementation_authorized": false,
+  "one_next_action": "Submit a separately reviewed research-problem proposal on safe native-trajectory to tracking-reference contracts; no further experiment or H1 implementation now"
+}

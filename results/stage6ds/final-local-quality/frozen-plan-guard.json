@@ -1,0 +1,5 @@
+{
+  "exit_code": 1,
+  "stderr": "Only deterministic inspect/replay modes are permitted\n",
+  "old_entry_still_rejects_plan": true
+}

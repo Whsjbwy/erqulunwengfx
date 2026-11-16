@@ -1,0 +1,48 @@
+{
+  "complete": true,
+  "registered": 54,
+  "K": 54,
+  "M": 47,
+  "Gref": 47,
+  "E": 47,
+  "S": 32,
+  "M_K": 0.8703703703703703,
+  "S_E": 0.6808510638297872,
+  "S_K": 0.5925925925925926,
+  "native_exact_before_budget": 49,
+  "late_native_exact": 2,
+  "at_least_one_independent_certificate_before10": 49,
+  "primary_M_definition": "Unchanged frozen6D final-return certificate chain",
+  "availability_definition": "Also disclose any first/final incumbent independently certified before10s; no additional tracking or replanning",
+  "strong_maps_by_condition": {
+    "rrt_first": [
+      "wide_1",
+      "wide_2",
+      "turn_1",
+      "turn_2",
+      "terrain_1",
+      "terrain_2"
+    ],
+    "sst_radius2_first": [
+      "wide_1",
+      "wide_2",
+      "turn_1",
+      "turn_2",
+      "terrain_1",
+      "terrain_2"
+    ],
+    "sst_radius2_anytime": [
+      "wide_1",
+      "wide_2",
+      "turn_1",
+      "terrain_1",
+      "terrain_2"
+    ]
+  },
+  "paired_strict_cost_cases": 15,
+  "paired_anytime_improvements": 14,
+  "maximum_native_rss_bytes": 66342912,
+  "maximum_job_record_bytes": 377839,
+  "independent_test_maps": 0,
+  "uncertainty": "Six development map clusters, three fixed seeds. Leave-one-map-out range is descriptive sensitivity, not a confidence interval or significance test."
+}

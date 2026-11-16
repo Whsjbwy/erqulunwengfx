@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "jobs": 54,
+  "native_intervals": 24313,
+  "additional_first_incumbent_intervals": 6832,
+  "los_intervals": 21283,
+  "maximum_rk4_error_m": 3.574849180676073e-14,
+  "maximum_los_position_error_m": 0.0,
+  "strict_safety_false_positives": 0,
+  "new_searches": 0,
+  "original_clocks_unchanged": true
+}

@@ -1,0 +1,28 @@
+{
+  "stage": "6D-S",
+  "base_commit": "e02cc05dd288b329d0ab11e783bceb0300e1e5ad",
+  "branch": "research/auv-obstacle-baselines-stage6ds",
+  "target": "fix/auv-stage6dr-pitch-contract",
+  "inherited_protocol": "stage6d_protocol.json:d2",
+  "inherited_maps": "stage6d_maps.json",
+  "adapter_id": "auv_pitch_contract_v1",
+  "native_entry": "auv6ds_runner",
+  "data_role": "obstacle_development_only",
+  "p1": {
+    "boundary_cases": 69,
+    "legacy_cases": 13,
+    "witness_maps": 6,
+    "witness_intervals": 2440,
+    "terrain_1_intervals": 370,
+    "planner_identity": "Construct official RRT/SST with the exact SI factory used by plan; inspect real bounds and signed tolerated states. Check identity again in each actual plan output. No solve during acceptance."
+  },
+  "pilot": "The first three original roster entries: wide_1 seed1, three conditions. Audit identity, inputs, certificates, clocks, RSS and record bytes, then reuse complete records verbatim. Approximate/no solution is not a reason to change seeds or block a valid pilot.",
+  "timing": "Inherit original8s native,10s planning including serialization/process and independent first/final certificates,20s reference/LOS+audit,30s combined. Normal late certificates remain failures; absent, inconsistent or nonmonotone clocks stop the batch. Native event clocks are not Python certificate times.",
+  "execution": "Frozen6B dense reference plus independently certified goal bridge and unchanged5AF TerminalLOS. No6D reference variants.",
+  "safety_stop": "Any model/SI, independent certificate, clock or resource inconsistency stops subsequent search. Retain a complete54-row ledger with unrun entries distinguished from failures; never retry partial invocations.",
+  "scientific_decision": "Exactly GO-to-prototype, PIVOT or BLOCKED with evidence boundaries. GO requires a concrete mechanism bottleneck and verified nearest-method difference, not merely low success. No H1 implementation even after GO.",
+  "maximum_random_searches": 54,
+  "h1_implementation_authorized": false,
+  "ci": "Final exact PR HEAD on Windows; official source build, deterministic actual-entry acceptance and full engineering checks. No extra stochastic CI experiments.",
+  "storage": "Only new stage6ds paths; reuse verified existing maps/dependencies, single native and independent trace records outside Git. No extra file checksum manifests."
+}
