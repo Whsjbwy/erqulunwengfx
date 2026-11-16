@@ -8,6 +8,8 @@ import subprocess
 from pathlib import Path
 from typing import Any
 
+import numpy as np
+
 from ..stage5a.analysis import write_csv
 from ..stage5a.maps import ROOT
 from ..stage6b.replay import audit_controls
@@ -15,6 +17,57 @@ from ..stage6c.acceptance import run as accept_interface
 from ..stage6c.common import boolean, read_csv, read_json, saved_record, scenarios
 from ..stage6c.reference import certify_los
 from .common import BASE, PUBLIC, save_json
+
+
+def recover_interface(source: Path, local: Path, output: Path) -> dict[str, Any]:
+    """Recover completed raw calls after a summary-directory write failure."""
+    names = {path.name for path in (source / "acceptance").iterdir()}
+    if (
+        len(names) != 13
+        or {path.name for path in (local / "acceptance").iterdir()} != names
+    ):
+        raise RuntimeError("Cannot recover incomplete interface calls")
+    rows = []
+    for name in sorted(names):
+        old = read_json(source / "acceptance" / name / "output.json")
+        actual = read_json(local / "acceptance" / name / "output.json")
+        if read_json(source / "acceptance" / name / "input.json") != read_json(
+            local / "acceptance" / name / "input.json"
+        ):
+            raise RuntimeError("Recovered request differs from the frozen fixture")
+        expected = np.asarray([r["following"] for r in old["trace"] if r["accepted"]])
+        states = np.asarray(actual["states"])
+        if (
+            expected.shape != states.shape
+            or old["reason"] != actual["reason"]
+            or actual["ompl_version"] != "2.0.2"
+        ):
+            raise RuntimeError("Recovered actual interface disagrees")
+        error = float(np.max(np.abs(expected - states))) if expected.size else 0.0
+        if error > 1e-10:
+            raise RuntimeError("Recovered state mapping differs")
+        rows.append(
+            {
+                "case": name,
+                "passed": True,
+                "accepted_intervals": len(states),
+                "maximum_state_error": error,
+                "actual_propagator_calls": actual["propagator_calls"],
+            }
+        )
+    write_csv(output / "c2_interface_cases.csv", rows)
+    summary = {
+        "passed": True,
+        "cases": 13,
+        "accepted_intervals": sum(r["accepted_intervals"] for r in rows),
+        "actual_propagator_calls": sum(r["actual_propagator_calls"] for r in rows),
+        "maximum_state_error": max(r["maximum_state_error"] for r in rows),
+        "recovered_after_summary_directory_failure": True,
+        "new_searches": 0,
+        "repeated_native_calls": 0,
+    }
+    save_json(output / "c2_interface_acceptance.json", summary)
+    return summary
 
 
 def run(
@@ -49,8 +102,14 @@ def run(
         or status["commands"][-1]["exit_code"]
     ):
         raise RuntimeError("Fresh native build/CTest not passed")
-    interface = accept_interface(
-        source, executable, dependency, build / "interface", output / "d0_interface"
+    interface_output = output / "d0_interface"
+    interface_output.mkdir(parents=True, exist_ok=True)
+    interface = (
+        recover_interface(source, build / "interface", interface_output)
+        if (build / "interface").exists()
+        else accept_interface(
+            source, executable, dependency, build / "interface", interface_output
+        )
     )
     cases, rows, totals = scenarios(), [], {}
     for stage, folder in (("6b", source), ("6c", previous)):

@@ -1,0 +1,7 @@
+{
+  "early_unit_test": {"result": "1 failed,13 passed", "cause": "New test used Scene.spec instead of the real Scene.specification", "fix": "Corrected the test field; actual14-case gate then passed", "full_separate_log_available": false},
+  "early_ruff": {"result": "new-file import/long-line issues", "fix": "Formatted only new6D files; actual gate check passed", "full_separate_log_available": false},
+  "first_d0": {"result": "FileNotFoundError while writing interface CSV", "cause": "New d0_interface output directory was not created", "actual_native_calls_completed": 13, "fix": "Create output directory; revalidate all13 preserved raw requests/states/reasons without invoking native again", "repeated_native_calls": 0, "failed_log": "local_only/stage6d_quality/d0.log", "successful_log": "local_only/stage6d_quality/d0_retry.log"},
+  "historical_data_changed": false,
+  "planning_searches_before_resolution": 0
+}
