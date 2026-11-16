@@ -1,0 +1,49 @@
+{
+  "stage": "6D",
+  "base_commit": "e39d88a8287d4ff98ce03a8afa1d59d3a7cc2c6d",
+  "branch": "research/auv-h1-admission-stage6d",
+  "target": "research/auv-control-baselines-stage6c",
+  "data_role": "development_only",
+  "d1": {
+    "source_paths": 21,
+    "versions": {"A": "saved_6B_dense_frozen", "B": "every_nonzero_edge_midpoint_v1", "C": "identical_A_vertices_arc_terminal_2m_v1", "D": "saved_6C_tail_geometry_v1"},
+    "maximum_new_replays": 42,
+    "terminal_distance_m": 2.0,
+    "geometry_absolute_tolerance_m": 1e-9,
+    "geometry_relative_tolerance": 1e-12,
+    "execution_cap_s": 20.0,
+    "pipeline_cap_s": 30.0,
+    "planning_charge": "Original 6B independent_certificate_finish_s; no new search",
+    "execution_engine": "Serial scoped guidance-factory injection into the unchanged stage5af.simulate; C changes switch_progress only. Restore factory even on exception.",
+    "causal_comparisons": "A-B isolates segmentation at the same polyline. A-C isolates terminal threshold at identical vertices. A-D is historical whole-tail geometry intervention; B-C changes two factors and is not an isolated causal contrast."
+  },
+  "d2": {
+    "map_config": "stage6d_maps.json",
+    "maps": ["wide_1", "wide_2", "turn_1", "turn_2", "terrain_1", "terrain_2"],
+    "seeds": [1, 2, 3],
+    "conditions": [
+      {"id": "rrt_first", "algorithm": "rrt", "mode": "first"},
+      {"id": "sst_radius2_first", "algorithm": "sst", "mode": "first"},
+      {"id": "sst_radius2_anytime", "algorithm": "sst", "mode": "anytime"}
+    ],
+    "selection_radius": 2.0,
+    "pruning_radius": 0.1,
+    "goal_bias": 0.05,
+    "propagation_min_steps": 1,
+    "propagation_max_steps": 50,
+    "search_cap_s": 8.0,
+    "planning_cap_s": 10.0,
+    "execution_cap_s": 20.0,
+    "pipeline_cap_s": 30.0,
+    "maximum_searches": 54,
+    "pilot": "wide_1 seed1 all three methods, reused verbatim in54; no reruns",
+    "resource_gate": {"minimum_available_ram_bytes": 4294967296, "maximum_native_rss_bytes": 1073741824, "maximum_job_record_bytes": 10485760},
+    "primary": "Strict budget-qualified native M/K",
+    "secondary": "Unchanged dense+bridge frozen TerminalLOS S/E and S/K; no selection of D1 variants for these runs",
+    "map_rule": "All six maps and supplied controls frozen before any search. Validate all six witnesses in actual SI plus independent Python and RK4. No witness controls in planner requests. No holdout maps and no additional radius sweep.",
+    "timing_rule": "Charge native startup/serialization/return and independent first/final control certification to10s. Store original clocks before subsequent validation can throw. Native event clocks are not independent Python certificate times.",
+    "decision_rule": "Six map clusters with three seeds each are development evidence, not independently validated performance. SST robust coverage >=5/6 maps with >=2/3 strict successes in each is preregistered as evidence against a broad baseline bottleneck; no GO based only on lower coverage."
+  },
+  "frozen": {"model": "five-state Euler-angle kinematics, not6DOF", "speed_m_s": 1.0, "yaw_rate_deg_s": 10.0, "pitch_rate_deg_s": 5.0, "pitch_bound_deg": 20.0, "step_s": 0.1, "goal_ball_m": 0.75, "effective_radius": "sqrt(1.04)+0.25", "clearance_truncation_m": 3.0},
+  "stop": "Stop on model/safety/clock inconsistency. Retain approximate, late, failed and anomalous records. No H1, current, MPC, RL, networks,6DOF, extra seeds,324-matrix or file checksum manifests. Finish with exactly GO/PIVOT/BLOCKED and one next action."
+}

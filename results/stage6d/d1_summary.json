@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "source_paths": 21,
+  "new_replays": 42,
+  "new_searches": 0,
+  "safety_false_positives": 0,
+  "success_by_version": {
+    "A": 11,
+    "B": 11,
+    "C": 14,
+    "D": 14
+  }
+}

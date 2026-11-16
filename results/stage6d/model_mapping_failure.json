@@ -1,0 +1,80 @@
+{
+  "actual_accepted_steps": 0,
+  "candidate_model_valid": true,
+  "candidate_pitch_minus_limit_rad": 2.7755575615628914e-16,
+  "candidate_point_geometry_valid": true,
+  "candidate_si_valid": false,
+  "candidate_space_bounds": false,
+  "candidate_state": [
+    16.919262144204044,
+    22.0,
+    6.691071660492486,
+    0.0,
+    0.3490658503988662,
+    1.0
+  ],
+  "continuous_geometry_relaxed": false,
+  "direct_interval_valid": true,
+  "direct_reason": "ok",
+  "expected_accepted_steps": 1,
+  "interval_index": 89,
+  "machine_epsilon": 2.220446049250313e-16,
+  "mismatch_detected": true,
+  "model_pitch_tolerance_rad": 1e-12,
+  "pitch_limit_rad": 0.3490658503988659,
+  "pitch_subspace_bounds": false,
+  "position_subspace_bounds": true,
+  "returned_state": [
+    16.82514484132251,
+    22.0,
+    6.657280095916341,
+    0.0,
+    0.3403392041388945,
+    1.0
+  ],
+  "source_state": [
+    16.82514484132251,
+    22.0,
+    6.657280095916341,
+    0.0,
+    0.3403392041388945,
+    1.0
+  ],
+  "time_start_s": 8.9,
+  "yaw_subspace_bounds": true,
+  "admission": "BLOCKED",
+  "model_mapping_gate_passed": false,
+  "independent_python_full_witness": {
+    "reason": "ok",
+    "accepted_intervals": 370,
+    "integrated_intervals": 370,
+    "last_accepted_state": [
+      43.752991462554576,
+      22.0,
+      13.538505900847111,
+      0.0,
+      -1.734723475976807e-17,
+      1.0
+    ],
+    "last_candidate_state": [
+      43.752991462554576,
+      22.0,
+      13.538505900847111,
+      0.0,
+      -1.734723475976807e-17,
+      1.0
+    ],
+    "goal_reached": true,
+    "final_goal_distance_m": 0.0,
+    "minimum_gap_lower_bound_m": 0.6060010584508584,
+    "independent_rk4_intervals": 3,
+    "maximum_rk4_error_m": 1.2079226507921703e-13,
+    "independent_replay_wall_s": 0.3523280999997951,
+    "first_rejected_position": null
+  },
+  "independent_python_intervals": 370,
+  "new_planning_searches": 0,
+  "frozen_code_modified": false,
+  "python_witness_scope": "Supplied-control model integration and continuous safety only; not a returned OMPL path or planner success",
+  "diagnosis_scope": "One failed witness plus a deterministic predicate counterexample; performance comparisons remain stopped"
+}

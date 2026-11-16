@@ -1,0 +1,86 @@
+{
+  "passed": true,
+  "pytest_cases": 14,
+  "checks": [
+    {
+      "name": "compile",
+      "command": [
+        "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "tests",
+        "scripts"
+      ],
+      "exit_code": 0,
+      "wall_s": 0.533762500001103,
+      "output": ""
+    },
+    {
+      "name": "pytest",
+      "command": [
+        "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_stage6d_reference.py",
+        "tests/test_stage6d_maps.py",
+        "--junitxml=..\\local_only\\stage6d_quality\\gate\\pytest.xml"
+      ],
+      "exit_code": 0,
+      "wall_s": 0.6625910999991902,
+      "output": "..............                                                           [100%]\r\n14 passed in 0.35s\r\n"
+    },
+    {
+      "name": "ruff",
+      "command": [
+        "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "src/gsunlight_repro/stage6d",
+        "tests/test_stage6d_reference.py",
+        "tests/test_stage6d_maps.py",
+        "scripts/stage6d_checks.py"
+      ],
+      "exit_code": 0,
+      "wall_s": 0.09891599999900791,
+      "output": "All checks passed!\n"
+    },
+    {
+      "name": "format",
+      "command": [
+        "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "src/gsunlight_repro/stage6d",
+        "tests/test_stage6d_reference.py",
+        "tests/test_stage6d_maps.py",
+        "scripts/stage6d_checks.py"
+      ],
+      "exit_code": 0,
+      "wall_s": 0.09342360000118788,
+      "output": "10 files already formatted\n"
+    },
+    {
+      "name": "clang-format",
+      "command": [
+        "..\\local_only\\stage6b_native\\packages\\llvm-mingw-20261104-ucrt-x86_64\\bin\\clang-format.exe",
+        "--dry-run",
+        "--Werror",
+        "-style={BasedOnStyle: LLVM, IndentWidth: 4, ColumnLimit: 100}",
+        "native/stage6c/adapter.hpp",
+        "native/stage6c/adapter_tests.cpp",
+        "native/stage6c/ompl_runner.cpp"
+      ],
+      "exit_code": 0,
+      "wall_s": 0.14632460000029823,
+      "output": ""
+    }
+  ],
+  "new_planning_searches": 0,
+  "log_directory": "..\\local_only\\stage6d_quality\\gate"
+}

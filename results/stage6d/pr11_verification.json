@@ -1,0 +1,22 @@
+{
+  "verified_utc": "2026-11-16 05:58:11 UTC",
+  "pr_url": "https://github.com/Whsjbwy/erqulunwengfx/pull/11",
+  "head": "e39d88a8287d4ff98ce03a8afa1d59d3a7cc2c6d",
+  "base": "research/auv-control-baselines-stage6b",
+  "state": "open",
+  "merged": false,
+  "windows_ci": [
+    {
+      "id": 43791388000,
+      "name": "Stage 6C Windows official OMPL calibration acceptance",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 2,
+      "jobs_url": "https://api.github.com/repos/Whsjbwy/erqulunwengfx/actions/runs/43791388000/jobs",
+      "logs_url": "https://api.github.com/repos/Whsjbwy/erqulunwengfx/actions/runs/43791388000/logs",
+      "workflow_id": 419049169
+    }
+  ],
+  "downloaded_head_proof": "local_only/stage6c_quality/final-head-evidence-e39d88a.json",
+  "note": "Fresh PR/workflow API queries and existing downloaded final-HEAD proof; no additional checksum manifest."
+}

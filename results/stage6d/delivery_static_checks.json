@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "compile",
+      "command": [
+        "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "tests",
+        "scripts"
+      ],
+      "exit_code": 0,
+      "wall_s": 0.15078390000053332,
+      "output": ""
+    },
+    {
+      "name": "ruff",
+      "command": [
+        "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "."
+      ],
+      "exit_code": 0,
+      "wall_s": 0.09821340000053169,
+      "output": "All checks passed!\n"
+    },
+    {
+      "name": "format",
+      "command": [
+        "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "."
+      ],
+      "exit_code": 0,
+      "wall_s": 0.09650189999956638,
+      "output": "269 files already formatted\n"
+    }
+  ],
+  "pytest_rerun": false,
+  "research_runtime_changed": false,
+  "scope": "Final read-only analysis table additions, report/figure delivery and CI evidence scripts"
+}

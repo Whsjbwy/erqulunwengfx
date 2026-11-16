@@ -1,0 +1,9 @@
+{
+  "passed": false,
+  "registered": 6,
+  "joint_passed": 4,
+  "native_exception": 1,
+  "not_run_after_stop": 1,
+  "reason": "Actual SI and frozen model pitch predicates disagree",
+  "searches_started": 0
+}

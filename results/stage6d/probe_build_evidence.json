@@ -1,0 +1,50 @@
+{
+  "commands": [
+    {
+      "label": "configure",
+      "command": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "-S",
+        "Z:/erqulunwengfx/native/stage6d",
+        "-B",
+        "Z:/local_only/stage6d_probe/build",
+        "-G",
+        "Ninja",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_MAKE_PROGRAM=Z:/local_only/stage6b_native/packages/ninja/ninja.exe",
+        "-DCMAKE_CXX_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang++.exe",
+        "-DCMAKE_CXX_FLAGS=-no-canonical-prefixes -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00",
+        "-DCMAKE_PREFIX_PATH=Z:/local_only/stage6b_native/prefix",
+        "-DSTAGE6D_JSON_INCLUDE=Z:/local_only/stage6b_native/include"
+      ],
+      "exit_code": 0,
+      "wall_s": 2.588553800000227,
+      "log": "build-00-configure.log"
+    },
+    {
+      "label": "build",
+      "command": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+        "--build",
+        "Z:\\local_only\\stage6d_probe\\build",
+        "--parallel",
+        "2"
+      ],
+      "exit_code": 0,
+      "wall_s": 2.326415100000304,
+      "log": "build-01-build.log"
+    },
+    {
+      "label": "ctest_detect_known_gap",
+      "command": [
+        "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\ctest.exe",
+        "--test-dir",
+        "Z:\\local_only\\stage6d_probe\\build",
+        "--output-on-failure"
+      ],
+      "exit_code": 0,
+      "wall_s": 0.2348691000006511,
+      "log": "build-02-ctest_detect_known_gap.log"
+    }
+  ]
+}

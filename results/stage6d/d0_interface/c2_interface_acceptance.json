@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "cases": 13,
+  "accepted_intervals": 930,
+  "actual_propagator_calls": 936,
+  "maximum_state_error": 0.0,
+  "recovered_after_summary_directory_failure": true,
+  "new_searches": 0,
+  "repeated_native_calls": 0
+}

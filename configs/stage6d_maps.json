@@ -1,0 +1,14 @@
+{
+  "spacing_m": [0.5, 0.5, 0.5],
+  "extent_m": [56.0, 44.0, 28.0],
+  "goal_rule": "Position ball0.75m, terminal yaw/pitch free as frozen. Full witness terminal five-state is recorded for audit, not imposed as an extra planner constraint.",
+  "controls_units": "yaw_deg_s,pitch_deg_s,duration_s",
+  "maps": [
+    {"id": "wide_1", "family": "wide_bypass", "start": [8,12,10], "yaw_deg": 0, "pitch_deg": 0, "boxes": [[22,28,7,17,0,24],[33,37,31,37,0,20]], "controls": [[0,0,6],[10,0,6],[0,0,6],[-10,0,6],[0,0,4],[-10,0,6],[0,0,6],[10,0,6],[0,0,4]]},
+    {"id": "wide_2", "family": "wide_bypass", "start": [8,14,10], "yaw_deg": 0, "pitch_deg": 0, "boxes": [[23,29,9,19,0,24],[35,39,32,38,0,22]], "controls": [[0,0,6],[10,0,6],[0,0,6],[-10,0,6],[0,0,4],[-10,0,6],[0,0,6],[10,0,6],[0,0,4]]},
+    {"id": "turn_1", "family": "turning_corridor", "start": [8,10,10], "yaw_deg": 0, "pitch_deg": 0, "free_boxes": [[0,24,6,14,0,28],[20,28,10,44,0,28]], "controls": [[0,0,10],[10,0,9],[0,0,16]]},
+    {"id": "turn_2", "family": "turning_corridor", "start": [8,10,10], "yaw_deg": 0, "pitch_deg": 0, "free_boxes": [[0,24,7,13,0,28],[21,27,10,44,0,28]], "controls": [[0,0,10],[10,0,9],[0,0,16]]},
+    {"id": "terrain_1", "family": "terrain_climb", "start": [8,22,6], "yaw_deg": 0, "pitch_deg": 0, "ceiling_z_m": 18, "boxes": [[0,56,0,44,0,2],[18,22,0,44,0,4.5],[22,26,0,44,0,6.5],[26,30,0,44,0,8],[30,34,0,44,0,8.5],[34,56,0,44,0,6],[20,26,2,15,0,16],[32,37,29,40,0,17]], "controls": [[0,0,5],[0,5,4],[0,0,18],[0,-5,4],[0,0,6]]},
+    {"id": "terrain_2", "family": "terrain_climb", "start": [8,22,6], "yaw_deg": 0, "pitch_deg": 0, "ceiling_z_m": 18, "boxes": [[0,56,0,44,0,2.5],[18,22,0,44,0,4.5],[22,26,0,44,0,6.5],[26,28,0,44,0,8.5],[28,32,0,44,0,9],[32,36,0,44,0,8],[36,56,0,44,0,6.5],[19,25,2,15,0,17],[32,38,29,40,0,17]], "controls": [[0,0,5],[0,5,4],[0,0,18],[0,-5,4],[0,0,6]]}
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "passed": true,
+  "base_commit": "e39d88a8287d4ff98ce03a8afa1d59d3a7cc2c6d",
+  "previous_exact_head_ci": {
+    "tests": 514,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "fresh_interface": {
+    "passed": true,
+    "cases": 13,
+    "accepted_intervals": 930,
+    "actual_propagator_calls": 936,
+    "maximum_state_error": 0.0,
+    "recovered_after_summary_directory_failure": true,
+    "new_searches": 0,
+    "repeated_native_calls": 0
+  },
+  "historical": {
+    "6b": {
+      "K": 36,
+      "M": 21,
+      "S": 11,
+      "native_intervals": 27661,
+      "LOS_intervals": 16259,
+      "missing_clocks_retained": 0
+    },
+    "6c": {
+      "K": 72,
+      "M": 46,
+      "S": 34,
+      "native_intervals": 46002,
+      "LOS_intervals": 22915,
+      "missing_clocks_retained": 1
+    }
+  },
+  "official_ompl": "2.0.2",
+  "license": "BSD-3-Clause",
+  "build": {
+    "official_ompl": "2.0.2",
+    "dependency_root": "Z:\\local_only\\stage6b_native",
+    "commands": [
+      {
+        "label": "configure",
+        "command": [
+          "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+          "-S",
+          "Z:/erqulunwengfx/native/stage6c",
+          "-B",
+          "Z:/local_only/stage6d_native/build",
+          "-G",
+          "Ninja",
+          "-DCMAKE_BUILD_TYPE=Release",
+          "-DCMAKE_POLICY_DEFAULT_CMP0176=NEW",
+          "-DCMAKE_MAKE_PROGRAM=Z:/local_only/stage6b_native/packages/ninja/ninja.exe",
+          "-DCMAKE_CXX_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang++.exe",
+          "-DCMAKE_CXX_FLAGS=-no-canonical-prefixes -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00",
+          "-DCMAKE_PREFIX_PATH=Z:/local_only/stage6b_native/prefix",
+          "-DSTAGE6C_JSON_INCLUDE=Z:/local_only/stage6b_native/include"
+        ],
+        "exit_code": 0,
+        "wall_s": 3.5436375999997836,
+        "log": "build-00-configure.log"
+      },
+      {
+        "label": "build",
+        "command": [
+          "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe",
+          "--build",
+          "Z:\\local_only\\stage6d_native\\build",
+          "--parallel",
+          "2"
+        ],
+        "exit_code": 0,
+        "wall_s": 3.457520999998451,
+        "log": "build-01-build.log"
+      },
+      {
+        "label": "ctest",
+        "command": [
+          "Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\ctest.exe",
+          "--test-dir",
+          "Z:\\local_only\\stage6d_native\\build",
+          "--output-on-failure"
+        ],
+        "exit_code": 0,
+        "wall_s": 0.9207830000013928,
+        "log": "build-02-ctest.log"
+      }
+    ]
+  },
+  "new_searches": 0,
+  "historical_modifications": []
+}
