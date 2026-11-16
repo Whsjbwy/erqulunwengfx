@@ -2,7 +2,34 @@
 
 import pytest
 
-from gsunlight_repro.stage6ds.analysis import group_rates, leave_one_map_out
+from gsunlight_repro.stage6ds.analysis import (
+    deadline_choice,
+    group_rates,
+    leave_one_map_out,
+)
+
+
+def test_first_certificate_survives_late_final_without_changing_primary() -> None:
+    result = deadline_choice(
+        [
+            {"label": "first", "safe": True, "cost_m": 50, "finish_s": 9},
+            {"label": "final", "safe": True, "cost_m": 40, "finish_s": 11},
+        ]
+    )
+    assert result["certificate_available_before10"]
+    assert result["deadline_best_certified_arc_m"] == 50
+    assert result["deadline_selected"] == "first"
+
+
+def test_unsafe_or_late_paths_have_no_deadline_cost() -> None:
+    result = deadline_choice(
+        [
+            {"label": "first", "safe": False, "cost_m": 50, "finish_s": 1},
+            {"label": "final", "safe": True, "cost_m": 40, "finish_s": 11},
+        ]
+    )
+    assert not result["certificate_available_before10"]
+    assert result["deadline_best_certified_arc_m"] is None
 
 
 def record(name: str, model: bool, executed: bool, success: bool) -> dict:

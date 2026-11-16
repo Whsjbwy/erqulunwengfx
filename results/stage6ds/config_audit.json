@@ -1,0 +1,13 @@
+{
+  "base": "e02cc05dd288b329d0ab11e783bceb0300e1e5ad",
+  "original_protocol_unchanged": true,
+  "original_maps_unchanged": true,
+  "actual_requests_checked": 54,
+  "all_scenes_and_voxel_bytes_match": true,
+  "all_seeds_and_settings_match": true,
+  "actual_planner_identity_checked": 54,
+  "witness_controls_leaked": 0,
+  "source_before_search": "ca2ad187785df2f692973a3631ff5272142d1436",
+  "pilot_commit": "cc3640452e6ec95b9b72d64fe0d3a2dc925b51b7",
+  "new_file_checksums": false
+}

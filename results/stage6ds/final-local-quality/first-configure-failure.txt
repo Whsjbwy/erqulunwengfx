@@ -1,0 +1,50 @@
+["Z:\\local_only\\stage6b_native\\packages\\cmake-3.31.8-windows-x86_64\\bin\\cmake.exe", "-S", "Z:/erqulunwengfx/native/stage6ds", "-B", "Z:/local_only/stage6ds_native/build", "-G", "Ninja", "-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_MAKE_PROGRAM=Z:/local_only/stage6b_native/packages/ninja/ninja.exe", "-DCMAKE_CXX_COMPILER=Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang++.exe", "-DCMAKE_CXX_FLAGS=-no-canonical-prefixes -D_WIN32_WINNT=0x0A00 -DWINVER=0x0A00", "-DCMAKE_PREFIX_PATH=Z:/local_only/stage6b_native/prefix", "-DSTAGE6DR_JSON_INCLUDE=Z:/local_only/stage6b_native/include"]
+-- The CXX compiler identification is Clang 23.1.5
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: Z:/local_only/stage6b_native/packages/llvm-mingw-20261104-ucrt-x86_64/bin/x86_64-w64-mingw32-clang++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+CMake Warning (dev) at D:/2区论文复现/local_only/stage6b_native/packages/cmake-3.31.8-windows-x86_64/share/cmake-3.31/Modules/CMakeFindDependencyMacro.cmake:76 (find_package):
+  Policy CMP0167 is not set: The FindBoost module is removed.  Run "cmake
+  --help-policy CMP0167" for policy details.  Use the cmake_policy command to
+  set the policy and suppress this warning.
+
+Call Stack (most recent call first):
+  Z:/local_only/stage6b_native/prefix/share/ompl/cmake/omplConfig.cmake:30 (find_dependency)
+  Z:/erqulunwengfx/native/stage6dr/CMakeLists.txt:6 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Check if compiler accepts -pthread
+-- Check if compiler accepts -pthread - yes
+-- Found Boost: Z:/local_only/stage6b_native/prefix/lib/cmake/Boost-1.89.0/BoostConfig.cmake (found version "1.89.0") found components: serialization
+-- Found ompl: Z:/local_only/stage6b_native/prefix/include/ompl-2.0;Z:/local_only/stage6b_native/prefix/include/boost-1_89;Z:/local_only/stage6b_native/prefix/include/eigen3 (Required is exact version "2.0.2")
+-- Configuring done (2.0s)
+CMake Error at CMakeLists.txt:14 (target_link_libraries):
+  Target "auv6ds_runner" links to:
+
+    ompl::ompl
+
+  but the target was not found.  Possible reasons include:
+
+    * There is a typo in the target name.
+    * A find_package call is missing for an IMPORTED target.
+    * An ALIAS target is missing.
+
+
+
+CMake Error at CMakeLists.txt:14 (target_link_libraries):
+  Target "auv6ds_identity_tests" links to:
+
+    ompl::ompl
+
+  but the target was not found.  Possible reasons include:
+
+    * There is a typo in the target name.
+    * A find_package call is missing for an IMPORTED target.
+    * An ALIAS target is missing.
+
+
+
+-- Generating done (0.1s)
+CMake Generate step failed.  Build files cannot be regenerated correctly.

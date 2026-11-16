@@ -15,13 +15,32 @@ import numpy as np
 
 from ..stage5a.analysis import write_csv
 from ..stage6c.common import boolean, read_csv, read_json
-from ..stage6d.common import save_json
+from ..stage6d.common import load_record, save_json
 from . import PUBLIC
 from .protocol import frozen
 
 CONDITIONS = ("rrt_first", "sst_radius2_first", "sst_radius2_anytime")
 LABELS = ("Control RRT first", "SST first", "SST anytime")
 COLORS = ("#405c93", "#1d8a78", "#c57a1e")
+
+
+def deadline_choice(candidates: list[dict[str, Any]]) -> dict[str, Any]:
+    """Keep a certified first incumbent available when final certification is late."""
+    available = [c for c in candidates if c["safe"] and c["finish_s"] <= 10]
+    if not available:
+        return {
+            "certificate_available_before10": False,
+            "deadline_best_certified_arc_m": None,
+            "deadline_selected": None,
+            "earliest_available_certificate_s": None,
+        }
+    best = min(available, key=lambda c: (round(c["cost_m"] / 0.1), c["finish_s"]))
+    return {
+        "certificate_available_before10": True,
+        "deadline_best_certified_arc_m": best["cost_m"],
+        "deadline_selected": best["label"],
+        "earliest_available_certificate_s": min(c["finish_s"] for c in available),
+    }
 
 
 def group_rates(rows: list[dict[str, Any]]) -> dict[str, int | float | None]:
@@ -101,7 +120,7 @@ def plots(
         range(18), [f"{name} / seed{s}" for name in maps for s in range(1, 4)]
     )
     ax.set_title(
-        "All54: A=approximate; Late=exact after10s; M=native only; S=strict LOS"
+        "All54: A=approximate; Late=final cert after10s; M=final native; S=LOS"
     )
     fig.savefig(output / "all54_outcomes.png", dpi=160)
     plt.close(fig)
@@ -137,9 +156,9 @@ def plots(
             )
     axes[0].axhline(10, ls="--", color="black", lw=1)
     axes[0].set_ylabel("Independent certificate completion (s)")
-    axes[0].set_title("All54 clocks; x=not strict M")
+    axes[0].set_title("All54 final-cert clocks; x=not final-qualified")
     axes[1].set_ylabel("Strict native control arc (m), speed=1m/s")
-    axes[1].set_title("Success-conditioned costs; failures omitted here only")
+    axes[1].set_title("Final-certified costs; failures omitted here only")
     for ax in axes[:2]:
         ax.set_xticks(range(3), ["RRT", "SST first", "SST anytime"], rotation=15)
     axes[2].set_xticks(range(6), maps, rotation=40)
@@ -161,12 +180,24 @@ def plots(
                 and e["condition"] == "sst_radius2_anytime"
             ]
             if group:
+                source = next(
+                    r
+                    for r in rows
+                    if r["scenario"] == name
+                    and int(r["native_seed"]) == seed
+                    and r["condition"] == "sst_radius2_anytime"
+                )
+                suffix = (
+                    " (late final cert)"
+                    if not boolean(source["model_feasible"])
+                    else ""
+                )
                 ax.step(
                     [e["native_certificate_finish_s"] for e in group],
                     [e["cost"] for e in group],
                     where="post",
                     marker=".",
-                    label=f"seed{seed}",
+                    label=f"seed{seed}{suffix}",
                     color=color,
                 )
             else:
@@ -236,8 +267,41 @@ def run(local: Path, output: Path = PUBLIC) -> dict[str, Any]:
                     "count": count,
                 }
             )
+    available_rows = []
     for row in rows:
         payload = read_json(local / "search" / row["job_id"] / "output.json")
+        record = load_record(
+            local / "search" / row["job_id"] / "independent_record.json.gz"
+        )
+        first = record["first_audit"]
+        first_path = payload.get("first_path") or payload
+        candidates = [
+            {
+                "label": "final",
+                "safe": record["audit"]["model_feasible"],
+                "finish_s": float(row["best_independent_certificate_s"]),
+                "cost_m": sum(c["duration_s"] for c in payload["controls"]),
+            }
+        ]
+        if first is not None and row["first_independent_certificate_s"]:
+            candidates.append(
+                {
+                    "label": "first",
+                    "safe": first["model_feasible"],
+                    "finish_s": float(row["first_independent_certificate_s"]),
+                    "cost_m": sum(c["duration_s"] for c in first_path["controls"]),
+                }
+            )
+        available_rows.append(
+            {
+                "job_id": row["job_id"],
+                "condition": row["condition"],
+                "frozen_final_qualified_M": boolean(row["model_feasible"]),
+                "first_certificate_s": row["first_independent_certificate_s"],
+                "final_certificate_s": row["best_independent_certificate_s"],
+                **deadline_choice(candidates),
+            }
+        )
         events.extend(
             {
                 "job_id": row["job_id"],
@@ -289,6 +353,13 @@ def run(local: Path, output: Path = PUBLIC) -> dict[str, Any]:
                     else None,
                 }
             )
+    write_csv(output / "deadline_available_incumbents.csv", available_rows)
+    for rate in rates:
+        rate["M_available_before10"] = sum(
+            r["certificate_available_before10"]
+            for r in available_rows
+            if r["condition"] == rate["condition"]
+        )
     for filename, data in (
         ("rates.csv", rates),
         ("map_rates.csv", map_rates),
@@ -307,6 +378,14 @@ def run(local: Path, output: Path = PUBLIC) -> dict[str, Any]:
         "late_native_exact": sum(
             boolean(r["native_M_before_budget"]) and not boolean(r["model_feasible"])
             for r in rows
+        ),
+        "at_least_one_independent_certificate_before10": sum(
+            r["certificate_available_before10"] for r in available_rows
+        ),
+        "primary_M_definition": "Unchanged frozen6D final-return certificate chain",
+        "availability_definition": (
+            "Also disclose any first/final incumbent independently certified "
+            "before10s; no additional tracking or replanning"
         ),
         "strong_maps_by_condition": {
             c: [r["scenario"] for r in map_rates if r["condition"] == c and r["M"] >= 2]

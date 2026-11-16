@@ -1,0 +1,34 @@
+{
+  "exact_engineering_head": "63bffdbf3af3e1de4d2089c7317e801218292249",
+  "exact_pr_head_ci": false,
+  "engineering_checks_passed": true,
+  "performance_source": "Saved original local54 experiments, not CI replanning",
+  "local_registered_searches": 54,
+  "local_completed_searches": 54,
+  "primary_frozen_final_certificate_rates": {
+    "K": 54,
+    "M": 47,
+    "Gref": 47,
+    "E": 47,
+    "S": 32,
+    "M_K": 0.8703703703703703,
+    "S_E": 0.6808510638297872,
+    "S_K": 0.5925925925925926
+  },
+  "at_least_one_independent_certificate_before10": 49,
+  "local_full_trace_audit": {
+    "passed": true,
+    "jobs": 54,
+    "native_intervals": 24313,
+    "additional_first_incumbent_intervals": 6832,
+    "los_intervals": 21283,
+    "maximum_rk4_error_m": 3.574849180676073e-14,
+    "maximum_los_position_error_m": 0.0,
+    "strict_safety_false_positives": 0,
+    "new_searches": 0,
+    "original_clocks_unchanged": true
+  },
+  "scientific_decision": "PIVOT",
+  "stochastic_searches_in_ci": 0,
+  "h1_implementation_authorized": false
+}

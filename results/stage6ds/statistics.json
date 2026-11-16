@@ -11,6 +11,9 @@
   "S_K": 0.5925925925925926,
   "native_exact_before_budget": 49,
   "late_native_exact": 2,
+  "at_least_one_independent_certificate_before10": 49,
+  "primary_M_definition": "Unchanged frozen6D final-return certificate chain",
+  "availability_definition": "Also disclose any first/final incumbent independently certified before10s; no additional tracking or replanning",
   "strong_maps_by_condition": {
     "rrt_first": [
       "wide_1",

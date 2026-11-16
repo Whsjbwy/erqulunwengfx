@@ -1,0 +1,54 @@
+name: Stage 6D-S Windows actual planner contract
+on:
+  pull_request:
+    branches: [fix/auv-stage6dr-pitch-contract]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  actual-entry-and-engineering:
+    runs-on: windows-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - name: Install existing Python dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Build pinned official OMPL and frozen6B adapter
+        run: python scripts/stage6b_build.py --local-root "$env:RUNNER_TEMP/auv-dependencies" --jobs 2
+      - name: Build actual planner entry and five deterministic CTests
+        run: python scripts/stage6ds_build.py --dependency-root "$env:RUNNER_TEMP/auv-dependencies" --local-root "$env:RUNNER_TEMP/auv-stage6ds-native"
+      - name: Generate original thirteen frozen fixtures
+        run: python -m gsunlight_repro.stage6b.runner accept --executable "$env:RUNNER_TEMP/auv-dependencies/build/adapter/auv6b_runner.exe" --build-root "$env:RUNNER_TEMP/auv-dependencies" --local-root "$env:RUNNER_TEMP/auv-frozen-fixtures" --output results/stage6b/ci-stage6ds-fixtures
+      - name: Real planner binary safety and identity acceptance without solve
+        run: python -m gsunlight_repro.stage6ds.acceptance --executable "$env:RUNNER_TEMP/auv-stage6ds-native/build/auv6ds_runner.exe" --original-probe "$env:RUNNER_TEMP/auv-stage6ds-native/build/frozen6dr/auv6dr_original_probe.exe" --dependency-root "$env:RUNNER_TEMP/auv-dependencies" --build-root "$env:RUNNER_TEMP/auv-stage6ds-native" --legacy-root "$env:RUNNER_TEMP/auv-frozen-fixtures" --local-root "$env:RUNNER_TEMP/auv-stage6ds-acceptance" --output results/stage6ds/ci-acceptance
+      - name: Actual full engineering checks at exact HEAD
+        env:
+          STAGE6DS_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: python scripts/stage6ds_quality.py --dependency-root "$env:RUNNER_TEMP/auv-dependencies" --build-root "$env:RUNNER_TEMP/auv-stage6ds-native" --acceptance-root results/stage6ds/ci-acceptance --output results/stage6ds/ci-quality
+      - name: Validate saved local54 ledger without repeating experiments
+        run: python -m gsunlight_repro.stage6ds.public_evidence --quality-root results/stage6ds/ci-quality
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: stage6ds-windows-actual-planner-evidence
+          path: |
+            results/stage6ds/ci-acceptance/
+            results/stage6ds/ci-quality/
+            results/stage6ds/planning_runs.csv
+            results/stage6ds/statistics.json
+            results/stage6ds/decision.json
+            results/stage6ds/deadline_available_incumbents.csv
+          if-no-files-found: warn
+      - name: Show native diagnostics on failure
+        if: failure()
+        run: |
+          foreach ($taskRoot in @("$env:RUNNER_TEMP/auv-dependencies", "$env:RUNNER_TEMP/auv-stage6ds-native")) {
+            $taskLogs = Get-ChildItem -LiteralPath $taskRoot -Filter 'build-*.log' -ErrorAction SilentlyContinue | Sort-Object Name | Select-Object -Last 2
+            foreach ($taskLog in $taskLogs) { Get-Content -LiteralPath $taskLog.FullName -Tail 45 }
+          }

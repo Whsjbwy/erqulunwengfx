@@ -12,6 +12,7 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 from gsunlight_repro.stage5a.maps import ROOT
+from gsunlight_repro.stage6c.acceptance import environment
 from gsunlight_repro.stage6c.common import read_json
 from gsunlight_repro.stage6d.common import save_json
 from gsunlight_repro.stage6ds import PUBLIC
@@ -107,6 +108,33 @@ def main() -> None:
         raise RuntimeError(
             "Actual-entry acceptance/original failure evidence is incomplete"
         )
+    save_json(out / "frozen-plan-request.json", {"mode": "plan"}, exclusive=True)
+    guard = subprocess.run(
+        [
+            str(args.build_root.resolve() / "build/frozen6dr/auv6dr_runner.exe"),
+            str(out / "frozen-plan-request.json"),
+            str(out / "forbidden-output.json"),
+        ],
+        capture_output=True,
+        text=True,
+        env=environment(args.dependency_root),
+        timeout=10,
+    )
+    retained = (
+        guard.returncode == 1
+        and "Only deterministic inspect/replay" in guard.stderr
+        and not (out / "forbidden-output.json").exists()
+    )
+    save_json(
+        out / "frozen-plan-guard.json",
+        {
+            "exit_code": guard.returncode,
+            "stderr": guard.stderr,
+            "old_entry_still_rejects_plan": retained,
+        },
+    )
+    if not retained:
+        raise RuntimeError("Frozen6DR entry no longer rejects plan")
     head = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
     expected = os.environ.get("STAGE6DS_HEAD")
     if expected is not None and expected != head:
