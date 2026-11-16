@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "jobs": [
+    "wide_1--rrt_first--seed1",
+    "wide_1--sst_radius2_first--seed1",
+    "wide_1--sst_radius2_anytime--seed1"
+  ],
+  "identity_safety_clocks_resources_passed": true,
+  "success_count_is_not_a_gate": true,
+  "resources": [
+    {
+      "job_id": "wide_1--rrt_first--seed1",
+      "peak_native_rss_bytes": 53968896,
+      "record_bytes": 52595
+    },
+    {
+      "job_id": "wide_1--sst_radius2_first--seed1",
+      "peak_native_rss_bytes": 10600448,
+      "record_bytes": 183583
+    },
+    {
+      "job_id": "wide_1--sst_radius2_anytime--seed1",
+      "peak_native_rss_bytes": 64090112,
+      "record_bytes": 188786
+    }
+  ],
+  "completed_searches": 3
+}
