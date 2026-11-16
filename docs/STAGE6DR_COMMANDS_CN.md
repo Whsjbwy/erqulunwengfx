@@ -26,7 +26,7 @@
 
 ## 单条故障最小复现
 
-本轮已保存精确输入；运行时应让DLL路径包含现有LLVM目录（只影响该PowerShell进程）。下列两个入口接收同一保存输入，新入口成功不依赖更换模型或控制：
+本轮已保存精确输入；运行时应让DLL路径包含现有LLVM目录（只影响该PowerShell进程）。下列旧入口接收完整370区间输入，新入口接收从原轨迹索引89提取的单区间输入；该区间的源状态、控制与几何相同，不是同一份输入文件。完整新SI验收另见`maps6/terrain_1`的370区间记录。
 
 ```powershell
 $env:PATH = (Resolve-Path ..\local_only\stage6b_native\packages\llvm-mingw-20261104-ucrt-x86_64\bin).Path + ';' + $env:PATH
@@ -40,6 +40,6 @@ $env:PATH = (Resolve-Path ..\local_only\stage6b_native\packages\llvm-mingw-20261
 
 ## 最终HEAD云端证明
 
-独立工作流：[stage6dr-windows.yml](../.github/workflows/stage6dr-windows.yml)。检出`${{ github.event.pull_request.head.sha || github.sha }}`并与实际`git rev-parse HEAD`比较。最终运行、job、artifact及实际下载核验结论登记在PR正文；本机ZIP、完整job日志及解析证明位于Git外`..\local_only\stage6dr_quality`，不再提交改变最终HEAD。
+独立工作流：[stage6dr-windows.yml](../.github/workflows/stage6dr-windows.yml)。检出`${{ github.event.pull_request.head.sha || github.sha }}`并与实际`git rev-parse HEAD`比较。最终运行、job、artifact及实际下载核验结论登记在[PR #13正文](https://github.com/Whsjbwy/erqulunwengfx/pull/13)；本机ZIP、完整job日志及解析证明位于Git外`..\local_only\stage6dr_quality`，不再提交改变最终HEAD。
 
 artifact名称为`stage6dr-windows-model-interface-evidence`，包含CI逐次结果、JUnit、命令/退出码、CTest日志、plan拒绝证据和`head-evidence.json`。关键字段分别为`engineering_checks_passed`、`original_adapter_mismatch_still_detected`、`new_model_interface_passed`，并要求`new_planning_searches=0`和`h1_authorized=false`。

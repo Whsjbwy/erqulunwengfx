@@ -2,7 +2,7 @@
 
 ## 结论与适用范围
 
-本机结果为 **MODEL-INTERFACE PASS**。最终交付还要求PR最终HEAD的独立Windows CI实际通过；其运行链接、准确HEAD及已下载核验的artifact在PR正文中登记，不用旧阶段绿色状态代替。CI分别记录工程检查、原始故障仍被检出、新接口验收三项结果。
+本机结果为 **MODEL-INTERFACE PASS**。最终交付还要求PR最终HEAD的独立Windows CI实际通过；其运行链接、准确HEAD及已下载核验的artifact在[PR #13正文](https://github.com/Whsjbwy/erqulunwengfx/pull/13)中登记，不用旧阶段绿色状态代替。CI分别记录工程检查、原始故障仍被检出、新接口验收三项结果。
 
 唯一适配器变化是把pitch子空间声明范围从`[-L,L]`改为`[-(L+t),L+t]`，其中L、t均来自未改动的冻结模型。原状态过滤器、传播器、连续安全认证和目标判据继续生效。修复是技术契约对齐，**不是算法创新或规划性能证据**。
 

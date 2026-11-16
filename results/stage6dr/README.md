@@ -13,6 +13,6 @@
 - `acceptance_summary.json`：本机模型接口验收汇总，明确最终HEAD CI需单独核验。
 - `local-quality/`：本机实际检查命令、精简stdout、534项JUnit及三种分开的门槛。记录为当时工作树检查，`exact_pr_head_ci=false`不是最终云端证明。
 
-完整输入/原生轨迹/进程stdout、stderr、计时保存在Git外`D:\2区论文复现\local_only\stage6dr_runs`，构建日志在`stage6dr_native`；旧网格和大型历史记录仅引用。未生成任何额外文件哈希清单。最终CI的HEAD、运行和artifact链接及实际下载核验写入PR正文，避免回填改变已验HEAD。
+完整输入/原生轨迹/进程stdout、stderr、计时保存在Git外`D:\2区论文复现\local_only\stage6dr_runs`，构建日志在`stage6dr_native`；旧网格和大型历史记录仅引用。未生成任何额外文件哈希清单。最终CI的HEAD、运行和artifact链接及实际下载核验写入[PR #13正文](https://github.com/Whsjbwy/erqulunwengfx/pull/13)，避免回填改变已验HEAD。
 
 本目录只证明确定性模型接口和给定控制安全，不提供规划算法成功率。原54次搜索仍未执行，H1仍未获准。
