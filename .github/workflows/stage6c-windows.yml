@@ -38,7 +38,7 @@ jobs:
           & "$env:RUNNER_TEMP/auv-dependencies/packages/llvm-mingw-20261104-ucrt-x86_64/bin/clang-format.exe" --dry-run --Werror '-style={BasedOnStyle: LLVM, IndentWidth: 4, ColumnLimit: 100}' native/stage6c/adapter.hpp native/stage6c/adapter_tests.cpp native/stage6c/ompl_runner.cpp
       - name: Generate thirteen frozen deterministic fixtures
         run: |
-          python -m gsunlight_repro.stage6b.runner accept --executable "$env:RUNNER_TEMP/auv-dependencies/build/adapter/auv6b_runner.exe" --build-root "$env:RUNNER_TEMP/auv-dependencies" --local-root "$env:RUNNER_TEMP/auv-frozen-fixtures" --output results/stage6c/ci-frozen
+          python -m gsunlight_repro.stage6b.runner accept --executable "$env:RUNNER_TEMP/auv-dependencies/build/adapter/auv6b_runner.exe" --build-root "$env:RUNNER_TEMP/auv-dependencies" --local-root "$env:RUNNER_TEMP/auv-frozen-fixtures" --output results/stage6b/ci-stage6c-fixtures
       - name: Validate thirteen actual Stage6C interface cases
         run: |
           python -m gsunlight_repro.stage6c.acceptance --source-root "$env:RUNNER_TEMP/auv-frozen-fixtures" --executable "$env:RUNNER_TEMP/auv-stage6c/build/auv6c_runner.exe" --dependency-root "$env:RUNNER_TEMP/auv-dependencies" --local-root "$env:RUNNER_TEMP/auv-stage6c-records" --output results/stage6c/ci-validation
@@ -46,7 +46,7 @@ jobs:
         env:
           STAGE6C_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
         run: |
-          python scripts/stage6c_ci_evidence.py --dependency-root "$env:RUNNER_TEMP/auv-dependencies" --build-root "$env:RUNNER_TEMP/auv-stage6c"
+          python scripts/stage6c_ci_evidence.py --dependency-root "$env:RUNNER_TEMP/auv-dependencies" --build-root "$env:RUNNER_TEMP/auv-stage6c" --frozen-output results/stage6b/ci-stage6c-fixtures
       - uses: actions/upload-artifact@v7
         if: always()
         with:

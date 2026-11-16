@@ -21,6 +21,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dependency-root", type=Path, required=True)
     parser.add_argument("--build-root", type=Path, required=True)
+    parser.add_argument("--frozen-output", type=Path, required=True)
     parser.add_argument(
         "--output", type=Path, default=Path("results/stage6c/ci-validation")
     )
@@ -37,7 +38,7 @@ def main() -> None:
         for key in ("tests", "failures", "errors", "skipped")
     }
     native = read(args.output / "c2_interface_acceptance.json")
-    frozen = read(Path("results/stage6c/ci-frozen/interface_acceptance.json"))
+    frozen = read(args.frozen_output / "interface_acceptance.json")
     build = read(args.build_root / "build_status.json")
     if (
         tests["failures"]

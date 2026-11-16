@@ -62,8 +62,8 @@
 
 最终只读复查46002个返回控制区间、6147个额外首次解区间、22915个C2保存LOS区间，以及C1两版本32410个区间；重算冻结目标、内环限幅、连续安全和严格时钟门槛，没有安全假阳性。独立RK4最大位置差约8.5265e-14m。[终审](../results/stage6c/final_trace_audit.json)
 
-本机513项pytest通过，Ruff、编译、格式检查、原生程序及clang-format均通过。最终HEAD的Windows工作流检出准确PR HEAD，从官方源码构建依赖并执行两套13例确定性验收，`head-evidence.json`与JUnit作为Actions artifact保存；实际结论由本阶段PR检查与该artifact核验，CI不增加规划搜索。[测试记录](STAGE6C_TEST_RESULTS_CN.md) · [真实命令](STAGE6C_COMMANDS_CN.md)
+本机初轮513项pytest通过；CI目录契约修复后最新完整514项通过，Ruff、编译和格式检查通过，原生程序及clang-format原检查通过。首轮云端因输出目录保护触发而失败，失败记录保留；修复没有改动研究算法或结果。最终HEAD的Windows工作流检出准确PR HEAD，从官方源码构建依赖并执行两套13例确定性验收，`head-evidence.json`与JUnit作为Actions artifact保存；实际结论由本阶段PR检查与该artifact核验，CI不增加规划搜索。[测试记录](STAGE6C_TEST_RESULTS_CN.md) · [真实命令](STAGE6C_COMMANDS_CN.md)
 
-新原生进程峰值RSS约79.37MiB，6C原始运行记录约15.95MB，地图和依赖复用单份；Git只含自编代码、精简结果及3张必要PNG，无额外文件校验清单。交付分支`research/auv-control-baselines-stage6c`以6B为目标，不合并main。[分支差异](https://github.com/Whsjbwy/erqulunwengfx/compare/research/auv-control-baselines-stage6b...research/auv-control-baselines-stage6c)
+新原生进程峰值RSS约79.37MiB，6C原始运行记录约15.95MB，地图和依赖复用单份；Git只含自编代码、精简结果及3张必要PNG，无额外文件校验清单。交付[PR #11](https://github.com/Whsjbwy/erqulunwengfx/pull/11)源分支为`research/auv-control-baselines-stage6c`，以6B为目标，不合并main。[分支差异](https://github.com/Whsjbwy/erqulunwengfx/compare/research/auv-control-baselines-stage6b...research/auv-control-baselines-stage6c)
 
 6C完成后停止，等待研究者审核。

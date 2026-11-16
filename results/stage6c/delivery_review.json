@@ -1,10 +1,10 @@
 {
-  "checked_utc": "2026-11-15T10:27:18.153197+00:00",
+  "checked_utc": "2026-11-16T02:09:51.126371+00:00",
   "base_stage6b_commit": "73bfd383971659833373434b15c499ae909c92f4",
   "branch": "research/auv-control-baselines-stage6c",
   "target": "research/auv-control-baselines-stage6b",
   "historical_modifications_or_deletions": [],
-  "new_public_files_including_this_review": 65,
+  "new_public_files_including_this_review": 68,
   "new_public_files": [
     ".github/workflows/stage6c-windows.yml",
     "configs/stage6c_protocol.json",
@@ -53,10 +53,13 @@
     "results/stage6c/local_checks.json",
     "results/stage6c/native_cost_events.csv",
     "results/stage6c/planning_runs.csv",
+    "results/stage6c/post_ci_fix_checks.json",
     "results/stage6c/pr10_verification.json",
     "results/stage6c/pytest_results.csv",
+    "results/stage6c/pytest_results_ci_fix.csv",
     "results/stage6c/rates.csv",
     "results/stage6c/resource_summary.json",
+    "results/stage6c/windows_ci_failed_attempt.json",
     "scripts/stage6c_build.py",
     "scripts/stage6c_ci_evidence.py",
     "src/gsunlight_repro/stage6c/__init__.py",
@@ -72,7 +75,7 @@
     "tests/test_stage6c_calibration.py",
     "tests/test_stage6c_reference.py"
   ],
-  "bytes_excluding_this_review": 1647755,
+  "bytes_excluding_this_review": 1703385,
   "largest_public_files": [
     [
       "results/stage6c/c1_all_trajectories.png",
@@ -87,12 +90,12 @@
       112312
     ],
     [
-      "results/stage6c/pytest_results.csv",
-      49471
+      "results/stage6c/pytest_results_ci_fix.csv",
+      49566
     ],
     [
-      "results/stage6c/planning_runs.csv",
-      34066
+      "results/stage6c/pytest_results.csv",
+      49471
     ]
   ],
   "cpp_and_calibration_runtime_unchanged_since_remaining68_started": true,

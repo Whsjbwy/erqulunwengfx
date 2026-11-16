@@ -19,6 +19,8 @@
 | `literature_matrix.csv` | 真实文献/代码/许可访问与未核验项 |
 | `build_preflight.json`、`build_evidence.json` | 前置映射失败及5条构建命令（1次编译失败） |
 | `local_checks.json`、`pytest_results.csv` | 真实513项检查、全部实际命令/退出码 |
+| `post_ci_fix_checks.json`、`pytest_results_ci_fix.csv` | CI目录修复后真实514项完整检查，初轮证据保留 |
+| `windows_ci_failed_attempt.json` | 首轮云端实际失败及目录保护修复原因，不冒充整轮成功 |
 | 3张PNG、`figure_manifest.csv`、`figure_qa.json` | 全21轨迹、全72结果、全18 AnyTime组；实际视觉QA |
 | `resource_summary.json`、`delivery_review.json` | 资源体积与相对冻结6B的范围审核 |
 
