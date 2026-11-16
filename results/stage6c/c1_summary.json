@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "source_paths": 21,
+  "native_M": 21,
+  "baseline_Gref": 21,
+  "baseline_E": 21,
+  "baseline_S": 11,
+  "adapted_Gref": 21,
+  "adapted_E": 21,
+  "adapted_S": 14,
+  "paired_outcomes": {
+    "kept_success": 11,
+    "recovered": 3,
+    "kept_failure": 7
+  },
+  "safety_false_positives": 0,
+  "new_searches": 0,
+  "new_los_executions": 21,
+  "c2_gate_passed": true,
+  "c2_gate_scope": "Safety and deterministic interface audit passed. Native M/cost is primary; frozen dense+bridge LOS remains secondary with its measured representation limitations.",
+  "causal_scope": "Whole tail-reference representation, including tangent, projection, last-edge and path-length-dependent simulation horizon. Not isolated terminal-switch timing causality."
+}

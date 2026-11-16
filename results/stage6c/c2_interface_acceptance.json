@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "cases": 13,
+  "accepted_intervals": 930,
+  "actual_propagator_calls": 936,
+  "maximum_state_error": 0.0,
+  "new_searches": 0
+}

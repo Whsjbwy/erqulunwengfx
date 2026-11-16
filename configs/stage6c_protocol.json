@@ -1,0 +1,48 @@
+{
+  "version": "stage6c-preregistered-v1",
+  "base_commit": "73bfd383971659833373434b15c499ae909c92f4",
+  "branch": "research/auv-control-baselines-stage6c",
+  "target": "research/auv-control-baselines-stage6b",
+  "data_role": "development",
+  "c1": {
+    "source": "All 21 budget-qualified exact stage6b jobs; reuse original baseline LOS, no new search",
+    "adapter": "tail_arc_2m_v1",
+    "tail_arc_m": 2.0,
+    "definition": "Keep original reference vertices strictly before max(0,L-2); append the interpolated anchor then the true goal. Remove duplicate vertices. Independently certify every resulting chord at the frozen full effective radius. Reject rather than fall back or select a per-path adapter.",
+    "causal_scope": "Whole reference-adapter intervention; terminal geometry, tangent and timing may all change. No claim of isolated switching causality.",
+    "baseline_reexecution": false,
+    "maximum_new_los_executions": 21,
+    "execution_wall_cap_s": 20.0,
+    "pipeline_wall_cap_s": 30.0,
+    "pipeline_planning_charge": "Original stage6b independent_certificate_finish_s; new replay input/read/adapter/LOS included in the20s adapter clock"
+  },
+  "c2": {
+    "gate": "C0 and analytical/safety/interface C1 checks pass, zero safety false positives, and reference-domain interpretation reviewed. Otherwise mark C2 not run.",
+    "cases": ["straight", "left_arc", "right_arc", "climb", "dive", "combined"],
+    "native_seeds": [1, 2, 3],
+    "conditions": [
+      {"id": "rrt_first", "algorithm": "rrt", "mode": "first", "selection_radius": 0.2, "pruning_radius": 0.1},
+      {"id": "sst_default_first", "algorithm": "sst", "mode": "first", "selection_radius": 0.2, "pruning_radius": 0.1},
+      {"id": "sst_radius2_first", "algorithm": "sst", "mode": "first", "selection_radius": 2.0, "pruning_radius": 0.1},
+      {"id": "sst_radius2_anytime", "algorithm": "sst", "mode": "anytime", "selection_radius": 2.0, "pruning_radius": 0.1}
+    ],
+    "maximum_searches": 72,
+    "pilot": "straight, native seed1, all4 conditions; reused in72",
+    "expansion_gate": "No process/setup/serialization errors or model/safety mismatch; each pilot peak native RSS<=1GiB, record<=5MiB, and available physical RAM>=4GiB. Budget failures remain failures and do not justify choosing another seed. If a resource gate fails stop and record pending review.",
+    "planning_wall_cap_s": 10.0,
+    "native_search_cap_s": 8.0,
+    "propagation_min_steps": 1,
+    "propagation_max_steps": 50,
+    "goal_bias": 0.05,
+    "metric": "Same compound weighted sum: R3 distance in metres plus SO2 and pitch distances in radians, weights1. Radius is a mixed metric value, not a physical metre.",
+    "sampling": "Unchanged official SST/RRT uniform controls and1-50 steps; RRT valid-prefix and SST whole-duration semantics retained",
+    "objective": "Official ControlDurationObjective; first mode cost threshold +infinity; anytime threshold0 and one continuous official solve call",
+    "instrumentation": "Read-only SST protected incumbent accessor used only by official improvement callback; no solve, selection, pruning or propagation override. Save first and final controls once, deduplicate if identical. Native certify improvement paths; independently replay first and final returned paths and charge all work to10s.",
+    "timing": "Separate first native certificate event, candidate return, and actual independent first/best certificate finish; never backdate independent certificate availability",
+    "c2_los": "Secondary only: final budget-qualified model path uses unchanged stage6b dense+bridge contract, with independent reference certification and frozen LOS. The C1 adapter is a diagnostic, not selected based on success and not silently substituted into C2.",
+    "los_wall_cap_s": 20.0,
+    "pipeline_wall_cap_s": 30.0,
+    "execution": "Serial CPU; fresh process per job; no F or holdout maps"
+  },
+  "stop": "No H1 implementation, model/controller changes, new holdout maps,324-trial matrix, file hashes or historical modifications. Stop on correctness/safety disagreement. Retain approximate, late, rejected and failed conditions."
+}

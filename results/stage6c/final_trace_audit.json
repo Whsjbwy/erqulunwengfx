@@ -1,0 +1,113 @@
+{
+  "passed": true,
+  "C1": {
+    "pairs": 21,
+    "transitions": {
+      "kept_success": 11,
+      "regressed": 0,
+      "recovered": 3,
+      "kept_failure": 7
+    },
+    "baseline_S": 11,
+    "adapted_S": 14,
+    "saved_los_intervals_audited": 32410,
+    "new_searches": 0,
+    "new_los_simulations": 0,
+    "interpretation": "Whole reference adaptation effect; no isolated terminal-time causal claim"
+  },
+  "registered_C2": 72,
+  "actual_C2_directories": 72,
+  "native_returned_intervals": 46002,
+  "additional_distinct_first_path_intervals": 6147,
+  "saved_C2_LOS_intervals": 22915,
+  "native_status_counts": {
+    "exact": 47,
+    "approximate": 25
+  },
+  "known_original_clock_failures": [
+    "straight--sst_radius2_anytime--seed1"
+  ],
+  "rates": [
+    {
+      "condition": "rrt_first",
+      "K": 18,
+      "raw_exact": 13,
+      "M": 13,
+      "Gref": 13,
+      "E": 13,
+      "S": 9,
+      "M_over_K": 0.7222222222222222,
+      "S_over_E": 0.6923076923076923,
+      "S_over_K": 0.5,
+      "missing_clock_failures": 0,
+      "late_certificates": 0,
+      "strict_cost_median_m": 67.69999999999999,
+      "cost_denominator": 13
+    },
+    {
+      "condition": "sst_default_first",
+      "K": 18,
+      "raw_exact": 8,
+      "M": 8,
+      "Gref": 8,
+      "E": 8,
+      "S": 6,
+      "M_over_K": 0.4444444444444444,
+      "S_over_E": 0.75,
+      "S_over_K": 0.3333333333333333,
+      "missing_clock_failures": 0,
+      "late_certificates": 0,
+      "strict_cost_median_m": 16.650000000000002,
+      "cost_denominator": 8
+    },
+    {
+      "condition": "sst_radius2_first",
+      "K": 18,
+      "raw_exact": 13,
+      "M": 13,
+      "Gref": 13,
+      "E": 13,
+      "S": 10,
+      "M_over_K": 0.7222222222222222,
+      "S_over_E": 0.7692307692307693,
+      "S_over_K": 0.5555555555555556,
+      "missing_clock_failures": 0,
+      "late_certificates": 0,
+      "strict_cost_median_m": 16.400000000000002,
+      "cost_denominator": 13
+    },
+    {
+      "condition": "sst_radius2_anytime",
+      "K": 18,
+      "raw_exact": 13,
+      "M": 12,
+      "Gref": 12,
+      "E": 12,
+      "S": 9,
+      "M_over_K": 0.6666666666666666,
+      "S_over_E": 0.75,
+      "S_over_K": 0.5,
+      "missing_clock_failures": 1,
+      "late_certificates": 0,
+      "strict_cost_median_m": 15.649999999999999,
+      "cost_denominator": 12
+    }
+  ],
+  "C2_primary_failures": {
+    "goal_reached": 34,
+    "approximate_not_strict": 25,
+    "instrumentation_failed_missing_original_clock": 1,
+    "tracking_error_limit": 12
+  },
+  "C2_los_full_margin_violations": 0,
+  "maximum_native_rk4_error_m": 8.526512829121202e-14,
+  "safety_false_positives": 0,
+  "new_searches": 0,
+  "new_plant_simulations": 0,
+  "development_map_clusters": 1,
+  "independent_holdout_maps_generated": 0,
+  "raw_root_stop_records": [
+    "stopped-1794734824103809500.json"
+  ],
+  "confidence_scope": "Descriptive paired development evidence only; six analytic tasks share one empty grid, so no map-level generalization CI/significance claim"
+}

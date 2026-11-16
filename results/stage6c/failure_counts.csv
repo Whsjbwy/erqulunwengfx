@@ -1,0 +1,5 @@
+failure_reason,count,denominator
+goal_reached,34,72
+approximate_not_strict,25,72
+instrumentation_failed_missing_original_clock,1,72
+tracking_error_limit,12,72

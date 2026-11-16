@@ -1,0 +1,11 @@
+{
+  "instrumentation_failures": 1,
+  "registered": 72,
+  "actually_run": 72,
+  "complete": true,
+  "pilot_only": false,
+  "native_M": 46,
+  "reference_Gref": 46,
+  "actual_E": 46,
+  "strict_S": 34
+}

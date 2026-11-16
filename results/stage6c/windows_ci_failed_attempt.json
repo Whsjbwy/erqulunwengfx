@@ -1,0 +1,14 @@
+{
+  "run_id": 43704256640,
+  "url": "https://github.com/Whsjbwy/erqulunwengfx/actions/runs/43704256640",
+  "head": "fbe27a4e62fc225c8d9ad1914f622a4ca9a183bf",
+  "conclusion": "failure",
+  "failed_step": "Generate thirteen frozen deterministic fixtures",
+  "error": "ValueError: Stage6B cannot target historical result directories",
+  "cause": "Stage6B Runner requires its output to be under results/stage6b. CI supplied results/stage6c/ci-frozen.",
+  "fix": "New isolated CI subdirectory results/stage6b/ci-stage6c-fixtures; frozen guard unchanged; evidence consumer receives explicit matching path.",
+  "native_build_ctest_and_cpp_format": "passed",
+  "additional_planning_searches": 0,
+  "local_log": "workspace/local_only/stage6c_quality/windows_ci_43704256640_failed.log",
+  "final_head_run": "To be verified separately; this failed run is retained."
+}

@@ -1,0 +1,15 @@
+{
+  "pairs": 21,
+  "transitions": {
+    "kept_success": 11,
+    "regressed": 0,
+    "recovered": 3,
+    "kept_failure": 7
+  },
+  "baseline_S": 11,
+  "adapted_S": 14,
+  "saved_los_intervals_audited": 32410,
+  "new_searches": 0,
+  "new_los_simulations": 0,
+  "interpretation": "Whole reference adaptation effect; no isolated terminal-time causal claim"
+}

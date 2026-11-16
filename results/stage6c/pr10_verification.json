@@ -1,0 +1,22 @@
+{
+  "checked_utc": "2026-11-15T09:05:54.197Z",
+  "url": "https://github.com/Whsjbwy/erqulunwengfx/pull/10",
+  "head": "73bfd383971659833373434b15c499ae909c92f4",
+  "base": "research/auv-executable-planning-stage6a",
+  "base_sha": "4553d0f7e14207c92eb69dafd444cfdab395bcf7",
+  "changed_files": 47,
+  "draft": false,
+  "merged": false,
+  "head_ci": [
+    {
+      "id": 43694473392,
+      "name": "Stage 6B Windows official OMPL acceptance",
+      "status": "completed",
+      "conclusion": "success",
+      "run_number": 4,
+      "jobs_url": "https://api.github.com/repos/Whsjbwy/erqulunwengfx/actions/runs/43694473392/jobs",
+      "logs_url": "https://api.github.com/repos/Whsjbwy/erqulunwengfx/actions/runs/43694473392/logs",
+      "workflow_id": 418971571
+    }
+  ]
+}
