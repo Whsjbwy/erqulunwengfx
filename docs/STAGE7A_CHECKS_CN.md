@@ -24,6 +24,8 @@
 
 脚本实际运行compileall、全量pytest、Ruff check、Ruff format --check、公开证据检查；每条命令保留退出码和耗时，日志与pytest.xml在新目录。运行结果以该目录的`evidence.json`和原始日志为准，任何失败保留原日志，不用“应该通过”替代。
 
+本地实际结果：**552项pytest通过，15.48秒**；compileall、Ruff check、Ruff format --check、公开47/15分母及13项文献一致性检查均退出0。运行源码提交为`cf3518a`，本地日志入库后最终提交的检查由Windows CI重新执行，不把本地前一HEAD当作最终HEAD。日志：[evidence.json](../results/stage7a/local-quality/evidence.json)、[pytest](../results/stage7a/local-quality/pytest.log)、[命令记录](../results/stage7a/local-quality/commands.json)。
+
 ## 开发错误留痕
 
 第一次提取遇到成功样本“引导已进入桥段但无失败索引”时，错误比较None与整数。已修复为明确的成功/未知/缺席分支，增加成功回归测试；`development_error.json`保留该错误。辅助只读检查还曾用Windows默认GBK读取UTF-8 JSON而报编码错误，显式指定UTF-8后重读成功；对科研数据没有写入。最初Ruff检查报告绘图代码长行，格式化后独立重新检查通过。路径查找中的未命中文件已改为实际文件定位，未作为不存在的源码引用。
