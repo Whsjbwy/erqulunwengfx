@@ -1,0 +1,11 @@
+[
+  {
+    "phase": "first deterministic B1 pytest admission, before any six-task execution",
+    "result": "3 failed,13 passed",
+    "evidence": "admission-first.xml",
+    "root_cause": "The finite-difference test constructed zero controls as an integer NumPy array. In-place scalar perturbations were truncated to zero. The analytic derivative was nonzero and the comparison failed.",
+    "repair": "Explicit dtype=float in test input; unchanged analytic formula and2e-9 finite-difference tolerance",
+    "new_six_task_executions_before_failure": 0,
+    "historical_data_modified": false
+  }
+]

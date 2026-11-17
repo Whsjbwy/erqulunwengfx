@@ -1,0 +1,32 @@
+{
+  "stage": "7B-0",
+  "base_commit": "24cc32d1cb2df0ba1fc50b08345840e7d3c6c0e8",
+  "branch": "research/auv-stage7b0-mature-tracking-check",
+  "target": "research/auv-safe-reference-stage7a",
+  "jobs": [
+    "turn_2--sst_radius2_first--seed1",
+    "turn_2--sst_radius2_first--seed2",
+    "turn_2--sst_radius2_first--seed3",
+    "terrain_2--sst_radius2_first--seed2",
+    "terrain_2--sst_radius2_anytime--seed2",
+    "wide_2--sst_radius2_first--seed1"
+  ],
+  "controller": "standard nominal-input feedforward plus finite-horizon discrete LTV-LQR; not original and not a Drake software reproduction",
+  "state_scales": "position: frozen0.75m goal tolerance on each axis; yaw: frozen one-second10deg turn; pitch: frozen20deg envelope",
+  "input_scales": "frozen10deg/s yaw and5deg/s pitch limits",
+  "weights": "Q=diag(1/state_scale^2), R=diag(1/input_scale^2), Qf=Q; no tuning",
+  "linearization": "analytic derivative of the frozen exact constant-rate0.1s flow, SO(2) tangent chart; verify by central finite differences",
+  "pitch_numerical_tolerance_rad": 1e-12,
+  "maximum_new_nominal_executions": 6,
+  "baselines": ["NATIVE-OPEN archived certificate", "LOS-FROZEN archived execution", "LTV-LQR new nominal execution"],
+  "execution_wall_budget_s": 20,
+  "pipeline_budget_s": 30,
+  "planning_clock": "reuse each original final independent-certificate finish time; no new search",
+  "simulation_horizon": "at most original saved native duration and original LOS simulation limit, first entry of unchanged0.75m goal ball; no terminal extension or bridge control",
+  "certification": "each new executed input sequence independently reintegrated and continuously certified by frozen6B replay; all new intervals additionally checked with50-substep frozen RK4",
+  "safety_policy": "stop on first online strict safety/constraint rejection; retain rejected candidate; independent certificate checks the same actual input, no inherited native certificate substitution",
+  "trial_policy": "exclusive six-task ledger; no retry, seed/map replacement or perturbation; incomplete invocation is retained and stops the batch",
+  "original_algorithms_authorized": false,
+  "current_model_implementation_authorized": false,
+  "new_planning_searches": 0
+}

@@ -1,0 +1,6 @@
+job_id,method,strict_success,termination,minimum_required_gap_lower_bound_m,first_strict_candidate_time_s,data_source,is_new_execution
+turn_2--sst_radius2_first--seed1,LOS-FROZEN,False,goal_reached_required_margin_violated,-0.13540750272857116,22.200000000000003,archived_frozen_LOS_execution,False
+turn_2--sst_radius2_first--seed2,LOS-FROZEN,False,goal_reached_required_margin_violated,-0.000329586032340623,24.0,archived_frozen_LOS_execution,False
+turn_2--sst_radius2_first--seed3,LOS-FROZEN,False,goal_reached_required_margin_violated,-0.06322922998821834,7.4,archived_frozen_LOS_execution,False
+terrain_2--sst_radius2_first--seed2,LOS-FROZEN,False,physical_sweep_rejected_workspace_boundary,-0.25404243107222024,59.6,archived_frozen_LOS_execution,False
+terrain_2--sst_radius2_anytime--seed2,LOS-FROZEN,False,physical_sweep_rejected_workspace_boundary,-0.25404243107222024,59.6,archived_frozen_LOS_execution,False
