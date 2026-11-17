@@ -1,0 +1,63 @@
+[
+  {
+    "check": "compileall",
+    "command": [
+      "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+      "-m",
+      "compileall",
+      "-q",
+      "src",
+      "tests",
+      "scripts"
+    ],
+    "exit_code": 0,
+    "wall_s": 0.14659730000039417
+  },
+  {
+    "check": "pytest",
+    "command": [
+      "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "-q",
+      "--junitxml=D:\\2区论文复现\\erqulunwengfx\\results\\stage7b0\\local-quality\\pytest.xml"
+    ],
+    "exit_code": 0,
+    "wall_s": 13.086292500000127
+  },
+  {
+    "check": "ruff",
+    "command": [
+      "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "check",
+      "."
+    ],
+    "exit_code": 0,
+    "wall_s": 0.08725479999975505
+  },
+  {
+    "check": "format",
+    "command": [
+      "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "format",
+      "--check",
+      "."
+    ],
+    "exit_code": 0,
+    "wall_s": 0.08653890000005049
+  },
+  {
+    "check": "public-evidence",
+    "command": [
+      "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+      "-m",
+      "gsunlight_repro.stage7b0.public_evidence"
+    ],
+    "exit_code": 0,
+    "wall_s": 0.18365540000013425
+  }
+]

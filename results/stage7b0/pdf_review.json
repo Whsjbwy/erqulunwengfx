@@ -1,0 +1,15 @@
+{
+  "pages": 2,
+  "paper": "A4",
+  "bytes": 71811,
+  "generation": "scripts/stage7b0_direction_pdf.py with configured bundled Python/reportlab/pypdf and system simhei.ttf",
+  "source": "results/stage7b0/direction_review.json",
+  "page_count_checks": [
+    "pypdf len(reader.pages)==2",
+    "pdfinfo Pages:2"
+  ],
+  "render_command": "pdftoppm -scale-to 1500 -png results/stage7b0/output/pdf/stage7b0_directions_cn.pdf ../local_only/stage7b0_quality/tmp/pdfs/directions",
+  "both_rendered_pages_visually_inspected": true,
+  "clipping_or_unreadable_glyphs_observed": false,
+  "checked_date": "2026-11-17"
+}

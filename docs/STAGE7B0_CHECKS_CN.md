@@ -35,6 +35,8 @@ PDF采用已配置的Codex附带Python/reportlab/pypdf和系统SimHei字体，�
 
 完整工程命令为`scripts/stage7b0_quality.py --output results/stage7b0/local-quality`，实际运行compileall、全量pytest、Ruff check、Ruff format --check和公开六行证据检查。真实退出码、耗时、日志及JUnit在新结果目录。合成单元测试正常运行模型积分；不把这些测试计为新增科研轨迹执行。
 
+本地实际检查通过：571项pytest，12.64秒，失败/错误/跳过均0；compileall、Ruff、格式及公开证据检查退出码全部0。该次源码HEAD为`05bdb27`，日志和结果入库后的最终提交由Windows CI重新执行并核对实际HEAD。
+
 新增Windows工作流取PR真实HEAD，运行相同检查，不依赖本地私有轨迹、不再执行六条任务。源码提交身份、计数和日志由CI产物核对；最终HEAD、运行/任务/产物ID及链接写入PR描述，并在工作区`local_only/stage7b0_quality/final_ci_verification.json`保存取证。避免为把自身HEAD写回仓库而递归提交，或把前一提交的CI作为最终证据。
 
 本轮无C++改动，无新OMPL构建和CTest。历史CTest只为继承证据，不写成本轮执行。相对7A的差异应全部为新增路径，无依赖源码、大原生轨迹、额外文件hash清单；PR目标7A，不合并main。完成后停止。
