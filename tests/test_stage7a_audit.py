@@ -7,6 +7,7 @@ import pytest
 from gsunlight_repro.stage7a.audit import (
     ABSENT,
     UNKNOWN,
+    describe,
     event_time,
     first_event,
     reference,
@@ -70,3 +71,45 @@ def test_tracking_event_uses_strict_declared_threshold() -> None:
     assert (
         first_event([{"cross_track_m": math.nextafter(3, math.inf)}], "tracking") == 0
     )
+    assert first_event([{"goal_distance_after_m": 0.75}], "goal") == 0
+    assert first_event([{"goal_distance_after_m": 0.75001}], "goal") == ABSENT
+
+
+def test_success_has_no_failure_even_when_guide_enters_bridge() -> None:
+    source = {
+        "scenario": "unit_only",
+        "condition": "unit_only",
+        "native_seed": "1",
+        "los_strict_success": "True",
+        "los_failure_reason": "goal_reached",
+    }
+    input_data = {"scenario": {"initial": [0, 0, 0, 0, 0, 1], "goal": [2, 0, 0]}}
+    sample = {
+        "time_start_s": 0,
+        "time_s": 0.1,
+        "start_position": [0, 0, 0],
+        "position": [1, 0, 0],
+        "pitch_rad": 0,
+        "reference_progress_m": 1,
+        "active_segment": 1,
+        "terminal_mode": True,
+        "terminal_switch": True,
+        "physical_reason": "ok",
+        "mission_reason": "ok",
+        "margin_reason": "ok",
+        "cross_track_m": 0,
+    }
+    record = {
+        "native_trace": [dict(sample)],
+        "los_trace": [dict(sample)],
+        "audit": {"model_feasible": True},
+        "tracking": {
+            "steps": 1,
+            "failure_reason": "goal_reached",
+            "reference_bridge_length_m": 1,
+        },
+    }
+    result, _ = describe("unit_only", source, input_data, record, 0.25)
+    assert result["guide_reached_bridge"] is True
+    assert result["earliest_strict_failure_kind"] == ABSENT
+    assert result["first_failure_before_guide_bridge"] == ABSENT

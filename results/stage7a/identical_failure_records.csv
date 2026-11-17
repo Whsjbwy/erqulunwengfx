@@ -1,0 +1,16 @@
+job_id,identical_saved_los_to
+turn_1--sst_radius2_anytime--seed2,turn_1--sst_radius2_anytime--seed2
+turn_2--rrt_first--seed1,turn_2--rrt_first--seed1
+turn_2--sst_radius2_first--seed1,turn_2--sst_radius2_first--seed1
+turn_2--rrt_first--seed2,turn_2--rrt_first--seed2
+turn_2--sst_radius2_first--seed2,turn_2--sst_radius2_first--seed2
+turn_2--rrt_first--seed3,turn_2--rrt_first--seed3
+turn_2--sst_radius2_first--seed3,turn_2--sst_radius2_first--seed3
+terrain_1--sst_radius2_anytime--seed1,terrain_1--sst_radius2_anytime--seed1
+terrain_1--sst_radius2_first--seed2,terrain_1--sst_radius2_first--seed2
+terrain_1--sst_radius2_anytime--seed2,terrain_1--sst_radius2_anytime--seed2
+terrain_2--sst_radius2_first--seed2,terrain_2--sst_radius2_first--seed2
+terrain_2--sst_radius2_anytime--seed2,terrain_2--sst_radius2_first--seed2
+terrain_2--rrt_first--seed3,terrain_2--rrt_first--seed3
+terrain_2--sst_radius2_first--seed3,terrain_2--sst_radius2_first--seed3
+terrain_2--sst_radius2_anytime--seed3,terrain_2--sst_radius2_first--seed3

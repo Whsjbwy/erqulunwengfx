@@ -33,6 +33,7 @@ def first_event(
         "mission": "mission_reason",
         "tracking": "cross_track_m",
         "terminal": "terminal_switch",
+        "goal": "goal_distance_after_m",
     }[kind]
     if not trace or any(key not in row for row in trace):
         return UNKNOWN
@@ -41,6 +42,8 @@ def first_event(
             failed = row[key] > tracking_limit
         elif kind == "terminal":
             failed = bool(row[key])
+        elif kind == "goal":
+            failed = row[key] <= 0.75
         else:
             failed = row[key] != "ok"
         if failed:
@@ -170,12 +173,12 @@ def describe(
     )
     events = {
         kind: first_event(los, kind)
-        for kind in ("margin", "physical", "mission", "tracking", "terminal")
+        for kind in ("margin", "physical", "mission", "tracking", "terminal", "goal")
     }
     observed = [
         (i, kind)
         for kind, i in events.items()
-        if isinstance(i, int) and kind != "terminal"
+        if isinstance(i, int) and kind in ("margin", "physical", "mission", "tracking")
     ]
     earliest = min(observed, default=None)
     first_index = earliest[0] if earliest else None
@@ -197,6 +200,14 @@ def describe(
             ABSENT,
         )
     first = los[first_index] if first_index is not None else None
+    if first_index is None or ref["bridge_length_m"] <= 1e-12:
+        failure_before_bridge: bool | str = ABSENT
+    elif isinstance(bridge_entry, int):
+        failure_before_bridge = first_index < bridge_entry
+    elif bridge_entry == ABSENT:
+        failure_before_bridge = True
+    else:
+        failure_before_bridge = UNKNOWN
     local_native_gap: float | str = UNKNOWN
     if first is not None and isinstance(first.get("active_segment"), int):
         active = first["active_segment"]
@@ -264,13 +275,7 @@ def describe(
             if bridge_entry == ABSENT
             else UNKNOWN
         ),
-        "first_failure_before_guide_bridge": (
-            first_index < bridge_entry
-            if isinstance(bridge_entry, int)
-            else True
-            if bridge_entry == ABSENT and first_index is not None
-            else UNKNOWN
-        ),
+        "first_failure_before_guide_bridge": failure_before_bridge,
         "terminal_mode_at_first_failure": first.get("terminal_mode", UNKNOWN)
         if first
         else ABSENT,
@@ -319,6 +324,88 @@ def describe(
     return result, event_rows
 
 
+def native_source_consistency(
+    input_data: dict[str, Any],
+    output: dict[str, Any],
+    record: dict[str, Any],
+) -> dict[str, Any]:
+    """Match saved controls/nodes to saved dense records without integrating them."""
+    controls, states, dense = (
+        output["controls"],
+        output["states"],
+        record["native_trace"],
+    )
+    if output["status"] != "exact" or len(states) != len(controls) + 1:
+        raise ValueError("Selected native source is not an exact PathControl")
+    if not record["audit"]["independent_audit_passed"]:
+        raise ValueError("The inherited independent certificate did not pass")
+    if not np.allclose(
+        states[0], input_data["scenario"]["initial"], rtol=0, atol=1e-12
+    ):
+        raise ValueError("Native output initial state differs from original input")
+    cursor = 0
+    for index, control in enumerate(controls):
+        steps = round(control["duration_s"] / 0.1)
+        if steps < 1 or not math.isclose(
+            steps * 0.1, control["duration_s"], abs_tol=1e-12
+        ):
+            raise ValueError("Saved duration is not a positive whole step count")
+        for row in dense[cursor : cursor + steps]:
+            if (
+                row["control_index"] != index
+                or not row["accepted"]
+                or any(
+                    not math.isclose(row[key], control[key], rel_tol=0, abs_tol=1e-12)
+                    for key in ("yaw_rate_rad_s", "pitch_rate_rad_s")
+                )
+            ):
+                raise ValueError("Native controls and dense source records disagree")
+        cursor += steps
+        if (
+            cursor > len(dense)
+            or math.dist(dense[cursor - 1]["position"], states[index + 1][:3]) > 1e-10
+        ):
+            raise ValueError("Saved native endpoint differs from output node")
+        endpoint = dense[cursor - 1]
+        node = states[index + 1]
+        yaw_error = math.remainder(endpoint["yaw_rad"] - node[3], 2 * math.pi)
+        if (
+            max(
+                abs(yaw_error),
+                abs(endpoint["pitch_rad"] - node[4]),
+                abs(endpoint["speed_m_s"] - node[5]),
+            )
+            > 1e-10
+        ):
+            raise ValueError("Saved native angle/speed differs from output node")
+    if cursor != len(dense):
+        raise ValueError("Native control duration and dense record count disagree")
+    los = record["los_trace"]
+    observed = [
+        *los[0]["start_position"],
+        los[0]["start_yaw_rad"],
+        los[0]["start_pitch_rad"],
+        los[0]["speed_m_s"],
+    ]
+    if not np.allclose(observed, input_data["scenario"]["initial"], rtol=0, atol=1e-12):
+        raise ValueError("Actual saved LOS initial state differs from native input")
+    differences = {}
+    count = min(len(dense), len(los))
+    for axis in ("yaw", "pitch"):
+        key = axis + "_rate_rad_s"
+        differences[f"max_equal_time_{axis}_rate_difference_deg_s"] = max(
+            abs(math.degrees(a[key] - b[key]))
+            for a, b in zip(dense[:count], los[:count], strict=True)
+        )
+    return {
+        "native_output_nodes": len(states),
+        "native_output_controls": len(controls),
+        "saved_control_node_correspondence_passed": True,
+        "actual_saved_initial_state_matches": True,
+        **differences,
+    }
+
+
 def run(raw: Path, output: Path = PUBLIC) -> dict[str, Any]:
     """Read exactly the47 saved M_final executions; never replace them with49."""
     if not output.resolve().is_relative_to(PUBLIC):
@@ -344,18 +431,33 @@ def run(raw: Path, output: Path = PUBLIC) -> dict[str, Any]:
     if missing:
         raise FileNotFoundError("Saved raw records missing: " + ", ".join(missing))
     rows, events = [], []
+    failure_traces: list[tuple[str, list[dict[str, Any]]]] = []
+    equivalence = []
     margin = read_config("stage5a_protocol.json")["vehicle"]["safety_margin_m"]
     for source in sources:
         if not (boolean(source["los_was_run"]) and boolean(source["los_eligible"])):
             raise ValueError("A selected execution does not belong to original E47")
         folder = raw / "search" / source["job_id"]
+        input_data = read_json(folder / "input.json")
+        output_data = read_json(folder / "output.json")
+        stored = load_record(folder / "independent_record.json.gz")
         row, found = describe(
             source["job_id"],
             source,
-            read_json(folder / "input.json"),
-            load_record(folder / "independent_record.json.gz"),
+            input_data,
+            stored,
             margin,
         )
+        row.update(native_source_consistency(input_data, output_data, stored))
+        if not row["LOS_strict_success"]:
+            representative = next(
+                (job for job, trace in failure_traces if trace == stored["los_trace"]),
+                source["job_id"],
+            )
+            equivalence.append(
+                {"job_id": source["job_id"], "identical_saved_los_to": representative}
+            )
+            failure_traces.append((source["job_id"], stored["los_trace"]))
         rows.append(row)
         events.extend(found)
     failed = [r for r in rows if not r["LOS_strict_success"]]
@@ -364,10 +466,14 @@ def run(raw: Path, output: Path = PUBLIC) -> dict[str, Any]:
     write_csv(output / "execution_index.csv", rows)
     write_csv(output / "failure_audit.csv", failed)
     write_csv(output / "event_audit.csv", events)
+    write_csv(output / "identical_failure_records.csv", equivalence)
     summary = {
         "executions": len(rows),
         "strict_successes": len(rows) - len(failed),
         "failures": len(failed),
+        "distinct_complete_saved_failure_traces": len(
+            {r["identical_saved_los_to"] for r in equivalence}
+        ),
         "original_termination_counts": dict(
             Counter(r["reported_termination_reason"] for r in failed)
         ),
