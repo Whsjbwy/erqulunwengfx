@@ -1,0 +1,11 @@
+{
+  "decision": "PIVOT",
+  "scope": "Do not admit T1/T2 as original mechanisms; mature feedforward/feedback and safety-tube work overlaps the present proposals. No empirical claim that an unimplemented controller recovered failures.",
+  "h1_status": "paused_no_tuning_or_prototype",
+  "hypotheses_evaluated": ["T1 preserved timed state/input reference", "T2 clearance-aware tracking safety coordination"],
+  "selected_original_direction": null,
+  "stage7b_authorized": false,
+  "new_planning_searches": 0,
+  "new_control_replays": 0,
+  "stop_for_researcher_and_chatgpt_review": true
+}

@@ -1,0 +1,21 @@
+{
+  "executions": 47,
+  "strict_successes": 32,
+  "failures": 15,
+  "distinct_complete_saved_failure_traces": 13,
+  "original_termination_counts": {
+    "tracking_error_limit": 4,
+    "goal_reached_required_margin_violated": 9,
+    "physical_sweep_rejected_workspace_boundary": 2
+  },
+  "earliest_strict_failure_counts": {
+    "tracking": 3,
+    "margin": 12
+  },
+  "failures_before_guide_bridge": 11,
+  "failures_with_terminal_mode_at_first_event": 4,
+  "missing_records": [],
+  "new_planning_searches": 0,
+  "new_control_replays": 0,
+  "new_controller_implementations": 0
+}

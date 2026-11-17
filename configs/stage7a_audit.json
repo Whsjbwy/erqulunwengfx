@@ -1,0 +1,23 @@
+{
+  "stage": "7A",
+  "base_commit": "43660a5008983ee9bf20a670eaed18463d748e22",
+  "branch": "research/auv-safe-reference-stage7a",
+  "target": "research/auv-obstacle-baselines-stage6ds",
+  "source_csv": "results/stage6ds/planning_runs.csv",
+  "selection": "model_feasible=True AND los_was_run=True AND los_eligible=True; preserve frozen M_final denominator",
+  "expected_executions": 47,
+  "expected_strict_successes": 32,
+  "expected_failures": 15,
+  "source_record": "search/<job_id>/independent_record.json.gz plus actual input/output JSON",
+  "audit_only": true,
+  "forbidden_calls": ["native solve", "simulate", "integrate", "_replay", "new controller"],
+  "events": "Distinguish earliest required-margin loss, first physical/mission rejection, first3m tracking-limit breach, goal entry, terminal switch and guide progress entering the goal bridge. Original termination classification remains unchanged.",
+  "missing_values": "not_recorded for absent fields; not_observed for known absent events. Derived quantities explicitly attributed to saved arrays and frozen configuration.",
+  "causality": "Observation and mathematical sufficiency conditions do not establish the cause of all15 failures. No counterfactual replays.",
+  "literature_minimum_items": 12,
+  "maximum_hypotheses": 2,
+  "new_planning_searches": 0,
+  "new_control_replays": 0,
+  "stage7b_authorized": false,
+  "h1_status": "Paused by researcher; no tuning or prototype"
+}

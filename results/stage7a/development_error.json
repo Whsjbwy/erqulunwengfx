@@ -1,0 +1,10 @@
+{
+  "phase": "First read-only extraction attempt",
+  "source_commit": "8460f3c",
+  "error": "TypeError: '<' not supported between instances of 'NoneType' and 'int'",
+  "cause": "A successful execution has no first failure index; the extractor compared it with an observed bridge entry",
+  "consequence": "Extraction stopped before index/failure CSV output; subsequent read of that absent CSV also failed",
+  "repair": "Explicitly distinguish absent failure from bridge chronology and add a success regression test",
+  "historical_records_modified": false,
+  "new_planning_or_control_experiments": 0
+}
