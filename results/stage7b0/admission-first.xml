@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="16" time="0.357" timestamp="2026-11-17T13:10:38.445493+08:00" hostname="BrasseBobi"><testcase classname="tests.test_stage7b0_lqr" name="test_exact_flow_jacobians_against_independent_finite_difference[0-0-0-0]" time="0.032"><failure message="AssertionError: &#10;Not equal to tolerance rtol=0, atol=2e-09&#10;&#10;Mismatched elements: 4 / 10 (40%)&#10;Mismatch at indices:&#10; [1, 0]: 0.005000000000000001 (ACTUAL), 0.0 (DESIRED)&#10; [2, 1]: 0.005000000000000001 (ACTUAL), 0.0 (DESIRED)&#10; [3, 0]: 0.1 (ACTUAL), 0.0 (DESIRED)&#10; [4, 1]: 0.1 (ACTUAL), 0.0 (DESIRED)&#10;Max absolute difference among violations: 0.1&#10;Max relative difference among violations: inf&#10; ACTUAL: array([[0.   , 0.   ],&#10;       [0.005, 0.   ],&#10;       [0.   , 0.005],...&#10; DESIRED: array([[0., 0.],&#10;[+2 more lines; full report in element text]">yaw = 0, pitch = 0, r = 0, q = 0
+
+    @pytest.mark.parametrize(
+        "yaw,pitch,r,q",
+        [
+            (0, 0, 0, 0),
+            (0.3, 0.2, 0.04, -0.03),
+            (-1, -0.3, 0.08, 0.08),
+            (1.8, 0.1, 1e-12, -1e-12),
+            (math.pi, 0.2, 0.03, -0.03),
+            (-math.pi, -0.2, -0.02, -0.02),
+            (0.4, math.pi / 9, 0, 0),
+            (0.4, -math.pi / 9, 0, 0),
+        ],
+    )
+    def test_exact_flow_jacobians_against_independent_finite_difference(
+        yaw: float, pitch: float, r: float, q: float
+    ) -&gt; None:
+        state, u, epsilon = State((8, 9, 10), yaw, pitch, 1), np.array([r, q]), 1e-5
+        a, b = jacobians(state, u, 0.1)
+        finite_a, finite_b = np.zeros((5, 5)), np.zeros((5, 2))
+        for column in range(5):
+            plus, minus = vector(state), vector(state)
+            plus[column] += epsilon
+            minus[column] -= epsilon
+            first = integrate(State(tuple(plus[:3]), *plus[3:], 1), r, q, 0.1)
+            second = integrate(State(tuple(minus[:3]), *minus[3:], 1), r, q, 0.1)
+            finite_a[:, column] = state_error(first, second) / (2 * epsilon)
+        for column in range(2):
+            plus, minus = u.copy(), u.copy()
+            plus[column] += epsilon
+            minus[column] -= epsilon
+            finite_b[:, column] = state_error(
+                integrate(state, *plus, 0.1), integrate(state, *minus, 0.1)
+            ) / (2 * epsilon)
+        np.testing.assert_allclose(a, finite_a, rtol=0, atol=2e-9)
+&gt;       np.testing.assert_allclose(b, finite_b, rtol=0, atol=2e-9)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0, atol=2e-09
+E       
+E       Mismatched elements: 4 / 10 (40%)
+E       Mismatch at indices:
+E        [1, 0]: 0.005000000000000001 (ACTUAL), 0.0 (DESIRED)
+E        [2, 1]: 0.005000000000000001 (ACTUAL), 0.0 (DESIRED)
+E        [3, 0]: 0.1 (ACTUAL), 0.0 (DESIRED)
+E        [4, 1]: 0.1 (ACTUAL), 0.0 (DESIRED)
+E       Max absolute difference among violations: 0.1
+E       Max relative difference among violations: inf
+E        ACTUAL: array([[0.   , 0.   ],
+E              [0.005, 0.   ],
+E              [0.   , 0.005],...
+E        DESIRED: array([[0., 0.],
+E              [0., 0.],
+E              [0., 0.],...
+
+tests\test_stage7b0_lqr.py:70: AssertionError</failure></testcase><testcase classname="tests.test_stage7b0_lqr" name="test_exact_flow_jacobians_against_independent_finite_difference[0.3-0.2-0.04--0.03]" time="0.001" /><testcase classname="tests.test_stage7b0_lqr" name="test_exact_flow_jacobians_against_independent_finite_difference[-1--0.3-0.08-0.08]" time="0.001" /><testcase classname="tests.test_stage7b0_lqr" name="test_exact_flow_jacobians_against_independent_finite_difference[1.8-0.1-1e-12--1e-12]" time="0.001" /><testcase classname="tests.test_stage7b0_lqr" name="test_exact_flow_jacobians_against_independent_finite_difference[3.141592653589793-0.2-0.03--0.03]" time="0.001" /><testcase classname="tests.test_stage7b0_lqr" name="test_exact_flow_jacobians_against_independent_finite_difference[-3.141592653589793--0.2--0.02--0.02]" time="0.001" /><testcase classname="tests.test_stage7b0_lqr" name="test_exact_flow_jacobians_against_independent_finite_difference[0.4-0.3490658503988659-0-0]" time="0.001"><failure message="AssertionError: &#10;Not equal to tolerance rtol=0, atol=2e-09&#10;&#10;Mismatched elements: 7 / 10 (70%)&#10;First 5 mismatches are at indices:&#10; [0, 0]: -0.0018296677133305993 (ACTUAL), 0.0 (DESIRED)&#10; [0, 1]: -0.0015751070659027484 (ACTUAL), 0.0 (DESIRED)&#10; [1, 0]: 0.004327571096791226 (ACTUAL), 0.0 (DESIRED)&#10; [1, 1]: -0.0006659445862502447 (ACTUAL), 0.0 (DESIRED)&#10; [2, 1]: 0.004698463103929543 (ACTUAL), 0.0 (DESIRED)&#10;Max absolute difference among violations: 0.1&#10;Max relative difference among violations: inf&#10;[+6 more lines; full report in element text]">yaw = 0.4, pitch = 0.3490658503988659, r = 0, q = 0
+
+    @pytest.mark.parametrize(
+        "yaw,pitch,r,q",
+        [
+            (0, 0, 0, 0),
+            (0.3, 0.2, 0.04, -0.03),
+            (-1, -0.3, 0.08, 0.08),
+            (1.8, 0.1, 1e-12, -1e-12),
+            (math.pi, 0.2, 0.03, -0.03),
+            (-math.pi, -0.2, -0.02, -0.02),
+            (0.4, math.pi / 9, 0, 0),
+            (0.4, -math.pi / 9, 0, 0),
+        ],
+    )
+    def test_exact_flow_jacobians_against_independent_finite_difference(
+        yaw: float, pitch: float, r: float, q: float
+    ) -&gt; None:
+        state, u, epsilon = State((8, 9, 10), yaw, pitch, 1), np.array([r, q]), 1e-5
+        a, b = jacobians(state, u, 0.1)
+        finite_a, finite_b = np.zeros((5, 5)), np.zeros((5, 2))
+        for column in range(5):
+            plus, minus = vector(state), vector(state)
+            plus[column] += epsilon
+            minus[column] -= epsilon
+            first = integrate(State(tuple(plus[:3]), *plus[3:], 1), r, q, 0.1)
+            second = integrate(State(tuple(minus[:3]), *minus[3:], 1), r, q, 0.1)
+            finite_a[:, column] = state_error(first, second) / (2 * epsilon)
+        for column in range(2):
+            plus, minus = u.copy(), u.copy()
+            plus[column] += epsilon
+            minus[column] -= epsilon
+            finite_b[:, column] = state_error(
+                integrate(state, *plus, 0.1), integrate(state, *minus, 0.1)
+            ) / (2 * epsilon)
+        np.testing.assert_allclose(a, finite_a, rtol=0, atol=2e-9)
+&gt;       np.testing.assert_allclose(b, finite_b, rtol=0, atol=2e-9)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0, atol=2e-09
+E       
+E       Mismatched elements: 7 / 10 (70%)
+E       First 5 mismatches are at indices:
+E        [0, 0]: -0.0018296677133305993 (ACTUAL), 0.0 (DESIRED)
+E        [0, 1]: -0.0015751070659027484 (ACTUAL), 0.0 (DESIRED)
+E        [1, 0]: 0.004327571096791226 (ACTUAL), 0.0 (DESIRED)
+E        [1, 1]: -0.0006659445862502447 (ACTUAL), 0.0 (DESIRED)
+E        [2, 1]: 0.004698463103929543 (ACTUAL), 0.0 (DESIRED)
+E       Max absolute difference among violations: 0.1
+E       Max relative difference among violations: inf
+E        ACTUAL: array([[-0.00183 , -0.001575],
+E              [ 0.004328, -0.000666],
+E              [ 0.      ,  0.004698],...
+E        DESIRED: array([[0., 0.],
+E              [0., 0.],
+E              [0., 0.],...
+
+tests\test_stage7b0_lqr.py:70: AssertionError</failure></testcase><testcase classname="tests.test_stage7b0_lqr" name="test_exact_flow_jacobians_against_independent_finite_difference[0.4--0.3490658503988659-0-0]" time="0.001"><failure message="AssertionError: &#10;Not equal to tolerance rtol=0, atol=2e-09&#10;&#10;Mismatched elements: 7 / 10 (70%)&#10;First 5 mismatches are at indices:&#10; [0, 0]: -0.0018296677133305993 (ACTUAL), 0.0 (DESIRED)&#10; [0, 1]: 0.0015751070659027484 (ACTUAL), 0.0 (DESIRED)&#10; [1, 0]: 0.004327571096791226 (ACTUAL), 0.0 (DESIRED)&#10; [1, 1]: 0.0006659445862502447 (ACTUAL), 0.0 (DESIRED)&#10; [2, 1]: 0.004698463103929543 (ACTUAL), 0.0 (DESIRED)&#10;Max absolute difference among violations: 0.1&#10;Max relative difference among violations: inf&#10;[+6 more lines; full report in element text]">yaw = 0.4, pitch = -0.3490658503988659, r = 0, q = 0
+
+    @pytest.mark.parametrize(
+        "yaw,pitch,r,q",
+        [
+            (0, 0, 0, 0),
+            (0.3, 0.2, 0.04, -0.03),
+            (-1, -0.3, 0.08, 0.08),
+            (1.8, 0.1, 1e-12, -1e-12),
+            (math.pi, 0.2, 0.03, -0.03),
+            (-math.pi, -0.2, -0.02, -0.02),
+            (0.4, math.pi / 9, 0, 0),
+            (0.4, -math.pi / 9, 0, 0),
+        ],
+    )
+    def test_exact_flow_jacobians_against_independent_finite_difference(
+        yaw: float, pitch: float, r: float, q: float
+    ) -&gt; None:
+        state, u, epsilon = State((8, 9, 10), yaw, pitch, 1), np.array([r, q]), 1e-5
+        a, b = jacobians(state, u, 0.1)
+        finite_a, finite_b = np.zeros((5, 5)), np.zeros((5, 2))
+        for column in range(5):
+            plus, minus = vector(state), vector(state)
+            plus[column] += epsilon
+            minus[column] -= epsilon
+            first = integrate(State(tuple(plus[:3]), *plus[3:], 1), r, q, 0.1)
+            second = integrate(State(tuple(minus[:3]), *minus[3:], 1), r, q, 0.1)
+            finite_a[:, column] = state_error(first, second) / (2 * epsilon)
+        for column in range(2):
+            plus, minus = u.copy(), u.copy()
+            plus[column] += epsilon
+            minus[column] -= epsilon
+            finite_b[:, column] = state_error(
+                integrate(state, *plus, 0.1), integrate(state, *minus, 0.1)
+            ) / (2 * epsilon)
+        np.testing.assert_allclose(a, finite_a, rtol=0, atol=2e-9)
+&gt;       np.testing.assert_allclose(b, finite_b, rtol=0, atol=2e-9)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0, atol=2e-09
+E       
+E       Mismatched elements: 7 / 10 (70%)
+E       First 5 mismatches are at indices:
+E        [0, 0]: -0.0018296677133305993 (ACTUAL), 0.0 (DESIRED)
+E        [0, 1]: 0.0015751070659027484 (ACTUAL), 0.0 (DESIRED)
+E        [1, 0]: 0.004327571096791226 (ACTUAL), 0.0 (DESIRED)
+E        [1, 1]: 0.0006659445862502447 (ACTUAL), 0.0 (DESIRED)
+E        [2, 1]: 0.004698463103929543 (ACTUAL), 0.0 (DESIRED)
+E       Max absolute difference among violations: 0.1
+E       Max relative difference among violations: inf
+E        ACTUAL: array([[-0.00183 ,  0.001575],
+E              [ 0.004328,  0.000666],
+E              [ 0.      ,  0.004698],...
+E        DESIRED: array([[0., 0.],
+E              [0., 0.],
+E              [0., 0.],...
+
+tests\test_stage7b0_lqr.py:70: AssertionError</failure></testcase><testcase classname="tests.test_stage7b0_lqr" name="test_scalar_riccati_matches_independent_one_step_cost_minimizer" time="0.001" /><testcase classname="tests.test_stage7b0_lqr" name="test_zero_error_feedforward_and_full_synthetic_nominal_consistency" time="0.001" /><testcase classname="tests.test_stage7b0_lqr" name="test_nonzero_attitude_error_generates_corrective_feedback" time="0.001" /><testcase classname="tests.test_stage7b0_lqr" name="test_signed_pitch_boundary_tolerance_and_saturation[-1]" time="0.001" /><testcase classname="tests.test_stage7b0_lqr" name="test_signed_pitch_boundary_tolerance_and_saturation[1]" time="0.001" /><testcase classname="tests.test_stage7b0_lqr" name="test_invalid_controls_and_speed_are_not_silently_accepted" time="0.001" /><testcase classname="tests.test_stage7b0_lqr" name="test_free_endpoints_do_not_certify_a_crossing_control_interval" time="0.001" /><testcase classname="tests.test_stage7b0_lqr" name="test_goal_ball_and_horizon_exhaustion_do_not_create_extra_controls" time="0.004" /></testsuite></testsuites>
