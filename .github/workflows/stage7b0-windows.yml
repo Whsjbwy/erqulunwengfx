@@ -1,0 +1,30 @@
+name: Stage 7B-0 Windows mature-tracker verification
+on:
+  pull_request:
+    branches: [research/auv-safe-reference-stage7a]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  synthetic-model-and-public-evidence:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - name: Install existing frozen project dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Full deterministic regression at exact HEAD without six-task reruns
+        run: python scripts/stage7b0_quality.py --output results/stage7b0/ci-quality
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: stage7b0-windows-mature-tracker-evidence
+          path: results/stage7b0/ci-quality/
+          if-no-files-found: error
