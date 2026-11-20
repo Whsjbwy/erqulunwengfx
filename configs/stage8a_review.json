@@ -1,0 +1,29 @@
+{
+  "stage": "8A",
+  "review_date": "2026-11-20",
+  "base_commit": "c99588362f72348260a33e463cb94774d2b3896f",
+  "base_pr": 16,
+  "minimum_method_papers": 8,
+  "maximum_candidates": 1,
+  "maximum_demonstrations_if_admitted": 6,
+  "candidate": {
+    "question": "在有限流场感知且有可验证的流速、空间梯度及时间变化上界时，固定正向水速与yaw/pitch限幅是否产生尚未被最近邻方法覆盖的持续安全可达性判据，并较全域最坏界减少误拒？",
+    "equivalent_mechanism_verified": false,
+    "key_method_unknown": true,
+    "difference_verified": false,
+    "broad_claim_already_covered": true,
+    "critical_sources": ["L1", "L5"],
+    "nearest_sources": ["L8", "L3", "L7"]
+  },
+  "case_families": [
+    "zero_flow_straight",
+    "zero_flow_gentle_turn",
+    "constant_downstream",
+    "constant_crossflow",
+    "linear_shear",
+    "analytic_time_varying"
+  ],
+  "planning_authorized": false,
+  "original_algorithm_authorized": false,
+  "preserve_all_history": true
+}

@@ -1,0 +1,7 @@
+case_id,case_family,run_state,reason,control_sequence,flow_parameters,flow_bounds,final_state,success,first_rejected_interval,minimum_clearance_m,integration_error_m,wall_s,execution_command
+1,zero_flow_straight,not_run_gate_A,NEED_MORE_EVIDENCE: model development not admitted,,,,,,,,,,
+2,zero_flow_gentle_turn,not_run_gate_A,NEED_MORE_EVIDENCE: model development not admitted,,,,,,,,,,
+3,constant_downstream,not_run_gate_A,NEED_MORE_EVIDENCE: model development not admitted,,,,,,,,,,
+4,constant_crossflow,not_run_gate_A,NEED_MORE_EVIDENCE: model development not admitted,,,,,,,,,,
+5,linear_shear,not_run_gate_A,NEED_MORE_EVIDENCE: model development not admitted,,,,,,,,,,
+6,analytic_time_varying,not_run_gate_A,NEED_MORE_EVIDENCE: model development not admitted,,,,,,,,,,

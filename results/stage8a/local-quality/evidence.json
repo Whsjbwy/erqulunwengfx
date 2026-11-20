@@ -1,0 +1,80 @@
+{
+  "passed": true,
+  "head": "c99588362f72348260a33e463cb94774d2b3896f",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.11.15 (main, Apr 14 2026, 14:31:26) [MSC v.1944 64 bit (AMD64)]",
+  "pytest": {
+    "tests": 584,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "historical_tracked_changes": 0,
+  "new_cpp_checks": false,
+  "new_flow_model_executions": 0,
+  "new_planning_searches": 0,
+  "gate_A": "NEED_MORE_EVIDENCE",
+  "commands": [
+    {
+      "check": "compileall",
+      "command": [
+        "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "tests",
+        "scripts"
+      ],
+      "exit_code": 0,
+      "wall_s": 0.6739671000000271
+    },
+    {
+      "check": "pytest",
+      "command": [
+        "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "--junitxml=D:\\2区论文复现\\erqulunwengfx\\results\\stage8a\\local-quality\\pytest.xml"
+      ],
+      "exit_code": 0,
+      "wall_s": 16.2328751
+    },
+    {
+      "check": "ruff",
+      "command": [
+        "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "."
+      ],
+      "exit_code": 0,
+      "wall_s": 0.10246879999976954
+    },
+    {
+      "check": "format",
+      "command": [
+        "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "."
+      ],
+      "exit_code": 0,
+      "wall_s": 0.10145539999984976
+    },
+    {
+      "check": "review",
+      "command": [
+        "D:\\2区论文复现\\erqulunwengfx\\.venv\\Scripts\\python.exe",
+        "-m",
+        "gsunlight_repro.stage8a.review"
+      ],
+      "exit_code": 0,
+      "wall_s": 0.22714339999993172
+    }
+  ]
+}
