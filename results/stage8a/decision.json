@@ -1,0 +1,21 @@
+{
+  "project_decision": "BLOCKED",
+  "gate_A": "NEED_MORE_EVIDENCE",
+  "gate_B": "NOT_ENTERED",
+  "reason": "通用局部误差界/安全管机制已被覆盖；具体联合假设的实质差异未证实，关键近邻L5未取得全文，L1本轮仅重获摘要。未知不等于创新，也不足以证明完整机制等价。",
+  "papers_reviewed": 10,
+  "papers_2023_2026": 8,
+  "candidates_retained": 1,
+  "candidate_admitted": false,
+  "case_families_reserved": 6,
+  "new_model_demonstrations": 0,
+  "not_run_gate_A": 6,
+  "new_planning_searches": 0,
+  "new_trajectory_replays": 0,
+  "success_rate": null,
+  "flow_model_correctness_established": false,
+  "continuous_flow_safety_established": false,
+  "robustness_established": false,
+  "original_algorithm_authorized": false,
+  "stop_for_review": true
+}

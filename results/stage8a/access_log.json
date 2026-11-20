@@ -1,0 +1,44 @@
+{
+  "checked_on": "2026-11-20",
+  "scope": "人工文献核验访问记录；不是全文镜像，不声称穷尽检索",
+  "search_topics": [
+    "2023–2026 AUV spatial/time-varying ocean currents motion constraints",
+    "limited sensing local flow uncertainty Lipschitz safe reachable invariant tracking",
+    "五篇7B-0近邻的精确题名、DOI、作者代码",
+    "FaSTrack extensions parameterized tracking contraction trusted domain"
+  ],
+  "access_events": [
+    {"source": "L1", "url": "https://www.mdpi.com/2218-6581/15/1/18", "observed": "本轮网页解析仅得摘要；7B-0全文审计保留原样"},
+    {"source": "L1", "url": "https://www.mdpi.com/2218-6581/15/1/18/pdf", "observed": "web工具返回unsupported content type；随后实际Invoke-WebRequest返回Access Denied，未获得PDF；后续读取出现FileNotFound，无模型运行"},
+    {"source": "L1", "url": "https://mdpi-res.com/d_attachment/robotics/robotics-15-00018/article_deploy/robotics-15-00018.pdf", "observed": "尝试标准静态PDF路径未取得内容；不据此判断论文或PDF不存在"},
+    {"source": "L2", "url": "https://www.mdpi.com/2504-446x/9/4/273", "observed": "取得HTML方法；核对§3.2无洋流、二维模型"},
+    {"source": "L3", "url": "https://arxiv.org/html/2604.05310v1", "observed": "取得作者v1全文；与正式版作者拼写和版本差异单列"},
+    {"source": "L4", "url": "https://arxiv.org/html/2102.07039v2", "observed": "取得作者全文及正式相关DOI；相关仓库根LICENSE核对BSD-3-Clause"},
+    {"source": "L5", "url": "https://www.sciencedirect.com/science/article/pii/S0029801825023959", "observed": "检索结果核实出版社摘要/元数据；直接正文及abs访问403，未取得全文；ResearchGate请求全文页面不算全文"},
+    {"source": "L6", "url": "https://arxiv.org/html/2404.02472v1", "observed": "取得作者全文方法；Crossref核对正式DOI和刊物年份"},
+    {"source": "L7", "url": "https://proceedings.mlr.press/v242/jeong24a/jeong24a.pdf", "observed": "取得PMLR正式PDF方法；正式页面无DOI，单列预印本DOI"},
+    {"source": "L8", "url": "https://arxiv.org/html/2104.08695v2", "observed": "取得扩展v2全文方法；大学站PDF入口超时不影响作者HTML取得；Crossref核对CDC正式DOI"},
+    {"source": "L9", "url": "https://link.springer.com/article/10.1007/s10514-024-10172-6", "observed": "取得出版社全文，阅读定义11/12及§6算法与可返回性"},
+    {"source": "L10", "url": "https://html.rhhz.net/jmsa/html/20230316.htm", "observed": "取得期刊全文，核对两个假设及安全引导方法"}
+  ],
+  "crossref_metadata_commands": {
+    "tool": "PowerShell Invoke-RestMethod -TimeoutSec 15",
+    "urls": [
+      "https://api.crossref.org/works/10.1109/LCSYS.2024.3410636",
+      "https://api.crossref.org/works/10.1109/CDC45484.2021.9683354"
+    ],
+    "observed": "两个请求实际返回匹配题名、DOI、刊物及年份；元数据核实不代替全文阅读"
+  },
+  "official_code_search": {
+    "method": "论文页面/作者预印本链接检查、精确题名GitHub仓库检索；未检索到不等于不存在",
+    "github_queries_observed_empty": [
+      "robotics15010018",
+      "\"Safe Returning FaSTrack\"",
+      "\"Parameterized\" \"FaSTrack\"",
+      "\"Model Error Propagation\" contraction"
+    ],
+    "verified_related_repository": "https://github.com/HJReachability/fastrack",
+    "verified_related_license": "BSD-3-Clause；相关实现，不保证覆盖TAC2021全部实验",
+    "new_external_builds": 0
+  }
+}
